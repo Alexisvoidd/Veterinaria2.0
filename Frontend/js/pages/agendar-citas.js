@@ -1,13 +1,13 @@
-/* REFERENCIA AL FORMULARIO PRINCIPAL */
+// REFERENCIA AL FORMULARIO PRINCIPAL
 const form = document.getElementById("appointment-form");
 
-/* REFERENCIA AL CAMPO DE FECHA */
+// REFERENCIA AL CAMPO DE FECHA
 const dateInput = document.getElementById("appointment-date");
 
-/* REFERENCIA AL SELECTOR DE HORARIOS */
+// REFERENCIA AL SELECTOR DE HORARIOS
 const timeSelect = document.getElementById("appointment-time");
 
-/* REFERENCIA AL MENSAJE GENERAL DEL FORMULARIO */
+// REFERENCIA AL MENSAJE GENERAL DEL FORMULARIO
 const message = document.getElementById("appointment-message");
 const petSelect = document.getElementById("pet-name");
 const speciesSelect = document.getElementById("species");
@@ -26,241 +26,241 @@ if (!usuarioSesion?.correo) {
 
 // Configuración de horarios según el día de la semana
 
-/* HORARIOS DISPONIBLES DE LUNES A VIERNES */
+// HORARIOS DISPONIBLES DE LUNES A VIERNES
 const horariosSemana = [
-  /* Primera hora disponible */
+  // Primera hora disponible
   "08:00",
 
-  /* Segunda hora disponible */
+  // Segunda hora disponible
   "09:00",
 
-  /* Tercera hora disponible */
+  // Tercera hora disponible
   "10:00",
 
-  /* Cuarta hora disponible */
+  // Cuarta hora disponible
   "11:00",
 
-  /* Horario después del descanso */
+  // Horario después del descanso
   "14:00",
 
-  /* Segunda hora de la tarde */
+  // Segunda hora de la tarde
   "15:00",
 
-  /* Tercera hora de la tarde */
+  // Tercera hora de la tarde
   "16:00",
 
-  /* Última hora disponible */
+  // Última hora disponible
   "17:00",
 ];
 
-/* HORARIOS DISPONIBLES LOS SÁBADOS */
+// HORARIOS DISPONIBLES LOS SÁBADOS
 const horariosSabado = [
-  /* Primera hora del sábado */
+  // Primera hora del sábado
   "08:00",
 
-  /* Segunda hora del sábado */
+  // Segunda hora del sábado
   "09:00",
 
-  /* Tercera hora del sábado */
+  // Tercera hora del sábado
   "10:00",
 
-  /* Cuarta hora del sábado */
+  // Cuarta hora del sábado
   "11:00",
 
-  /* Quinta hora del sábado */
+  // Quinta hora del sábado
   "12:00",
 
-  /* Última hora del sábado */
+  // Última hora del sábado
   "13:00",
 ];
 
-/* FUNCIONES PARA LAS FECHAS Y HORARIOS */
+// FUNCIONES PARA LAS FECHAS Y HORARIOS
 
-/* Evita fechas anteriores y marca los domingos como no disponibles. */
+// Evita fechas anteriores y marca los domingos como no disponibles.
 function prepararFecha() {
-  /* Obtiene la fecha actual */
+  // Obtiene la fecha actual
   const hoy = new Date();
 
-  /* Establece la hora actual en medianoche */
+  // Establece la hora actual en medianoche
   hoy.setHours(0, 0, 0, 0);
 
-  /* Convierte la fecha actual al formato YYYY-MM-DD */
+  // Convierte la fecha actual al formato YYYY-MM-DD
   const iso = hoy.toISOString().split("T")[0];
 
-  /* Evita seleccionar fechas anteriores a hoy */
+  // Evita seleccionar fechas anteriores a hoy
   dateInput.min = iso;
 
-  /* Verifica si ya existe una fecha seleccionada */
+  // Verifica si ya existe una fecha seleccionada
   if (dateInput.value) {
-    /* Convierte la fecha seleccionada en un objeto Date */
+    // Convierte la fecha seleccionada en un objeto Date
     const fecha = new Date(`${dateInput.value}T12:00:00`);
 
-    /* Comprueba si la fecha seleccionada corresponde a un domingo */
+    // Comprueba si la fecha seleccionada corresponde a un domingo
     if (fecha.getDay() === 0) {
-      /* Muestra un mensaje de validación para los domingos */
+      // Muestra un mensaje de validación para los domingos
       dateInput.setCustomValidity("Los domingos no hay atención.");
     } else {
-      /* Elimina cualquier mensaje de validación anterior */
+      // Elimina cualquier mensaje de validación anterior
       dateInput.setCustomValidity("");
     }
   }
 }
 
-/* Define los horarios disponibles según el día seleccionado. */
+// Define los horarios disponibles según el día seleccionado
 function cargarHorarios() {
-  /* Convierte la fecha seleccionada en un objeto Date */
+  // Convierte la fecha seleccionada en un objeto Date
   const fecha = new Date(`${dateInput.value}T12:00:00`);
 
-  /* Comprueba si todavía no se ha seleccionado una fecha */
+  // Comprueba si todavía no se ha seleccionado una fecha
   if (!dateInput.value) {
-    /* Muestra una opción indicando que primero debe seleccionarse una fecha */
+    // Muestra una opción indicando que primero debe seleccionarse una fecha
     timeSelect.innerHTML =
       '<option value="">Primero selecciona una fecha</option>';
 
-    /* Detiene la ejecución de la función */
+    // Detiene la ejecución de la función
     return;
   }
 
-  /* Comprueba si la fecha seleccionada es domingo */
+  // Comprueba si la fecha seleccionada es domingo
   if (fecha.getDay() === 0) {
-    /* Informa que no existen horarios disponibles los domingos */
+    // Informa que no existen horarios disponibles los domingos
     timeSelect.innerHTML = '<option value="">No atendemos domingos</option>';
 
-    /* Detiene la ejecución de la función */
+    // Detiene la ejecución de la función
     return;
   }
 
-  /* Selecciona los horarios del sábado o de lunes a viernes */
+  // Selecciona los horarios del sábado o de lunes a viernes
   const horarios = fecha.getDay() === 6 ? horariosSabado : horariosSemana;
 
-  /* Genera las opciones del selector de horarios */
+  // Genera las opciones del selector de horarios
   timeSelect.innerHTML =
     '<option value="">Selecciona una hora</option>' +
-    /* Convierte cada horario en una opción HTML */
+    // Convierte cada horario en una opción HTML
     horarios.map((h) => `<option value="${h}">${h}</option>`).join("");
 }
 
-/* FUNCIONES DE VALIDACIÓN DE CAMPOS */
+// FUNCIONES DE VALIDACIÓN DE CAMPOS
 
-/* Maneja la adición/eliminación de clases CSS de error en los campos */
+// Maneja la adición/eliminación de clases CSS de error en los campos
 function error(id, hayError) {
-  /* Busca el contenedor del campo mediante su selector */
+  // Busca el contenedor del campo mediante su selector
   const campo = document.querySelector(id);
 
-  /* Agrega o elimina la clase de error según corresponda */
+  // Agrega o elimina la clase de error según corresponda
   campo.classList.toggle("has-error", hayError);
 
-  /* Busca el control de formulario dentro del campo */
+  // Busca el control de formulario dentro del campo
   const control = campo.querySelector("input, select, textarea");
 
-  /* Comprueba que exista un control */
+  // Comprueba que exista un control
   if (control) {
-    /* Agrega o elimina la clase visual de campo inválido */
+    // Agrega o elimina la clase visual de campo inválido
     control.classList.toggle("invalid", hayError);
   }
 }
 
-/* Valida todos los campos del formulario antes de enviar */
+// Valida todos los campos del formulario antes de enviar
 function validar() {
-  /* Indica inicialmente que todos los campos son válidos */
+  // Indica inicialmente que todos los campos son válidos
   let ok = true;
 
-  /* EXTRACCIÓN DE VALORES */
+  // EXTRACCIÓN DE VALORES
 
-  /* Obtiene y limpia el nombre del propietario */
+  // Obtiene y limpia el nombre del propietario
   const nombre = document.getElementById("owner-name").value.trim();
 
-  /* Obtiene y limpia el correo electrónico */
+  // Obtiene y limpia el correo electrónico
   const email = document.getElementById("owner-email").value.trim();
 
-  /* Obtiene y limpia el teléfono */
+  // Obtiene y limpia el teléfono
   const phone = document.getElementById("owner-phone").value.trim();
 
-  /* Obtiene y limpia el nombre de la mascota */
+  // Obtiene y limpia el nombre de la mascota
   const pet = document.getElementById("pet-name").value.trim();
 
-  /* Obtiene la especie seleccionada */
+  // Obtiene la especie seleccionada
   const species = document.getElementById("species").value;
 
-  /* Obtiene el servicio seleccionado */
+  // Obtiene el servicio seleccionado
   const service = document.getElementById("service").value;
 
-  /* Obtiene y limpia el motivo de la cita */
+  // Obtiene y limpia el motivo de la cita
   const reason = document.getElementById("reason").value.trim();
 
-  /* Comprueba si el usuario aceptó el consentimiento */
+  // Comprueba si el usuario aceptó el consentimiento
   const consent = document.getElementById("appointment-consent").checked;
 
-  /* VALIDACIONES INDIVIDUALES */
+  // VALIDACIONES INDIVIDUALES
 
-  /* Valida que el nombre tenga al menos cinco caracteres */
+  // Valida que el nombre tenga al menos cinco caracteres
   error("#field-owner-name", nombre.length < 5);
 
-  /* Marca el formulario como inválido si el nombre es demasiado corto */
+  // Marca el formulario como inválido si el nombre es demasiado corto
   if (nombre.length < 5) ok = false;
 
-  /* Valida el formato del correo electrónico */
+  // Valida el formato del correo electrónico
   error("#field-owner-email", !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
 
-  /* Marca el formulario como inválido si el correo no cumple la expresión */
+  // Marca el formulario como inválido si el correo no cumple la expresión
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) ok = false;
 
-  /* Valida que el teléfono tenga entre 7 y 20 caracteres permitidos */
+  // Valida que el teléfono tenga entre 7 y 20 caracteres permitidos
   error("#field-owner-phone", !/^[+0-9\s()-]{7,20}$/.test(phone));
 
-  /* Marca el formulario como inválido si el teléfono no cumple el formato */
+  // Marca el formulario como inválido si el teléfono no cumple el formato
   if (!/^[+0-9\s()-]{7,20}$/.test(phone)) ok = false;
 
-  /* Valida que el nombre de la mascota tenga al menos dos caracteres */
+  // Valida que el nombre de la mascota tenga al menos dos caracteres
   error("#field-pet-name", pet.length < 2);
 
-  /* Marca el formulario como inválido si falta el nombre de la mascota */
+  // Marca el formulario como inválido si falta el nombre de la mascota
   if (pet.length < 2) ok = false;
 
-  /* Valida que se haya seleccionado una especie */
+  // Valida que se haya seleccionado una especie
   error("#field-species", !species);
 
-  /* Marca el formulario como inválido si no hay especie */
+  // Marca el formulario como inválido si no hay especie
   if (!species) ok = false;
 
-  /* Valida que se haya seleccionado un servicio */
+  // Valida que se haya seleccionado un servicio
   error("#field-service", !service);
 
-  /* Marca el formulario como inválido si no hay servicio */
+  // Marca el formulario como inválido si no hay servicio
   if (!service) ok = false;
 
-  /* VALIDACIÓN DE FECHA */
+  // VALIDACIÓN DE FECHA
 
-  /* Convierte la fecha seleccionada en un objeto Date */
+  // Convierte la fecha seleccionada en un objeto Date
   const fecha = new Date(`${dateInput.value}T12:00:00`);
 
-  /* Determina si la fecha seleccionada es inválida */
+  // Determina si la fecha seleccionada es inválida
   const fechaMala =
-    /* Comprueba que exista una fecha */
+    // Comprueba que exista una fecha
     !dateInput.value ||
-    /* Comprueba que la fecha sea válida */
+    // Comprueba que la fecha sea válida
     Number.isNaN(fecha.getTime()) ||
-    /* Comprueba que la fecha no sea anterior al día actual */
+    // Comprueba que la fecha no sea anterior al día actual
     fecha < new Date(new Date().setHours(0, 0, 0, 0)) ||
-    /* Comprueba que no sea domingo */
+    // Comprueba que no sea domingo
     fecha.getDay() === 0;
 
-  /* Marca visualmente el campo si la fecha es incorrecta */
+  // Marca visualmente el campo si la fecha es incorrecta
   error("#field-date", fechaMala);
 
-  /* Marca el formulario como inválido si la fecha es incorrecta */
+  // Marca el formulario como inválido si la fecha es incorrecta
   if (fechaMala) ok = false;
 
-  /* Valida que se haya seleccionado una hora */
+  // Valida que se haya seleccionado una hora
   error("#field-time", !timeSelect.value);
 
-  /* Marca el formulario como inválido si no hay hora */
+  // Marca el formulario como inválido si no hay hora
   if (!timeSelect.value) ok = false;
 
-  /* Valida que el motivo tenga al menos diez caracteres */
+  // Valida que el motivo tenga al menos diez caracteres
   error("#field-reason", reason.length < 10);
 
-  /* Marca el formulario como inválido si el motivo es demasiado corto */
+  /* Marca el formulario como inválido si el motivo es demasiado corto 
   if (reason.length < 10) ok = false;
 
   /* VALIDACIÓN DE CONSENTIMIENTO */
