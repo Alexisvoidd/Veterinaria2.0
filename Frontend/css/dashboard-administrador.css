@@ -1,8 +1,4 @@
-/* =========================================================
-   VETSALUD - DASHBOARD-ADMINISTRADOR.CSS
-   =========================================================
-   Estilos específicos del panel de administración
-   ========================================================= */
+
 
 body {
   background: #f5f8fa;
@@ -211,9 +207,9 @@ html.dark-mode .admin-perfil-lista dd {
   color: #f1f5f9;
 }
 
-/* =========================================================
+/* 
    TABLAS Y CONTENEDORES
-   ========================================================= */
+    */
 
 .tabla-contenedor {
   overflow-x: auto;
@@ -245,9 +241,9 @@ tbody tr:hover {
   background: #f8fbfe;
 }
 
-/* =========================================================
+/* 
    BADGES DE ESTADO
-   ========================================================= */
+    */
 
 .estado {
   font-size: 0.76rem;
@@ -293,9 +289,9 @@ tbody tr:hover {
   color: #dc2626 !important;
 }
 
-/* =========================================================
+/* 
    INPUTS, SELECTS Y BOTONES DE TABLAS
-   ========================================================= */
+    */
 
 .admin-producto-precio,
 .admin-producto-stock,
@@ -360,9 +356,9 @@ tbody tr:hover {
   transform: scale(0.98);
 }
 
-/* =========================================================
+/* 
    FORMULARIO DE NUEVO PRODUCTO
-   ========================================================= */
+    */
 
 .admin-producto-form {
   display: grid;
@@ -409,9 +405,9 @@ tbody tr:hover {
   background: #164283;
 }
 
-/* =========================================================
+/* 
    MENSAJE DE ERROR O FEEDBACK
-   ========================================================= */
+    */
 
 .mensaje-admin {
   min-height: 20px;
@@ -421,9 +417,9 @@ tbody tr:hover {
   font-weight: 500;
 }
 
-/* =========================================================
+/* 
    TOAST DE NOTIFICACIÓN
-   ========================================================= */
+    */
 
 .login-alerta-toast {
   position: fixed;
@@ -477,9 +473,12 @@ tbody tr:hover {
   }
 }
 
-/* =========================================================
+.material-symbols-outlined {
+  font-size: 2.75rem;
+}
+/* 
    RESPONSIVE DESIGN
-   ========================================================= */
+    */
 
 @media (max-width: 950px) {
   .admin-resumen-grid {

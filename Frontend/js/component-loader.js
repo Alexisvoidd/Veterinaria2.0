@@ -85,9 +85,9 @@ async function cargarComponente(selector, htmlPath, cssPath, jsPath) {
   }
 }
 
-/* =========================================================
+/* 
    CARGAR LAYOUT
-========================================================= */
+ */
 
 async function cargarLayout() {
   /* =====================================================
@@ -124,9 +124,9 @@ async function cargarLayout() {
   );
 }
 
-/* =========================================================
+/* 
    INICIALIZACIÓN
-========================================================= */
+ */
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", cargarLayout);

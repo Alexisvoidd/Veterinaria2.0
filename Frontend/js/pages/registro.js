@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSubmit = document.getElementById("btn-submit-registro");
   const botonesTogglePassword = document.querySelectorAll(".campo-boton-ojo");
 
-  // ====================================================================
+  // ===========
   // 1. ALTERNADOR DE VISIBILIDAD DE CONTRASEÑA (VER / OCULTAR)
-  // ====================================================================
+  // ===========
   botonesTogglePassword.forEach((boton) => {
     boton.addEventListener("click", () => {
       const envoltorio = boton.closest(".campo-envoltorio-input");
@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ====================================================================
+  // ===========
   // 2. REFERENCIAS A LOS CAMPOS DEL FORMULARIO
-  // ====================================================================
+  // ===========
   const campos = {
     tipoDocumento: document.getElementById("tipoDocumento"),
     numeroDocumento: document.getElementById("numeroDocumento"),
@@ -48,9 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
     confirmPassword: document.getElementById("confirmPassword"),
   };
 
-  // ====================================================================
+  // ===========
   // 3. FUNCIONES DE MANIPULACIÓN VISUAL DE ERRORES
-  // ====================================================================
+  // ===========
 
   /**
    * Muestra un mensaje de error y resalta visualmente el campo.
@@ -93,9 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ====================================================================
+  // ===========
   // 4. REGLAS INDIVIDUALES DE VALIDACIÓN
-  // ====================================================================
+  // ===========
 
   /**
    * Valida un campo específico según su ID y reglas de negocio.
@@ -463,9 +463,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ====================================================================
+  // 
   // 5. ESCUCHADORES DE EVENTOS EN TIEMPO REAL (INPUT / BLUR / CHANGE)
-  // ====================================================================
+  // 
   Object.keys(campos).forEach((id) => {
     const el = campos[id];
     if (!el) return;
@@ -500,9 +500,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ====================================================================
+  // 
   // 6. VALIDACIÓN GENERAL DEL FORMULARIO COMPLETO
-  // ====================================================================
+  // 
   function validarFormularioCompleto() {
     let esValido = true;
     let primerElementoInvalido = null;
@@ -549,9 +549,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return esValido;
   }
 
-  // ====================================================================
+  // 
   // 7. ENVÍO DEL FORMULARIO (SUBMIT)
-  // ====================================================================
+  // 
   if (formRegistro) {
     formRegistro.addEventListener("submit", async (evento) => {
       evento.preventDefault();

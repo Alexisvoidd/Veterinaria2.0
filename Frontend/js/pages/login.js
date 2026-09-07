@@ -1,13 +1,13 @@
-/* =========================================================
+/* 
    VETSALUD - LOGIN.JS
-   =========================================================
+   
    Funciones:
    - Mostrar / ocultar contraseña
    - Validar formulario de login
    - Conectar con /api/login
    - Guardar usuario y token
    - Redireccionar según el rol
-   ========================================================= */
+    */
 
 document.addEventListener("DOMContentLoaded", () => {
   /* =====================================================
@@ -115,9 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-/* =========================================================
+/* 
    TOAST DE LOGIN
-   ========================================================= */
+    */
 
 /**
  * Muestra una notificación emergente temporal.
@@ -184,9 +184,9 @@ function mostrarToastLogin(titulo, mensaje, esError = false) {
   }, 3500);
 }
 
-/* =========================================================
+/* 
    CARGAR LAYOUT
-   ========================================================= */
+    */
 
 if (typeof cargarLayout === "function") {
   cargarLayout();

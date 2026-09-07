@@ -1,9 +1,9 @@
 /* ESPERA A QUE TODO EL HTML HAYA CARGADO */
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =========================================================
+    /* 
        CONTENIDO DE LOS ARTÍCULOS
-    ========================================================= */
+     */
 
     /* OBJETO QUE ALMACENA TODOS LOS ARTÍCULOS DEL BLOG */
     const articulos = {
@@ -636,9 +636,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    /* =========================================================
+    /* 
        REFERENCIAS A ELEMENTOS DEL HTML
-    ========================================================= */
+     */
 
     /* Obtiene todos los botones de categorías */
     const botonesCategoria =
@@ -651,9 +651,9 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-    /* =========================================================
+    /* 
        CREAR MODAL
-    ========================================================= */
+     */
 
     /* Crea dinámicamente el contenedor principal del modal */
     const modal =
@@ -726,9 +726,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(modal);
 
 
-    /* =========================================================
+    /* 
        ELEMENTOS DEL MODAL
-    ========================================================= */
+     */
 
     /* Obtiene la imagen del modal */
     const modalImagen =
@@ -767,9 +767,9 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-    /* =========================================================
+    /* 
        ABRIR MODAL
-    ========================================================= */
+     */
 
     /* Función encargada de abrir un artículo específico */
     function abrirModal(id) {
@@ -835,9 +835,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
+    /* 
        CERRAR MODAL
-    ========================================================= */
+     */
 
     /* Función encargada de cerrar el modal */
     function cerrarModal() {
@@ -855,9 +855,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
+    /* 
        BOTONES "LEER MÁS"
-    ========================================================= */
+     */
 
     /* Escucha los clics realizados en todo el documento */
     document.addEventListener(
@@ -904,9 +904,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =========================================================
+    /* 
        CERRAR MODAL
-    ========================================================= */
+     */
 
     /* Cierra el modal al pulsar el botón */
     botonCerrar.addEventListener(
@@ -940,9 +940,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =========================================================
+    /* 
        FILTRO DE ARTÍCULOS
-    ========================================================= */
+     */
 
     /* Filtra las tarjetas según la categoría seleccionada */
     function filtrarArticulos(
@@ -988,9 +988,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
+    /* 
        BOTONES DE CATEGORÍA
-    ========================================================= */
+     */
 
     /* Recorre todos los botones de categoría */
     botonesCategoria.forEach(
@@ -1054,9 +1054,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =========================================================
+    /* 
        ESTADO INICIAL
-    ========================================================= */
+     */
 
     /* Busca el botón correspondiente a "Todos" */
     const botonTodos =
@@ -1080,9 +1080,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
+    /* 
        MOSTRAR TODOS AL CARGAR
-    ========================================================= */
+     */
 
     /* Muestra todos los artículos inicialmente */
     filtrarArticulos(
