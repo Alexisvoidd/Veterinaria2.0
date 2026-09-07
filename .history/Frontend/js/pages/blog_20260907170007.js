@@ -1,5 +1,6 @@
 /* ESPERA A QUE TODO EL HTML HAYA CARGADO */
 document.addEventListener("DOMContentLoaded", () => {
+  // =========================================================
   // CONTENIDO DE LOS ARTÍCULOS
 
   // OBJETO QUE ALMACENA TODOS LOS ARTÍCULOS DEL BLOG

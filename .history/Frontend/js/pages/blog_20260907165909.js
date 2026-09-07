@@ -1,6 +1,8 @@
 /* ESPERA A QUE TODO EL HTML HAYA CARGADO */
 document.addEventListener("DOMContentLoaded", () => {
+  // =========================================================
   // CONTENIDO DE LOS ARTÍCULOS
+  // =========================================================
 
   // OBJETO QUE ALMACENA TODOS LOS ARTÍCULOS DEL BLOG
   const articulos = {
@@ -540,7 +542,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
+  // =========================================================
   // REFERENCIAS A ELEMENTOS DEL HTML
+  // =========================================================
 
   // Obtiene todos los botones de categorías
   const botonesCategoria = document.querySelectorAll(
@@ -552,7 +556,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ".articulos_grid .articulo"
   );
 
+  // =========================================================
   // CREAR MODAL
+  // =========================================================
 
   // Crea dinámicamente el contenedor principal del modal
   const modal = document.createElement("div");
@@ -617,7 +623,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Agrega el modal al final del body
   document.body.appendChild(modal);
 
+  // =========================================================
   // ELEMENTOS DEL MODAL
+  // =========================================================
 
   const modalImagen = modal.querySelector(
     "#modal-articulo-imagen"
@@ -643,7 +651,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ".blog-modal__overlay"
   );
 
+  // =========================================================
   // ABRIR MODAL
+  // =========================================================
 
   function abrirModal(id) {
     // Busca el artículo
@@ -676,7 +686,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // =========================================================
   // CERRAR MODAL
+  // =========================================================
 
   function cerrarModal() {
     // Oculta el modal
@@ -686,7 +698,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("modal-blog-abierto");
   }
 
+  // =========================================================
   // BOTONES "LEER MÁS"
+  // =========================================================
 
   document.addEventListener("click", (evento) => {
     // Busca el botón "Leer más" más cercano
@@ -716,8 +730,9 @@ document.addEventListener("DOMContentLoaded", () => {
     abrirModal(id);
   });
 
+  // =========================================================
   // EVENTOS PARA CERRAR EL MODAL
-  
+  // =========================================================
 
   // Cerrar mediante el botón X
   botonCerrar.addEventListener(

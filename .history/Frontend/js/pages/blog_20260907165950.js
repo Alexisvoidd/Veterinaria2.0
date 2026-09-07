@@ -1,6 +1,8 @@
 /* ESPERA A QUE TODO EL HTML HAYA CARGADO */
 document.addEventListener("DOMContentLoaded", () => {
+  // =========================================================
   // CONTENIDO DE LOS ARTÍCULOS
+  // =========================================================
 
   // OBJETO QUE ALMACENA TODOS LOS ARTÍCULOS DEL BLOG
   const articulos = {
@@ -540,7 +542,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
+  // =========================================================
   // REFERENCIAS A ELEMENTOS DEL HTML
+  // =========================================================
 
   // Obtiene todos los botones de categorías
   const botonesCategoria = document.querySelectorAll(
@@ -552,7 +556,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ".articulos_grid .articulo"
   );
 
+  // =========================================================
   // CREAR MODAL
+  // =========================================================
 
   // Crea dinámicamente el contenedor principal del modal
   const modal = document.createElement("div");
