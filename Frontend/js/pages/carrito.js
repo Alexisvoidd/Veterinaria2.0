@@ -128,7 +128,6 @@ function renderizarCarrito() {
         <!-- CIERRA EL PRODUCTO -->
         </article>
 
-    /* UNE TODOS LOS PRODUCTOS GENERADOS EN UN SOLO TEXTO HTML */
     `,
     )
     .join("");
