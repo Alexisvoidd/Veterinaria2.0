@@ -1,0 +1,1011 @@
+:root {
+
+  /* COLOR PRIMARIO DE LA MARCA */
+  /* Define el azul marino principal */
+  --color-primario: #00377a;
+
+  /* Define una versión más oscura del azul principal */
+  --color-primario-oscuro: #002554;
+
+  /* Define el color secundario de la interfaz */
+  --color-secundario: #006397;
+
+  /* Define el azul profundo para títulos */
+  --color-azul-profundo: #0d254d;
+
+
+  /* FONDOS Y SUPERFICIES */
+  /* Define el fondo general de la página */
+  --color-fondo-calido: #f5f8fc;
+
+  /* Define el fondo neutro de campos */
+  --color-arena-neutro: #f2efe9;
+
+  /* Define el color blanco */
+  --color-blanco: #ffffff;
+
+
+  /* TEXTOS Y BORDES */
+  /* Define el color principal de los textos */
+  --color-texto-principal: #1a1b21;
+
+  /* Define el color secundario de los textos */
+  --color-texto-secundario: #434751;
+
+  /* Define el color de los bordes suaves */
+  --color-borde-suave: #e2e8f0;
+
+
+  /* ESTADOS DE VALIDACIÓN */
+  /* Define el color utilizado para errores */
+  --color-error: #ba1a1a;
+
+  /* Define el color utilizado para estados exitosos */
+  --color-exito: #2e7d32;
+
+
+  /* TIPOGRAFÍAS */
+  /* Define la fuente utilizada para títulos */
+  --fuente-titulos: 'Montserrat', sans-serif;
+
+  /* Define la fuente utilizada para textos */
+  --fuente-cuerpo: 'Open Sans', sans-serif;
+}
+
+
+/* CONFIGURACIÓN GENERAL DE TODOS LOS ELEMENTOS */
+* {
+
+  /* Incluye padding y borde dentro del tamaño total */
+  box-sizing: border-box;
+
+  /* Elimina los márgenes predeterminados */
+  margin: 0;
+
+  /* Elimina el padding predeterminado */
+  padding: 0;
+}
+
+
+/* CONFIGURACIÓN GENERAL DEL CUERPO */
+body {
+
+  /* Define la fuente principal */
+  font-family: var(--fuente-cuerpo);
+
+  /* Define el color de fondo general */
+  background-color: var(--color-fondo-calido);
+
+  /* Define el color principal del texto */
+  color: var(--color-texto-principal);
+
+  /* Garantiza una altura mínima de toda la pantalla */
+  min-height: 100vh;
+
+  /* Suaviza la representación de las fuentes */
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* CONTENEDOR PRINCIPAL DE LA PÁGINA DE RECUPERACIÓN */
+.recuperar-pagina {
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Ocupa como mínimo toda la altura de la pantalla */
+  min-height: 100vh;
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+}
+
+
+/* CONTENEDOR PRINCIPAL DE RECUPERACIÓN */
+.recuperar-contenedor {
+
+  /* Permite que el contenedor crezca dentro de la página */
+  flex: 1 0 auto;
+
+  /* Define una altura mínima descontando el footer */
+  min-height: calc(100vh - 200px);
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra horizontalmente el contenido */
+  justify-content: center;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Agrega espacio interno */
+  padding: 2rem 1.25rem;
+
+  /* Permite posicionar elementos decorativos */
+  position: relative;
+
+  /* Oculta elementos que sobresalgan */
+  overflow: hidden;
+
+  /* Aplica un degradado radial al fondo */
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f0f4f9 100%);
+}
+
+
+/* PRIMERA ESFERA DECORATIVA */
+.recuperar-esfera-decorativa-1 {
+
+  /* Posiciona la esfera de forma absoluta */
+  position: absolute;
+
+  /* Define su posición vertical */
+  top: 10%;
+
+  /* Define su posición horizontal */
+  left: 20%;
+
+  /* Define el ancho de la esfera */
+  width: 420px;
+
+  /* Define la altura de la esfera */
+  height: 420px;
+
+  /* Aplica un degradado radial */
+  background: radial-gradient(circle, rgba(0, 55, 122, 0.05) 0%, transparent 70%);
+
+  /* Evita que interfiera con los clics */
+  pointer-events: none;
+
+  /* Coloca la esfera detrás del contenido */
+  z-index: 0;
+}
+
+
+/* SEGUNDA ESFERA DECORATIVA */
+.recuperar-esfera-decorativa-2 {
+
+  /* Posiciona la esfera de forma absoluta */
+  position: absolute;
+
+  /* Define su posición inferior */
+  bottom: 10%;
+
+  /* Define su posición desde la derecha */
+  right: 20%;
+
+  /* Define el ancho de la esfera */
+  width: 450px;
+
+  /* Define la altura de la esfera */
+  height: 450px;
+
+  /* Aplica un degradado radial */
+  background: radial-gradient(circle, rgba(0, 99, 151, 0.05) 0%, transparent 70%);
+
+  /* Evita que interfiera con los clics */
+  pointer-events: none;
+
+  /* Coloca la esfera detrás del contenido */
+  z-index: 0;
+}
+
+
+/* TARJETA PRINCIPAL DE RECUPERACIÓN */
+.recuperar-tarjeta {
+
+  /* Permite controlar su posición respecto al contenedor */
+  position: relative;
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Limita el ancho máximo de la tarjeta */
+  max-width: 460px;
+
+  /* Define el fondo blanco */
+  background-color: var(--color-blanco);
+
+  /* Redondea las esquinas */
+  border-radius: 1.25rem;
+
+  /* Define un borde suave */
+  border: 1px solid rgba(226, 232, 240, 0.8);
+
+  /* Aplica una sombra suave */
+  box-shadow: 0 10px 35px -5px rgba(13, 37, 77, 0.07), 0 4px 10px -2px rgba(13, 37, 77, 0.02);
+
+  /* Agrega espacio interno */
+  padding: 3rem 2.25rem 2.75rem 2.25rem;
+
+  /* Coloca la tarjeta por encima de los elementos decorativos */
+  z-index: 1;
+
+  /* Centra el contenido */
+  text-align: center;
+}
+
+
+/* AJUSTE DE LA TARJETA EN PANTALLAS PEQUEÑAS */
+@media (max-width: 480px) {
+
+  /* TARJETA DE RECUPERACIÓN */
+  .recuperar-tarjeta {
+
+    /* Reduce el espacio interno en móviles */
+    padding: 2.25rem 1.5rem 2rem 1.5rem;
+  }
+}
+
+
+/* CONTENEDOR DEL LOGO */
+.recuperar-logo-contenedor {
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra el logo */
+  justify-content: center;
+
+  /* Agrega separación inferior */
+  margin-bottom: 1.75rem;
+}
+
+
+/* IMAGEN DEL LOGO */
+.recuperar-logo-imagen {
+
+  /* Define la altura del logo */
+  height: 50px;
+
+  /* Mantiene el ancho proporcional */
+  width: auto;
+
+  /* Mantiene la imagen dentro de su espacio */
+  object-fit: contain;
+}
+
+
+/* ENCABEZADO DE LA RECUPERACIÓN */
+.recuperar-encabezado {
+
+  /* Agrega separación inferior */
+  margin-bottom: 2rem;
+}
+
+
+/* TÍTULO DE RECUPERACIÓN */
+.recuperar-titulo {
+
+  /* Define la fuente del título */
+  font-family: var(--fuente-titulos);
+
+  /* Define el grosor del título */
+  font-weight: 700;
+
+  /* Define el tamaño del título */
+  font-size: 1.6rem;
+
+  /* Define el color del título */
+  color: var(--color-azul-profundo);
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.75rem;
+
+  /* Reduce ligeramente el espacio entre letras */
+  letter-spacing: -0.015em;
+}
+
+
+/* SUBTÍTULO DE RECUPERACIÓN */
+.recuperar-subtitulo {
+
+  /* Define el tamaño del texto */
+  font-size: 0.925rem;
+
+  /* Define el color secundario */
+  color: var(--color-texto-secundario);
+
+  /* Define el espacio entre líneas */
+  line-height: 1.55;
+
+  /* Limita el ancho del subtítulo */
+  max-width: 360px;
+
+  /* Centra el subtítulo */
+  margin: 0 auto;
+}
+
+
+/* FORMULARIO DE RECUPERACIÓN */
+.formulario-recuperar {
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Separa los campos */
+  gap: 1.35rem;
+
+  /* Alinea el texto hacia la izquierda */
+  text-align: left;
+}
+
+
+/* GRUPO DE CADA CAMPO */
+.campo-grupo {
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+}
+
+
+/* ETIQUETA DE LOS CAMPOS */
+.campo-etiqueta {
+
+  /* Define el tamaño del texto */
+  font-size: 0.85rem;
+
+  /* Resalta la etiqueta */
+  font-weight: 700;
+
+  /* Define el color de la etiqueta */
+  color: var(--color-texto-principal);
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.45rem;
+}
+
+
+/* CONTENEDOR DEL INPUT */
+.campo-envoltorio-input {
+
+  /* Permite posicionar elementos internos */
+  position: relative;
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+}
+
+
+/* ICONO IZQUIERDO DEL INPUT */
+.campo-icono-izquierdo {
+
+  /* Posiciona el icono dentro del campo */
+  position: absolute;
+
+  /* Separa el icono del lado izquierdo */
+  left: 0.95rem;
+
+  /* Define el color del icono */
+  color: var(--color-texto-secundario);
+
+  /* Evita que el icono intercepte los clics */
+  pointer-events: none;
+
+  /* Define el tamaño del icono */
+  font-size: 1.25rem;
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el icono */
+  align-items: center;
+}
+
+
+/* CAMPO DE ENTRADA */
+.campo-entrada {
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Define el fondo del campo */
+  background-color: var(--color-arena-neutro);
+
+  /* Define un borde transparente */
+  border: 1.5px solid transparent;
+
+  /* Redondea las esquinas */
+  border-radius: 0.55rem;
+
+  /* Agrega espacio interno y espacio para el icono */
+  padding: 0.8rem 1rem 0.8rem 2.85rem;
+
+  /* Define la fuente del campo */
+  font-family: var(--fuente-cuerpo);
+
+  /* Define el tamaño del texto */
+  font-size: 0.925rem;
+
+  /* Define el color del texto */
+  color: var(--color-texto-principal);
+
+  /* Suaviza los cambios visuales */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Elimina el contorno predeterminado */
+  outline: none;
+}
+
+
+/* TEXTO DE EJEMPLO DEL INPUT */
+.campo-entrada::placeholder {
+
+  /* Define el color del texto de ejemplo */
+  color: #a0a0a8;
+}
+
+
+/* ESTADO FOCUS DEL INPUT */
+.campo-entrada:focus {
+
+  /* Cambia el fondo al blanco */
+  background-color: var(--color-blanco);
+
+  /* Cambia el color del borde */
+  border-color: var(--color-primario);
+
+  /* Agrega un halo alrededor del campo */
+  box-shadow: 0 0 0 3px rgba(0, 55, 122, 0.14);
+}
+
+
+/* BOTÓN PRINCIPAL DE RECUPERACIÓN */
+.recuperar-boton-enviar {
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Define el fondo del botón */
+  background-color: var(--color-primario);
+
+  /* Define el color del texto */
+  color: var(--color-blanco);
+
+  /* Define la fuente del botón */
+  font-family: var(--fuente-titulos);
+
+  /* Define el grosor del texto */
+  font-weight: 600;
+
+  /* Define el tamaño del texto */
+  font-size: 0.95rem;
+
+  /* Agrega espacio interno */
+  padding: 0.9rem 1.5rem;
+
+  /* Elimina el borde */
+  border: none;
+
+  /* Redondea las esquinas */
+  border-radius: 0.65rem;
+
+  /* Cambia el cursor para indicar interacción */
+  cursor: pointer;
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Centra horizontalmente el contenido */
+  justify-content: center;
+
+  /* Separa el texto del icono */
+  gap: 0.6rem;
+
+  /* Aplica una sombra al botón */
+  box-shadow: 0 4px 14px rgba(0, 55, 122, 0.22);
+
+  /* Define una transición suave */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Agrega una pequeña separación superior */
+  margin-top: 0.25rem;
+}
+
+
+/* EFECTO HOVER DEL BOTÓN */
+.recuperar-boton-enviar:hover {
+
+  /* Oscurece el fondo */
+  background-color: var(--color-primario-oscuro);
+
+  /* Aumenta la sombra */
+  box-shadow: 0 6px 18px rgba(0, 55, 122, 0.32);
+
+  /* Eleva ligeramente el botón */
+  transform: translateY(-1px);
+}
+
+
+/* EFECTO AL PRESIONAR EL BOTÓN */
+.recuperar-boton-enviar:active {
+
+  /* Reduce ligeramente el tamaño */
+  transform: scale(0.985);
+}
+
+
+/* MOVIMIENTO DEL ICONO AL PASAR EL CURSOR */
+.recuperar-boton-enviar:hover .recuperar-boton-icono {
+
+  /* Desplaza el icono hacia la derecha */
+  transform: translateX(4px);
+}
+
+
+/* ICONO DEL BOTÓN */
+.recuperar-boton-icono {
+
+  /* Define el tamaño del icono */
+  font-size: 1.15rem;
+
+  /* Suaviza el movimiento del icono */
+  transition: transform 0.2s ease;
+}
+
+
+/* PIE DEL FORMULARIO */
+.recuperar-pie {
+
+  /* Agrega separación superior */
+  margin-top: 1.75rem;
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra el enlace */
+  justify-content: center;
+}
+
+
+/* ENLACE PARA VOLVER */
+.recuperar-enlace-volver {
+
+  /* Usa Flexbox */
+  display: inline-flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Separa el icono del texto */
+  gap: 0.45rem;
+
+  /* Define la fuente del enlace */
+  font-family: var(--fuente-titulos);
+
+  /* Resalta el enlace */
+  font-weight: 700;
+
+  /* Define el tamaño del enlace */
+  font-size: 0.875rem;
+
+  /* Define el color del enlace */
+  color: var(--color-primario);
+
+  /* Elimina el subrayado */
+  text-decoration: none;
+
+  /* Suaviza el cambio de color y posición */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+
+/* EFECTO HOVER DEL ENLACE PARA VOLVER */
+.recuperar-enlace-volver:hover {
+
+  /* Cambia al color oscuro */
+  color: var(--color-primario-oscuro);
+
+  /* Desplaza ligeramente el enlace hacia la izquierda */
+  transform: translateX(-2px);
+}
+
+
+/* ICONO DEL ENLACE PARA VOLVER */
+.recuperar-enlace-icono {
+
+  /* Define el tamaño del icono */
+  font-size: 1.15rem;
+}
+
+
+/* ALERTA TOAST */
+.recuperar-alerta-toast {
+
+  /* Fija la alerta respecto a la ventana */
+  position: fixed;
+
+  /* Separa la alerta del borde superior */
+  top: 1.5rem;
+
+  /* Separa la alerta del borde derecho */
+  right: 1.5rem;
+
+  /* Define el fondo de la alerta */
+  background: var(--color-blanco);
+
+  /* Redondea las esquinas */
+  border-radius: 0.75rem;
+
+  /* Agrega espacio interno */
+  padding: 1rem 1.25rem;
+
+  /* Aplica una sombra */
+  box-shadow: 0 12px 30px rgba(13, 37, 77, 0.18);
+
+  /* Agrega un borde de color en el lado izquierdo */
+  border-left: 4px solid var(--color-primario);
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Separa el icono del contenido */
+  gap: 0.75rem;
+
+  /* Coloca la alerta por encima de otros elementos */
+  z-index: 100;
+
+  /* Ejecuta la animación de entrada */
+  animation: deslizarToast 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Alinea el texto hacia la izquierda */
+  text-align: left;
+}
+
+
+/* ALERTA DE ERROR */
+.recuperar-alerta-toast.error {
+
+  /* Cambia el borde al color de error */
+  border-left-color: var(--color-error);
+}
+
+
+/* ICONO DE LA ALERTA */
+.recuperar-alerta-icono {
+
+  /* Define el tamaño del icono */
+  font-size: 1.5rem;
+
+  /* Define el color del icono */
+  color: var(--color-primario);
+}
+
+
+/* ICONO DE ALERTA DE ERROR */
+.recuperar-alerta-toast.error .recuperar-alerta-icono {
+
+  /* Cambia el icono al color de error */
+  color: var(--color-error);
+}
+
+
+/* TÍTULO DE LA ALERTA */
+.recuperar-alerta-titulo {
+
+  /* Define la fuente del título */
+  font-family: var(--fuente-titulos);
+
+  /* Define el grosor del título */
+  font-weight: 700;
+
+  /* Define el tamaño del título */
+  font-size: 0.85rem;
+
+  /* Define el color del título */
+  color: var(--color-azul-profundo);
+}
+
+
+/* MENSAJE DE LA ALERTA */
+.recuperar-alerta-mensaje {
+
+  /* Define el tamaño del mensaje */
+  font-size: 0.8rem;
+
+  /* Define el color del mensaje */
+  color: var(--color-texto-secundario);
+}
+
+
+/* RECUPERAR CONTRASEÑA - MODO OSCURO */
+
+/* CONFIGURACIÓN GENERAL DEL CUERPO EN MODO OSCURO */
+html.dark-mode body {
+
+  /* Define el fondo oscuro */
+  background-color: #101820;
+
+  /* Define el color claro del texto */
+  color: #d2dbe5;
+}
+
+
+/* CONTENEDOR PRINCIPAL EN MODO OSCURO */
+html.dark-mode .recuperar-contenedor {
+
+  /* Aplica un degradado radial oscuro */
+  background: radial-gradient(
+    circle at 50% 50%,
+    #182431 0%,
+    #101820 100%
+  );
+}
+
+
+/* ESFERAS DECORATIVAS EN MODO OSCURO */
+
+/* PRIMERA ESFERA DECORATIVA */
+html.dark-mode .recuperar-esfera-decorativa-1 {
+
+  /* Cambia el degradado a un tono azul visible sobre fondo oscuro */
+  background: radial-gradient(
+    circle,
+    rgba(75, 163, 227, 0.08) 0%,
+    transparent 70%
+  );
+}
+
+
+/* SEGUNDA ESFERA DECORATIVA */
+html.dark-mode .recuperar-esfera-decorativa-2 {
+
+  /* Cambia el degradado a un tono azul más suave */
+  background: radial-gradient(
+    circle,
+    rgba(75, 163, 227, 0.06) 0%,
+    transparent 70%
+  );
+}
+
+
+/* TARJETA EN MODO OSCURO */
+html.dark-mode .recuperar-tarjeta {
+
+  /* Define el fondo oscuro de la tarjeta */
+  background-color: #182431;
+
+  /* Define el color del borde */
+  border-color: #33485b;
+
+  /* Aplica sombras oscuras */
+  box-shadow:
+    0 10px 35px -5px rgba(0, 0, 0, 0.35),
+    0 4px 10px -2px rgba(0, 0, 0, 0.20);
+}
+
+
+/* TÍTULO EN MODO OSCURO */
+html.dark-mode .recuperar-titulo {
+
+  /* Define un color claro para el título */
+  color: #f1f5f9;
+}
+
+
+/* SUBTÍTULO EN MODO OSCURO */
+html.dark-mode .recuperar-subtitulo {
+
+  /* Define un color claro secundario */
+  color: #b8c5d3;
+}
+
+
+/* FORMULARIO EN MODO OSCURO */
+
+/* ETIQUETAS EN MODO OSCURO */
+html.dark-mode .campo-etiqueta {
+
+  /* Define un color claro para las etiquetas */
+  color: #d2dbe5;
+}
+
+
+/* ICONOS DE LOS CAMPOS EN MODO OSCURO */
+html.dark-mode .campo-icono-izquierdo {
+
+  /* Define un color gris azulado para los iconos */
+  color: #9eacba;
+}
+
+
+/* CAMPOS DE ENTRADA EN MODO OSCURO */
+html.dark-mode .campo-entrada {
+
+  /* Define el fondo oscuro del campo */
+  background-color: #111c27;
+
+  /* Define el color del borde */
+  border-color: #40566a;
+
+  /* Define el color claro del texto */
+  color: #f1f5f9;
+}
+
+
+/* PLACEHOLDER EN MODO OSCURO */
+html.dark-mode .campo-entrada::placeholder {
+
+  /* Define un color tenue para el texto de ejemplo */
+  color: #7f91a3;
+}
+
+
+/* INPUT EN FOCUS EN MODO OSCURO */
+html.dark-mode .campo-entrada:focus {
+
+  /* Cambia el fondo al color de la tarjeta */
+  background-color: #182431;
+
+  /* Define el borde azul */
+  border-color: #4ba3e3;
+
+  /* Agrega un halo azul alrededor del campo */
+  box-shadow: 0 0 0 3.5px rgba(75, 163, 227, 0.14);
+}
+
+
+/* BOTÓN EN MODO OSCURO */
+
+/* BOTÓN PRINCIPAL EN MODO OSCURO */
+html.dark-mode .recuperar-boton-enviar {
+
+  /* Define el fondo azul oscuro */
+  background-color: #00377a;
+
+  /* Mantiene el texto blanco */
+  color: #ffffff;
+
+  /* Aplica una sombra oscura */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.30);
+}
+
+
+/* EFECTO HOVER DEL BOTÓN EN MODO OSCURO */
+html.dark-mode .recuperar-boton-enviar:hover {
+
+  /* Oscurece el botón al pasar el cursor */
+  background-color: #002554;
+
+  /* Aumenta la sombra */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.40);
+}
+
+
+/* ENLACE VOLVER EN MODO OSCURO */
+
+/* ENLACE PARA VOLVER EN MODO OSCURO */
+html.dark-mode .recuperar-enlace-volver {
+
+  /* Define un azul claro para el enlace */
+  color: #4ba3e3;
+}
+
+
+/* EFECTO HOVER DEL ENLACE EN MODO OSCURO */
+html.dark-mode .recuperar-enlace-volver:hover {
+
+  /* Aclara el enlace al pasar el cursor */
+  color: #7bc2f2;
+}
+
+
+/* TOAST / ALERTA EN MODO OSCURO */
+
+/* ALERTA TOAST EN MODO OSCURO */
+html.dark-mode .recuperar-alerta-toast {
+
+  /* Define un fondo oscuro */
+  background: #111c27;
+
+  /* Define el borde azul */
+  border-left-color: #4ba3e3;
+
+  /* Aplica una sombra oscura */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.40);
+}
+
+
+/* ALERTA DE ERROR EN MODO OSCURO */
+html.dark-mode .recuperar-alerta-toast.error {
+
+  /* Define el borde rojo para los errores */
+  border-left-color: #ff6b6b;
+}
+
+
+/* ICONO DEL TOAST EN MODO OSCURO */
+html.dark-mode .recuperar-alerta-icono {
+
+  /* Define el color azul del icono */
+  color: #4ba3e3;
+}
+
+
+/* ICONO DE ERROR DEL TOAST EN MODO OSCURO */
+html.dark-mode .recuperar-alerta-toast.error .recuperar-alerta-icono {
+
+  /* Define el color rojo del icono */
+  color: #ff6b6b;
+}
+
+
+/* TÍTULO DEL TOAST EN MODO OSCURO */
+html.dark-mode .recuperar-alerta-titulo {
+
+  /* Define un color claro para el título */
+  color: #f1f5f9;
+}
+
+
+/* MENSAJE DEL TOAST EN MODO OSCURO */
+html.dark-mode .recuperar-alerta-mensaje {
+
+  /* Define un color claro secundario */
+  color: #b8c5d3;
+}
+
+
+/* REDUCIR ANIMACIONES */
+
+/* DESACTIVA ANIMACIONES Y TRANSICIONES DEL CONTENEDOR */
+html.reduce-motion .recuperar-contenedor *,
+
+/* DESACTIVA ANIMACIONES DE LOS PSEUDOELEMENTOS BEFORE */
+html.reduce-motion .recuperar-contenedor *::before,
+
+/* DESACTIVA ANIMACIONES DE LOS PSEUDOELEMENTOS AFTER */
+html.reduce-motion .recuperar-contenedor *::after,
+
+/* DESACTIVA LA ANIMACIÓN DEL TOAST */
+html.reduce-motion .recuperar-alerta-toast {
+
+  /* Desactiva todas las animaciones */
+  animation: none !important;
+
+  /* Desactiva todas las transiciones */
+  transition: none !important;
+}
+
+
+/* ANIMACIÓN DE ENTRADA DEL TOAST */
+@keyframes deslizarToast {
+
+  /* ESTADO INICIAL */
+  from {
+
+    /* Hace invisible la alerta */
+    opacity: 0;
+
+    /* Coloca la alerta ligeramente arriba */
+    transform: translateY(-20px);
+  }
+
+  /* ESTADO FINAL */
+  to {
+
+    /* Hace visible la alerta */
+    opacity: 1;
+
+    /* Devuelve la alerta a su posición original */
+    transform: translateY(0);
+  }
+}

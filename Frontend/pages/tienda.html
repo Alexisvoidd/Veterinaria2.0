@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <meta name="description" content="Tienda de productos para mascotas VetSalud.">
+    <title>Tienda | VetSalud</title>
+    <link rel="stylesheet" href="../css/tienda.css">
+</head>
+
+<body data-page="tienda">
+<div id="nav-container"></div>
+<main class="page-shell">
+  <section class="page-hero"><div class="page-container"><span class="eyebrow">Tienda VetSalud</span><h1>Todo para cuidar a quien amas.</h1><p>Encuentra productos para alimentación, higiene, accesorios y bienestar. Consulta su disponibilidad y agrégalos al carrito.</p></div></section>
+  <section class="section"><div class="page-container">
+    <div class="store-toolbar"><div><h2>Productos</h2><p id="results-count">Cargando productos...</p></div>
+      <div class="store-tools"><label class="search-box"><span class="material-symbols-outlined">search</span><input id="product-search" type="search" placeholder="Buscar por nombre o descripción..." aria-label="Buscar producto"></label>
+      <select id="category-filter" aria-label="Filtrar por categoría"><option value="todos">Todas las categorías</option><option value="ALIMENTACION">Alimentación</option><option value="HIGIENE">Higiene</option><option value="ACCESORIOS">Accesorios</option><option value="BIENESTAR">Bienestar</option></select>
+      <select id="sort-filter" aria-label="Ordenar productos"><option value="relevancia">Más relevantes</option><option value="precio-asc">Precio: menor a mayor</option><option value="precio-desc">Precio: mayor a menor</option><option value="nombre">Nombre A-Z</option><option value="stock">Mayor disponibilidad</option></select>
+      <label class="availability-toggle"><input id="availability-filter" type="checkbox"> Solo disponibles</label>
+      <button id="open-cart" class="cart-button" type="button"><span class="material-symbols-outlined">shopping_cart</span><span>Carrito</span><b id="cart-count">0</b></button></div></div>
+    <div id="category-chips" class="category-chips"><button class="chip active" data-category="todos">Todos</button><button class="chip" data-category="ALIMENTACION">Alimentación</button><button class="chip" data-category="HIGIENE">Higiene</button><button class="chip" data-category="ACCESORIOS">Accesorios</button><button class="chip" data-category="BIENESTAR">Bienestar</button></div>
+    <div id="product-grid" class="product-grid"></div>
+  </div></section>
+</main>
+<div id="product-modal" class="modal" aria-hidden="true"><div class="modal__backdrop" data-close-modal></div><div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal__close" type="button" data-close-modal aria-label="Cerrar"><span class="material-symbols-outlined">close</span></button><div id="modal-content"></div></div></div>
+<div id="accessibility-container"></div>
+    <!-- ==========================================
+         FOOTER GLOBAL (cargado automáticamente)
+    =========================================== -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../js/component-loader.js"></script><script src="../js/pages/tienda.js"></script>
+</body></html>

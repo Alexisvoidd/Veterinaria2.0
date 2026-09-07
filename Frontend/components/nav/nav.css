@@ -1,0 +1,633 @@
+:root {
+    --primary: #1b4e9b; /* Color principal */
+    --secondary: #4ba3e3; /* Color secundario */
+    --tertiary: #6fced9; /* Color terciario */
+}
+
+.vs-nav {
+    position: sticky; /* Mantiene el navbar visible */
+    top: 0; /* Lo fija arriba */
+    z-index: 1000; /* Lo coloca encima */
+    background: rgba(255, 255, 255, 0.96); /* Fondo semitransparente */
+    backdrop-filter: blur(12px); /* Desenfoca el fondo */
+    -webkit-backdrop-filter: blur(12px); /* Compatibilidad con WebKit */
+    border-bottom: 1px solid #e7eef6; /* Borde inferior */
+    box-shadow: 0 7px 24px rgba(23, 65, 112, 0.06); /* Agrega sombra */
+    font-family: "Raleway", "Montserrat", "Host Grotesk", sans-serif; /* Fuente */
+    transition:
+        background-color 0.4s ease, /* Suaviza el fondo */
+        backdrop-filter 0.4s ease, /* Suaviza el desenfoque */
+        box-shadow 0.4s ease, /* Suaviza la sombra */
+        border-color 0.4s ease; /* Suaviza el borde */
+}
+
+.vs-nav__container {
+    width: min(1240px, calc(100% - 36px)); /* Define el ancho */
+    min-height: 82px; /* Altura mínima */
+    margin: auto; /* Centra el contenido */
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px; /* Espacio entre elementos */
+    transition: min-height 0.35s ease; /* Suaviza la altura */
+}
+
+.vs-nav__logo {
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    flex: 0 0 auto; /* Evita que se reduzca */
+    text-decoration: none; /* Quita subrayado */
+}
+
+.vs-nav__logo img {
+    display: block; /* Muestra como bloque */
+    width: 178px; /* Ancho del logo */
+    height: auto; /* Mantiene proporción */
+    transition:
+        opacity 0.25s ease, /* Suaviza opacidad */
+        transform 0.25s ease; /* Suaviza movimiento */
+}
+
+.vs-nav__links {
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra enlaces */
+    gap: 4px; /* Espacio entre enlaces */
+    margin-left: auto; /* Empuja hacia la derecha */
+}
+
+.vs-nav__links a {
+    position: relative; /* Permite posicionar elementos */
+    text-decoration: none; /* Quita subrayado */
+    color: #4a6682; /* Color del enlace */
+    font-size: 0.84rem; /* Tamaño del texto */
+    font-weight: 700; /* Texto grueso */
+    padding: 10px 12px; /* Espacio interno */
+    border-radius: 9px; /* Bordes redondeados */
+    transition: all 0.25s ease; /* Suaviza cambios */
+}
+
+.vs-nav__links a:hover {
+    color: var(--primary); /* Cambia el color */
+    background: #f1f7fd; /* Cambia el fondo */
+}
+
+.vs-nav__links a.active {
+    color: var(--primary); /* Color activo */
+    background: #edf6fd; /* Fondo activo */
+}
+
+.vs-nav__links a.active::after {
+    content: ""; /* Crea el indicador */
+    position: absolute; /* Posiciona el indicador */
+    left: 12px; /* Distancia izquierda */
+    right: 12px; /* Distancia derecha */
+    bottom: 4px; /* Posición inferior */
+    height: 2.5px; /* Alto del indicador */
+    border-radius: 2px; /* Redondea el indicador */
+    background: var(--secondary); /* Color del indicador */
+}
+
+
+/* DESPLEGABLE DE SERVICIOS EN NAVBAR */
+
+.vs-nav__dropdown {
+    position: relative; /* Base para el menú */
+    display: inline-flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+}
+
+.vs-nav__dropdown-toggle {
+    display: inline-flex !important; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 4px; /* Espacio entre elementos */
+    cursor: pointer; /* Muestra cursor */
+}
+
+.vs-nav__dropdown-arrow {
+    font-size: 18px !important; /* Tamaño de flecha */
+    color: inherit; /* Hereda color */
+    transition: transform 0.25s ease; /* Suaviza giro */
+}
+
+.vs-nav__dropdown:hover .vs-nav__dropdown-arrow,
+.vs-nav__dropdown.is-open .vs-nav__dropdown-arrow {
+    transform: rotate(180deg); /* Gira la flecha */
+}
+
+.vs-nav__dropdown-menu {
+    position: absolute; /* Posición independiente */
+    top: calc(100% + 10px); /* Coloca debajo */
+    left: 0; /* Alinea a la izquierda */
+    min-width: 250px; /* Ancho mínimo */
+    width: max-content; /* Ajusta al contenido */
+    max-width: 300px; /* Ancho máximo */
+    background: #ffffff; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    border: 1px solid #e8edf3; /* Borde */
+    padding: 8px 6px; /* Espacio interno */
+    box-shadow: 0 12px 32px rgba(13, 37, 77, 0.12); /* Sombra */
+    opacity: 0; /* Lo oculta visualmente */
+    visibility: hidden; /* Lo hace invisible */
+    pointer-events: none; /* Desactiva clics */
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease; /* Suaviza aparición */
+    transform: translateY(6px); /* Desplaza hacia abajo */
+    z-index: 1050; /* Lo coloca encima */
+}
+
+
+/* Indicador de flecha superior */
+
+.vs-nav__dropdown-menu::after {
+    content: ""; /* Crea la flecha */
+    position: absolute; /* Posiciona la flecha */
+    top: -5px; /* La coloca arriba */
+    left: 24px; /* Posición horizontal */
+    width: 9px; /* Ancho */
+    height: 9px; /* Alto */
+    background: #ffffff; /* Fondo blanco */
+    border-left: 1px solid #e8edf3; /* Borde izquierdo */
+    border-top: 1px solid #e8edf3; /* Borde superior */
+    transform: rotate(45deg); /* Forma de flecha */
+}
+
+
+/* Puente invisible para evitar que se cierre al mover el ratón */
+
+.vs-nav__dropdown-menu::before {
+    content: ""; /* Crea el puente */
+    position: absolute; /* Posiciona el puente */
+    top: -14px; /* Lo coloca arriba */
+    left: 0; /* Inicia a la izquierda */
+    right: 0; /* Termina a la derecha */
+    height: 16px; /* Alto del puente */
+}
+
+.vs-nav__dropdown:hover .vs-nav__dropdown-menu,
+.vs-nav__dropdown:focus-within .vs-nav__dropdown-menu,
+.vs-nav__dropdown.is-open .vs-nav__dropdown-menu {
+    opacity: 1; /* Muestra el menú */
+    visibility: visible; /* Lo hace visible */
+    pointer-events: auto; /* Permite interacción */
+    transform: translateY(0); /* Devuelve posición */
+}
+
+.vs-nav__dropdown-list {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Ordena verticalmente */
+    gap: 2px; /* Espacio entre opciones */
+}
+
+.vs-nav__dropdown-item {
+    display: block !important; /* Ocupa toda la línea */
+    padding: 10px 14px !important; /* Espacio interno */
+    color: #2d3748 !important; /* Color del texto */
+    font-size: 0.92rem !important; /* Tamaño del texto */
+    font-weight: 500 !important; /* Grosor del texto */
+    line-height: 1.35 !important; /* Altura de línea */
+    border-radius: 6px !important; /* Bordes redondeados */
+    text-decoration: none !important; /* Quita subrayado */
+    background: transparent !important; /* Fondo transparente */
+    transition: background-color 0.15s ease, color 0.15s ease !important; /* Suaviza cambios */
+    text-align: left; /* Alinea a la izquierda */
+}
+
+.vs-nav__dropdown-item::after {
+    display: none !important; /* Oculta indicador */
+}
+
+.vs-nav__dropdown-item:hover,
+.vs-nav__dropdown-item:focus {
+    background-color: #f1f4f8 !important; /* Fondo al interactuar */
+    color: #1b4e9b !important; /* Color azul */
+}
+
+.vs-nav__dropdown-item.active-item {
+    background-color: #f1f4f8 !important; /* Fondo activo */
+    color: #1b4e9b !important; /* Color activo */
+    font-weight: 600 !important; /* Texto resaltado */
+}
+
+.vs-nav__actions {
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 10px; /* Espacio entre acciones */
+    margin-left: 10px; /* Separa de los enlaces */
+}
+
+.vs-nav__login {
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 6px; /* Espacio entre elementos */
+    text-decoration: none; /* Quita subrayado */
+    color: #4a6682; /* Color del texto */
+    font-size: 0.82rem; /* Tamaño del texto */
+    font-weight: 800; /* Texto grueso */
+    padding: 10px 12px; /* Espacio interno */
+    border-radius: 9px; /* Bordes redondeados */
+    transition: all 0.25s ease; /* Suaviza cambios */
+}
+
+.vs-nav__login:hover {
+    color: var(--primary); /* Cambia el color */
+    background: #f1f7fd; /* Cambia el fondo */
+}
+
+.vs-nav__login .material-symbols-outlined {
+    font-size: 20px; /* Tamaño del icono */
+    color: var(--primary); /* Color del icono */
+}
+
+.vs-nav__cta {
+    display: inline-flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 6px; /* Espacio entre elementos */
+    text-decoration: none; /* Quita subrayado */
+    background: var(--primary) !important; /* Fondo azul */
+    color: #ffffff !important; /* Texto blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 11px 18px; /* Espacio interno */
+    font-size: 0.82rem; /* Tamaño del texto */
+    font-weight: 800; /* Texto grueso */
+    box-shadow: 0 6px 16px rgba(27, 78, 155, 0.28); /* Sombra */
+    transition: all 0.25s ease; /* Suaviza cambios */
+}
+
+.vs-nav__cta:hover {
+    background: #164283 !important; /* Fondo al pasar */
+    color: #ffffff !important; /* Mantiene texto blanco */
+    transform: translateY(-1px); /* Sube ligeramente */
+    box-shadow: 0 8px 22px rgba(27, 78, 155, 0.38); /* Aumenta sombra */
+}
+
+.vs-nav__cta .material-symbols-outlined {
+    font-size: 18px; /* Tamaño del icono */
+    color: #ffffff !important; /* Icono blanco */
+}
+
+.vs-nav__toggle {
+    display: none; /* Oculta el menú móvil */
+    border: 0; /* Quita el borde */
+    background: #edf6fd; /* Fondo claro */
+    color: var(--primary); /* Color azul */
+    width: 42px; /* Ancho */
+    height: 42px; /* Alto */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Muestra cursor */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    transition:
+        background 0.2s, /* Suaviza fondo */
+        color 0.2s; /* Suaviza color */
+}
+
+.vs-nav__toggle:hover {
+    background: #dfeefb; /* Cambia el fondo */
+}
+
+
+/* ESTADO TRANSPARENTE EN INICIO */
+
+body[data-page="inicio"] .vs-nav.vs-nav--transparent:not(.scrolled) {
+    position: fixed; /* Fija el navbar */
+    width: 100%; /* Ocupa todo el ancho */
+    left: 0; /* Alinea a la izquierda */
+    top: 0; /* Lo coloca arriba */
+    background: transparent; /* Fondo transparente */
+    backdrop-filter: none; /* Quita desenfoque */
+    -webkit-backdrop-filter: none; /* Quita desenfoque WebKit */
+    border-bottom: none; /* Quita borde inferior */
+    border: 0; /* Quita todos los bordes */
+    box-shadow: none; /* Quita sombra */
+}
+
+body[data-page="inicio"]
+.vs-nav.vs-nav--transparent:not(.scrolled)
+.vs-nav__links
+a {
+    color: #ffffff; /* Enlaces blancos */
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65); /* Mejora visibilidad */
+}
+
+body[data-page="inicio"]
+.vs-nav.vs-nav--transparent:not(.scrolled)
+.vs-nav__links
+a:hover {
+    color: #ffffff; /* Mantiene blanco */
+    background: rgba(255, 255, 255, 0.18); /* Fondo transparente */
+    backdrop-filter: blur(4px); /* Desenfoca fondo */
+}
+
+body[data-page="inicio"]
+.vs-nav.vs-nav--transparent:not(.scrolled)
+.vs-nav__links
+a.active {
+    color: #ffffff; /* Enlace activo blanco */
+    background: rgba(255, 255, 255, 0.22); /* Fondo activo */
+}
+
+body[data-page="inicio"]
+.vs-nav.vs-nav--transparent:not(.scrolled)
+.vs-nav__links
+a.active::after {
+    background: #6fced9; /* Color del indicador */
+    box-shadow: 0 0 8px rgba(111, 206, 217, 0.8); /* Brillo */
+}
+
+body[data-page="inicio"]
+.vs-nav.vs-nav--transparent:not(.scrolled)
+.vs-nav__login {
+    color: #ffffff; /* Texto blanco */
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65); /* Mejora visibilidad */
+}
+
+body[data-page="inicio"]
+.vs-nav.vs-nav--transparent:not(.scrolled)
+.vs-nav__login:hover {
+    color: #ffffff; /* Mantiene blanco */
+    background: rgba(255, 255, 255, 0.18); /* Fondo transparente */
+}
+
+body[data-page="inicio"]
+.vs-nav.vs-nav--transparent:not(.scrolled)
+.vs-nav__login
+.material-symbols-outlined {
+    color: #ffffff; /* Icono blanco */
+}
+
+body[data-page="inicio"]
+.vs-nav.vs-nav--transparent:not(.scrolled)
+.vs-nav__cta {
+    background: var(--primary) !important; /* Fondo azul */
+    color: #ffffff !important; /* Texto blanco */
+    box-shadow: 0 6px 18px rgba(27, 78, 155, 0.45); /* Sombra */
+}
+
+body[data-page="inicio"]
+.vs-nav.vs-nav--transparent:not(.scrolled)
+.vs-nav__cta:hover {
+    background: #164283 !important; /* Fondo al pasar */
+    box-shadow: 0 8px 24px rgba(27, 78, 155, 0.6); /* Aumenta sombra */
+}
+
+body[data-page="inicio"]
+.vs-nav.vs-nav--transparent:not(.scrolled)
+.vs-nav__toggle {
+    background: rgba(255, 255, 255, 0.18); /* Fondo transparente */
+    color: #ffffff; /* Icono blanco */
+}
+
+
+/* ESTADO CON SCROLL EN INICIO */
+
+body[data-page="inicio"] .vs-nav.vs-nav--transparent.scrolled {
+    position: fixed; /* Fija el navbar */
+    width: 100%; /* Ocupa todo el ancho */
+    left: 0; /* Alinea izquierda */
+    top: 0; /* Lo coloca arriba */
+    background: rgba(255, 255, 255, 0.96); /* Fondo claro */
+    backdrop-filter: blur(12px); /* Desenfoque */
+    -webkit-backdrop-filter: blur(12px); /* Desenfoque WebKit */
+    border-bottom: 1px solid #e7eef6; /* Borde inferior */
+    box-shadow: 0 7px 24px rgba(23, 65, 112, 0.08); /* Sombra */
+}
+
+body[data-page="inicio"]
+.vs-nav.vs-nav--transparent.scrolled
+.vs-nav__container {
+    min-height: 72px; /* Reduce altura al hacer scroll */
+}
+
+
+/* CARRITO */
+
+.vs-nav__cart {
+    position: relative; /* Permite ubicar contador */
+    width: 42px; /* Ancho */
+    height: 42px; /* Alto */
+    display: inline-flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    color: inherit; /* Hereda color */
+    text-decoration: none; /* Quita subrayado */
+    border-radius: 50%; /* Forma circular */
+    transition:
+        background-color 0.2s ease, /* Suaviza fondo */
+        transform 0.2s ease; /* Suaviza movimiento */
+}
+
+.vs-nav__cart:hover {
+    background-color: rgba(0, 0, 0, 0.06); /* Fondo al pasar */
+    transform: translateY(-1px); /* Sube ligeramente */
+}
+
+.vs-nav__cart .material-symbols-outlined {
+    font-size: 24px; /* Tamaño del icono */
+}
+
+
+/* Número que aparece sobre el carrito */
+
+.vs-nav__cart-count {
+    position: absolute; /* Posiciona el contador */
+    top: -2px; /* Coloca arriba */
+    right: -2px; /* Coloca a la derecha */
+    min-width: 19px; /* Ancho mínimo */
+    height: 19px; /* Alto */
+    padding: 0 5px; /* Espacio horizontal */
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    border-radius: 999px; /* Forma circular */
+    background: #e53935; /* Fondo rojo */
+    color: #ffffff; /* Texto blanco */
+    font-size: 11px; /* Tamaño del número */
+    font-weight: 700; /* Texto grueso */
+    line-height: 1; /* Altura de línea */
+    border: 2px solid #ffffff; /* Borde blanco */
+}
+
+
+/* Oculta el contador cuando el carrito está vacío */
+
+.vs-nav__cart-count.vacio {
+    display: none; /* Oculta el contador */
+}
+
+
+@media (max-width: 1080px) {
+
+    .vs-nav__container {
+        gap: 12px; /* Reduce separación */
+    }
+
+    .vs-nav__logo img {
+        width: 160px; /* Reduce el logo */
+    }
+
+    .vs-nav__links a {
+        padding: 9px 8px; /* Reduce espacio */
+        font-size: 0.78rem; /* Reduce texto */
+    }
+
+    .vs-nav__login span:last-child {
+        display: none; /* Oculta texto de login */
+    }
+
+}
+
+
+@media (max-width: 860px) {
+
+    .vs-nav__container {
+        min-height: 72px; /* Reduce altura */
+    }
+
+    .vs-nav__logo img {
+        width: 150px; /* Reduce el logo */
+    }
+
+    .vs-nav__links {
+        display: none; /* Oculta enlaces */
+        position: absolute; /* Posiciona el menú */
+        left: 14px; /* Margen izquierdo */
+        right: 14px; /* Margen derecho */
+        top: 78px; /* Coloca debajo */
+        background: #fff; /* Fondo blanco */
+        border: 1px solid #e1ebf4; /* Borde */
+        border-radius: 16px; /* Bordes redondeados */
+        padding: 12px; /* Espacio interno */
+        box-shadow: 0 18px 38px rgba(23, 65, 112, 0.15); /* Sombra */
+        flex-direction: column; /* Ordena verticalmente */
+        align-items: stretch; /* Ocupa el ancho */
+        gap: 4px; /* Espacio entre enlaces */
+    }
+
+    .vs-nav__links.is-open {
+        display: flex; /* Muestra el menú */
+    }
+
+    .vs-nav__links a {
+        padding: 12px 14px; /* Aumenta espacio */
+        font-size: 0.88rem; /* Ajusta tamaño */
+    }
+
+    .vs-nav__links a.active::after {
+        left: 14px; /* Ajusta izquierda */
+        right: auto; /* Quita derecha */
+        width: 28px; /* Define ancho */
+        bottom: 8px; /* Ajusta posición */
+    }
+
+    .vs-nav__actions {
+        margin-left: auto; /* Empuja acciones */
+    }
+
+    .vs-nav__login {
+        display: none; /* Oculta login */
+    }
+
+    .vs-nav__toggle {
+        display: flex; /* Muestra botón */
+    }
+
+    body[data-page="inicio"]
+    .vs-nav.vs-nav--transparent:not(.scrolled)
+    .vs-nav__links.is-open {
+        background: #ffffff; /* Fondo blanco */
+    }
+
+    body[data-page="inicio"]
+    .vs-nav.vs-nav--transparent:not(.scrolled)
+    .vs-nav__links.is-open
+    a {
+        color: #4a6682; /* Color de enlaces */
+        text-shadow: none; /* Quita sombra */
+    }
+
+    body[data-page="inicio"]
+    .vs-nav.vs-nav--transparent:not(.scrolled)
+    .vs-nav__links.is-open
+    a:hover {
+        color: var(--primary); /* Color al pasar */
+        background: #f1f7fd; /* Fondo al pasar */
+    }
+
+    body[data-page="inicio"]
+    .vs-nav.vs-nav--transparent:not(.scrolled)
+    .vs-nav__links.is-open
+    a.active {
+        color: var(--primary); /* Color activo */
+        background: #edf6fd; /* Fondo activo */
+    }
+
+
+    /* Desplegable en Móvil */
+
+    .vs-nav__dropdown {
+        display: flex; /* Usa flexbox */
+        flex-direction: column; /* Ordena verticalmente */
+        width: 100%; /* Ocupa todo el ancho */
+        align-items: stretch; /* Estira elementos */
+    }
+
+    .vs-nav__dropdown-toggle {
+        width: 100%; /* Ocupa todo el ancho */
+        justify-content: space-between !important; /* Separa contenido */
+    }
+
+    .vs-nav__dropdown-menu {
+        position: static !important; /* Quita posición absoluta */
+        transform: none !important; /* Quita desplazamiento */
+        width: 100% !important; /* Ocupa todo el ancho */
+        box-shadow: none !important; /* Quita sombra */
+        border: 1px solid #e1ebf4 !important; /* Agrega borde */
+        border-radius: 12px !important; /* Redondea bordes */
+        background: #f8fafc !important; /* Fondo claro */
+        margin-top: 4px !important; /* Espacio superior */
+        padding: 10px !important; /* Espacio interno */
+        display: none !important; /* Oculta menú */
+        opacity: 1 !important; /* Mantiene opacidad */
+        visibility: visible !important; /* Mantiene visibilidad */
+        pointer-events: auto !important; /* Permite interacción */
+    }
+
+    .vs-nav__dropdown.is-open-mobile .vs-nav__dropdown-menu {
+        display: block !important; /* Muestra menú móvil */
+    }
+
+    .vs-nav__dropdown.is-open-mobile .vs-nav__dropdown-arrow {
+        transform: rotate(180deg) !important; /* Gira flecha */
+    }
+
+    .vs-nav__dropdown-grid {
+        grid-template-columns: 1fr !important; /* Usa una columna */
+        gap: 6px !important; /* Espacio entre elementos */
+    }
+
+    .vs-nav__dropdown-info p {
+        max-width: 100% !important; /* Usa todo el ancho */
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .vs-nav__container {
+        width: calc(100% - 24px); /* Reduce ancho */
+    }
+
+    .vs-nav__logo img {
+        width: 135px; /* Reduce el logo */
+    }
+
+    .vs-nav__cta {
+        padding: 10px 12px; /* Reduce espacio */
+        font-size: 0.75rem; /* Reduce texto */
+    }
+
+    .vs-nav__cta .material-symbols-outlined {
+        display: none; /* Oculta el icono */
+    }
+
+}

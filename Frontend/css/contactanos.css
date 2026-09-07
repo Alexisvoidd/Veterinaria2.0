@@ -1,0 +1,519 @@
+/* Define el fondo de la sección de contacto */
+.contact-section {
+    /* Establece el fondo blanco de la sección */
+    background: #fff;
+}
+
+/* Organiza la información y el formulario en columnas */
+.contact-layout {
+    /* Activa el sistema de cuadrícula */
+    display: grid;
+    /* Define el ancho proporcional de las dos columnas */
+    grid-template-columns: .82fr 1.4fr;
+    /* Define el espacio entre las columnas */
+    gap: 42px;
+    /* Alinea los elementos al inicio */
+    align-items: start;
+}
+
+/* Organiza verticalmente las tarjetas de información */
+.contact-info {
+    /* Activa el diseño flexible */
+    display: flex;
+    /* Coloca los elementos en dirección vertical */
+    flex-direction: column;
+    /* Define el espacio entre las tarjetas */
+    gap: 13px;
+}
+
+/* Define la estructura visual de cada tarjeta informativa */
+.info-card {
+    /* Activa el diseño flexible */
+    display: flex;
+    /* Define el espacio entre icono y contenido */
+    gap: 15px;
+    /* Define el espacio interno de la tarjeta */
+    padding: 18px;
+    /* Define el borde de la tarjeta */
+    border: 1px solid #e1eaf2;
+    /* Redondea las esquinas */
+    border-radius: 15px;
+    /* Define el fondo de la tarjeta */
+    background: #fbfdff;
+}
+
+/* Define el tamaño y apariencia del icono */
+.info-icon {
+    /* Define el ancho del icono */
+    width: 43px;
+    /* Define la altura del icono */
+    height: 43px;
+    /* Evita que el icono reduzca su tamaño */
+    flex: 0 0 43px;
+    /* Redondea las esquinas del icono */
+    border-radius: 12px;
+    /* Define el fondo del icono */
+    background: #eaf4fc;
+    /* Define el color principal del icono */
+    color: var(--primary);
+    /* Activa una cuadrícula para centrar el contenido */
+    display: grid;
+    /* Centra el icono horizontal y verticalmente */
+    place-items: center;
+}
+
+/* Define el estilo del título de las tarjetas */
+.info-card h3 {
+    /* Define el margen del título */
+    margin: 1px 0 5px;
+    /* Define el tamaño del título */
+    font-size: .98rem;
+    /* Define el color del título */
+    color: #244a72;
+}
+
+/* Define el estilo del texto de las tarjetas */
+.info-card p {
+    /* Elimina el margen predeterminado */
+    margin: 0;
+    /* Define el color del texto */
+    color: #74869a;
+    /* Define el tamaño del texto */
+    font-size: .79rem;
+    /* Define el espacio entre líneas */
+    line-height: 1.65;
+}
+
+/* Define la apariencia general de la tarjeta del mapa */
+.map-card {
+    /* Define el borde de la tarjeta */
+    border: 1px solid #e0eaf3;
+    /* Redondea las esquinas */
+    border-radius: 18px;
+    /* Oculta el contenido que sobresale */
+    overflow: hidden;
+    /* Define el fondo */
+    background: #fff;
+    /* Agrega una sombra suave */
+    box-shadow: 0 8px 25px rgba(27, 78, 155, .06);
+}
+
+/* Organiza el encabezado del mapa */
+.map-heading {
+    /* Define el espacio interno */
+    padding: 17px 18px;
+    /* Activa el diseño flexible */
+    display: flex;
+    /* Separa el título y el icono */
+    justify-content: space-between;
+    /* Centra verticalmente los elementos */
+    align-items: center;
+}
+
+/* Define el título del mapa */
+.map-heading h2 {
+    /* Define el tamaño del título */
+    font-size: 1.1rem;
+    /* Define el color del título */
+    color: #244a72;
+    /* Define el margen del título */
+    margin: 6px 0 0;
+}
+
+/* Define la apariencia del icono del encabezado del mapa */
+.map-heading > .material-symbols-outlined {
+    /* Define el ancho del icono */
+    width: 42px;
+    /* Define la altura del icono */
+    height: 42px;
+    /* Redondea las esquinas */
+    border-radius: 12px;
+    /* Define el fondo del icono */
+    background: #eaf4fc;
+    /* Define el color del icono */
+    color: var(--primary);
+    /* Activa una cuadrícula */
+    display: grid;
+    /* Centra el icono */
+    place-items: center;
+}
+
+/* Define el tamaño y fondo del contenedor del mapa */
+.map-wrap {
+    /* Define la altura del mapa */
+    height: 285px;
+    /* Define el fondo del mapa */
+    background: #edf5fa;
+}
+
+/* Ajusta el iframe utilizado para mostrar el mapa */
+.map-wrap iframe {
+    /* Elimina el borde del iframe */
+    border: 0;
+    /* Ocupa todo el ancho disponible */
+    width: 100%;
+    /* Ocupa toda la altura disponible */
+    height: 100%;
+    /* Evita espacios adicionales */
+    display: block;
+}
+
+/* Define la apariencia de la nota debajo del mapa */
+.map-note {
+    /* Define el tamaño del texto */
+    font-size: .68rem;
+    /* Define el espacio entre líneas */
+    line-height: 1.55;
+    /* Define el color del texto */
+    color: #7b8b9a;
+    /* Define el espacio interno */
+    padding: 0 18px 16px;
+    /* Elimina el margen */
+    margin: 0;
+}
+
+/* Define la apariencia de la tarjeta del formulario */
+.contact-card {
+    /* Define el espacio interno */
+    padding: 30px;
+    /* Define el borde */
+    border: 1px solid #dfe9f3;
+    /* Redondea las esquinas */
+    border-radius: 20px;
+    /* Aplica la sombra general */
+    box-shadow: var(--shadow);
+    /* Define el fondo blanco */
+    background: #fff;
+}
+
+/* Define el título principal del formulario */
+.form-heading h2 {
+    /* Define el tamaño del título */
+    font-size: 1.65rem;
+    /* Define el color del título */
+    color: #1a4575;
+    /* Define el margen */
+    margin: 11px 0 6px;
+}
+
+/* Define el texto descriptivo del formulario */
+.form-heading p {
+    /* Define el margen inferior */
+    margin: 0 0 24px;
+    /* Define el color */
+    color: #77899c;
+    /* Define el tamaño */
+    font-size: .8rem;
+}
+
+/* Organiza los campos del formulario en dos columnas */
+.form-grid {
+    /* Activa la cuadrícula */
+    display: grid;
+    /* Define dos columnas iguales */
+    grid-template-columns: 1fr 1fr;
+    /* Define el espacio entre campos */
+    gap: 18px;
+}
+
+/* Hace que el campo ocupe todas las columnas */
+.field-full {
+    /* Ocupa desde la primera hasta la última columna */
+    grid-column: 1/-1;
+}
+
+/* Define la apariencia del contador de caracteres */
+.counter {
+    /* Define el tamaño del texto */
+    font-size: .7rem;
+    /* Define el color */
+    color: #8b9bad;
+    /* Alinea el texto a la derecha */
+    text-align: right;
+}
+
+/* Define el margen superior del botón de envío */
+.submit-btn {
+    /* Separa el botón de los campos */
+    margin-top: 18px;
+}
+
+
+/* VETSALUD - CONTACTANOS - MODO OSCURO */
+
+/* Define el fondo de la sección de contacto en modo oscuro */
+html.dark-mode .contact-section {
+    /* Establece el fondo oscuro */
+    background: #101820;
+}
+
+/* Define el fondo y borde de las tarjetas informativas */
+html.dark-mode .info-card {
+    /* Define el fondo oscuro de la tarjeta */
+    background: #182431;
+    /* Define el color del borde */
+    border-color: #33485b;
+}
+
+/* Define el aspecto del icono en modo oscuro */
+html.dark-mode .info-icon {
+    /* Define el fondo del icono */
+    background: #20364d;
+    /* Define el color del icono */
+    color: #4ba3e3;
+}
+
+/* Define el color de los títulos informativos */
+html.dark-mode .info-card h3 {
+    /* Establece un color claro para el título */
+    color: #f1f5f9;
+}
+
+/* Define el color del texto informativo */
+html.dark-mode .info-card p {
+    /* Establece un color claro para el texto */
+    color: #b8c5d3;
+}
+
+
+/* MAPA */
+
+/* Define la apariencia de la tarjeta del mapa en modo oscuro */
+html.dark-mode .map-card {
+    /* Define el fondo oscuro */
+    background: #182431;
+    /* Define el color del borde */
+    border-color: #33485b;
+    /* Define una sombra oscura */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
+}
+
+/* Define el color del título del mapa */
+html.dark-mode .map-heading h2 {
+    /* Establece el color claro */
+    color: #f1f5f9;
+}
+
+/* Define el aspecto del icono del mapa */
+html.dark-mode .map-heading > .material-symbols-outlined {
+    /* Define el fondo oscuro del icono */
+    background: #20364d;
+    /* Define el color azul del icono */
+    color: #4ba3e3;
+}
+
+/* Define el fondo del área del mapa */
+html.dark-mode .map-wrap {
+    /* Establece un fondo oscuro */
+    background: #1d2b39;
+}
+
+/* Define el color de la nota del mapa */
+html.dark-mode .map-note {
+    /* Establece un color secundario */
+    color: #9eacba;
+}
+
+
+/* FORMULARIO */
+
+/* Define la apariencia de la tarjeta del formulario */
+html.dark-mode .contact-card {
+    /* Define el fondo oscuro */
+    background: #182431;
+    /* Define el borde oscuro */
+    border-color: #33485b;
+    /* Define una sombra oscura */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
+}
+
+/* Define el color del título del formulario */
+html.dark-mode .form-heading h2 {
+    /* Establece un color claro */
+    color: #f1f5f9;
+}
+
+/* Define el color del texto descriptivo */
+html.dark-mode .form-heading p {
+    /* Establece un color claro */
+    color: #b8c5d3;
+}
+
+/* Define el color del contador */
+html.dark-mode .counter {
+    /* Establece un color secundario */
+    color: #9eacba;
+}
+
+
+/* CAMPOS DEL FORMULARIO */
+
+/* Define el aspecto de los campos en modo oscuro */
+html.dark-mode .contact-card input,
+html.dark-mode .contact-card textarea,
+html.dark-mode .contact-card select {
+    /* Define el fondo oscuro de los campos */
+    background: #111c27;
+    /* Define el color del texto */
+    color: #f1f5f9;
+    /* Define el color del borde */
+    border-color: #40566a;
+}
+
+/* Define el color de los textos de ayuda */
+html.dark-mode .contact-card input::placeholder,
+html.dark-mode .contact-card textarea::placeholder {
+    /* Establece un color tenue */
+    color: #7f91a3;
+}
+
+/* Define el estilo de los campos cuando reciben el foco */
+html.dark-mode .contact-card input:focus,
+html.dark-mode .contact-card textarea:focus,
+html.dark-mode .contact-card select:focus {
+    /* Cambia el color del borde al seleccionar */
+    border-color: #4ba3e3;
+    /* Elimina el contorno predeterminado */
+    outline: none;
+    /* Agrega un resplandor alrededor del campo */
+    box-shadow: 0 0 0 3px rgba(75, 163, 227, .12);
+}
+
+
+/* LABELS */
+
+/* Define el color de las etiquetas del formulario */
+html.dark-mode .contact-card label {
+    /* Establece un color claro */
+    color: #d2dbe5;
+}
+
+
+/* BOTÓN ENVIAR */
+
+/* Define la apariencia del botón de envío */
+html.dark-mode .submit-btn {
+    /* Define el fondo azul oscuro */
+    background: #00377a;
+    /* Define el color blanco del texto */
+    color: #ffffff;
+}
+
+/* Cambia el fondo del botón al pasar el cursor */
+html.dark-mode .submit-btn:hover {
+    /* Oscurece el botón */
+    background: #002554;
+}
+
+
+/* NOTAS / MENSAJES */
+
+/* Define el color de las notas de contacto */
+html.dark-mode .contact-note {
+    /* Establece un color secundario */
+    color: #9eacba;
+}
+
+
+/* REDUCIR ANIMACIONES */
+
+/* Desactiva las animaciones cuando está activa la reducción de movimiento */
+html.reduce-motion .contact-section *,
+html.reduce-motion .contact-section *::before,
+html.reduce-motion .contact-section *::after {
+    /* Desactiva todas las animaciones */
+    animation: none !important;
+    /* Desactiva todas las transiciones */
+    transition: none !important;
+}
+
+
+/* RESPONSIVE */
+
+/* Ajusta la información de contacto en pantallas medianas */
+@media (max-width: 850px) {
+
+    /* Mantiene transparente el fondo de la información */
+    html.dark-mode .contact-info {
+        /* Hace transparente el fondo */
+        background: transparent;
+    }
+
+}
+
+/* Ajusta la tarjeta del formulario en pantallas pequeñas */
+@media (max-width: 560px) {
+
+    /* Mantiene el fondo oscuro del formulario */
+    html.dark-mode .contact-card {
+        /* Define el fondo oscuro */
+        background: #182431;
+    }
+
+}
+
+/* Adapta la distribución para pantallas de hasta 850px */
+@media(max-width:850px) {
+
+    /* Convierte el diseño principal en una sola columna */
+    .contact-layout {
+        /* Define una única columna */
+        grid-template-columns: 1fr;
+    }
+
+    /* Organiza las tarjetas informativas en dos columnas */
+    .contact-info {
+        /* Activa el diseño de cuadrícula */
+        display: grid;
+        /* Define dos columnas iguales */
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Hace que el mapa ocupe todo el ancho */
+    .map-card {
+        /* Ocupa todas las columnas */
+        grid-column: 1/-1;
+    }
+
+    /* Hace que la nota ocupe todo el ancho */
+    .contact-note {
+        /* Ocupa todas las columnas */
+        grid-column: 1/-1;
+    }
+
+}
+
+/* Adapta el contenido para pantallas de hasta 560px */
+@media(max-width:560px) {
+
+    /* Cambia la información a una sola columna */
+    .contact-info {
+        /* Vuelve al diseño flexible */
+        display: flex;
+    }
+
+    /* Reduce el espacio interno del formulario */
+    .contact-card {
+        /* Define un padding más pequeño */
+        padding: 21px;
+    }
+
+    /* Organiza los campos en una sola columna */
+    .form-grid {
+        /* Define una única columna */
+        grid-template-columns: 1fr;
+    }
+
+    /* Restablece la posición del campo completo */
+    .field-full {
+        /* Permite la posición automática */
+        grid-column: auto;
+    }
+
+    /* Reduce la altura del mapa en móviles */
+    .map-wrap {
+        /* Define una altura menor */
+        height: 240px;
+    }
+
+}

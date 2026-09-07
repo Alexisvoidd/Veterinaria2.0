@@ -1,0 +1,1164 @@
+
+:root {
+  /* Paleta de colores oficial VetSalud */
+  /* Define el color principal de la marca */
+  --color-primario: #00377a;
+  /* Define una versión más oscura del color principal */
+  --color-primario-oscuro: #002554;
+  /* Define el color secundario de la marca */
+  --color-secundario: #006397;
+  /* Define el color cyan utilizado como acento */
+  --color-acento-cyan: #4ba3e3;
+  /* Define el color rojo utilizado en botones */
+  --color-rojo-boton: #c90812;
+  /* Define el color rojo utilizado al pasar el cursor */
+  --color-rojo-boton-hover: #a8050e;
+
+  /* Fondos y superficies */
+  /* Define el fondo general de la página */
+  --color-fondo-pagina: #faf9f6;
+  /* Define el fondo blanco de las tarjetas */
+  --color-fondo-blanco: #ffffff;
+  /* Define un fondo suave para diferentes elementos */
+  --color-fondo-suave: #f4f6fa;
+
+  /* Textos y bordes */
+  /* Define el color principal de los títulos */
+  --color-texto-titulo: #1a1b21;
+  /* Define el color principal del contenido */
+  --color-texto-cuerpo: #434751;
+  /* Define el color para textos secundarios o apagados */
+  --color-texto-apagado: #718096;
+  /* Define el color de los bordes suaves */
+  --color-borde-suave: #e2e8f0;
+  /* Define el color de los bordes de los campos */
+  --color-borde-input: #d8e0ea;
+
+  /* Tipografías */
+  /* Define la fuente utilizada en títulos */
+  --fuente-titulos: 'Montserrat', sans-serif;
+  /* Define la fuente utilizada en textos generales */
+  --fuente-cuerpo: 'Open Sans', sans-serif;
+
+  /* Sombras y transiciones */
+  /* Define la sombra estándar de las tarjetas */
+  --sombra-card: 0 10px 30px rgba(13, 37, 77, 0.07);
+  /* Define la sombra de las tarjetas al pasar el cursor */
+  --sombra-card-hover: 0 18px 40px rgba(13, 37, 77, 0.12);
+  /* Define la transición general de los elementos */
+  --transicion-base: all 0.25s ease-in-out;
+}
+
+/* Reset y estructura general de todos los elementos */
+* {
+  /* Incluye padding y border dentro del tamaño total */
+  box-sizing: border-box;
+  /* Elimina los márgenes predeterminados */
+  margin: 0;
+  /* Elimina los rellenos predeterminados */
+  padding: 0;
+}
+
+/* Estilos generales del cuerpo de la página */
+body {
+  /* Define la fuente general de la página */
+  font-family: var(--fuente-cuerpo);
+  /* Define el color de fondo general */
+  background-color: var(--color-fondo-pagina);
+  /* Define el color general del contenido */
+  color: var(--color-texto-cuerpo);
+  /* Define la altura de las líneas */
+  line-height: 1.65;
+  /* Suaviza la representación de las fuentes */
+  -webkit-font-smoothing: antialiased;
+  /* Garantiza una altura mínima de toda la pantalla */
+  min-height: 100vh;
+}
+
+/* Contenedor general de la página de servicios */
+.servicios-pagina {
+  /* Define la altura mínima de la página */
+  min-height: calc(100vh - 200px);
+  /* Agrega espacio inferior */
+  padding-bottom: 5rem;
+}
+
+/* Contenedor central del contenido */
+.servicios-contenedor {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+  /* Limita el ancho máximo del contenido */
+  max-width: 1240px;
+  /* Centra horizontalmente el contenedor */
+  margin: 0 auto;
+  /* Agrega espacio horizontal interno */
+  padding: 0 1.5rem;
+}
+
+/* Encabezado y hero de la página de servicios */
+
+/* Contenedor principal del encabezado */
+.servicios-hero-encabezado {
+  /* Define el espacio superior e inferior */
+  padding: 2.5rem 0 1.5rem;
+  /* Define el fondo del encabezado */
+  background-color: var(--color-fondo-pagina);
+}
+
+/* Migajas de navegación o breadcrumb */
+.servicios-migajas {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Centra verticalmente los elementos */
+  align-items: center;
+  /* Define la separación entre elementos */
+  gap: 0.35rem;
+  /* Define el tamaño del texto */
+  font-size: 0.85rem;
+  /* Define el color de las migajas */
+  color: var(--color-texto-apagado);
+  /* Agrega separación inferior */
+  margin-bottom: 0.85rem;
+}
+
+/* Enlaces dentro de las migajas */
+.servicios-migajas a {
+  /* Define el color del enlace */
+  color: var(--color-secundario);
+  /* Elimina el subrayado */
+  text-decoration: none;
+  /* Define el grosor del texto */
+  font-weight: 500;
+  /* Aplica la transición general */
+  transition: var(--transicion-base);
+}
+
+/* Estado hover de los enlaces de las migajas */
+.servicios-migajas a:hover {
+  /* Cambia el enlace al color principal */
+  color: var(--color-primario);
+  /* Muestra el subrayado */
+  text-decoration: underline;
+}
+
+/* Iconos utilizados dentro de las migajas */
+.servicios-migajas .material-symbols-outlined {
+  /* Define el tamaño del icono */
+  font-size: 1rem;
+  /* Define el color del icono */
+  color: #a0aec0;
+}
+
+/* Migaja que representa la página actual */
+.servicios-migaja-activa {
+  /* Define el color del elemento activo */
+  color: var(--color-texto-cuerpo);
+  /* Resalta el texto activo */
+  font-weight: 600;
+}
+
+/* Título principal de la página */
+.servicios-titulo-principal {
+  /* Utiliza la fuente de títulos */
+  font-family: var(--fuente-titulos);
+  /* Define el tamaño del título */
+  font-size: 2.4rem;
+  /* Define el grosor del título */
+  font-weight: 800;
+  /* Define el color del título */
+  color: var(--color-texto-titulo);
+  /* Define la altura de las líneas */
+  line-height: 1.15;
+  /* Ajusta el espacio entre letras */
+  letter-spacing: -0.02em;
+}
+
+/* Ajustes del título en pantallas medianas */
+@media (min-width: 768px) {
+  /* Título principal en pantallas mayores a 768px */
+  .servicios-titulo-principal {
+    /* Aumenta el tamaño del título */
+    font-size: 2.8rem;
+  }
+}
+
+/* Grid principal en dos columnas */
+
+/* Sección que contiene el detalle del servicio */
+.servicios-seccion-detalle {
+  /* Agrega espacio superior */
+  padding-top: 1rem;
+}
+
+/* Distribución principal del contenido */
+.servicios-grid-layout {
+  /* Utiliza CSS Grid */
+  display: grid;
+  /* Utiliza una columna inicialmente */
+  grid-template-columns: 1fr;
+  /* Define la separación entre elementos */
+  gap: 2.5rem;
+  /* Alinea los elementos al inicio */
+  align-items: start;
+}
+
+/* Distribución en dos columnas en pantallas grandes */
+@media (min-width: 992px) {
+  /* Grid en pantallas mayores a 992px */
+  .servicios-grid-layout {
+    /* Crea una columna flexible y otra fija */
+    grid-template-columns: minmax(0, 1fr) 420px;
+    /* Aumenta la separación entre columnas */
+    gap: 3.5rem;
+  }
+}
+
+/* Columna izquierda con el contenido del servicio */
+
+/* Contenedor de la información principal del servicio */
+.servicios-columna-contenido {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Organiza el contenido verticalmente */
+  flex-direction: column;
+  /* Define la separación entre bloques */
+  gap: 1.75rem;
+}
+
+/* Contenedor de la imagen destacada */
+.servicios-imagen-destacada-wrap {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+  /* Redondea las esquinas */
+  border-radius: 16px;
+  /* Oculta el contenido que sobresalga */
+  overflow: hidden;
+  /* Define un fondo de respaldo */
+  background-color: #e2e8f0;
+  /* Aplica la sombra de tarjeta */
+  box-shadow: var(--sombra-card);
+  /* Agrega un borde suave */
+  border: 1px solid rgba(0, 55, 122, 0.06);
+}
+
+/* Imagen principal del servicio */
+.servicios-imagen-destacada {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+  /* Mantiene la altura proporcional */
+  height: auto;
+  /* Limita la altura máxima */
+  max-height: 480px;
+  /* Ajusta la imagen para cubrir el espacio */
+  object-fit: cover;
+  /* Elimina el espacio inferior típico de imágenes inline */
+  display: block;
+  /* Suaviza la transformación de la imagen */
+  transition: transform 0.4s ease;
+}
+
+/* Efecto hover sobre la imagen destacada */
+.servicios-imagen-destacada-wrap:hover .servicios-imagen-destacada {
+  /* Aumenta ligeramente el tamaño de la imagen */
+  transform: scale(1.015);
+}
+
+/* Bloques de texto */
+
+/* Contenedor general de bloques de texto */
+.servicios-bloque-texto {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Organiza el contenido verticalmente */
+  flex-direction: column;
+  /* Define la separación entre elementos */
+  gap: 0.75rem;
+}
+
+/* Subtítulos de la página */
+.servicios-subtitulo {
+  /* Utiliza la fuente de títulos */
+  font-family: var(--fuente-titulos);
+  /* Define el tamaño del subtítulo */
+  font-size: 1.55rem;
+  /* Define el grosor del subtítulo */
+  font-weight: 700;
+  /* Define el color del subtítulo */
+  color: var(--color-texto-titulo);
+  /* Define la altura de las líneas */
+  line-height: 1.25;
+  /* Ajusta ligeramente el espacio entre letras */
+  letter-spacing: -0.01em;
+  /* Agrega espacio superior */
+  margin-top: 0.5rem;
+}
+
+/* Ajuste de subtítulos en pantallas medianas */
+@media (min-width: 768px) {
+  /* Subtítulo en pantallas mayores a 768px */
+  .servicios-subtitulo {
+    /* Aumenta el tamaño del subtítulo */
+    font-size: 1.75rem;
+  }
+}
+
+/* Párrafos descriptivos del servicio */
+.servicios-parrafo {
+  /* Define el tamaño del texto */
+  font-size: 1.02rem;
+  /* Define la altura de las líneas */
+  line-height: 1.75;
+  /* Define el color del texto */
+  color: var(--color-texto-cuerpo);
+}
+
+/* Enlaces con estilo de texto subrayado */
+.servicios-enlace-subrayado {
+  /* Utiliza flexbox en línea */
+  display: inline-flex;
+  /* Centra verticalmente los elementos */
+  align-items: center;
+  /* Define la separación entre texto e icono */
+  gap: 0.4rem;
+  /* Alinea el enlace al inicio */
+  align-self: flex-start;
+  /* Define el color del enlace */
+  color: var(--color-texto-titulo);
+  /* Agrega subrayado */
+  text-decoration: underline;
+  /* Separa el subrayado del texto */
+  text-underline-offset: 3px;
+  /* Define el grosor del texto */
+  font-weight: 600;
+  /* Define el tamaño del enlace */
+  font-size: 0.98rem;
+  /* Aplica la transición general */
+  transition: var(--transicion-base);
+  /* Agrega una pequeña separación superior */
+  margin-top: 0.25rem;
+}
+
+/* Estado hover de los enlaces subrayados */
+.servicios-enlace-subrayado:hover {
+  /* Cambia el color del enlace */
+  color: var(--color-primario);
+  /* Cambia el color del subrayado */
+  text-decoration-color: var(--color-primario);
+  /* Desplaza ligeramente el enlace */
+  transform: translateX(2px);
+}
+
+/* Selector rápido de otros servicios */
+.servicios-otros-selector {
+  /* Agrega espacio superior */
+  margin-top: 2rem;
+  /* Define el espacio interno */
+  padding: 1.75rem;
+  /* Define el fondo del selector */
+  background-color: var(--color-fondo-blanco);
+  /* Redondea las esquinas */
+  border-radius: 14px;
+  /* Agrega un borde suave */
+  border: 1px solid var(--color-borde-suave);
+  /* Agrega una sombra ligera */
+  box-shadow: 0 4px 18px rgba(13, 37, 77, 0.04);
+}
+
+/* Título del selector de otros servicios */
+.servicios-otros-titulo {
+  /* Utiliza la fuente de títulos */
+  font-family: var(--fuente-titulos);
+  /* Define el tamaño del título */
+  font-size: 1.15rem;
+  /* Define el grosor del título */
+  font-weight: 700;
+  /* Define el color del título */
+  color: var(--color-primario);
+  /* Agrega separación inferior */
+  margin-bottom: 1.1rem;
+}
+
+/* Cuadrícula de botones tipo pill */
+.servicios-pills-grid {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Permite que los elementos pasen a otra línea */
+  flex-wrap: wrap;
+  /* Define la separación entre pills */
+  gap: 0.6rem;
+}
+
+/* Botón individual de servicio */
+.servicio-pill {
+  /* Define el borde del botón */
+  border: 1px solid var(--color-borde-suave);
+  /* Define el fondo del botón */
+  background-color: var(--color-fondo-suave);
+  /* Define el color del texto */
+  color: var(--color-texto-cuerpo);
+  /* Redondea completamente el botón */
+  border-radius: 30px;
+  /* Define el espacio interno */
+  padding: 0.55rem 1rem;
+  /* Define el tamaño del texto */
+  font-size: 0.88rem;
+  /* Define el grosor del texto */
+  font-weight: 600;
+  /* Utiliza la fuente de títulos */
+  font-family: var(--fuente-titulos);
+  /* Cambia el cursor para indicar que es interactivo */
+  cursor: pointer;
+  /* Utiliza flexbox */
+  display: inline-flex;
+  /* Centra verticalmente el contenido */
+  align-items: center;
+  /* Define la separación entre icono y texto */
+  gap: 0.45rem;
+  /* Aplica la transición general */
+  transition: var(--transicion-base);
+}
+
+/* Iconos dentro de los botones de servicio */
+.servicio-pill i {
+  /* Define el color del icono */
+  color: var(--color-secundario);
+  /* Define el tamaño del icono */
+  font-size: 0.85rem;
+}
+
+/* Estado hover de los botones de servicio */
+.servicio-pill:hover {
+  /* Cambia el fondo al pasar el cursor */
+  background-color: #e8f0fe;
+  /* Cambia el color del borde */
+  border-color: var(--color-secundario);
+  /* Cambia el color del texto */
+  color: var(--color-primario);
+  /* Eleva ligeramente el botón */
+  transform: translateY(-1px);
+}
+
+/* Estado activo del botón de servicio */
+.servicio-pill.activo {
+  /* Define el fondo azul principal */
+  background-color: var(--color-primario);
+  /* Define el texto blanco */
+  color: #ffffff;
+  /* Define el borde principal */
+  border-color: var(--color-primario);
+  /* Agrega una sombra al botón activo */
+  box-shadow: 0 4px 12px rgba(0, 55, 122, 0.25);
+}
+
+/* Icono del botón de servicio activo */
+.servicio-pill.activo i {
+  /* Cambia el icono a blanco */
+  color: #ffffff;
+}
+
+/* Columna derecha con formulario flotante */
+
+/* Contenedor de la columna del formulario */
+.servicios-columna-formulario {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+}
+
+/* Comportamiento sticky del formulario en pantallas grandes */
+@media (min-width: 992px) {
+  /* Columna del formulario en pantallas mayores a 992px */
+  .servicios-columna-formulario {
+    /* Mantiene el formulario fijo durante el desplazamiento */
+    position: sticky;
+    /* Define la distancia respecto a la parte superior */
+    top: 96px;
+    /* Alinea el elemento al inicio */
+    align-self: start;
+    /* Mantiene el formulario por encima de otros elementos */
+    z-index: 10;
+  }
+}
+
+/* Tarjeta que contiene el formulario */
+.servicios-formulario-sticky-card {
+  /* Define el fondo de la tarjeta */
+  background: var(--color-fondo-blanco);
+  /* Redondea las esquinas */
+  border-radius: 16px;
+  /* Define el borde */
+  border: 1px solid var(--color-borde-suave);
+  /* Define el espacio interno */
+  padding: 2rem 1.75rem;
+  /* Aplica la sombra estándar */
+  box-shadow: var(--sombra-card);
+  /* Aplica la transición general */
+  transition: var(--transicion-base);
+}
+
+/* Estado hover de la tarjeta del formulario */
+.servicios-formulario-sticky-card:hover {
+  /* Aumenta la sombra al pasar el cursor */
+  box-shadow: var(--sombra-card-hover);
+}
+
+/* Formulario de contacto */
+.servicios-form {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+  /* Define la separación entre campos */
+  gap: 1.25rem;
+}
+
+/* Fila individual del formulario */
+.servicios-form-row {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+}
+
+/* Fila configurada para dos columnas */
+.servicios-form-row.dos-columnas {
+  /* Utiliza CSS Grid */
+  display: grid;
+  /* Mantiene una columna inicialmente */
+  grid-template-columns: 1fr;
+  /* Define la separación entre columnas */
+  gap: 1rem;
+}
+
+/* Distribución de dos columnas en pantallas pequeñas */
+@media (min-width: 480px) {
+  /* Fila de dos columnas en pantallas mayores a 480px */
+  .servicios-form-row.dos-columnas {
+    /* Divide el espacio en dos columnas iguales */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Campo individual del formulario */
+.servicios-form-field {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Organiza etiqueta y campo verticalmente */
+  flex-direction: column;
+  /* Define la separación entre etiqueta y campo */
+  gap: 0.4rem;
+}
+
+/* Etiquetas del formulario */
+.servicios-label {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Centra verticalmente el contenido */
+  align-items: center;
+  /* Define la separación entre icono y texto */
+  gap: 0.45rem;
+  /* Define el tamaño del texto */
+  font-size: 0.84rem;
+  /* Define el grosor del texto */
+  font-weight: 600;
+  /* Define el color de la etiqueta */
+  color: var(--color-texto-cuerpo);
+  /* Utiliza la fuente general */
+  font-family: var(--fuente-cuerpo);
+}
+
+/* Iconos de las etiquetas */
+.servicios-label i {
+  /* Define el color del icono */
+  color: var(--color-texto-apagado);
+  /* Define el tamaño del icono */
+  font-size: 0.85rem;
+}
+
+/* Inputs y áreas de texto */
+
+/* Campos de entrada y áreas de texto */
+.servicios-input,
+.servicios-textarea {
+  /* Ocupan todo el ancho disponible */
+  width: 100%;
+  /* Define el borde de los campos */
+  border: 1px solid var(--color-borde-input);
+  /* Redondea las esquinas */
+  border-radius: 8px;
+  /* Define el fondo blanco */
+  background-color: #ffffff;
+  /* Define el color del texto */
+  color: var(--color-texto-titulo);
+  /* Utiliza la fuente general */
+  font-family: var(--fuente-cuerpo);
+  /* Define el tamaño del texto */
+  font-size: 0.95rem;
+  /* Define el espacio interno */
+  padding: 0.75rem 0.9rem;
+  /* Suaviza los cambios del campo */
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  /* Elimina el contorno predeterminado */
+  outline: none;
+}
+
+/* Altura específica de los inputs */
+.servicios-input {
+  /* Define la altura del campo */
+  height: 46px;
+}
+
+/* Contenedor del área de texto */
+.servicios-textarea-wrapper {
+  /* Permite posicionar elementos internos */
+  position: relative;
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+}
+
+/* Área de texto del formulario */
+.servicios-textarea {
+  /* Define la altura mínima */
+  min-height: 120px;
+  /* Permite modificar verticalmente su tamaño */
+  resize: vertical;
+  /* Define la altura de las líneas */
+  line-height: 1.5;
+  /* Hace que el textarea se comporte como bloque */
+  display: block;
+}
+
+/* Texto placeholder de inputs y textarea */
+.servicios-input::placeholder,
+.servicios-textarea::placeholder {
+  /* Define el color del texto de ejemplo */
+  color: #94a3b8;
+  /* Define el tamaño del texto de ejemplo */
+  font-size: 0.9rem;
+}
+
+/* Estado de enfoque de inputs y textarea */
+.servicios-input:focus,
+.servicios-textarea:focus {
+  /* Cambia el color del borde al enfocar */
+  border-color: var(--color-primario);
+  /* Agrega un halo alrededor del campo */
+  box-shadow: 0 0 0 3.5px rgba(0, 55, 122, 0.12);
+  /* Mantiene el fondo blanco */
+  background-color: #ffffff;
+}
+
+/* Contador de caracteres */
+
+/* Contenedor del contador de caracteres */
+.servicios-contador-wrap {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Alinea el contador a la derecha */
+  justify-content: flex-end;
+  /* Agrega una pequeña separación superior */
+  padding-top: 0.25rem;
+}
+
+/* Texto del contador */
+.servicios-contador {
+  /* Define el tamaño del contador */
+  font-size: 0.78rem;
+  /* Define el color del contador */
+  color: var(--color-texto-apagado);
+  /* Define el grosor del texto */
+  font-weight: 500;
+}
+
+/* Mensajes de error */
+
+/* Mensaje de error de los campos */
+.servicios-error-msg {
+  /* Oculta el mensaje inicialmente */
+  display: none;
+  /* Define el tamaño del mensaje */
+  font-size: 0.76rem;
+  /* Define el color del error */
+  color: #dc2626;
+  /* Define el grosor del texto */
+  font-weight: 500;
+}
+
+/* Campos que presentan un error */
+.servicios-form-field.con-error .servicios-input,
+.servicios-form-field.con-error .servicios-textarea {
+  /* Cambia el borde al color de error */
+  border-color: #dc2626;
+  /* Cambia el fondo para indicar el error */
+  background-color: #fff5f5;
+}
+
+/* Muestra el mensaje cuando existe un error */
+.servicios-form-field.con-error .servicios-error-msg {
+  /* Hace visible el mensaje */
+  display: block;
+}
+
+/* Notificación de alerta */
+
+/* Contenedor general de las alertas */
+.servicios-alerta-box {
+  /* Define el espacio interno */
+  padding: 0.9rem 1rem;
+  /* Redondea las esquinas */
+  border-radius: 8px;
+  /* Define el tamaño del texto */
+  font-size: 0.9rem;
+  /* Define el grosor del texto */
+  font-weight: 600;
+  /* Define la altura de las líneas */
+  line-height: 1.4;
+  /* Aplica la animación de aparición */
+  animation: fadeIn 0.3s ease;
+}
+
+/* Alerta de éxito */
+.servicios-alerta-box.exito {
+  /* Define el fondo verde claro */
+  background-color: #ecfdf5;
+  /* Define el color del texto */
+  color: #065f46;
+  /* Define el borde verde */
+  border: 1px solid #a7f3d0;
+}
+
+/* Alerta de error */
+.servicios-alerta-box.error {
+  /* Define el fondo rojo claro */
+  background-color: #fef2f2;
+  /* Define el color del texto */
+  color: #991b1b;
+  /* Define el borde rojo */
+  border: 1px solid #fecaca;
+}
+
+/* Botón de enviar mensaje */
+
+/* Botón principal del formulario */
+.servicios-btn-enviar {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+  /* Define la altura del botón */
+  height: 50px;
+  /* Elimina el borde */
+  border: none;
+  /* Redondea las esquinas */
+  border-radius: 8px;
+  /* Define el fondo principal */
+  background: var(--color-primario);
+  /* Define el color blanco del texto */
+  color: #ffffff;
+  /* Utiliza la fuente de títulos */
+  font-family: var(--fuente-titulos);
+  /* Define el tamaño del texto */
+  font-size: 1rem;
+  /* Define el grosor del texto */
+  font-weight: 700;
+  /* Utiliza flexbox en línea */
+  display: inline-flex;
+  /* Centra verticalmente el contenido */
+  align-items: center;
+  /* Centra horizontalmente el contenido */
+  justify-content: center;
+  /* Define la separación entre texto e icono */
+  gap: 0.6rem;
+  /* Cambia el cursor para indicar interacción */
+  cursor: pointer;
+  /* Agrega una sombra al botón */
+  box-shadow: 0 4px 16px rgba(0, 55, 122, 0.28);
+  /* Aplica la transición general */
+  transition: var(--transicion-base);
+  /* Agrega una pequeña separación superior */
+  margin-top: 0.25rem;
+}
+
+/* Icono dentro del botón de enviar */
+.servicios-btn-enviar i {
+  /* Define el tamaño del icono */
+  font-size: 1.05rem;
+  /* Suaviza el movimiento del icono */
+  transition: transform 0.2s ease;
+}
+
+/* Estado hover del botón de enviar */
+.servicios-btn-enviar:hover {
+  /* Oscurece el fondo del botón */
+  background: var(--color-primario-oscuro);
+  /* Aumenta la sombra */
+  box-shadow: 0 8px 24px rgba(0, 37, 84, 0.35);
+  /* Eleva ligeramente el botón */
+  transform: translateY(-2px);
+}
+
+/* Movimiento del icono al pasar el cursor */
+.servicios-btn-enviar:hover i {
+  /* Desplaza el icono hacia la derecha y arriba */
+  transform: translateX(3px) translateY(-2px);
+}
+
+/* Estado activo del botón */
+.servicios-btn-enviar:active {
+  /* Devuelve el botón a su posición original */
+  transform: translateY(0);
+}
+
+/* Estado deshabilitado del botón */
+.servicios-btn-enviar:disabled {
+  /* Reduce la opacidad para indicar que está deshabilitado */
+  opacity: 0.7;
+  /* Cambia el cursor para indicar que no está disponible */
+  cursor: not-allowed;
+  /* Elimina cualquier transformación */
+  transform: none;
+}
+
+/* Modo oscuro de VetSalud Servicios */
+
+/* Variables que cambian cuando se activa el modo oscuro */
+html.dark-mode {
+  /* Fondos */
+  /* Define el fondo oscuro principal */
+  --color-fondo-pagina: #101820;
+  /* Define el fondo oscuro de tarjetas */
+  --color-fondo-blanco: #182431;
+  /* Define un fondo oscuro secundario */
+  --color-fondo-suave: #1d2b39;
+
+  /* Textos */
+  /* Define el color claro de los títulos */
+  --color-texto-titulo: #f1f5f9;
+  /* Define el color claro del contenido */
+  --color-texto-cuerpo: #d2dbe5;
+  /* Define el color apagado en modo oscuro */
+  --color-texto-apagado: #9eacba;
+
+  /* Bordes */
+  /* Define el color de los bordes generales */
+  --color-borde-suave: #33485b;
+  /* Define el color de los bordes de inputs */
+  --color-borde-input: #40566a;
+
+  /* Mantener identidad VetSalud */
+  /* Define el color principal adaptado al modo oscuro */
+  --color-primario: #4ba3e3;
+  /* Define el color principal oscuro adaptado */
+  --color-primario-oscuro: #2384c4;
+  /* Define el color secundario adaptado al modo oscuro */
+  --color-secundario: #4ba3e3;
+}
+
+/* Página en modo oscuro */
+
+/* Cuerpo de la página en modo oscuro */
+html.dark-mode body {
+  /* Aplica el fondo oscuro */
+  background-color: var(--color-fondo-pagina);
+  /* Aplica el color claro al texto */
+  color: var(--color-texto-cuerpo);
+}
+
+/* Encabezado en modo oscuro */
+
+/* Hero de servicios en modo oscuro */
+html.dark-mode .servicios-hero-encabezado {
+  /* Mantiene el fondo oscuro */
+  background-color: var(--color-fondo-pagina);
+}
+
+/* Migajas en modo oscuro */
+html.dark-mode .servicios-migajas {
+  /* Define el color apagado */
+  color: var(--color-texto-apagado);
+}
+
+/* Enlaces de las migajas en modo oscuro */
+html.dark-mode .servicios-migajas a {
+  /* Define el color azul claro */
+  color: #4ba3e3;
+}
+
+/* Hover de los enlaces de las migajas */
+html.dark-mode .servicios-migajas a:hover {
+  /* Aclara el enlace al pasar el cursor */
+  color: #7bc2f2;
+}
+
+/* Iconos de las migajas en modo oscuro */
+html.dark-mode .servicios-migajas .material-symbols-outlined {
+  /* Define el color del icono */
+  color: #718096;
+}
+
+/* Migaja activa en modo oscuro */
+html.dark-mode .servicios-migaja-activa {
+  /* Define el color claro del elemento activo */
+  color: #d2dbe5;
+}
+
+/* Título principal en modo oscuro */
+html.dark-mode .servicios-titulo-principal {
+  /* Define el color claro del título */
+  color: #f1f5f9;
+}
+
+/* Imagen en modo oscuro */
+
+/* Contenedor de la imagen destacada en modo oscuro */
+html.dark-mode .servicios-imagen-destacada-wrap {
+  /* Define un fondo oscuro de respaldo */
+  background-color: #182431;
+  /* Define el color del borde */
+  border-color: #33485b;
+}
+
+/* Textos en modo oscuro */
+
+/* Subtítulo en modo oscuro */
+html.dark-mode .servicios-subtitulo {
+  /* Define el color claro del subtítulo */
+  color: #f1f5f9;
+}
+
+/* Párrafos en modo oscuro */
+html.dark-mode .servicios-parrafo {
+  /* Define el color claro del contenido */
+  color: #d2dbe5;
+}
+
+/* Enlaces subrayados en modo oscuro */
+html.dark-mode .servicios-enlace-subrayado {
+  /* Define el color claro del enlace */
+  color: #f1f5f9;
+}
+
+/* Hover de enlaces subrayados en modo oscuro */
+html.dark-mode .servicios-enlace-subrayado:hover {
+  /* Cambia el enlace al azul claro */
+  color: #4ba3e3;
+  /* Cambia también el color del subrayado */
+  text-decoration-color: #4ba3e3;
+}
+
+/* Selector de servicios en modo oscuro */
+
+/* Tarjeta de otros servicios en modo oscuro */
+html.dark-mode .servicios-otros-selector {
+  /* Define el fondo oscuro de la tarjeta */
+  background-color: #182431;
+  /* Define el borde oscuro */
+  border-color: #33485b;
+  /* Define una sombra oscura */
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.20);
+}
+
+/* Título del selector en modo oscuro */
+html.dark-mode .servicios-otros-titulo {
+  /* Define el color azul claro */
+  color: #4ba3e3;
+}
+
+/* Pills en modo oscuro */
+
+/* Botones de servicio en modo oscuro */
+html.dark-mode .servicio-pill {
+  /* Define el fondo oscuro del botón */
+  background-color: #1d2b39;
+  /* Define el borde oscuro */
+  border-color: #40566a;
+  /* Define el color claro del texto */
+  color: #d2dbe5;
+}
+
+/* Iconos de los botones en modo oscuro */
+html.dark-mode .servicio-pill i {
+  /* Define el color azul claro del icono */
+  color: #4ba3e3;
+}
+
+/* Hover de los botones de servicio en modo oscuro */
+html.dark-mode .servicio-pill:hover {
+  /* Define un fondo azul oscuro */
+  background-color: #20364d;
+  /* Cambia el borde al azul claro */
+  border-color: #4ba3e3;
+  /* Cambia el texto a blanco */
+  color: #ffffff;
+}
+
+/* Botón de servicio activo en modo oscuro */
+html.dark-mode .servicio-pill.activo {
+  /* Define el fondo azul principal */
+  background-color: #00377a;
+  /* Define el borde azul claro */
+  border-color: #4ba3e3;
+  /* Mantiene el texto blanco */
+  color: #ffffff;
+}
+
+/* Icono del botón activo en modo oscuro */
+html.dark-mode .servicio-pill.activo i {
+  /* Mantiene el icono en blanco */
+  color: #ffffff;
+}
+
+/* Formulario en modo oscuro */
+
+/* Tarjeta flotante del formulario en modo oscuro */
+html.dark-mode .servicios-formulario-sticky-card {
+  /* Define el fondo oscuro de la tarjeta */
+  background-color: #182431;
+  /* Define el borde oscuro */
+  border-color: #33485b;
+  /* Define una sombra oscura */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Hover de la tarjeta del formulario en modo oscuro */
+html.dark-mode .servicios-formulario-sticky-card:hover {
+  /* Aumenta la sombra al pasar el cursor */
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Labels en modo oscuro */
+
+/* Etiquetas del formulario en modo oscuro */
+html.dark-mode .servicios-label {
+  /* Define el color claro de las etiquetas */
+  color: #d2dbe5;
+}
+
+/* Iconos de las etiquetas en modo oscuro */
+html.dark-mode .servicios-label i {
+  /* Define el color apagado del icono */
+  color: #9eacba;
+}
+
+/* Inputs en modo oscuro */
+
+/* Inputs y textareas en modo oscuro */
+html.dark-mode .servicios-input,
+html.dark-mode .servicios-textarea {
+  /* Define el fondo oscuro de los campos */
+  background-color: #101c27;
+  /* Define el color claro del texto */
+  color: #f1f5f9;
+
+  /* Define el color del borde */
+  border-color: #40566a;
+}
+
+/* Placeholder de los campos en modo oscuro */
+html.dark-mode .servicios-input::placeholder,
+html.dark-mode .servicios-textarea::placeholder {
+  /* Define el color apagado del placeholder */
+  color: #8fa1b3;
+}
+
+/* Estado focus de inputs y textarea en modo oscuro */
+html.dark-mode .servicios-input:focus,
+html.dark-mode .servicios-textarea:focus {
+  /* Mantiene el fondo oscuro al enfocar */
+  background-color: #101c27;
+  /* Define el color blanco del texto */
+  color: #ffffff;
+
+  /* Cambia el borde al azul claro */
+  border-color: #4ba3e3;
+
+  /* Agrega un halo azul alrededor del campo */
+  box-shadow:
+    0 0 0 3.5px rgba(75, 163, 227, 0.18);
+}
+
+/* Contador en modo oscuro */
+
+/* Contador de caracteres en modo oscuro */
+html.dark-mode .servicios-contador {
+  /* Define el color apagado del contador */
+  color: #9eacba;
+}
+
+/* Errores en modo oscuro */
+
+/* Campos con error en modo oscuro */
+html.dark-mode .servicios-form-field.con-error .servicios-input,
+html.dark-mode .servicios-form-field.con-error .servicios-textarea {
+  /* Define un fondo rojizo oscuro */
+  background-color: #321d20;
+  /* Define el borde rojo */
+  border-color: #ef4444;
+}
+
+/* Mensaje de error en modo oscuro */
+html.dark-mode .servicios-error-msg {
+  /* Define un rojo claro para el mensaje */
+  color: #f87171;
+}
+
+/* Alertas en modo oscuro */
+
+/* Alerta de éxito en modo oscuro */
+html.dark-mode .servicios-alerta-box.exito {
+  /* Define el fondo verde oscuro */
+  background-color: #12352b;
+  /* Define el color verde claro */
+  color: #86efac;
+  /* Define el borde verde oscuro */
+  border-color: #22634e;
+}
+
+/* Alerta de error en modo oscuro */
+html.dark-mode .servicios-alerta-box.error {
+  /* Define el fondo rojo oscuro */
+  background-color: #351b1e;
+  /* Define el color rojo claro */
+  color: #fca5a5;
+  /* Define el borde rojo oscuro */
+  border-color: #6b2b31;
+}
+
+/* Botón enviar en modo oscuro */
+
+/* Botón principal en modo oscuro */
+html.dark-mode .servicios-btn-enviar {
+  /* Define el fondo azul del botón */
+  background-color: #00377a;
+  /* Mantiene el texto blanco */
+  color: #ffffff;
+}
+
+/* Estado hover del botón en modo oscuro */
+html.dark-mode .servicios-btn-enviar:hover {
+  /* Oscurece el fondo del botón */
+  background-color: #002554;
+}
+
+/* Iconos Material Symbols en modo oscuro */
+
+/* Iconos Material Symbols dentro del encabezado */
+html.dark-mode .servicios-hero-encabezado
+.material-symbols-outlined {
+  /* Define el color apagado del icono */
+  color: #718096;
+}
+
+/* Animación de aparición de las alertas */
+@keyframes fadeIn {
+  /* Estado inicial de la animación */
+  from {
+    /* Hace transparente el elemento */
+    opacity: 0;
+    /* Desplaza el elemento ligeramente hacia arriba */
+    transform: translateY(-4px);
+  }
+
+  /* Estado final de la animación */
+  to {
+    /* Hace completamente visible el elemento */
+    opacity: 1;
+    /* Devuelve el elemento a su posición original */
+    transform: translateY(0);
+  }
+}

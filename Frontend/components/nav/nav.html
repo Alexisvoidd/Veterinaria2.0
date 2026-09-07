@@ -1,0 +1,295 @@
+<header class="vs-nav" id="main-nav">
+
+  <!-- Contenedor principal del navbar -->
+  <div class="vs-nav__container">
+
+
+    <!-- LOGO -->
+    <a
+      class="vs-nav__logo"
+      href="index.html"
+      data-nav="inicio"
+      aria-label="VetSalud - Inicio"
+    >
+
+      <!-- Imagen del logo -->
+      <img
+        id="vs-nav-logo-img"
+        src="../assets/logo.png"
+        alt="VetSalud Veterinaria"
+      />
+
+    </a>
+
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav
+      class="vs-nav__links"
+      id="vs-nav-links"
+      aria-label="Navegación principal"
+    >
+
+      <!-- Enlace al inicio -->
+      <a
+        href="index.html"
+        data-nav="inicio"
+      >
+        Inicio
+      </a>
+
+
+      <!-- DESPLEGABLE DE SERVICIOS -->
+      <div
+        class="vs-nav__dropdown"
+        id="vs-nav-dropdown-servicios"
+      >
+
+        <!-- Botón/enlace principal de servicios -->
+        <a
+          href="servicios.html"
+          class="vs-nav__dropdown-toggle"
+          data-nav="servicios"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+
+          <!-- Nombre de la sección -->
+          <span>
+            Servicios
+          </span>
+
+          <!-- Icono de flecha -->
+          <span class="material-symbols-outlined vs-nav__dropdown-arrow">
+            expand_more
+          </span>
+
+        </a>
+
+
+        <!-- MENÚ DESPLEGABLE -->
+        <div
+          class="vs-nav__dropdown-menu"
+          aria-label="Menú desplegable de servicios"
+        >
+
+          <!-- Lista de servicios -->
+          <div class="vs-nav__dropdown-list">
+
+
+            <!-- Diagnóstico avanzado -->
+            <a
+              href="servicios.html?servicio=diagnostico"
+              class="vs-nav__dropdown-item"
+              data-servicio-link="diagnostico"
+            >
+              Diagnóstico avanzado
+            </a>
+
+
+            <!-- Recorte de uñas -->
+            <a
+              href="servicios.html?servicio=unas"
+              class="vs-nav__dropdown-item"
+              data-servicio-link="unas"
+            >
+              Recorte de uñas
+            </a>
+
+
+            <!-- Vacunas de refuerzo -->
+            <a
+              href="servicios.html?servicio=vacunacion"
+              class="vs-nav__dropdown-item"
+              data-servicio-link="vacunacion"
+            >
+              Vacunas de refuerzo
+            </a>
+
+
+            <!-- Atención preventiva -->
+            <a
+              href="servicios.html?servicio=bienestar"
+              class="vs-nav__dropdown-item"
+              data-servicio-link="bienestar"
+            >
+              Exámenes de atención preventiva
+            </a>
+
+
+            <!-- Cuidados reproductivos -->
+            <a
+              href="servicios.html?servicio=esterilizacion"
+              class="vs-nav__dropdown-item"
+              data-servicio-link="esterilizacion"
+            >
+              Cuidados reproductivos
+            </a>
+
+
+            <!-- Procedimientos quirúrgicos -->
+            <a
+              href="servicios.html?servicio=cirugia"
+              class="vs-nav__dropdown-item"
+              data-servicio-link="cirugia"
+            >
+              Procedimientos quirúrgicos
+            </a>
+
+
+            <!-- Cuidado dental -->
+            <a
+              href="servicios.html?servicio=dental"
+              class="vs-nav__dropdown-item"
+              data-servicio-link="dental"
+            >
+              Cuidado y limpieza dental
+            </a>
+
+
+            <!-- Microchips -->
+            <a
+              href="servicios.html?servicio=microchips"
+              class="vs-nav__dropdown-item"
+              data-servicio-link="microchips"
+            >
+              Microchips para mascotas
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Enlace a la tienda -->
+      <a
+        href="tienda.html"
+        data-nav="tienda"
+      >
+        Tienda
+      </a>
+
+
+      <!-- Enlace al blog -->
+      <a
+        href="blog.html"
+        data-nav="blog"
+      >
+        Blog
+      </a>
+
+
+      <!-- Enlace a contacto -->
+      <a
+        href="contactanos.html"
+        data-nav="contactanos"
+      >
+        Contáctanos
+      </a>
+
+    </nav>
+
+
+    <!-- ACCIONES DEL NAVBAR -->
+    <div class="vs-nav__actions">
+
+
+      <!-- CARRITO -->
+      <a
+        class="vs-nav__cart"
+        href="carrito.html"
+        data-nav="carrito"
+        aria-label="Ver carrito"
+      >
+
+        <!-- Icono del carrito -->
+        <span
+          class="material-symbols-outlined"
+          aria-hidden="true"
+        >
+          shopping_cart
+        </span>
+
+        <!-- Contador de productos -->
+        <span
+          class="vs-nav__cart-count"
+          id="nav-cart-count"
+        >
+          0
+        </span>
+
+      </a>
+
+
+      <!-- INICIAR SESIÓN -->
+      <a
+        class="vs-nav__login"
+        href="login.html"
+        data-nav="login"
+      >
+
+        <!-- Icono de usuario -->
+        <span
+          class="material-symbols-outlined"
+          aria-hidden="true"
+        >
+          person
+        </span>
+
+        <!-- Texto del enlace -->
+        <span>
+          Iniciar sesión
+        </span>
+
+      </a>
+
+
+      <!-- AGENDAR CITA -->
+      <a
+        class="vs-nav__cta"
+        href="agendar-citas.html"
+      >
+
+        <!-- Icono de cita -->
+        <span
+          class="material-symbols-outlined"
+          aria-hidden="true"
+        >
+          event_available
+        </span>
+
+        <!-- Texto del botón -->
+        <span>
+          Agendar cita
+        </span>
+
+      </a>
+
+
+      <!-- BOTÓN DEL MENÚ MÓVIL -->
+      <button
+        class="vs-nav__toggle"
+        id="vs-nav-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="vs-nav-links"
+      >
+
+        <!-- Icono del menú móvil -->
+        <span
+          class="material-symbols-outlined"
+          id="vs-nav-icon"
+          aria-hidden="true"
+        >
+          menu
+        </span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>

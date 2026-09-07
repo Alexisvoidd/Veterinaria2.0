@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VetSalud - Centro Veterinario Especializado</title>
+
+  <!-- Fuentes oficiales de Google: Montserrat, Open Sans, Jost y Raleway -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700;800&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Iconos de Material Symbols Outlined y Font Awesome -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Hoja de Estilos Principal -->
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+<body data-page="inicio">
+
+  <div class="inicio-pagina">
+
+    
+    <div id="nav-container"></div>
+
+    <main id="hogar">
+      
+      <section class="inicio-seccion-hero">
+        <!-- Imagen de fondo -->
+        <img src="../assets/images/productos/fondo_pag_principal.jpg" alt="Perro y gato descansando juntos en VetSalud" class="inicio-hero-imagen-fondo">
+        
+        <!-- Capa de degradado oscuro -->
+        <div class="inicio-hero-degradado-fondo"></div>
+
+        <!-- Contenido textual y botón -->
+        <div class="inicio-hero-contenido-centrado">
+          <h1 class="inicio-hero-titulo">
+            La salud de su mascota, nuestra máxima prioridad.
+          </h1>
+          <p class="inicio-hero-descripcion">
+            Bienvenidos a la Clínica Veterinaria VetSalud, donde la ciencia médica de vanguardia se une a la compasión más profunda. Nos dedicamos a garantizar que su perro o gato disfrute de una vida larga, feliz y saludable. Desde vacunas esenciales para cachorros y gatitos hasta cirugías complejas, nuestro equipo ofrece servicios veterinarios de primera categoría.
+          </p>
+          <a href="agendar-citas.html" class="inicio-hero-boton-solicitar" id="btn-hero-solicitar">
+            <span>Solicite una cita</span>
+          </a>
+        </div>
+      </section>
+
+    
+      <section id="servicios" class="inicio-seccion-servicios">
+        <div class="inicio-contenedor">
+          
+          <div class="inicio-seccion-encabezado">
+            <h2 class="inicio-seccion-titulo">
+              Servicios esenciales adaptados a las necesidades de su acompañante.
+            </h2>
+            <p class="inicio-seccion-subtitulo">
+              Nos especializamos en la gestión proactiva de la salud animal. Descubra por qué nos destacamos por nuestros chequeos rutinarios, análisis de laboratorio precisos en nuestras instalaciones y cirugía experta de tejidos blandos.
+            </p>
+          </div>
+
+          <!-- Contenedor del Carrusel -->
+          <div class="inicio-carrusel-contenedor">
+            <!-- Flecha Izquierda -->
+            <button type="button" class="inicio-carrusel-flecha izquierda" id="carrusel-btn-izq" aria-label="Ver servicios anteriores">
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+
+            <!-- Pista Deslizable con 8 Tarjetas vinculadas a agendar-citas -->
+            <div class="inicio-carrusel-pista" id="carrusel-servicios-pista">
+              
+              <!-- Tarjeta 1 -->
+              <a href="servicios.html?servicio=diagnostico" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Diagnóstico avanzado">
+                <div class="inicio-servicio-imagen-contenedor">
+                  <img src="../assets/images/productos/servicio_img_1.jpg" alt="Diagnóstico avanzado" class="inicio-servicio-imagen-foto" loading="lazy">
+                </div>
+                <div class="inicio-servicio-pie">
+                  <h3 class="inicio-servicio-pie-titulo">Diagnóstico avanzado</h3>
+                </div>
+              </a>
+
+              <!-- Tarjeta 2 -->
+              <a href="servicios.html?servicio=unas" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Recorte de uñas">
+                <div class="inicio-servicio-imagen-contenedor">
+                  <img src="../assets/images/productos/servicio_img_2.jpg" alt="Recorte de uñas cómodo para perros y gatos" class="inicio-servicio-imagen-foto" loading="lazy">
+                </div>
+                <div class="inicio-servicio-pie">
+                  <h3 class="inicio-servicio-pie-titulo">Recorte de uñas cómodos</h3>
+                </div>
+              </a>
+
+              <!-- Tarjeta 3 -->
+              <a href="servicios.html?servicio=vacunacion" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Dosis de refuerzo y vacunación">
+                <div class="inicio-servicio-imagen-contenedor">
+                  <img src="../assets/images/productos/servicio_img_3.jpg" alt="Dosis de refuerzo y vacunación" class="inicio-servicio-imagen-foto" loading="lazy">
+                </div>
+                <div class="inicio-servicio-pie">
+                  <h3 class="inicio-servicio-pie-titulo">¿Por qué son importantes las dosis de refuerzo?</h3>
+                </div>
+              </a>
+
+              <!-- Tarjeta 4 -->
+              <a href="servicios.html?servicio=bienestar" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Exámenes de bienestar">
+                <div class="inicio-servicio-imagen-contenedor">
+                  <img src="../assets/images/productos/servicio_img_4.jpg" alt="Exámenes de bienestar y prevención" class="inicio-servicio-imagen-foto" loading="lazy">
+                </div>
+                <div class="inicio-servicio-pie">
+                  <h3 class="inicio-servicio-pie-titulo">Exámenes de bienestar y atención preventiva</h3>
+                </div>
+              </a>
+
+              <!-- Tarjeta 5 -->
+              <a href="servicios.html?servicio=esterilizacion" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Esterilización">
+                <div class="inicio-servicio-imagen-contenedor">
+                  <img src="../assets/images/productos/servicio_img_5.jpg" alt="Cuidado reproductivo y esterilización" class="inicio-servicio-imagen-foto" loading="lazy">
+                </div>
+                <div class="inicio-servicio-pie">
+                  <h3 class="inicio-servicio-pie-titulo">Cuidado reproductivo y esterilización responsable</h3>
+                </div>
+              </a>
+
+              <!-- Tarjeta 6 -->
+              <a href="servicios.html?servicio=cirugia" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Procedimientos quirúrgicos">
+                <div class="inicio-servicio-imagen-contenedor">
+                  <img src="../assets/images/productos/servicio_img_7.jpg" alt="Procedimientos quirúrgicos" class="inicio-servicio-imagen-foto" loading="lazy">
+                </div>
+                <div class="inicio-servicio-pie">
+                  <h3 class="inicio-servicio-pie-titulo">Procedimientos quirúrgicos y seguridad anestésica</h3>
+                </div>
+              </a>
+
+              <!-- Tarjeta 7 -->
+              <a href="servicios.html?servicio=dental" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Limpieza dental">
+                <div class="inicio-servicio-imagen-contenedor">
+                  <img src="../assets/images/productos/servicio_img_6.jpg" alt="Limpieza dental profesional" class="inicio-servicio-imagen-foto" loading="lazy">
+                </div>
+                <div class="inicio-servicio-pie">
+                  <h3 class="inicio-servicio-pie-titulo">Cuidado y limpieza dental profesional</h3>
+                </div>
+              </a>
+
+              <!-- Tarjeta 8 -->
+              <a href="servicios.html?servicio=microchips" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Microchips y diagnósticos">
+                <div class="inicio-servicio-imagen-contenedor">
+                  <img src="../assets/images/productos/servicio_img_8.jpg" alt="Microchips y diagnósticos" class="inicio-servicio-imagen-foto" loading="lazy">
+                </div>
+                <div class="inicio-servicio-pie">
+                  <h3 class="inicio-servicio-pie-titulo">Microchips de identificación y pruebas diagnósticas</h3>
+                </div>
+              </a>
+
+            </div>
+
+            <!-- Flecha Derecha -->
+            <button type="button" class="inicio-carrusel-flecha derecha" id="carrusel-btn-der" aria-label="Ver más servicios">
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      
+      <!-- Sección Nosotros / Por qué confiar -->
+      <section id="nosotros" class="inicio-seccion-destacada">
+        <div class="inicio-contenedor">
+          <div class="inicio-destacada-grid">
+            
+            <!-- Contenido textual -->
+            <div class="inicio-destacada-contenido">
+              <h2 class="inicio-destacada-titulo">Por qué las familias confían en VetSalud</h2>
+              <p class="inicio-destacada-descripcion">
+                Los dueños de mascotas eligen VetSalud porque combinamos diagnósticos avanzados internos con un trato cálido e individualizado, tratando a cada mascota como si fuera de la familia. Con una comunicación empática y un equipo reconocido por su excelencia, la clínica ofrece atención moderna y eficiente sin perder nunca la calidez humana.
+              </p>
+              <a href="blog.html" class="inicio-boton">Más información</a>
+            </div>
+
+            <!-- Imagen del equipo (3 veterinarios) -->
+            <div class="inicio-destacada-imagen-wrap">
+              <img src="../assets/images/productos/blog-1.png" alt="Equipo profesional de la Clínica Veterinaria VetSalud" class="inicio-destacada-imagen" loading="lazy">
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Blog / Recursos del propietario -->
+      <section id="blog" class="inicio-seccion-destacada inicio-seccion-destacada-alt">
+        <div class="inicio-contenedor">
+          <div class="inicio-destacada-grid invertido">
+            
+            <!-- Imagen del blog -->
+            <div class="inicio-destacada-imagen-wrap">
+              <img src="../assets/images/productos/blog-2.jpg" alt="Mascotas felices recibiendo cariño y cuidados en VetSalud" class="inicio-destacada-imagen" loading="lazy">
+            </div>
+
+            <!-- Contenido textual -->
+            <div class="inicio-destacada-contenido">
+              <h2 class="inicio-destacada-titulo">Recursos del propietario</h2>
+              <p class="inicio-destacada-descripcion">
+                Mantente informado y empoderado con el blog de la Clínica Veterinaria VetSalud, donde compartimos consejos prácticos para que tu mascota se mantenga sana, feliz y libre de estrés en cada etapa de su vida. Cada publicación está diseñada para ayudarte a tomar decisiones seguras y compasivas para tu compañero de cuatro patas.
+              </p>
+              <a href="blog.html" class="inicio-boton">Leer más</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="testimonios" class="inicio-seccion-testimonios">
+        <div class="inicio-contenedor">
+          
+          <div class="inicio-seccion-encabezado">
+            <h2 class="inicio-seccion-titulo">Testimonios de Familias Felices</h2>
+            <p class="inicio-seccion-subtitulo">
+              Conoce las experiencias reales de quienes confían la vida de sus mascotas en nuestras manos.
+            </p>
+          </div>
+
+          <div class="inicio-testimonios-cuadricula">
+            
+            <article class="inicio-testimonio-tarjeta">
+              <p class="inicio-testimonio-cita">
+                "La atención en VetSalud es excepcional. Salvaron a mi perro en una emergencia con una dedicación y cariño incomparables."
+              </p>
+              <div class="inicio-testimonio-autor">
+                <h4 class="inicio-testimonio-nombre">Carlos Mendoza</h4>
+                <span class="inicio-testimonio-info">Dueño de Toby (Golden Retriever)</span>
+              </div>
+            </article>
+
+            <article class="inicio-testimonio-tarjeta">
+              <p class="inicio-testimonio-cita">
+                "El equipo médico es muy profesional y empático. Las instalaciones están impecables y mi gata nunca se estresa durante sus consultas."
+              </p>
+              <div class="inicio-testimonio-autor">
+                <h4 class="inicio-testimonio-nombre">Valeria Gómez</h4>
+                <span class="inicio-testimonio-info">Dueña de Luna (Gata Persa)</span>
+              </div>
+            </article>
+
+            <article class="inicio-testimonio-tarjeta">
+              <p class="inicio-testimonio-cita">
+                "Llevo más de 4 años confiando la salud de mis mascotas a VetSalud. Los mejores veterinarios y precios muy justos."
+              </p>
+              <div class="inicio-testimonio-autor">
+                <h4 class="inicio-testimonio-nombre">Andrés Morales</h4>
+                <span class="inicio-testimonio-info">Dueño de Rocky y Mia</span>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      
+      <section id="faq" class="inicio-seccion-faq">
+        <div class="inicio-contenedor">
+          
+          <div class="inicio-seccion-encabezado">
+            <h2 class="inicio-seccion-titulo">Preguntas Frecuentes</h2>
+            <p class="inicio-seccion-subtitulo">
+              Resolvemos las dudas más comunes sobre nuestros servicios y procedimientos.
+            </p>
+          </div>
+
+          <div class="inicio-faq-lista">
+            
+            <div class="inicio-faq-item abierto">
+              <button type="button" class="inicio-faq-boton" aria-expanded="true">
+                <span>¿Atienden urgencias 24/7?</span>
+                <span class="material-symbols-outlined inicio-faq-icono">add</span>
+              </button>
+              <div class="inicio-faq-respuesta">
+                No, nuestros servicios cuentan con un horario de Lunes a Sabado desde las 8:00 AM a 6:00 PM.
+              </div>
+            </div>
+
+            <div class="inicio-faq-item">
+              <button type="button" class="inicio-faq-boton" aria-expanded="false">
+                <span>¿Qué documentos necesito para la primera cita?</span>
+                <span class="material-symbols-outlined inicio-faq-icono">add</span>
+              </button>
+              <div class="inicio-faq-respuesta">
+                Te recomendamos traer la cartilla de vacunación previa de tu mascota, su historial clínico anterior (si aplica) y un documento de identidad del propietario.
+              </div>
+            </div>
+
+            <div class="inicio-faq-item">
+              <button type="button" class="inicio-faq-boton" aria-expanded="false">
+                <span>¿Cómo agendar un servicio o consulta especializada?</span>
+                <span class="material-symbols-outlined inicio-faq-icono">add</span>
+              </button>
+              <div class="inicio-faq-respuesta">
+                Puedes agendar directamente haciendo clic en cualquiera de nuestras tarjetas de servicios o en el botón "Solicite una cita".
+              </div>
+            </div>
+
+            <div class="inicio-faq-item">
+              <button type="button" class="inicio-faq-boton" aria-expanded="false">
+                <span>¿Tienen planes de salud preventiva?</span>
+                <span class="material-symbols-outlined inicio-faq-icono">add</span>
+              </button>
+              <div class="inicio-faq-respuesta">
+                Sí, contamos con planes mensuales y anuales de bienestar que incluyen consultas ilimitadas, vacunas, desparasitaciones periódicas y descuentos especiales.
+              </div>
+            </div>
+
+            <div class="inicio-faq-item">
+              <button type="button" class="inicio-faq-boton" aria-expanded="false">
+                <span>¿Realizan cirugías complejas con anestesia segura?</span>
+                <span class="material-symbols-outlined inicio-faq-icono">add</span>
+              </button>
+              <div class="inicio-faq-respuesta">
+                Totalmente. Todas nuestras cirugías cuentan con monitoreo multiparamétrico avanzado continuo y un anestesiólogo veterinario dedicado durante todo el procedimiento.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+  </div>
+  
+  <div id="footer-container"></div>
+
+
+  <!-- ACCESIBILIDAD -->
+<div id="accessibility-container"></div>
+
+<!-- COMPONENT LOADER -->
+<script src="../js/component-loader.js"></script>
+
+<!-- JS DE LA PÁGINA -->
+<script src="../js/pages/inicio.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/base.css" />
+    <meta name="description" content="Agenda una cita en VetSalud." />
+    <title>Agendar citas | VetSalud</title>
+    <link rel="stylesheet" href="../css/agendar-citas.css" />
+  </head>
+
+  <body data-page="agendar-citas">
+    <div id="nav-container"></div>
+    <main class="page-shell">
+      <section class="page-hero">
+        <div class="page-container">
+          <span class="eyebrow">Citas VetSalud</span>
+          <h1>Agenda la atención de tu mascota.</h1>
+          <p>
+            Selecciona el servicio, el día y el horario que prefieras. Los datos
+            se validan antes de registrar la solicitud.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="page-container">
+          <div class="appointment-card">
+            <div class="appointment-intro">
+              <span class="eyebrow">Reserva en pocos pasos</span>
+              <h2>Solicitar una cita</h2>
+              <p>
+                Completa la información del propietario, la mascota y la cita.
+              </p>
+            </div>
+            <form id="appointment-form" novalidate>
+              <div class="form-section">
+                <h3>Datos del propietario</h3>
+                <div class="form-grid">
+                  <div class="field" id="field-owner-name">
+                    <label for="owner-name">Nombre completo *</label
+                    ><input id="owner-name" required /><small class="error"
+                      >Escribe tu nombre completo.</small
+                    >
+                  </div>
+                  <div class="field" id="field-owner-email">
+                    <label for="owner-email">Correo *</label
+                    ><input id="owner-email" type="email" required /><small
+                      class="error"
+                      >Ingresa un correo válido.</small
+                    >
+                  </div>
+                  <div class="field" id="field-owner-phone">
+                    <label for="owner-phone">Teléfono *</label
+                    ><input
+                      id="owner-phone"
+                      type="tel"
+                      inputmode="numeric"
+                      required
+                    /><small class="error">Ingresa un teléfono válido.</small>
+                  </div>
+                </div>
+              </div>
+              <div class="form-section">
+                <h3>Datos de la mascota</h3>
+                <div class="form-grid">
+                  <div class="field" id="field-pet-name">
+                    <label for="pet-name">Mascota *</label
+                    ><select id="pet-name" required>
+                      <option value="">Cargando tus mascotas...</option></select
+                    ><small class="error"
+                      >Selecciona una mascota registrada.</small
+                    >
+                  </div>
+                  <div class="field" id="field-species">
+                    <label for="species">Especie *</label
+                    ><select id="species" required>
+                      <option value="">Selecciona</option>
+                      <option>Perro</option>
+                      <option>Gato</option>
+                      <option>Otro</option></select
+                    ><small class="error">Selecciona la especie.</small>
+                  </div>
+                </div>
+              </div>
+              <div class="form-section">
+                <h3>Datos de la cita</h3>
+                <div class="form-grid">
+                  <div class="field" id="field-service">
+                    <label for="service">Servicio *</label
+                    ><select id="service" required>
+                      <option value="">Selecciona un servicio</option>
+                      <option>Consulta general</option>
+                      <option>Vacunación</option>
+                      <option>Odontología</option>
+                      <option>Diagnóstico</option>
+                      <option>Cirugía</option></select
+                    ><small class="error">Selecciona un servicio.</small>
+                  </div>
+                  <div class="field" id="field-date">
+                    <label for="appointment-date">Fecha *</label
+                    ><input id="appointment-date" type="date" required /><small
+                      class="error"
+                      >Selecciona una fecha válida.</small
+                    >
+                  </div>
+                  <div class="field" id="field-time">
+                    <label for="appointment-time">Hora *</label
+                    ><select id="appointment-time" required>
+                      <option value="">
+                        Primero selecciona una fecha
+                      </option></select
+                    ><small class="error">Selecciona un horario.</small>
+                  </div>
+                  <div class="field field-full" id="field-reason">
+                    <label for="reason">Motivo de la cita *</label
+                    ><textarea
+                      id="reason"
+                      minlength="10"
+                      maxlength="300"
+                      required
+                      placeholder="Cuéntanos brevemente el motivo de la consulta..."
+                    ></textarea
+                    ><small class="error"
+                      >Escribe al menos 10 caracteres.</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <label class="check-row"
+                ><input id="appointment-consent" type="checkbox" /><span
+                  >Acepto que estos datos sean utilizados para gestionar mi
+                  solicitud de cita.</span
+                ></label
+              >
+              <div
+                id="appointment-message"
+                class="form-message"
+                role="alert"
+              ></div>
+              <button class="btn btn-primary" type="submit">
+                <span class="material-symbols-outlined">event_available</span
+                >Solicitar cita
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="accessibility-container"></div>
+    <!-- ==========================================
+         FOOTER GLOBAL (cargado automáticamente)
+    =========================================== -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/pages/agendar-citas.js"></script>
+  </body>
+</html>

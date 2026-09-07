@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - VetSalud</title>
+
+  <!-- Fuentes oficiales de Google: Montserrat, Open Sans, Jost y Raleway -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700;800&family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Iconos de Material Symbols Outlined y Font Awesome -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Hojas de estilos -->
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body data-page="login">
+
+  <div class="login-pagina">
+    <!-- Navegación modular -->
+    <div id="nav-container"></div>
+
+    <div class="login-contenedor">
+      
+
+
+      <section class="login-seccion-visual">
+        <!-- Imagen principal de atención veterinaria -->
+        <img 
+          src="../assets/images/productos/logo_inicio_sesion.png" 
+          alt="Atención veterinaria profesional VetSalud" 
+          class="login-imagen-fondo"
+        >
+        
+        <!-- Capa de degradado para resaltar el contenido textual -->
+        <div class="login-capa-degradado"></div>
+
+        <!-- Tarjeta flotante con efecto de cristal -->
+        <div class="login-contenedor-tarjeta-flotante">
+          <div class="login-tarjeta-flotante">
+            <h2 class="login-tarjeta-titulo">
+              Cuidado profesional para tus compañeros.
+            </h2>
+            <p class="login-tarjeta-descripcion">
+              Experimenta una atención veterinaria diseñada con comodidad, empatía y excelencia.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="login-seccion-formulario">
+        <div class="login-caja-formulario">
+          
+          <!-- Logotipo oficial de VetSalud -->
+          <div class="login-logo-contenedor">
+            <a href="index.html">
+              <img 
+                src="../assets/logo.png" 
+                alt="Logotipo de VetSalud Veterinaria" 
+                class="login-logo-imagen"
+              >
+            </a>
+          </div>
+
+          <!-- Encabezado del formulario -->
+          <div class="login-encabezado">
+            <h1 class="login-titulo">
+              Bienvenido de nuevo
+            </h1>
+            <p class="login-subtitulo">
+              Por favor, inicia sesión para gestionar el historial médico y citas de tu mascota.
+            </p>
+          </div>
+
+          <!-- Formulario de autenticación -->
+          <form class="formulario-login" id="form-login">
+            
+            <!-- Campo: Correo Electrónico -->
+            <div class="campo-grupo">
+              <label for="correo" class="campo-etiqueta">
+                Correo electrónico
+              </label>
+              <div class="campo-envoltorio-input">
+                <span class="material-symbols-outlined campo-icono-izquierdo">mail</span>
+                <input 
+                  type="email" 
+                  id="correo" 
+                  name="correo" 
+                  placeholder="tu_correo@ejemplo.com" 
+                  required 
+                  class="campo-entrada" 
+                  autocomplete="email"
+                >
+              </div>
+            </div>
+
+            <!-- Campo: Contraseña con alternador de visibilidad -->
+            <div class="campo-grupo">
+              <div class="campo-fila-superior">
+                <label for="password" class="campo-etiqueta">
+                  Contraseña
+                </label>
+                <a href="recuperar_contrasena.html" class="campo-enlace-olvido">
+                  ¿Olvidaste tu contraseña?
+                </a>
+              </div>
+              <div class="campo-envoltorio-input">
+                <span class="material-symbols-outlined campo-icono-izquierdo">lock</span>
+                <input 
+                  type="password" 
+                  id="password" 
+                  name="password" 
+                  placeholder="••••••••" 
+                  required 
+                  class="campo-entrada campo-entrada-con-ojo" 
+                  autocomplete="current-password"
+                >
+                <button 
+                  type="button" 
+                  class="campo-boton-ojo" 
+                  id="btn-toggle-password"
+                  aria-label="Ver contraseña"
+                >
+                  <span class="material-symbols-outlined">visibility_off</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Opción: Recordarme -->
+            <div class="login-fila-opciones">
+              <label class="login-etiqueta-checkbox">
+                <input 
+                  type="checkbox" 
+                  id="recordarme" 
+                  name="recordarme" 
+                  class="login-checkbox"
+                >
+                <span>Recordarme</span>
+              </label>
+            </div>
+
+            <!-- Botón de envío de formulario -->
+            <button type="submit" class="login-boton-enviar">
+              <span>Iniciar Sesión</span>
+              <span class="material-symbols-outlined login-boton-icono">arrow_forward</span>
+            </button>
+          </form>
+
+          <!-- Enlace para registrarse -->
+          <div class="login-pie">
+            <p class="login-pie-texto">
+              ¿No tienes una cuenta?
+              <a href="registro.html" class="login-enlace-registro">
+                Regístrate
+              </a>
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+<div id="accessibility-container"></div>
+    <!-- ==========================================
+         FOOTER GLOBAL (cargado automáticamente)
+    =========================================== -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../js/component-loader.js"></script>
+  <script src="../js/pages/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+:root {
+    --primary: #1B4E9B; /* Color principal */
+    --secondary: #4BA3E3; /* Color secundario */
+    --tertiary: #6FCED9; /* Color terciario */
+}
+
+.vs-footer {
+    position: relative; /* Permite posicionar elementos */
+    background: var(--primary); /* Fondo principal */
+    color: #fff; /* Texto blanco */
+    margin-top: auto; /* Empuja el footer abajo */
+    overflow: hidden; /* Oculta contenido sobrante */
+    font-family: 'Raleway', 'Open Sans', sans-serif; /* Fuente */
+}
+
+.vs-footer__accent {
+    height: 6px; /* Alto de la franja */
+    display: flex; /* Usa flexbox */
+}
+
+.vs-footer__accent span:first-child {
+    flex: 1; /* Ocupa más espacio */
+    background: var(--secondary); /* Color secundario */
+}
+
+.vs-footer__accent span:last-child {
+    flex: .6; /* Ocupa menos espacio */
+    background: var(--tertiary); /* Color terciario */
+}
+
+.vs-footer__container {
+    width: min(1160px, calc(100% - 40px)); /* Define el ancho */
+    margin: auto; /* Centra el contenedor */
+    padding: 58px 0 24px; /* Espacio interno */
+}
+
+.vs-footer__grid {
+    display: grid; /* Usa CSS Grid */
+    grid-template-columns: 1.35fr .8fr 1.15fr 1.1fr; /* Define columnas */
+    gap: 36px; /* Espacio entre columnas */
+}
+
+.vs-footer__brand {
+    max-width: 330px; /* Limita el ancho */
+}
+
+.vs-footer__logo {
+    display: block; /* Muestra como bloque */
+    width: min(240px, 100%); /* Define el ancho */
+    height: auto; /* Mantiene proporción */
+    margin-bottom: 16px; /* Espacio inferior */
+}
+
+.vs-footer__brand p {
+    font-size: .85rem; /* Tamaño del texto */
+    line-height: 1.7; /* Altura de línea */
+    color: rgba(255, 255, 255, .82); /* Texto semitransparente */
+    margin: 0; /* Quita margen */
+}
+
+.vs-footer h2 {
+    font-size: 1.05rem; /* Tamaño del título */
+    margin: 5px 0 18px; /* Define márgenes */
+    color: #fff; /* Título blanco */
+    font-family: 'Montserrat', 'Host Grotesk', sans-serif; /* Fuente */
+    font-weight: 700; /* Texto grueso */
+}
+
+.vs-footer__links {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Ordena verticalmente */
+    gap: 8.5px; /* Espacio entre enlaces */
+}
+
+.vs-footer__links a {
+    width: max-content; /* Usa el ancho del contenido */
+    max-width: 100%; /* Evita que sobresalga */
+    color: rgba(255, 255, 255, .78); /* Color del enlace */
+    text-decoration: none; /* Quita subrayado */
+    font-size: .83rem; /* Tamaño del texto */
+    line-height: 1.4; /* Altura de línea */
+    transition: all .2s ease; /* Suaviza cambios */
+}
+
+.vs-footer__links a:hover {
+    color: #fff; /* Cambia a blanco */
+    transform: translateX(4px); /* Mueve a la derecha */
+}
+
+.vs-footer__socials {
+    display: flex; /* Usa flexbox */
+    gap: 10px; /* Espacio entre iconos */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.vs-footer__socials a {
+    width: 38px; /* Ancho del botón */
+    height: 38px; /* Alto del botón */
+    display: grid; /* Usa grid */
+    place-items: center; /* Centra el contenido */
+    border: 1px solid rgba(255, 255, 255, .25); /* Borde */
+    border-radius: 50%; /* Forma circular */
+    color: #fff; /* Icono blanco */
+    text-decoration: none; /* Quita subrayado */
+    background: rgba(255, 255, 255, .08); /* Fondo transparente */
+    transition: all .2s ease; /* Suaviza cambios */
+}
+
+.vs-footer__socials a:hover {
+    background: rgba(255, 255, 255, .2); /* Cambia el fondo */
+    transform: translateY(-2px); /* Sube el botón */
+    border-color: rgba(255, 255, 255, .5); /* Aclara el borde */
+}
+
+.vs-footer__socials .material-symbols-outlined {
+    font-size: 19px; /* Tamaño del icono */
+}
+
+.vs-footer__contact {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Ordena verticalmente */
+    gap: 13px; /* Espacio entre contactos */
+}
+
+.vs-footer__contact p {
+    display: flex; /* Usa flexbox */
+    align-items: flex-start; /* Alinea arriba */
+    gap: 10px; /* Espacio entre elementos */
+    margin: 0; /* Quita margen */
+    color: rgba(255, 255, 255, .8); /* Texto semitransparente */
+    font-size: .82rem; /* Tamaño del texto */
+    line-height: 1.55; /* Altura de línea */
+}
+
+.vs-footer__contact .material-symbols-outlined {
+    font-size: 20px; /* Tamaño del icono */
+    color: var(--tertiary); /* Color del icono */
+    flex-shrink: 0; /* Evita que se reduzca */
+}
+
+.vs-footer__contact a {
+    text-decoration: none; /* Quita subrayado */
+    color: inherit; /* Hereda el color */
+    transition: color .2s; /* Suaviza el color */
+}
+
+.vs-footer__contact a:hover {
+    color: #fff; /* Cambia a blanco */
+    text-decoration: underline; /* Agrega subrayado */
+}
+
+.vs-footer__bottom {
+    margin-top: 42px; /* Espacio superior */
+    padding-top: 20px; /* Espacio interno superior */
+    border-top: 1px solid rgba(255, 255, 255, .16); /* Línea superior */
+    display: flex; /* Usa flexbox */
+    justify-content: space-between; /* Separa elementos */
+    gap: 20px; /* Espacio entre elementos */
+    align-items: center; /* Centra verticalmente */
+}
+
+.vs-footer__bottom p,
+.vs-footer__bottom div {
+    margin: 0; /* Quita margen */
+    color: rgba(255, 255, 255, .65); /* Texto tenue */
+    font-size: .75rem; /* Tamaño pequeño */
+}
+
+.vs-footer__bottom div {
+    display: flex; /* Usa flexbox */
+    gap: 12px; /* Espacio entre elementos */
+}
+
+.vs-footer__bottom a {
+    text-decoration: none; /* Quita subrayado */
+    color: inherit; /* Hereda el color */
+    transition: color .2s; /* Suaviza el color */
+}
+
+.vs-footer__bottom a:hover {
+    color: #fff; /* Cambia a blanco */
+}
+
+@media(max-width:900px) {
+
+    .vs-footer__grid {
+        grid-template-columns: 1.2fr 1fr 1fr; /* Reduce columnas */
+    }
+
+    .vs-footer__grid > section:last-child {
+        grid-column: 1/-1; /* Ocupa toda la fila */
+    }
+
+    .vs-footer__brand {
+        max-width: none; /* Quita el límite */
+    }
+
+    .vs-footer__bottom {
+        align-items: flex-start; /* Alinea al inicio */
+        flex-direction: column; /* Ordena verticalmente */
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .vs-footer__container {
+        width: min(100% - 28px, 1160px); /* Ajusta el ancho */
+        padding-top: 45px; /* Reduce espacio superior */
+    }
+
+    .vs-footer__grid {
+        grid-template-columns: 1fr; /* Usa una columna */
+        gap: 30px; /* Espacio entre secciones */
+    }
+
+    .vs-footer__grid > section:first-child,
+    .vs-footer__grid > section:last-child {
+        grid-column: auto; /* Restablece la columna */
+    }
+
+    .vs-footer__logo {
+        width: 210px; /* Reduce el logo */
+    }
+
+    .vs-footer__bottom {
+        margin-top: 30px; /* Reduce espacio superior */
+    }
+
+    .vs-footer__bottom div {
+        flex-wrap: wrap; /* Permite saltar de línea */
+    }
+
+}

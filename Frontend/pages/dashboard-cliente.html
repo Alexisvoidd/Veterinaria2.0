@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Cliente | VetSalud</title>
+
+    <!-- Fuentes oficiales: Montserrat y Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos de Material Symbols Outlined -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <!-- Estilos del Dashboard -->
+    <link rel="stylesheet" href="../css/dashboard-cliente.css" />
+  </head>
+
+  <body data-page="dashboard-cliente">
+    <div class="dash-layout">
+      <aside class="dash-sidebar" id="dash-sidebar">
+        <!-- Logotipo -->
+        <div class="dash-sidebar__brand">
+          <a
+            href="index.html"
+            class="dash-sidebar__logo-link"
+            aria-label="VetSalud - Ir a Inicio"
+            title="Volver al inicio de VetSalud"
+          >
+            <img
+              src="../assets/logo.png"
+              alt="VetSalud Veterinaria"
+              class="dash-sidebar__logo-img"
+            />
+          </a>
+        </div>
+
+        <!-- Menú de Secciones del Dashboard -->
+        <nav class="dash-sidebar__nav" aria-label="Navegación del panel">
+          <button
+            type="button"
+            class="dash-nav-item active"
+            data-tab="mascotas"
+          >
+            <span class="material-symbols-outlined">pets</span>
+            <span>Mis Mascotas</span>
+          </button>
+
+          <button type="button" class="dash-nav-item" data-tab="citas">
+            <span class="material-symbols-outlined">calendar_month</span>
+            <span>Mis Citas</span>
+          </button>
+
+          <button type="button" class="dash-nav-item" data-tab="historial">
+            <span class="material-symbols-outlined">history_edu</span>
+            <span>Historial Médico</span>
+          </button>
+
+          <button type="button" class="dash-nav-item" data-tab="compras">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span>Mis Compras</span>
+          </button>
+
+          <button type="button" class="dash-nav-item" data-tab="perfil">
+            <span class="material-symbols-outlined">person</span>
+            <span>Mi Perfil</span>
+          </button>
+        </nav>
+
+        <!-- Botones de Acción Inferiores: Volver al Inicio y Cerrar Sesión -->
+        <div class="dash-sidebar__footer">
+          <a
+            href="index.html"
+            class="dash-home-btn"
+            title="Ir a la página principal sin cerrar sesión"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span>Volver al Inicio</span>
+          </a>
+          <a
+            href="login.html"
+            class="dash-logout-btn"
+            title="Cerrar sesión de cliente"
+          >
+            <span class="material-symbols-outlined">logout</span>
+            <span>Cerrar Sesión</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Overlay oscuro para dispositivos móviles -->
+      <div class="dash-backdrop" id="dash-backdrop"></div>
+
+      <main class="dash-main">
+        <!-- Barra superior responsive para móvil -->
+        <header class="dash-topbar">
+          <button
+            type="button"
+            class="dash-menu-toggle"
+            id="dash-menu-toggle"
+            aria-label="Abrir menú de navegación"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <span class="dash-topbar__title">VetSalud</span>
+          <div
+            class="dash-topbar__user"
+            data-navigate-tab="perfil"
+            style="cursor: pointer"
+            title="Ver mi perfil"
+          >
+            <span class="dash-topbar__avatar" id="topbar-avatar">CM</span>
+          </div>
+        </header>
+
+        <div class="dash-content-container">
+          <section class="dash-tab-content active" id="tab-mascotas">
+            <!-- Encabezado de Bienvenida Dinámico -->
+            <header class="dash-greeting">
+              <div class="dash-greeting__info">
+                <h1 class="dash-greeting__title" id="greeting-client-name">
+                  ¡Hola!
+                </h1>
+                <p class="dash-greeting__subtitle">
+                  Aquí tienes un resumen de la salud y estado clínico de tus
+                  mascotas.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="dash-btn-primary-action"
+                id="btn-top-nueva-mascota"
+              >
+                <span class="material-symbols-outlined">add</span>
+                <span>Registrar Mascota</span>
+              </button>
+            </header>
+
+            <!-- Tarjetas KPI / Estadísticas Generales -->
+            <div class="dash-kpi-grid">
+              <article class="dash-kpi-card" data-navigate-tab="mascotas">
+                <div class="dash-kpi-icon-wrap dash-kpi-icon--blue">
+                  <span class="material-symbols-outlined">pets</span>
+                </div>
+                <div class="dash-kpi-info">
+                  <span class="dash-kpi-label">MIS MASCOTAS</span>
+                  <strong class="dash-kpi-value" id="kpi-mascotas-count"
+                    >0</strong
+                  >
+                </div>
+              </article>
+
+              <article class="dash-kpi-card" data-navigate-tab="citas">
+                <div class="dash-kpi-icon-wrap dash-kpi-icon--teal">
+                  <span class="material-symbols-outlined">calendar_today</span>
+                </div>
+                <div class="dash-kpi-info">
+                  <span class="dash-kpi-label">PRÓXIMA CITA</span>
+                  <strong
+                    class="dash-kpi-value dash-kpi-value--text"
+                    id="kpi-proxima-cita"
+                    >Sin citas pendientes</strong
+                  >
+                </div>
+              </article>
+
+              <article class="dash-kpi-card" data-navigate-tab="historial">
+                <div class="dash-kpi-icon-wrap dash-kpi-icon--slate">
+                  <span class="material-symbols-outlined"
+                    >medical_services</span
+                  >
+                </div>
+                <div class="dash-kpi-info">
+                  <span class="dash-kpi-label">HISTORIAL MÉDICO</span>
+                  <strong class="dash-kpi-value" id="kpi-tratamientos-count"
+                    >0</strong
+                  >
+                </div>
+              </article>
+            </div>
+
+            <!-- Fila Destacada: Próxima Cita Dinámica & Accesos Rápidos -->
+            <div class="dash-featured-grid">
+              <!-- Hero Card Dinámica: Próxima Cita -->
+              <div id="hero-card-container">
+                <!-- Se inyecta dinámicamente con JS -->
+              </div>
+
+              <!-- Accesos Rápidos -->
+              <article class="dash-quick-card">
+                <h3 class="dash-quick-card__title">Accesos Rápidos</h3>
+
+                <div class="dash-quick-actions-list">
+                  <button
+                    type="button"
+                    class="dash-quick-action-item"
+                    id="btn-quick-agendar"
+                  >
+                    <span class="dash-quick-action-text">Solicitar Cita</span>
+                    <span
+                      class="material-symbols-outlined dash-quick-action-icon"
+                      >add_circle</span
+                    >
+                  </button>
+
+                  <button
+                    type="button"
+                    class="dash-quick-action-item"
+                    id="btn-quick-historial"
+                  >
+                    <span class="dash-quick-action-text"
+                      >Ver Historial Completo</span
+                    >
+                    <span
+                      class="material-symbols-outlined dash-quick-action-icon"
+                      >history</span
+                    >
+                  </button>
+
+                  <button
+                    type="button"
+                    class="dash-quick-action-item"
+                    id="btn-quick-nueva-mascota"
+                  >
+                    <span class="dash-quick-action-text"
+                      >Registrar Nueva Mascota</span
+                    >
+                    <span
+                      class="material-symbols-outlined dash-quick-action-icon"
+                      >pets</span
+                    >
+                  </button>
+
+                  <button
+                    type="button"
+                    class="dash-quick-action-item"
+                    data-navigate-tab="perfil"
+                  >
+                    <span class="dash-quick-action-text">Editar Mi Perfil</span>
+                    <span
+                      class="material-symbols-outlined dash-quick-action-icon"
+                      >manage_accounts</span
+                    >
+                  </button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Mis Mascotas Grid -->
+            <div class="dash-pets-section">
+              <div class="dash-pets-section__header">
+                <h2 class="dash-pets-section__title">Mis Mascotas</h2>
+                <span class="dash-pets-count-badge" id="pets-count-badge"
+                  >0 registradas</span
+                >
+              </div>
+
+              <div class="dash-pets-grid" id="pets-cards-container">
+                <!-- Inyectado dinámicamente según la especie con avatar y emoji -->
+              </div>
+            </div>
+          </section>
+
+          <section class="dash-tab-content" id="tab-citas">
+            <header class="dash-section-header">
+              <div>
+                <h1 class="dash-greeting__title">Mis Citas Médicas</h1>
+                <p class="dash-greeting__subtitle">
+                  Gestiona tus citas programadas, historial de atenciones y
+                  reprogramaciones.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="dash-btn-primary-action"
+                id="btn-agendar-desde-citas"
+              >
+                <span class="material-symbols-outlined">calendar_add_on</span>
+                <span>Nueva Cita</span>
+              </button>
+            </header>
+
+            <!-- Filtros de Estado de Citas -->
+            <div class="dash-filters-bar">
+              <button
+                type="button"
+                class="dash-filter-chip active"
+                data-filter-cita="todas"
+              >
+                Todas
+              </button>
+              <button
+                type="button"
+                class="dash-filter-chip"
+                data-filter-cita="CONFIRMADA"
+              >
+                Confirmadas
+              </button>
+              <button
+                type="button"
+                class="dash-filter-chip"
+                data-filter-cita="PENDIENTE"
+              >
+                Pendientes
+              </button>
+              <button
+                type="button"
+                class="dash-filter-chip"
+                data-filter-cita="ATENDIDA"
+              >
+                Atendidas
+              </button>
+              <button
+                type="button"
+                class="dash-filter-chip"
+                data-filter-cita="CANCELADA"
+              >
+                Canceladas
+              </button>
+            </div>
+
+            <!-- Lista de Citas (Formato Tarjetas Clínicas) -->
+            <div class="dash-cards-list" id="citas-container">
+              <!-- Renderizado dinámicamente con JS -->
+            </div>
+          </section>
+
+          <section class="dash-tab-content" id="tab-historial">
+            <header class="dash-section-header">
+              <div>
+                <h1 class="dash-greeting__title">
+                  Historial Clínico y Tratamientos
+                </h1>
+                <p class="dash-greeting__subtitle">
+                  Episodios médicos, diagnósticos, recetas y evolución de tus
+                  mascotas en VetSalud.
+                </p>
+              </div>
+              <div class="dash-filter-select-wrap">
+                <label for="filtro-mascota-historial" class="dash-label-inline"
+                  >Mascota:</label
+                >
+                <select
+                  id="filtro-mascota-historial"
+                  class="dash-select-filter"
+                >
+                  <option value="todas">Todas las mascotas</option>
+                </select>
+              </div>
+            </header>
+
+            <div class="dash-timeline-list" id="historial-container">
+              <!-- Renderizado dinámicamente con JS -->
+            </div>
+          </section>
+
+          <section class="dash-tab-content" id="tab-compras">
+            <header class="dash-section-header">
+              <div>
+                <h1 class="dash-greeting__title">Mis Compras y Pedidos</h1>
+                <p class="dash-greeting__subtitle">
+                  Consulta el historial de tickets, productos adquiridos y
+                  compras en la tienda VetSalud.
+                </p>
+              </div>
+              <a href="tienda.html" class="dash-btn-primary-action">
+                <span class="material-symbols-outlined">add_shopping_cart</span>
+                <span>Comprar en Tienda</span>
+              </a>
+            </header>
+
+            <!-- Filtros de compras -->
+            <div class="dash-filters-bar">
+              <button
+                type="button"
+                class="dash-filter-chip active"
+                data-filter-compra="todas"
+              >
+                Todos los pedidos
+              </button>
+              <button
+                type="button"
+                class="dash-filter-chip"
+                data-filter-compra="PAGADA"
+              >
+                Pagados
+              </button>
+              <button
+                type="button"
+                class="dash-filter-chip"
+                data-filter-compra="ANULADA"
+              >
+                Anulados
+              </button>
+            </div>
+
+            <!-- Lista de Pedidos -->
+            <div class="dash-orders-list" id="compras-container">
+              <!-- Renderizado dinámicamente con JS -->
+            </div>
+          </section>
+
+          <section class="dash-tab-content" id="tab-perfil">
+            <header class="dash-section-header">
+              <div>
+                <h1 class="dash-greeting__title">
+                  Mi Perfil y Datos Personales
+                </h1>
+                <p class="dash-greeting__subtitle">
+                  Gestiona tu información de contacto, identificación y
+                  seguridad de acceso.
+                </p>
+              </div>
+            </header>
+
+            <div class="dash-profile-grid">
+              <!-- Columna Izquierda: Tarjeta de Identificación y Resumen -->
+              <div class="dash-profile-sidebar-col">
+                <article class="dash-profile-card-summary">
+                  <div class="dash-profile-avatar-wrap">
+                    <div
+                      class="dash-profile-avatar"
+                      id="profile-avatar-display"
+                    >
+                      CM
+                    </div>
+                    <button
+                      type="button"
+                      class="dash-profile-avatar-btn"
+                      id="btn-cambiar-avatar"
+                      title="Cambiar foto de perfil"
+                    >
+                      <span class="material-symbols-outlined"
+                        >photo_camera</span
+                      >
+                    </button>
+                  </div>
+
+                  <h3 class="dash-profile-name" id="profile-summary-name">
+                    Cargando perfil...
+                  </h3>
+                  <span
+                    class="dash-badge dash-badge--green"
+                    style="margin: 0.5rem auto 1rem"
+                    >CUENTA ACTIVA</span
+                  >
+
+                  <div class="dash-profile-stats-list">
+                    <div class="dash-profile-stat-item">
+                      <span>Mascotas Registradas</span>
+                      <strong id="profile-stat-pets">0 </strong>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Columna Derecha: Formularios de Edición -->
+              <div class="dash-profile-main-col">
+                <!-- Formulario 1: Datos Personales y de Contacto (Tabla 'cliente') -->
+                <article class="dash-form-card">
+                  <div class="dash-form-card__header">
+                    <span class="material-symbols-outlined dash-form-card__icon"
+                      >badge</span
+                    >
+                    <div>
+                      <h3 class="dash-form-card__title">
+                        Información Personal y de Contacto
+                      </h3>
+                      <p class="dash-form-card__sub">
+                        Datos vinculados a tu historial de propietario e
+                        historias clínicas.
+                      </p>
+                    </div>
+                  </div>
+
+                  <form id="form-editar-perfil" class="dash-profile-form">
+                    <div class="dash-form-row">
+                      <div class="dash-form-group">
+                        <label for="perfil-nombre">Nombre(s) *</label>
+                        <input
+                          type="text"
+                          id="perfil-nombre"
+                          name="nombre"
+                          placeholder="Tus nombres"
+                          required
+                          minlength="2"
+                          maxlength="100"
+                          pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,100}"
+                          class="dash-input"
+                        />
+                      </div>
+                      <div class="dash-form-group">
+                        <label for="perfil-apellido">Apellido(s) *</label>
+                        <input
+                          type="text"
+                          id="perfil-apellido"
+                          name="apellido"
+                          placeholder="Tus apellidos"
+                          required
+                          minlength="2"
+                          maxlength="100"
+                          pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,100}"
+                          class="dash-input"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="dash-form-row">
+                      <div class="dash-form-group">
+                        <label for="perfil-tipo-doc">Tipo de Documento *</label>
+                        <select
+                          id="perfil-tipo-doc"
+                          name="tipo_documento"
+                          required
+                          class="dash-select"
+                        >
+                          <option value="CC" selected>
+                            C.C - Cédula de Ciudadanía
+                          </option>
+                          <option value="TI">
+                            C.E - Cédula de Extranjería
+                          </option>
+                          <option value="PAS">PAS - Pasaporte</option>
+                        </select>
+                      </div>
+                      <div class="dash-form-group">
+                        <label for="perfil-documento"
+                          >Número de Documento *</label
+                        >
+                        <input
+                          type="text"
+                          id="perfil-documento"
+                          name="documento"
+                          placeholder="Número de identificación"
+                          required
+                          minlength="5"
+                          maxlength="20"
+                          pattern="[0-9]{5,20}"
+                          inputmode="numeric"
+                          class="dash-input"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="dash-form-row">
+                      <div class="dash-form-group">
+                        <label for="perfil-telefono1"
+                          >Teléfono Principal *</label
+                        >
+                        <input
+                          type="tel"
+                          id="perfil-telefono1"
+                          name="telefono_1"
+                          placeholder="3001234567"
+                          required
+                          minlength="7"
+                          maxlength="20"
+                          pattern="[0-9]{7,20}"
+                          inputmode="numeric"
+                          class="dash-input"
+                        />
+                      </div>
+                      <div class="dash-form-group">
+                        <label for="perfil-telefono2"
+                          >Teléfono Secundario (Opcional)</label
+                        >
+                        <input
+                          type="tel"
+                          id="perfil-telefono2"
+                          name="telefono_2"
+                          class="dash-input"
+                          placeholder="Ej. Teléfono alternativo"
+                          minlength="7"
+                          maxlength="20"
+                          pattern="[0-9]{7,20}"
+                          inputmode="numeric"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="dash-form-row">
+                      <div class="dash-form-group">
+                        <label for="perfil-correo">Correo Electrónico *</label>
+                        <input
+                          type="email"
+                          id="perfil-correo"
+                          name="correo"
+                          placeholder="correo@ejemplo.com"
+                          required
+                          maxlength="120"
+                          class="dash-input"
+                        />
+                      </div>
+                      <div class="dash-form-group">
+                        <label for="perfil-nacimiento"
+                          >Fecha de Nacimiento</label
+                        >
+                        <input
+                          type="date"
+                          id="perfil-nacimiento"
+                          name="fecha_nacimiento"
+                          class="dash-input"
+                          max="9999-12-31"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="dash-form-group">
+                      <label for="perfil-direccion"
+                        >Dirección de Residencia</label
+                      >
+                      <input
+                        type="text"
+                        id="perfil-direccion"
+                        name="direccion"
+                        class="dash-input"
+                        placeholder="Dirección para entrega de domicilios"
+                        maxlength="180"
+                        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü0-9 #.,°\-]{1,180}"
+                      />
+                    </div>
+
+                    <div class="dash-profile-actions">
+                      <button type="submit" class="dash-btn dash-btn--primary">
+                        <span class="material-symbols-outlined">save</span>
+                        <span>Guardar Cambios de Perfil</span>
+                      </button>
+                    </div>
+                  </form>
+                </article>
+
+                <!-- Formulario 2: Seguridad y Cambio de Contraseña (Tabla 'usuario') -->
+                <article class="dash-form-card" style="margin-top: 1.5rem">
+                  <div class="dash-form-card__header">
+                    <span class="material-symbols-outlined dash-form-card__icon"
+                      >lock_reset</span
+                    >
+                    <div>
+                      <h3 class="dash-form-card__title">
+                        Seguridad y Cambio de Contraseña
+                      </h3>
+                      <p class="dash-form-card__sub">
+                        Mantén protegida tu cuenta actualizando tu clave de
+                        acceso periódicamente.
+                      </p>
+                    </div>
+                  </div>
+
+                  <form id="form-cambiar-password" class="dash-profile-form">
+                    <div class="dash-form-group">
+                      <label for="pass-actual">Contraseña Actual *</label>
+                      <div class="dash-password-field">
+                        <input
+                          type="password"
+                          id="pass-actual"
+                          required
+                          placeholder="Ingresa tu contraseña actual"
+                          class="dash-input"
+                        />
+                        <button
+                          type="button"
+                          class="dash-password-toggle"
+                          data-password-target="pass-actual"
+                          aria-label="Ver contraseña"
+                        >
+                          <span
+                            class="material-symbols-outlined"
+                            aria-hidden="true"
+                            >visibility_off</span
+                          >
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="dash-form-row">
+                      <div class="dash-form-group">
+                        <label for="pass-nueva">Nueva Contraseña *</label>
+                        <div class="dash-password-field">
+                          <input
+                            type="password"
+                            id="pass-nueva"
+                            required
+                            minlength="8"
+                            maxlength="100"
+                            pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,100}"
+                            title="Usa mínimo 8 caracteres, una mayúscula, una minúscula y un número"
+                            placeholder="Mínimo 8 caracteres, mayúscula y número"
+                            class="dash-input"
+                          />
+                          <button
+                            type="button"
+                            class="dash-password-toggle"
+                            data-password-target="pass-nueva"
+                            aria-label="Ver contraseña"
+                          >
+                            <span
+                              class="material-symbols-outlined"
+                              aria-hidden="true"
+                              >visibility_off</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                      <div class="dash-form-group">
+                        <label for="pass-confirmar"
+                          >Confirmar Nueva Contraseña *</label
+                        >
+                        <div class="dash-password-field">
+                          <input
+                            type="password"
+                            id="pass-confirmar"
+                            required
+                            minlength="8"
+                            maxlength="100"
+                            placeholder="Repite la contraseña"
+                            class="dash-input"
+                          />
+                          <button
+                            type="button"
+                            class="dash-password-toggle"
+                            data-password-target="pass-confirmar"
+                            aria-label="Ver contraseña"
+                          >
+                            <span
+                              class="material-symbols-outlined"
+                              aria-hidden="true"
+                              >visibility_off</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="dash-profile-actions">
+                      <button type="submit" class="dash-btn dash-btn--primary">
+                        <span class="material-symbols-outlined">key</span>
+                        <span>Actualizar Contraseña</span>
+                      </button>
+                    </div>
+                  </form>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal: Registrar Nueva Mascota (Mapea tabla 'mascota') -->
+    <div class="dash-modal" id="modal-nueva-mascota" aria-hidden="true">
+      <div class="dash-modal__backdrop" data-close-modal></div>
+      <div
+        class="dash-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-mascota-title"
+      >
+        <button
+          class="dash-modal__close"
+          type="button"
+          data-close-modal
+          aria-label="Cerrar"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="dash-modal__header">
+          <span class="material-symbols-outlined dash-modal__header-icon"
+            >pets</span
+          >
+          <h3 id="modal-mascota-title">Registrar Nueva Mascota</h3>
+          <p>
+            Completa la información para crear el expediente clínico de tu
+            mascota.
+          </p>
+        </div>
+        <form id="form-nueva-mascota" class="dash-modal__form">
+          <div class="dash-form-row">
+            <div class="dash-form-group">
+              <label for="mascota-nombre">Nombre de la Mascota *</label>
+              <input
+                type="text"
+                id="mascota-nombre"
+                placeholder="Ej. Toby / Luna"
+                required
+                class="dash-input"
+              />
+            </div>
+            <div class="dash-form-group">
+              <label for="mascota-especie">Especie *</label>
+              <select id="mascota-especie" required class="dash-select">
+                <option value="">Selecciona especie</option>
+                <option value="Perro">Perro</option>
+                <option value="Gato">Gato</option>
+                <option value="Ave">Ave / Pájaro</option>
+                <option value="Conejo">Conejo</option>
+                <option value="Hamster">Hámster / Roedor</option>
+                <option value="Pez">Pez</option>
+                <option value="Reptil">Reptil / Tortuga</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dash-form-row">
+            <div class="dash-form-group">
+              <label for="mascota-raza">Raza *</label>
+              <input
+                type="text"
+                id="mascota-raza"
+                placeholder="Ej. Mestizo, Siamés, Labrador..."
+                required
+                class="dash-input"
+              />
+            </div>
+            <div class="dash-form-group">
+              <label for="mascota-sexo">Sexo *</label>
+              <select id="mascota-sexo" required class="dash-select">
+                <option value="M">Macho (♂)</option>
+                <option value="F">Hembra (♀)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dash-form-group">
+            <label for="mascota-nacimiento"
+              >Fecha de Nacimiento Aproximada</label
+            >
+            <input type="date" id="mascota-nacimiento" class="dash-input" />
+          </div>
+
+          <div class="dash-form-group">
+            <label for="mascota-foto">Foto de la Mascota</label>
+            <input
+              type="file"
+              id="mascota-foto"
+              class="dash-input"
+              accept="image/jpeg,image/png,image/webp"
+            />
+            <small class="dash-form-help"
+              >JPG, PNG o WEBP. Tamaño máximo: 2 MB.</small
+            >
+            <img
+              id="mascota-foto-preview"
+              class="dash-pet-photo-preview"
+              alt="Vista previa de la mascota"
+              hidden
+            />
+          </div>
+
+          <div class="dash-modal__actions">
+            <button
+              type="button"
+              class="dash-btn dash-btn--secondary"
+              data-close-modal
+            >
+              Cancelar
+            </button>
+            <button type="submit" class="dash-btn dash-btn--primary">
+              Guardar Mascota
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal: Agendar Nueva Cita (Mapea tablas 'cita', 'cita_servicio', 'servicio') -->
+    <div class="dash-modal" id="modal-agendar-cita" aria-hidden="true">
+      <div class="dash-modal__backdrop" data-close-modal></div>
+      <div
+        class="dash-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-agendar-title"
+      >
+        <button
+          class="dash-modal__close"
+          type="button"
+          data-close-modal
+          aria-label="Cerrar"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="dash-modal__header">
+          <span class="material-symbols-outlined dash-modal__header-icon"
+            >calendar_add_on</span
+          >
+          <h3 id="modal-agendar-title">Solicitar Nueva Cita</h3>
+          <p>
+            Selecciona tu mascota, el servicio veterinario y el horario deseado.
+          </p>
+        </div>
+        <form id="form-agendar-cita-modal" class="dash-modal__form">
+          <div class="dash-form-row">
+            <div class="dash-form-group">
+              <label for="cita-mascota">Mascota *</label>
+              <select id="cita-mascota" required class="dash-select">
+                <option value="">Selecciona mascota</option>
+              </select>
+            </div>
+            <div class="dash-form-group">
+              <label for="cita-servicio">Servicio *</label>
+              <select id="cita-servicio" required class="dash-select">
+                <option value="">Selecciona servicio</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dash-form-row">
+            <div class="dash-form-group">
+              <label for="cita-fecha">Fecha Deseada *</label>
+              <input type="date" id="cita-fecha" required class="dash-input" />
+            </div>
+            <div class="dash-form-group">
+              <label for="cita-hora">Horario Preferido *</label>
+              <select id="cita-hora" required class="dash-select">
+                <option value="">Selecciona hora</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dash-form-group">
+            <label for="cita-motivo">Motivo de la Consulta *</label>
+            <textarea
+              id="cita-motivo"
+              rows="2"
+              placeholder="Cuéntanos brevemente qué necesita tu mascota..."
+              required
+              class="dash-input"
+            ></textarea>
+          </div>
+
+          <div class="dash-modal__actions">
+            <button
+              type="button"
+              class="dash-btn dash-btn--secondary"
+              data-close-modal
+            >
+              Cancelar
+            </button>
+            <button type="submit" class="dash-btn dash-btn--primary">
+              Confirmar Solicitud
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal: Reprogramar Cita -->
+    <div class="dash-modal" id="modal-reprogramar" aria-hidden="true">
+      <div class="dash-modal__backdrop" data-close-modal></div>
+      <div
+        class="dash-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-reprogramar-title"
+      >
+        <button
+          class="dash-modal__close"
+          type="button"
+          data-close-modal
+          aria-label="Cerrar"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="dash-modal__header">
+          <span class="material-symbols-outlined dash-modal__header-icon"
+            >edit_calendar</span
+          >
+          <h3 id="modal-reprogramar-title">Reprogramar Cita</h3>
+          <p id="reprogramar-sub-info">
+            Cita actual: <strong>Vacunación para Riden</strong>
+          </p>
+        </div>
+        <form id="form-reprogramar" class="dash-modal__form">
+          <div class="dash-form-group">
+            <label for="nueva-fecha">Nueva Fecha *</label>
+            <input type="date" id="nueva-fecha" required class="dash-input" />
+          </div>
+          <div class="dash-form-group">
+            <label for="nuevo-horario">Nuevo Horario *</label>
+            <select id="nuevo-horario" required class="dash-select">
+              <option value="">Selecciona horario</option>
+            </select>
+          </div>
+          <div class="dash-form-group">
+            <label for="motivo-cambio">Motivo del cambio</label>
+            <input
+              type="text"
+              id="motivo-cambio"
+              placeholder="Ej. Cambio de horario laboral"
+              class="dash-input"
+            />
+          </div>
+          <div class="dash-modal__actions">
+            <button
+              type="button"
+              class="dash-btn dash-btn--secondary"
+              data-close-modal
+            >
+              Cancelar
+            </button>
+            <button type="submit" class="dash-btn dash-btn--primary">
+              Confirmar Reprogramación
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal: Recibo de Compra -->
+    <div class="dash-modal" id="modal-recibo" aria-hidden="true">
+      <div class="dash-modal__backdrop" data-close-modal></div>
+      <div
+        class="dash-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-recibo-title"
+      >
+        <button
+          class="dash-modal__close"
+          type="button"
+          data-close-modal
+          aria-label="Cerrar"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="dash-modal__header">
+          <span class="material-symbols-outlined dash-modal__header-icon"
+            >receipt_long</span
+          >
+          <h3 id="modal-recibo-title">Comprobante de Pago</h3>
+          <p id="recibo-num-info">Ticket de Venta #VTA-2026-0041</p>
+        </div>
+        <div class="dash-receipt-content" id="recibo-body">
+          <div class="dash-receipt-row">
+            <span>Cliente:</span>
+            <strong id="recibo-cliente-nombre">Cliente</strong>
+          </div>
+          <div class="dash-receipt-row">
+            <span>Establecimiento:</span>
+            <strong>VetSalud Veterinaria • Sede Sogamoso</strong>
+          </div>
+          <div class="dash-receipt-row">
+            <span>Método de Pago:</span>
+            <strong id="recibo-metodo">TARJETA</strong>
+          </div>
+          <div class="dash-receipt-row">
+            <span>Estado del Ticket:</span>
+            <span class="dash-badge dash-badge--green">PAGADA</span>
+          </div>
+          <div class="dash-receipt-divider"></div>
+          <div class="dash-receipt-row dash-receipt-row--total">
+            <span>Total Facturado:</span>
+            <strong id="recibo-total-amount">$111,000 COP</strong>
+          </div>
+        </div>
+        <div class="dash-modal__actions">
+          <button
+            type="button"
+            class="dash-btn dash-btn--primary"
+            data-close-modal
+          >
+            Cerrar Comprobante
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notificación Toast -->
+    <div
+      class="dash-toast"
+      id="dash-toast"
+      role="alert"
+      aria-live="assertive"
+    ></div>
+
+    <div id="accessibility-container"></div>
+    <!-- ==========================================
+         FOOTER GLOBAL (cargado automáticamente)
+    =========================================== -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/pages/dashboard-cliente.js"></script>
+  </body>
+</html>

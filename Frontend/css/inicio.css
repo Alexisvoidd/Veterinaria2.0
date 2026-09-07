@@ -1,0 +1,657 @@
+
+/* HERO PRINCIPAL */
+.hero {
+    /* Aplica un degradado claro de fondo */
+    background: linear-gradient(135deg, #f4faff 0%, #fff 70%);
+
+    /* Agrega espacio vertical al hero */
+    padding: 72px 0 75px
+}
+
+/* DISTRIBUCIÓN DEL CONTENIDO DEL HERO */
+.hero-grid {
+    /* Usa CSS Grid para organizar el contenido */
+    display: grid;
+
+    /* Divide el espacio en dos columnas */
+    grid-template-columns: 1.05fr .95fr;
+
+    /* Centra verticalmente los elementos */
+    align-items: center;
+
+    /* Separa las columnas */
+    gap: 60px
+}
+
+/* TÍTULO PRINCIPAL DEL HERO */
+.hero h1 {
+    /* Define un tamaño de fuente adaptable */
+    font-size: clamp(2.7rem, 5vw, 4.8rem);
+
+    /* Define la altura de cada línea */
+    line-height: 1.02;
+
+    /* Define el color del título */
+    color: #123e78;
+
+    /* Agrega margen superior y separación inferior */
+    margin: 14px 0 18px;
+
+    /* Limita el ancho máximo del título */
+    max-width: 680px
+}
+
+/* DESCRIPCIÓN DEL HERO */
+.hero p {
+    /* Limita el ancho del texto */
+    max-width: 600px;
+
+    /* Define el color del texto */
+    color: #65778c;
+
+    /* Aumenta el espacio entre las líneas */
+    line-height: 1.8
+}
+
+/* CONTENEDOR DE LOS BOTONES DEL HERO */
+.hero-actions {
+    /* Coloca los botones en fila */
+    display: flex;
+
+    /* Separa los botones */
+    gap: 10px;
+
+    /* Permite que los botones bajen de línea */
+    flex-wrap: wrap;
+
+    /* Separa los botones del texto superior */
+    margin-top: 25px
+}
+
+/* TARJETA DEL HERO */
+.hero-card {
+    /* Define el fondo blanco de la tarjeta */
+    background: #fff;
+
+    /* Agrega un borde sutil */
+    border: 1px solid #dfeaf4;
+
+    /* Redondea las esquinas */
+    border-radius: 28px;
+
+    /* Agrega espacio interno */
+    padding: 28px;
+
+    /* Aplica la sombra general */
+    box-shadow: var(--shadow)
+}
+
+/* CONTENEDOR DEL LOGO DEL HERO */
+.hero-logo-wrap {
+    /* Define una altura mínima */
+    min-height: 290px;
+
+    /* Redondea las esquinas internas */
+    border-radius: 20px;
+
+    /* Aplica un degradado de fondo */
+    background: linear-gradient(145deg, #eef8ff, #f8fdff);
+
+    /* Usa Grid para centrar el contenido */
+    display: grid;
+
+    /* Centra el contenido horizontal y verticalmente */
+    place-items: center
+}
+
+/* IMAGEN O LOGO DENTRO DEL HERO */
+.hero-logo-wrap img {
+    /* Define el ancho de la imagen */
+    width: 88%;
+
+    /* Limita el ancho máximo de la imagen */
+    max-width: 510px
+}
+
+/* ESTADÍSTICAS DEL HERO */
+.hero-stats {
+    /* Usa Grid para organizar las estadísticas */
+    display: grid;
+
+    /* Crea tres columnas del mismo tamaño */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Separa las estadísticas */
+    gap: 10px;
+
+    /* Separa las estadísticas del contenido superior */
+    margin-top: 15px
+}
+
+/* CADA ELEMENTO DE ESTADÍSTICAS */
+.hero-stats div {
+    /* Centra el texto */
+    text-align: center;
+
+    /* Agrega espacio interno */
+    padding: 13px 5px;
+
+    /* Define el fondo de cada estadística */
+    background: #f8fbfe;
+
+    /* Redondea las esquinas */
+    border-radius: 12px
+}
+
+/* VALOR PRINCIPAL DE CADA ESTADÍSTICA */
+.hero-stats strong {
+    /* Convierte el elemento en bloque */
+    display: block;
+
+    /* Define la fuente de las estadísticas */
+    font-family: 'Host Grotesk', sans-serif;
+
+    /* Usa el color principal */
+    color: var(--primary);
+
+    /* Define el tamaño del valor */
+    font-size: 1.2rem
+}
+
+/* TEXTO SECUNDARIO DE LAS ESTADÍSTICAS */
+.hero-stats span {
+    /* Define un tamaño pequeño para el texto */
+    font-size: .68rem;
+
+    /* Define el color secundario */
+    color: #8191a2
+}
+
+/* ENCABEZADO DE LAS SECCIONES */
+.section-head {
+    /* Usa Flexbox para organizar el contenido */
+    display: flex;
+
+    /* Separa los elementos hacia los extremos */
+    justify-content: space-between;
+
+    /* Alinea los elementos en la parte inferior */
+    align-items: end;
+
+    /* Separa los elementos */
+    gap: 30px;
+
+    /* Agrega espacio inferior */
+    margin-bottom: 28px
+}
+
+/* TÍTULOS DE SECCIÓN, SOBRE NOSOTROS Y LOGIN */
+.section h2,
+.about h2,
+.login-strip h2 {
+    /* Define el tamaño del título */
+    font-size: 2rem;
+
+    /* Define el color del título */
+    color: #1b4674;
+
+    /* Agrega margen superior */
+    margin: 10px 0 0
+}
+
+/* DESCRIPCIÓN DEL ENCABEZADO DE SECCIÓN */
+.section-head>p {
+    /* Limita el ancho del texto */
+    max-width: 470px;
+
+    /* Elimina los márgenes predeterminados */
+    margin: 0;
+
+    /* Define el color del texto */
+    color: #77899c;
+
+    /* Define el tamaño del texto */
+    font-size: .82rem;
+
+    /* Define el espacio entre líneas */
+    line-height: 1.7
+}
+
+/* CUADRÍCULA DE SERVICIOS */
+.service-grid {
+    /* Usa CSS Grid */
+    display: grid;
+
+    /* Crea cuatro columnas */
+    grid-template-columns: repeat(4, 1fr);
+
+    /* Separa las tarjetas */
+    gap: 16px
+}
+
+/* TARJETAS INDIVIDUALES DE SERVICIOS */
+.service-grid article {
+    /* Agrega espacio interno */
+    padding: 24px;
+
+    /* Agrega un borde */
+    border: 1px solid #e0eaf2;
+
+    /* Redondea las esquinas */
+    border-radius: 17px;
+
+    /* Define una transición para los efectos */
+    transition: .2s
+}
+
+/* EFECTO AL PASAR EL CURSOR SOBRE UN SERVICIO */
+.service-grid article:hover {
+    /* Eleva ligeramente la tarjeta */
+    transform: translateY(-4px);
+
+    /* Aplica la sombra general */
+    box-shadow: var(--shadow)
+}
+
+/* ICONOS DE LOS SERVICIOS */
+.service-grid .material-symbols-outlined {
+    /* Define el ancho del contenedor del icono */
+    width: 47px;
+
+    /* Define la altura del contenedor del icono */
+    height: 47px;
+
+    /* Redondea el contenedor */
+    border-radius: 13px;
+
+    /* Usa Grid para centrar el icono */
+    display: grid;
+
+    /* Centra el icono */
+    place-items: center;
+
+    /* Define el fondo del icono */
+    background: #eaf4fc;
+
+    /* Usa el color principal */
+    color: var(--primary)
+}
+
+/* TÍTULOS DE LOS SERVICIOS */
+.service-grid h3 {
+    /* Define el tamaño del título */
+    font-size: 1.05rem;
+
+    /* Define el color del título */
+    color: #234b73;
+
+    /* Agrega separación alrededor del título */
+    margin: 16px 0 7px
+}
+
+/* DESCRIPCIÓN DE LOS SERVICIOS */
+.service-grid p {
+    /* Define un tamaño pequeño para la descripción */
+    font-size: .78rem;
+
+    /* Define el espacio entre líneas */
+    line-height: 1.65;
+
+    /* Define el color del texto */
+    color: #77899c;
+
+    /* Elimina el margen predeterminado */
+    margin: 0
+}
+
+/* SECCIÓN SOBRE NOSOTROS */
+.about {
+    /* Define un fondo ligeramente azulado */
+    background: #f8fbfe
+}
+
+/* DISTRIBUCIÓN DE SOBRE NOSOTROS */
+.about-grid {
+    /* Usa CSS Grid */
+    display: grid;
+
+    /* Divide el contenido en dos columnas */
+    grid-template-columns: .9fr 1.1fr;
+
+    /* Centra verticalmente los elementos */
+    align-items: center;
+
+    /* Separa las columnas */
+    gap: 70px
+}
+
+/* ELEMENTO VISUAL DE SOBRE NOSOTROS */
+.about-visual {
+    /* Define una altura mínima */
+    min-height: 330px;
+
+    /* Redondea las esquinas */
+    border-radius: 28px;
+
+    /* Aplica un degradado con el color principal */
+    background: linear-gradient(145deg, var(--primary), #286ab8);
+
+    /* Usa Grid para centrar el contenido */
+    display: grid;
+
+    /* Centra el contenido */
+    place-items: center;
+
+    /* Aplica una sombra */
+    box-shadow: 0 20px 45px rgba(27, 78, 155, .2)
+}
+
+/* ICONO DEL ELEMENTO VISUAL */
+.about-visual .material-symbols-outlined {
+    /* Define un tamaño grande para el icono */
+    font-size: 120px;
+
+    /* Define el icono en color blanco */
+    color: #fff
+}
+
+/* TEXTO DE SOBRE NOSOTROS */
+.about p {
+    /* Define el color del texto */
+    color: #718398;
+
+    /* Define el espacio entre líneas */
+    line-height: 1.8;
+
+    /* Limita el ancho del texto */
+    max-width: 600px
+}
+
+/* LISTA DE CARACTERÍSTICAS */
+.checks {
+    /* Usa Flexbox */
+    display: flex;
+
+    /* Organiza los elementos verticalmente */
+    flex-direction: column;
+
+    /* Separa los elementos */
+    gap: 10px;
+
+    /* Separa la lista del contenido superior */
+    margin-top: 22px
+}
+
+/* ELEMENTOS DE LA LISTA DE CARACTERÍSTICAS */
+.checks span {
+    /* Usa Flexbox */
+    display: flex;
+
+    /* Centra verticalmente el contenido */
+    align-items: center;
+
+    /* Separa el icono del texto */
+    gap: 8px;
+
+    /* Define el peso de la fuente */
+    font-weight: 700;
+
+    /* Define el tamaño del texto */
+    font-size: .8rem;
+
+    /* Define el color del texto */
+    color: #315675
+}
+
+/* ICONOS DE LAS CARACTERÍSTICAS */
+.checks i {
+    /* Define el tamaño del icono */
+    font-size: 19px;
+
+    /* Define el color del icono */
+    color: #37a6b4
+}
+
+/* CUADRÍCULA DEL BLOG */
+.blog-grid {
+    /* Usa CSS Grid */
+    display: grid;
+
+    /* Crea tres columnas */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Separa las tarjetas */
+    gap: 18px
+}
+
+/* TARJETAS DEL BLOG */
+.blog-grid article {
+    /* Agrega espacio interno */
+    padding: 23px;
+
+    /* Agrega un borde */
+    border: 1px solid #e0e9f1;
+
+    /* Redondea las esquinas */
+    border-radius: 17px
+}
+
+/* CATEGORÍA O ETIQUETA DEL BLOG */
+.blog-grid span {
+    /* Define un tamaño pequeño */
+    font-size: .66rem;
+
+    /* Aumenta el espacio entre letras */
+    letter-spacing: .1em;
+
+    /* Usa el color secundario */
+    color: var(--secondary);
+
+    /* Define el peso de la fuente */
+    font-weight: 800
+}
+
+/* TÍTULOS DE LAS ENTRADAS DEL BLOG */
+.blog-grid h3 {
+    /* Define el tamaño del título */
+    font-size: 1.05rem;
+
+    /* Define el color del título */
+    color: #244b73;
+
+    /* Define el espacio entre líneas */
+    line-height: 1.35;
+
+    /* Agrega separación alrededor del título */
+    margin: 11px 0 8px
+}
+
+/* DESCRIPCIÓN DE LAS ENTRADAS DEL BLOG */
+.blog-grid p {
+    /* Define el tamaño del texto */
+    font-size: .77rem;
+
+    /* Define el espacio entre líneas */
+    line-height: 1.65;
+
+    /* Define el color del texto */
+    color: #7a8b9d;
+
+    /* Elimina el margen predeterminado */
+    margin: 0
+}
+
+/* ENLACES DE TEXTO */
+.text-link {
+    /* Usa Flexbox */
+    display: inline-flex;
+
+    /* Centra verticalmente el contenido */
+    align-items: center;
+
+    /* Separa el texto del icono */
+    gap: 5px;
+
+    /* Usa el color principal */
+    color: var(--primary);
+
+    /* Define el peso de la fuente */
+    font-weight: 800;
+
+    /* Define el tamaño del enlace */
+    font-size: .8rem;
+
+    /* Elimina el subrayado */
+    text-decoration: none
+}
+
+/* ICONO DE LOS ENLACES DE TEXTO */
+.text-link .material-symbols-outlined {
+    /* Define el tamaño del icono */
+    font-size: 17px
+}
+
+/* FRANJA DE INICIO DE SESIÓN */
+.login-strip {
+    /* Usa el color principal como fondo */
+    background: var(--primary);
+
+    /* Define el texto en blanco */
+    color: #fff;
+
+    /* Agrega espacio vertical */
+    padding: 45px 0
+}
+
+/* CONTENEDOR DE LA FRANJA DE LOGIN */
+.login-strip .page-container {
+    /* Usa Flexbox */
+    display: flex;
+
+    /* Separa los elementos hacia los extremos */
+    justify-content: space-between;
+
+    /* Centra verticalmente los elementos */
+    align-items: center;
+
+    /* Separa los elementos */
+    gap: 30px
+}
+
+/* TÍTULO DE LA FRANJA DE LOGIN */
+.login-strip h2 {
+    /* Mantiene el título en blanco */
+    color: #fff
+}
+
+/* DESCRIPCIÓN DE LA FRANJA DE LOGIN */
+.login-strip p {
+    /* Usa un blanco semitransparente */
+    color: rgba(255, 255, 255, .78);
+
+    /* Define el tamaño del texto */
+    font-size: .8rem;
+
+    /* Agrega separación superior */
+    margin: 8px 0 0
+}
+
+/* TEXTO SUPERIOR DE LA FRANJA DE LOGIN */
+.login-strip .eyebrow {
+    /* Define el color del texto destacado */
+    color: #9ee7ee
+}
+
+/* RESPONSIVE PARA PANTALLAS DE HASTA 900PX */
+@media(max-width:900px) {
+
+    /* ADAPTA LAS CUADRÍCULAS PRINCIPALES A UNA COLUMNA */
+    .hero-grid,
+    .about-grid {
+        /* Cambia a una sola columna */
+        grid-template-columns: 1fr
+    }
+
+    /* LIMITA EL ANCHO DE LA TARJETA DEL HERO */
+    .hero-card {
+        /* Define el ancho máximo de la tarjeta */
+        max-width: 650px
+    }
+
+    /* REDUCE LOS SERVICIOS A DOS COLUMNAS */
+    .service-grid {
+        /* Crea dos columnas iguales */
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    /* CAMBIA LA ALINEACIÓN DEL ENCABEZADO */
+    .section-head {
+        /* Alinea los elementos al inicio */
+        align-items: flex-start;
+
+        /* Organiza los elementos verticalmente */
+        flex-direction: column
+    }
+
+    /* REDUCE EL BLOG A DOS COLUMNAS */
+    .blog-grid {
+        /* Crea dos columnas iguales */
+        grid-template-columns: 1fr 1fr
+    }
+
+    /* ADAPTA LA FRANJA DE LOGIN */
+    .login-strip .page-container {
+        /* Alinea los elementos al inicio */
+        align-items: flex-start;
+
+        /* Organiza los elementos verticalmente */
+        flex-direction: column
+    }
+}
+
+/* RESPONSIVE PARA PANTALLAS DE HASTA 560PX */
+@media(max-width:560px) {
+
+    /* AJUSTA EL ESPACIADO DEL HERO EN MÓVILES */
+    .hero {
+        /* Reduce el espacio vertical */
+        padding: 50px 0
+    }
+
+    /* REDUCE EL ESPACIADO DE LA TARJETA */
+    .hero-card {
+        /* Reduce el espacio interno */
+        padding: 14px
+    }
+
+    /* REDUCE LA ALTURA DEL CONTENEDOR DEL LOGO */
+    .hero-logo-wrap {
+        /* Define una altura mínima menor */
+        min-height: 210px
+    }
+
+    /* ADAPTA SERVICIOS Y BLOG A UNA COLUMNA */
+    .service-grid,
+    .blog-grid {
+        /* Usa una sola columna */
+        grid-template-columns: 1fr
+    }
+
+    /* REDUCE EL ESPACIO ENTRE COLUMNAS DE SOBRE NOSOTROS */
+    .about-grid {
+        /* Reduce la separación */
+        gap: 35px
+    }
+
+    /* REDUCE LA ALTURA DEL ELEMENTO VISUAL */
+    .about-visual {
+        /* Define una altura mínima menor */
+        min-height: 250px
+    }
+
+    /* AJUSTA EL ESPACIADO DE LA FRANJA DE LOGIN */
+    .login-strip {
+        /* Reduce el espacio vertical */
+        padding: 38px 0
+    }
+}

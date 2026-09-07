@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../components/nav/nav.css">
+    <link rel="stylesheet" href="../css/carrito.css">
+    <title>Carrito | VetSalud</title>
+</head>
+
+<body data-page="carrito">
+    <div id="nav-container"></div>
+    <main class="carrito-pagina">
+        <section class="carrito-encabezado"><span class="eyebrow">Tu compra</span>
+            <h1>Carrito de compras</h1>
+            <p>Revisa tus productos antes de confirmar el pedido.</p>
+        </section>
+        <div class="carrito-layout">
+            <section>
+                <div id="carrito-items" class="carrito-items"></div>
+            </section>
+            <aside class="resumen-compra">
+                <h2>Resumen</h2>
+                <div class="resumen-linea"><span>Productos</span><strong id="resumen-cantidad">0</strong></div>
+                <div class="resumen-linea total"><span>Total</span><strong id="resumen-total">$0</strong></div><button
+                    id="boton-comprar" class="btn btn-primary" type="button">Continuar con la compra</button><a
+                    class="boton-secundario" href="tienda.html">Seguir comprando</a>
+                <p id="mensaje-carrito" class="mensaje-carrito" role="alert"></p>
+            </aside>
+        </div>
+    </main>
+    <div id="modal-compra" class="modal-carrito" aria-hidden="true">
+        <div class="modal-carrito__fondo" data-cerrar-compra></div>
+        <div class="modal-carrito__dialog"><button class="modal-cerrar" type="button" data-cerrar-compra
+                aria-label="Cerrar"><span class="material-symbols-outlined">close</span></button>
+            <h2>Finalizar compra</h2>
+            <p>Completa los datos de entrega.</p>
+            <form id="form-compra" novalidate><label>Nombre completo<input id="nombre-compra"
+                        required></label><label>Correo electrónico<input id="correo-compra" type="email"
+                        required></label><label>Teléfono<input id="telefono-compra" type="tel"
+                        required></label><label>Ciudad<input id="ciudad-compra" required></label><label>Dirección de
+                    entrega<input id="direccion-compra" required></label><label>Método de pago<select id="pago-compra"
+                        required>
+                        <option value="">Selecciona</option>
+                        <option>Pago contra entrega</option>
+                        <option>Transferencia bancaria</option>
+                        <option>Pago en tienda</option>
+                    </select></label><label>Notas<input id="notas-compra" placeholder="Opcional"></label>
+                <div id="mensaje-compra" class="mensaje-carrito" role="alert"></div><button class="btn btn-primary"
+                    type="submit">Confirmar pedido</button>
+            </form>
+        </div>
+    </div>
+    <div id="accessibility-container"></div>
+    <!-- ==========================================
+         FOOTER GLOBAL (cargado automáticamente)
+    =========================================== -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/pages/carrito.js"></script>
+</body>
+
+</html>

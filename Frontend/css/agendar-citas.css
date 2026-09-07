@@ -1,0 +1,106 @@
+/* TARJETA DE AGENDAMIENTO */
+
+.appointment-card {
+    width: min(900px, 100%); /* Limita el ancho máximo a 900px */
+    margin: auto; /* Centra la tarjeta */
+    padding: 32px; /* Agrega espacio interno */
+    border: 1px solid #dfe9f3; /* Define el borde */
+    border-radius: 21px; /* Redondea las esquinas */
+    background: #fff; /* Fondo blanco */
+    box-shadow: var(--shadow); /* Agrega sombra */
+}
+
+
+/* INTRODUCCIÓN */
+
+.appointment-intro h2 {
+    font-size: 1.8rem; /* Tamaño del título */
+    color: #1a4575; /* Color del título */
+    margin: 10px 0 6px; /* Define los márgenes */
+}
+
+.appointment-intro p {
+    font-size: .8rem; /* Tamaño del texto */
+    color: #77899c; /* Color del texto */
+    margin: 0 0 28px; /* Agrega margen inferior */
+}
+
+
+/* SECCIONES DEL FORMULARIO */
+
+.form-section {
+    padding: 22px 0; /* Agrega espacio vertical */
+    border-top: 1px solid #e7eef5; /* Agrega línea superior */
+}
+
+.form-section:first-of-type {
+    border-top: 0; /* Elimina la línea de la primera sección */
+    padding-top: 0; /* Elimina espacio superior */
+}
+
+.form-section h3 {
+    font-size: 1.05rem; /* Tamaño del subtítulo */
+    color: #244a72; /* Color del subtítulo */
+    margin: 0 0 17px; /* Agrega margen inferior */
+}
+
+
+/* GRID DEL FORMULARIO */
+
+.form-grid {
+    display: grid; /* Activa CSS Grid */
+    grid-template-columns: 1fr 1fr; /* Crea dos columnas iguales */
+    gap: 18px; /* Separa los campos */
+}
+
+.field-full {
+    grid-column: 1 / -1; /* Ocupa todas las columnas */
+}
+
+
+/* FILA DE CHECKBOX */
+
+.check-row {
+    display: flex; /* Usa flexbox */
+    gap: 10px; /* Separa el checkbox del texto */
+    align-items: flex-start; /* Alinea los elementos arriba */
+    margin: 23px 0; /* Agrega margen vertical */
+    color: #65798d; /* Color del texto */
+    font-size: .76rem; /* Tamaño del texto */
+    line-height: 1.5; /* Define la altura de línea */
+    cursor: pointer; /* Cambia el cursor */
+}
+
+.check-row input {
+    margin-top: 3px; /* Ajusta la posición del checkbox */
+    accent-color: var(--primary); /* Cambia el color del checkbox */
+}
+
+
+/* BOTÓN DE AGENDAMIENTO */
+
+.appointment-card .btn {
+    margin-top: 2px; /* Agrega un pequeño espacio superior */
+}
+
+
+/* DISEÑO RESPONSIVO */
+
+@media (max-width: 600px) {
+
+    /* Ajusta la tarjeta en pantallas pequeñas */
+    .appointment-card {
+        padding: 22px; /* Reduce el espacio interno */
+    }
+
+    /* Cambia el formulario a una sola columna */
+    .form-grid {
+        grid-template-columns: 1fr; /* Usa una sola columna */
+    }
+
+    /* Hace que el campo ocupe una sola columna */
+    .field-full {
+        grid-column: auto; /* Restablece la posición de columna */
+    }
+
+}

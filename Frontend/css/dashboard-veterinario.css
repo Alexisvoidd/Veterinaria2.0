@@ -1,0 +1,1991 @@
+
+/* Define las variables generales de colores, bordes, sombras y tamaños */
+:root {
+
+    /* Define el color principal del dashboard */
+    --color-principal: #1677c8;
+
+    /* Define una versión más oscura del color principal */
+    --color-principal-oscuro: #0e5fa5;
+
+    /* Define el color secundario del dashboard */
+    --color-secundario: #35b8a1;
+
+    /* Define el color principal para los textos */
+    --color-texto: #18324b;
+
+    /* Define el color para textos secundarios */
+    --color-texto-secundario: #6d7d8c;
+
+    /* Define el color de fondo general */
+    --color-fondo: #f4f8fb;
+
+    /* Define el color blanco utilizado en tarjetas y elementos */
+    --color-blanco: #ffffff;
+
+    /* Define el color de los bordes */
+    --color-borde: #e3ebf2;
+
+    /* Define la sombra general utilizada en las tarjetas */
+    --sombra-card:
+        0 8px 25px rgba(28, 65, 94, 0.07);
+
+    /* Define el radio de las esquinas de las tarjetas */
+    --radio-card: 18px;
+}
+
+
+/* BODY */
+
+/* Configura los estilos generales del cuerpo de la página */
+body {
+
+    /* Elimina los márgenes predeterminados del navegador */
+    margin: 0;
+
+    /* Aplica el color de fondo general */
+    background: var(--color-fondo);
+
+    /* Aplica el color principal del texto */
+    color: var(--color-texto);
+
+    /* Define la fuente principal del dashboard */
+    font-family: "Open Sans", sans-serif;
+}
+
+
+/* CONTENEDOR */
+
+/* Configura el contenedor principal del dashboard */
+.dashboard-veterinario {
+
+    /* Garantiza una altura mínima descontando el encabezado */
+    min-height: calc(100vh - 80px);
+
+    /* Define el espacio interno del dashboard */
+    padding: 45px 25px 70px;
+}
+
+
+/* Configura el ancho y centrado del contenido */
+.dashboard-contenedor {
+
+    /* Define un ancho máximo de 1250px */
+    width: min(1250px, 100%);
+
+    /* Centra horizontalmente el contenedor */
+    margin: 0 auto;
+}
+
+
+/* ENCABEZADO */
+
+/* Organiza horizontalmente el encabezado del dashboard */
+.dashboard-encabezado {
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Centra verticalmente los elementos */
+    align-items: center;
+
+    /* Distribuye los elementos hacia los extremos */
+    justify-content: space-between;
+
+    /* Define separación entre los elementos */
+    gap: 30px;
+
+    /* Agrega espacio debajo del encabezado */
+    margin-bottom: 35px;
+}
+
+
+/* Configura la etiqueta superior del encabezado */
+.dashboard-etiqueta {
+
+    /* Permite controlar el tamaño y margen del elemento */
+    display: inline-block;
+
+    /* Agrega espacio debajo de la etiqueta */
+    margin-bottom: 8px;
+
+    /* Aplica el color principal */
+    color: var(--color-principal);
+
+    /* Define el tamaño del texto */
+    font-size: 12px;
+
+    /* Hace el texto más grueso */
+    font-weight: 700;
+
+    /* Aumenta la separación entre letras */
+    letter-spacing: 1.5px;
+}
+
+
+/* Configura el título principal del dashboard */
+.dashboard-encabezado h1 {
+
+    /* Elimina el margen superior y agrega espacio inferior */
+    margin: 0 0 8px;
+
+    /* Define la fuente del título */
+    font-family: "Montserrat", sans-serif;
+
+    /* Ajusta el tamaño del título según la pantalla */
+    font-size: clamp(28px, 4vw, 40px);
+
+    /* Define un peso de fuente alto */
+    font-weight: 800;
+
+    /* Aplica el color del texto */
+    color: var(--color-texto);
+}
+
+
+/* Configura el texto descriptivo del encabezado */
+.dashboard-encabezado p {
+
+    /* Elimina los márgenes predeterminados */
+    margin: 0;
+
+    /* Aplica el color secundario */
+    color: var(--color-texto-secundario);
+
+    /* Define el tamaño del texto */
+    font-size: 15px;
+
+    /* Define la altura de las líneas */
+    line-height: 1.6;
+}
+
+
+/* Configura el bloque que muestra la fecha */
+.dashboard-fecha {
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Centra verticalmente el contenido */
+    align-items: center;
+
+    /* Define separación entre icono y texto */
+    gap: 12px;
+
+    /* Define el espacio interno */
+    padding: 14px 18px;
+
+    /* Aplica el fondo blanco */
+    background: var(--color-blanco);
+
+    /* Define el borde */
+    border: 1px solid var(--color-borde);
+
+    /* Redondea las esquinas */
+    border-radius: 14px;
+
+    /* Aplica la sombra de las tarjetas */
+    box-shadow: var(--sombra-card);
+
+    /* Evita que el bloque se reduzca */
+    flex-shrink: 0;
+}
+
+
+/* Configura el icono de calendario de la fecha */
+.dashboard-fecha > .material-symbols-outlined {
+
+    /* Aplica el color principal */
+    color: var(--color-principal);
+
+    /* Define el tamaño del icono */
+    font-size: 28px;
+}
+
+
+/* Configura el contenedor interno de la fecha */
+.dashboard-fecha div {
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Organiza el contenido verticalmente */
+    flex-direction: column;
+
+    /* Define separación entre los textos */
+    gap: 3px;
+}
+
+
+/* Configura la etiqueta de la fecha */
+.dashboard-fecha span {
+
+    /* Aplica el color secundario */
+    color: var(--color-texto-secundario);
+
+    /* Define el tamaño del texto */
+    font-size: 11px;
+
+    /* Convierte el texto a mayúsculas */
+    text-transform: uppercase;
+
+    /* Aumenta ligeramente la separación entre letras */
+    letter-spacing: 0.7px;
+}
+
+
+/* Configura el texto principal de la fecha */
+.dashboard-fecha strong {
+
+    /* Define el tamaño del texto */
+    font-size: 14px;
+}
+
+
+/* ESTADÍSTICAS */
+
+/* Configura la cuadrícula de estadísticas */
+.dashboard-estadisticas {
+
+    /* Activa CSS Grid */
+    display: grid;
+
+    /* Crea cuatro columnas de igual proporción */
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    /* Define separación entre las tarjetas */
+    gap: 20px;
+
+    /* Agrega espacio debajo de las estadísticas */
+    margin-bottom: 25px;
+}
+
+
+/* Configura cada tarjeta estadística */
+.estadistica-card {
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Centra verticalmente el contenido */
+    align-items: center;
+
+    /* Define separación entre icono y texto */
+    gap: 15px;
+
+    /* Define el espacio interno */
+    padding: 23px;
+
+    /* Aplica el fondo blanco */
+    background: var(--color-blanco);
+
+    /* Aplica el borde */
+    border: 1px solid var(--color-borde);
+
+    /* Redondea las esquinas */
+    border-radius: var(--radio-card);
+
+    /* Aplica la sombra */
+    box-shadow: var(--sombra-card);
+
+    /* Suaviza las transformaciones y sombras */
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Aplica un efecto al pasar el cursor sobre una estadística */
+.estadistica-card:hover {
+
+    /* Eleva ligeramente la tarjeta */
+    transform: translateY(-3px);
+
+    /* Aumenta la sombra durante el hover */
+    box-shadow:
+        0 12px 30px rgba(28, 65, 94, 0.11);
+}
+
+
+/* Configura el contenedor del icono estadístico */
+.estadistica-icono {
+
+    /* Define el ancho del icono */
+    width: 52px;
+
+    /* Define la altura del icono */
+    height: 52px;
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Centra verticalmente el icono */
+    align-items: center;
+
+    /* Centra horizontalmente el icono */
+    justify-content: center;
+
+    /* Redondea las esquinas */
+    border-radius: 14px;
+
+    /* Aplica un fondo azul claro */
+    background: #eaf5fd;
+
+    /* Aplica el color principal al icono */
+    color: var(--color-principal);
+
+    /* Evita que el contenedor se reduzca */
+    flex-shrink: 0;
+}
+
+
+/* Configura el icono Material Symbols dentro de la estadística */
+.estadistica-icono .material-symbols-outlined {
+
+    /* Define el tamaño del icono */
+    font-size: 27px;
+}
+
+
+/* Configura la información de la estadística */
+.estadistica-informacion {
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Organiza la información verticalmente */
+    flex-direction: column;
+
+    /* Evita problemas de desbordamiento */
+    min-width: 0;
+}
+
+
+/* Configura el título de la estadística */
+.estadistica-titulo {
+
+    /* Aplica el color secundario */
+    color: var(--color-texto-secundario);
+
+    /* Define el tamaño del texto */
+    font-size: 13px;
+
+    /* Define el grosor del texto */
+    font-weight: 600;
+}
+
+
+/* Configura el número principal de la estadística */
+.estadistica-numero {
+
+    /* Define los márgenes superior e inferior */
+    margin: 2px 0;
+
+    /* Aplica la fuente Montserrat */
+    font-family: "Montserrat", sans-serif;
+
+    /* Define el tamaño del número */
+    font-size: 28px;
+
+    /* Reduce la altura de línea */
+    line-height: 1;
+
+    /* Hace el número más grueso */
+    font-weight: 800;
+}
+
+
+/* Configura la descripción de la estadística */
+.estadistica-descripcion {
+
+    /* Aplica un color gris claro */
+    color: #94a2ad;
+
+    /* Define el tamaño del texto */
+    font-size: 11px;
+}
+
+
+/* GRID PRINCIPAL */
+
+/* Configura la distribución principal del dashboard */
+.dashboard-grid {
+
+    /* Activa CSS Grid */
+    display: grid;
+
+    /* Define dos columnas con diferentes proporciones */
+    grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(320px, 1fr);
+
+    /* Define separación entre columnas */
+    gap: 25px;
+}
+
+
+/* PANELES */
+
+/* Configura los paneles principales del dashboard */
+.dashboard-panel {
+
+    /* Aplica el fondo blanco */
+    background: var(--color-blanco);
+
+    /* Define el borde del panel */
+    border: 1px solid var(--color-borde);
+
+    /* Redondea las esquinas */
+    border-radius: var(--radio-card);
+
+    /* Aplica la sombra */
+    box-shadow: var(--sombra-card);
+
+    /* Oculta contenido que sobresalga */
+    overflow: hidden;
+}
+
+
+/* Configura el encabezado de cada panel */
+.panel-encabezado {
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Centra verticalmente el contenido */
+    align-items: center;
+
+    /* Distribuye el contenido */
+    justify-content: space-between;
+
+    /* Define separación entre elementos */
+    gap: 20px;
+
+    /* Define el espacio interno */
+    padding: 23px 25px;
+
+    /* Agrega una línea inferior */
+    border-bottom: 1px solid var(--color-borde);
+}
+
+
+/* Configura el contenedor interno del encabezado */
+.panel-encabezado > div {
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Centra verticalmente los elementos */
+    align-items: center;
+
+    /* Define separación entre icono y texto */
+    gap: 13px;
+}
+
+
+/* Configura el icono del panel */
+.panel-icono {
+
+    /* Aplica el color principal */
+    color: var(--color-principal);
+
+    /* Define el tamaño del icono */
+    font-size: 27px;
+}
+
+
+/* Configura el título de los paneles */
+.panel-encabezado h2 {
+
+    /* Elimina el margen predeterminado */
+    margin: 0;
+
+    /* Aplica la fuente Montserrat */
+    font-family: "Montserrat", sans-serif;
+
+    /* Define el tamaño */
+    font-size: 17px;
+
+    /* Define el grosor */
+    font-weight: 700;
+}
+
+
+/* Configura la descripción del panel */
+.panel-encabezado p {
+
+    /* Define un pequeño margen superior */
+    margin: 3px 0 0;
+
+    /* Aplica el color secundario */
+    color: var(--color-texto-secundario);
+
+    /* Define el tamaño del texto */
+    font-size: 12px;
+}
+
+
+/* Configura el botón del panel */
+.panel-boton {
+
+    /* Elimina el borde */
+    border: 0;
+
+    /* Hace transparente el fondo */
+    background: transparent;
+
+    /* Aplica el color principal */
+    color: var(--color-principal);
+
+    /* Define el tamaño del texto */
+    font-size: 12px;
+
+    /* Hace el texto más grueso */
+    font-weight: 700;
+
+    /* Cambia el cursor a una mano */
+    cursor: pointer;
+}
+
+
+/* Agrega subrayado al botón cuando se pasa el cursor */
+.panel-boton:hover {
+
+    /* Subraya el texto */
+    text-decoration: underline;
+}
+
+
+/* CONSULTAS */
+
+/* Configura la lista de consultas */
+.consultas-lista {
+
+    /* Define el espacio interno de la lista */
+    padding: 5px 25px;
+}
+
+
+/* Configura cada elemento de consulta */
+.consulta-item {
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Centra verticalmente los elementos */
+    align-items: center;
+
+    /* Define separación entre elementos */
+    gap: 14px;
+
+    /* Define el espacio vertical */
+    padding: 18px 0;
+
+    /* Agrega una línea inferior */
+    border-bottom: 1px solid #edf2f6;
+}
+
+
+/* Elimina el borde inferior de la última consulta */
+.consulta-item:last-child {
+
+    /* Elimina el borde inferior */
+    border-bottom: 0;
+}
+
+
+/* Configura el icono de cada consulta */
+.consulta-icono {
+
+    /* Define el ancho del icono */
+    width: 43px;
+
+    /* Define la altura del icono */
+    height: 43px;
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Centra verticalmente el icono */
+    align-items: center;
+
+    /* Centra horizontalmente el icono */
+    justify-content: center;
+
+    /* Hace el contenedor circular */
+    border-radius: 50%;
+
+    /* Aplica un fondo verde claro */
+    background: #eef8f6;
+
+    /* Aplica el color secundario */
+    color: var(--color-secundario);
+
+    /* Evita que se reduzca */
+    flex-shrink: 0;
+}
+
+
+/* Configura los datos de la consulta */
+.consulta-datos {
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Organiza el contenido verticalmente */
+    flex-direction: column;
+
+    /* Define separación entre textos */
+    gap: 3px;
+
+    /* Ocupa el espacio disponible */
+    flex: 1;
+}
+
+
+/* Configura el nombre principal de la consulta */
+.consulta-datos strong {
+
+    /* Define el tamaño del texto */
+    font-size: 14px;
+}
+
+
+/* Configura la información secundaria de la consulta */
+.consulta-datos span {
+
+    /* Aplica el color secundario */
+    color: var(--color-texto-secundario);
+
+    /* Define el tamaño del texto */
+    font-size: 12px;
+}
+
+
+/* Configura el estado de la consulta */
+.consulta-estado {
+
+    /* Define el espacio interno */
+    padding: 5px 10px;
+
+    /* Redondea completamente el estado */
+    border-radius: 20px;
+
+    /* Aplica un fondo verde claro */
+    background: #eaf8f1;
+
+    /* Aplica un color verde */
+    color: #279267;
+
+    /* Define el tamaño del texto */
+    font-size: 10px;
+
+    /* Hace el texto más grueso */
+    font-weight: 700;
+}
+
+
+/* ACCIONES */
+
+/* Configura la lista de acciones rápidas */
+.acciones-lista {
+
+    /* Define el espacio interno */
+    padding: 8px 15px 15px;
+}
+
+
+/* Configura cada botón de acción */
+.accion-boton {
+
+    /* Ocupa todo el ancho disponible */
+    width: 100%;
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Centra verticalmente el contenido */
+    align-items: center;
+
+    /* Define separación entre elementos */
+    gap: 13px;
+
+    /* Define el espacio interno */
+    padding: 16px 10px;
+
+    /* Elimina el borde general */
+    border: 0;
+
+    /* Agrega una línea inferior */
+    border-bottom: 1px solid #edf2f6;
+
+    /* Hace transparente el fondo */
+    background: transparent;
+
+    /* Alinea el texto a la izquierda */
+    text-align: left;
+
+    /* Cambia el cursor a una mano */
+    cursor: pointer;
+
+    /* Aplica el color principal del texto */
+    color: var(--color-texto);
+
+    /* Hereda la fuente del elemento padre */
+    font-family: inherit;
+}
+
+
+/* Elimina el borde inferior de la última acción */
+.accion-boton:last-child {
+
+    /* Elimina el borde inferior */
+    border-bottom: 0;
+}
+
+
+/* Configura el primer icono de cada acción */
+.accion-boton > .material-symbols-outlined:first-child {
+
+    /* Define el ancho del icono */
+    width: 42px;
+
+    /* Define la altura del icono */
+    height: 42px;
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Centra verticalmente el icono */
+    align-items: center;
+
+    /* Centra horizontalmente el icono */
+    justify-content: center;
+
+    /* Redondea las esquinas */
+    border-radius: 12px;
+
+    /* Aplica un fondo azul claro */
+    background: #eaf5fd;
+
+    /* Aplica el color principal */
+    color: var(--color-principal);
+
+    /* Define el tamaño del icono */
+    font-size: 22px;
+}
+
+
+/* Configura el contenedor de texto de la acción */
+.accion-boton div {
+
+    /* Activa Flexbox */
+    display: flex;
+
+    /* Organiza el contenido verticalmente */
+    flex-direction: column;
+
+    /* Define separación entre textos */
+    gap: 3px;
+
+    /* Ocupa el espacio disponible */
+    flex: 1;
+}
+
+
+/* Configura el título de la acción */
+.accion-boton strong {
+
+    /* Define el tamaño del texto */
+    font-size: 13px;
+}
+
+
+/* Configura la descripción de la acción */
+.accion-boton span {
+
+    /* Aplica el color secundario */
+    color: var(--color-texto-secundario);
+
+    /* Define el tamaño del texto */
+    font-size: 11px;
+}
+
+
+/* Configura la flecha de las acciones */
+.accion-flecha {
+
+    /* Aplica un color gris */
+    color: #a5b1bb;
+
+    /* Define el tamaño del icono */
+    font-size: 20px;
+}
+
+
+/* Aplica un fondo al pasar el cursor sobre una acción */
+.accion-boton:hover {
+
+    /* Cambia ligeramente el fondo */
+    background: #f8fbfd;
+}
+
+
+/* Cambia el color de la flecha al pasar el cursor */
+.accion-boton:hover .accion-flecha {
+
+    /* Aplica el color principal */
+    color: var(--color-principal);
+}
+
+
+/* MODO OSCURO */
+
+/* Configura el fondo y texto general en modo oscuro */
+html.dark-mode body {
+
+    /* Aplica el fondo oscuro */
+    background: #101820;
+
+    /* Aplica el color de texto claro */
+    color: #d2dbe5;
+}
+
+
+/* CONTENEDOR Y ENCABEZADO */
+
+/* Cambia el color del título en modo oscuro */
+html.dark-mode .dashboard-encabezado h1 {
+
+    /* Aplica un blanco suave */
+    color: #f1f5f9;
+}
+
+
+/* Cambia el color del párrafo en modo oscuro */
+html.dark-mode .dashboard-encabezado p {
+
+    /* Aplica un gris azulado claro */
+    color: #b8c5d3;
+}
+
+
+/* Cambia el color de la etiqueta en modo oscuro */
+html.dark-mode .dashboard-etiqueta {
+
+    /* Aplica un azul claro */
+    color: #4ba3e3;
+}
+
+
+/* Configura la tarjeta de fecha en modo oscuro */
+html.dark-mode .dashboard-fecha {
+
+    /* Aplica el fondo oscuro de la tarjeta */
+    background: #182431;
+
+    /* Cambia el color del borde */
+    border-color: #33485b;
+
+    /* Aplica una sombra oscura */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .20);
+}
+
+
+/* Cambia el color del icono de fecha */
+html.dark-mode .dashboard-fecha > .material-symbols-outlined {
+
+    /* Aplica azul claro */
+    color: #4ba3e3;
+}
+
+
+/* Cambia el color de la etiqueta de fecha */
+html.dark-mode .dashboard-fecha span {
+
+    /* Aplica gris azulado */
+    color: #9eacba;
+}
+
+
+/* Cambia el color del texto principal de la fecha */
+html.dark-mode .dashboard-fecha strong {
+
+    /* Aplica blanco suave */
+    color: #f1f5f9;
+}
+
+
+/* ESTADÍSTICAS */
+
+/* Configura las tarjetas estadísticas en modo oscuro */
+html.dark-mode .estadistica-card {
+
+    /* Aplica el fondo oscuro */
+    background: #182431;
+
+    /* Cambia el color del borde */
+    border-color: #33485b;
+
+    /* Aplica una sombra oscura */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .20);
+}
+
+
+/* Cambia la sombra al pasar el cursor en modo oscuro */
+html.dark-mode .estadistica-card:hover {
+
+    /* Aumenta la sombra de la tarjeta */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .30);
+}
+
+
+/* Configura el icono estadístico en modo oscuro */
+html.dark-mode .estadistica-icono {
+
+    /* Aplica un fondo azul oscuro */
+    background: #20364d;
+
+    /* Aplica azul claro al icono */
+    color: #4ba3e3;
+}
+
+
+/* Cambia el color del título estadístico */
+html.dark-mode .estadistica-titulo {
+
+    /* Aplica gris azulado */
+    color: #b8c5d3;
+}
+
+
+/* Cambia el color del número estadístico */
+html.dark-mode .estadistica-numero {
+
+    /* Aplica blanco suave */
+    color: #f1f5f9;
+}
+
+
+/* Cambia el color de la descripción estadística */
+html.dark-mode .estadistica-descripcion {
+
+    /* Aplica gris azulado */
+    color: #9eacba;
+}
+
+
+/* PANELES */
+
+/* Configura los paneles en modo oscuro */
+html.dark-mode .dashboard-panel {
+
+    /* Aplica el fondo oscuro */
+    background: #182431;
+
+    /* Cambia el color del borde */
+    border-color: #33485b;
+
+    /* Aplica sombra oscura */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .20);
+}
+
+
+/* Cambia el borde inferior del encabezado */
+html.dark-mode .panel-encabezado {
+
+    /* Aplica el color del borde oscuro */
+    border-bottom-color: #33485b;
+}
+
+
+/* Cambia el color del icono del panel */
+html.dark-mode .panel-icono {
+
+    /* Aplica azul claro */
+    color: #4ba3e3;
+}
+
+
+/* Cambia el color del título del panel */
+html.dark-mode .panel-encabezado h2 {
+
+    /* Aplica blanco suave */
+    color: #f1f5f9;
+}
+
+
+/* Cambia el color de la descripción del panel */
+html.dark-mode .panel-encabezado p {
+
+    /* Aplica gris azulado */
+    color: #b8c5d3;
+}
+
+
+/* Cambia el color del botón del panel */
+html.dark-mode .panel-boton {
+
+    /* Aplica azul claro */
+    color: #4ba3e3;
+}
+
+
+/* Cambia el color del botón al pasar el cursor */
+html.dark-mode .panel-boton:hover {
+
+    /* Aplica un azul más claro */
+    color: #7bc2f2;
+}
+
+
+/* CONSULTAS */
+
+/* Cambia el borde de las consultas en modo oscuro */
+html.dark-mode .consulta-item {
+
+    /* Aplica el borde oscuro */
+    border-bottom-color: #33485b;
+}
+
+
+/* Configura el icono de consulta en modo oscuro */
+html.dark-mode .consulta-icono {
+
+    /* Aplica un fondo verde oscuro */
+    background: #193c3a;
+
+    /* Aplica verde claro */
+    color: #5ed1bd;
+}
+
+
+/* Cambia el color del nombre de la consulta */
+html.dark-mode .consulta-datos strong {
+
+    /* Aplica blanco suave */
+    color: #f1f5f9;
+}
+
+
+/* Cambia el color de los datos secundarios */
+html.dark-mode .consulta-datos span {
+
+    /* Aplica gris azulado */
+    color: #b8c5d3;
+}
+
+
+/* Configura el estado de consulta en modo oscuro */
+html.dark-mode .consulta-estado {
+
+    /* Aplica un fondo verde oscuro */
+    background: #1e4030;
+
+    /* Aplica verde claro */
+    color: #8ee0ac;
+}
+
+
+/* ACCIONES */
+
+/* Configura los botones de acción en modo oscuro */
+html.dark-mode .accion-boton {
+
+    /* Cambia el borde inferior */
+    border-bottom-color: #33485b;
+
+    /* Aplica texto claro */
+    color: #d2dbe5;
+}
+
+
+/* Configura el icono de acción en modo oscuro */
+html.dark-mode .accion-boton > .material-symbols-outlined:first-child {
+
+    /* Aplica fondo azul oscuro */
+    background: #20364d;
+
+    /* Aplica azul claro */
+    color: #4ba3e3;
+}
+
+
+/* Cambia el color del título de la acción */
+html.dark-mode .accion-boton strong {
+
+    /* Aplica blanco suave */
+    color: #f1f5f9;
+}
+
+
+/* Cambia el color de la descripción de la acción */
+html.dark-mode .accion-boton span {
+
+    /* Aplica gris azulado */
+    color: #b8c5d3;
+}
+
+
+/* Cambia el color de la flecha */
+html.dark-mode .accion-flecha {
+
+    /* Aplica gris azulado */
+    color: #7f91a3;
+}
+
+
+/* Cambia el fondo de las acciones al pasar el cursor */
+html.dark-mode .accion-boton:hover {
+
+    /* Aplica un fondo ligeramente más claro */
+    background: #1d2b39;
+}
+
+
+/* Cambia el color de la flecha al pasar el cursor */
+html.dark-mode .accion-boton:hover .accion-flecha {
+
+    /* Aplica azul claro */
+    color: #4ba3e3;
+}
+
+
+/* REDUCE MOTION */
+
+/* Reduce las animaciones cuando el usuario tiene activada esta preferencia */
+html.reduce-motion .dashboard-veterinario *,
+html.reduce-motion .dashboard-veterinario *::before,
+html.reduce-motion .dashboard-veterinario *::after {
+
+    /* Desactiva todas las animaciones */
+    animation: none !important;
+
+    /* Desactiva todas las transiciones */
+    transition: none !important;
+}
+
+
+/* RESPONSIVE */
+
+/* Ajusta el dashboard para pantallas de hasta 1050px */
+@media (max-width: 1050px) {
+
+    /* Ajusta la cuadrícula de estadísticas */
+    .dashboard-estadisticas {
+
+        /* Reduce las estadísticas a dos columnas */
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* Ajusta el dashboard para pantallas de hasta 850px */
+@media (max-width: 850px) {
+
+    /* Cambia la dirección del encabezado */
+    .dashboard-encabezado {
+
+        /* Alinea los elementos al inicio */
+        align-items: flex-start;
+
+        /* Coloca los elementos verticalmente */
+        flex-direction: column;
+    }
+
+
+    /* Ajusta el bloque de fecha */
+    .dashboard-fecha {
+
+        /* Ocupa todo el ancho disponible */
+        width: 100%;
+
+        /* Incluye el padding dentro del ancho */
+        box-sizing: border-box;
+    }
+
+
+    /* Ajusta la cuadrícula principal */
+    .dashboard-grid {
+
+        /* Coloca los paneles en una sola columna */
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* Ajusta el dashboard para pantallas de hasta 600px */
+@media (max-width: 600px) {
+
+    /* Reduce el espacio exterior del dashboard */
+    .dashboard-veterinario {
+
+        /* Reduce el padding para móviles */
+        padding: 30px 15px 50px;
+    }
+
+
+    /* Ajusta la cuadrícula de estadísticas */
+    .dashboard-estadisticas {
+
+        /* Coloca las estadísticas en una sola columna */
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Reduce el padding de las tarjetas estadísticas */
+    .estadistica-card {
+
+        /* Define un espacio interno menor */
+        padding: 20px;
+    }
+
+
+    /* Reduce el padding de los encabezados */
+    .panel-encabezado {
+
+        /* Define el espacio interno para móviles */
+        padding: 20px;
+    }
+
+
+    /* Reduce el espacio de la lista de consultas */
+    .consultas-lista {
+
+        /* Ajusta el padding horizontal */
+        padding: 5px 20px;
+    }
+
+
+    /* Oculta el estado de la consulta en pantallas pequeñas */
+    .consulta-estado {
+
+        /* No muestra el estado */
+        display: none;
+    }
+
+}
+
+/* Modales clínicos y formularios */
+
+.vet-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.vet-modal-backdrop[hidden] {
+    display: none !important;
+}
+
+.vet-modal {
+    background: var(--color-blanco);
+    border-radius: 20px;
+    width: min(650px, 100%);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    border: 1px solid var(--color-borde);
+    overflow: hidden;
+    animation: modalEntrada 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vet-modal--lg {
+    width: min(900px, 100%);
+}
+
+@keyframes modalEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.vet-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 22px 26px;
+    border-bottom: 1px solid var(--color-borde);
+    gap: 16px;
+}
+
+.vet-modal-header h3 {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-texto);
+}
+
+.vet-modal-header p {
+    margin: 4px 0 0;
+    font-size: 0.88rem;
+    color: var(--color-texto-secundario);
+}
+
+.vet-modal-cerrar {
+    background: transparent;
+    border: 0;
+    color: var(--color-texto-secundario);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.vet-modal-cerrar:hover {
+    background: #f1f5f9;
+    color: var(--color-texto);
+}
+
+.vet-modal-body {
+    padding: 24px 26px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.vet-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-borde);
+}
+
+/* FORMULARIOS */
+
+.vet-form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.vet-form-grupo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.vet-form-grupo input,
+.vet-form-grupo select,
+.vet-form-grupo textarea {
+    padding: 10px 14px;
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    background: #fdfdfd;
+    font-family: inherit;
+    font-size: 0.92rem;
+    color: var(--color-texto);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.vet-form-grupo input:focus,
+.vet-form-grupo select:focus,
+.vet-form-grupo textarea:focus {
+    outline: none;
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 3px rgba(22, 119, 200, 0.15);
+}
+
+.vet-form-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+@media (max-width: 600px) {
+    .vet-form-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* BOTONES */
+
+.vet-btn-primario {
+    background: var(--color-principal);
+    color: #fff;
+    border: 0;
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.vet-btn-primario:hover {
+    background: var(--color-principal-oscuro);
+}
+
+.vet-btn-primario:active {
+    transform: scale(0.98);
+}
+
+.vet-btn-secundario {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.vet-btn-secundario:hover {
+    background: #e2e8f0;
+}
+
+/* BUSCADOR DE PACIENTES */
+
+.vet-buscador-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.vet-buscador-input-wrap .material-symbols-outlined {
+    position: absolute;
+    left: 14px;
+    color: var(--color-texto-secundario);
+    pointer-events: none;
+}
+
+.vet-buscador-input-wrap input {
+    width: 100%;
+    padding: 12px 14px 12px 44px;
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: #f8fafc;
+    color: var(--color-texto);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.vet-buscador-input-wrap input:focus {
+    outline: none;
+    border-color: var(--color-principal);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(22, 119, 200, 0.15);
+}
+
+.vet-paciente-resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+.vet-paciente-card-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border: 1px solid var(--color-borde);
+    border-radius: 14px;
+    background: #fff;
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.vet-paciente-card-item:hover {
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+}
+
+.vet-paciente-card-icono {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #eaf5fd;
+    color: var(--color-principal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.vet-paciente-card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.vet-paciente-card-info strong {
+    font-size: 1rem;
+    color: var(--color-texto);
+}
+
+.vet-paciente-card-info span {
+    font-size: 0.85rem;
+    color: var(--color-texto-secundario);
+}
+
+.vet-paciente-card-info small {
+    font-size: 0.78rem;
+    color: #94a3b8;
+}
+
+.vet-btn-detalle {
+    background: #eaf5fd;
+    color: var(--color-principal);
+    border: 0;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.vet-btn-detalle:hover {
+    background: #d6ecfb;
+}
+
+/* FICHA DETALLE DEL PACIENTE */
+
+.vet-ficha-paciente {
+    background: #f8fafc;
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.vet-ficha-encabezado {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.vet-ficha-encabezado h4 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--color-texto);
+    font-family: "Montserrat", sans-serif;
+}
+
+.vet-ficha-encabezado p {
+    margin: 4px 0 0;
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+}
+
+.vet-ficha-dueno {
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    font-size: 0.85rem;
+    color: #334155;
+    line-height: 1.5;
+}
+
+.vet-ficha-seccion {
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vet-ficha-seccion h5 {
+    margin: 0 0 6px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--color-texto);
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 6px;
+}
+
+.vet-historia-entry {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.vet-historia-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.vet-historia-entry p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+.vet-vacunas-lista,
+.vet-citas-lista {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 0.85rem;
+    color: #475569;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* TABLA DE TODAS LAS CONSULTAS */
+
+.vet-filtros-consultas {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.vet-filtros-consultas .vet-buscador-input-wrap {
+    flex: 1;
+}
+
+.vet-filtro-select {
+    padding: 11px 14px;
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    background: #f8fafc;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+}
+
+.vet-tabla-contenedor {
+    overflow-x: auto;
+    border: 1px solid var(--color-borde);
+    border-radius: 14px;
+    max-height: 480px;
+}
+
+.vet-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    background: #fff;
+}
+
+.vet-tabla th,
+.vet-tabla td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+    white-space: nowrap;
+}
+
+.vet-tabla th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #475569;
+    font-family: "Montserrat", sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.vet-tabla tbody tr:hover {
+    background: #f8fbfe;
+}
+
+.vet-subtexto {
+    font-size: 0.78rem;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.vet-select-estado {
+    padding: 5px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* BADGES DE ESTADO */
+
+.estado {
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    display: inline-block;
+    background: #eef5f8;
+    color: #334155;
+    text-transform: uppercase;
+}
+
+.estado.PENDIENTE {
+    background: #fff4d8;
+    color: #b45309;
+}
+
+.estado.CONFIRMADA {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.estado.ATENDIDA,
+.estado.ACTIVO {
+    background: #e4f5ea;
+    color: #15803d;
+}
+
+.estado.CANCELADA,
+.estado.INACTIVO {
+    background: #fde7e7;
+    color: #b91c1c;
+}
+
+.vet-empty-state {
+    text-align: center;
+    padding: 35px 20px;
+    color: var(--color-texto-secundario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.vet-empty-state .material-symbols-outlined {
+    font-size: 36px;
+    color: #cbd5e1;
+}
+
+.vet-loading-inline {
+    padding: 20px;
+    text-align: center;
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+}
+
+.vet-text-muted {
+    font-size: 0.8rem;
+    color: var(--color-texto-secundario);
+    font-weight: normal;
+}
+
+/* TOAST NOTIFICATION */
+
+.login-alerta-toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #0f172a;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    animation: deslizarToast 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.login-alerta-toast.error {
+    background: #dc2626;
+}
+
+.login-alerta-icono {
+    font-size: 24px;
+}
+
+.login-alerta-titulo {
+    font-weight: 700;
+    font-size: 0.88rem;
+}
+
+.login-alerta-mensaje {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+@keyframes deslizarToast {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SOPORTE MODO OSCURO PARA MODALES */
+
+html.dark-mode .vet-modal {
+    background: #182431;
+    border-color: #33485b;
+}
+
+html.dark-mode .vet-modal-header {
+    border-bottom-color: #33485b;
+}
+
+html.dark-mode .vet-modal-header h3 {
+    color: #f1f5f9;
+}
+
+html.dark-mode .vet-modal-header p {
+    color: #94a3b8;
+}
+
+html.dark-mode .vet-modal-cerrar {
+    color: #94a3b8;
+}
+
+html.dark-mode .vet-modal-cerrar:hover {
+    background: #20364d;
+    color: #f1f5f9;
+}
+
+html.dark-mode .vet-modal-footer {
+    border-top-color: #33485b;
+}
+
+html.dark-mode .vet-form-grupo label {
+    color: #e2e8f0;
+}
+
+html.dark-mode .vet-form-grupo input,
+html.dark-mode .vet-form-grupo select,
+html.dark-mode .vet-form-grupo textarea {
+    background: #131d27;
+    border-color: #33485b;
+    color: #f1f5f9;
+}
+
+html.dark-mode .vet-btn-secundario {
+    background: #20364d;
+    border-color: #33485b;
+    color: #e2e8f0;
+}
+
+html.dark-mode .vet-btn-secundario:hover {
+    background: #284461;
+}
+
+html.dark-mode .vet-buscador-input-wrap input {
+    background: #131d27;
+    border-color: #33485b;
+    color: #f1f5f9;
+}
+
+html.dark-mode .vet-paciente-card-item {
+    background: #182431;
+    border-color: #33485b;
+}
+
+html.dark-mode .vet-paciente-card-info strong {
+    color: #f1f5f9;
+}
+
+html.dark-mode .vet-paciente-card-icono {
+    background: #20364d;
+    color: #4ba3e3;
+}
+
+html.dark-mode .vet-ficha-paciente {
+    background: #131d27;
+    border-color: #33485b;
+}
+
+html.dark-mode .vet-ficha-encabezado h4 {
+    color: #f1f5f9;
+}
+
+html.dark-mode .vet-ficha-dueno,
+html.dark-mode .vet-ficha-seccion,
+html.dark-mode .vet-historia-entry {
+    background: #182431;
+    border-color: #33485b;
+    color: #cbd5e1;
+}
+
+html.dark-mode .vet-ficha-seccion h5 {
+    color: #f1f5f9;
+    border-bottom-color: #33485b;
+}
+
+html.dark-mode .vet-historia-entry p,
+html.dark-mode .vet-vacunas-lista,
+html.dark-mode .vet-citas-lista {
+    color: #94a3b8;
+}
+
+html.dark-mode .vet-tabla-contenedor {
+    border-color: #33485b;
+}
+
+html.dark-mode .vet-tabla {
+    background: #182431;
+}
+
+html.dark-mode .vet-tabla th {
+    background: #131d27;
+    color: #cbd5e1;
+    border-bottom-color: #33485b;
+}
+
+html.dark-mode .vet-tabla td {
+    border-bottom-color: #33485b;
+    color: #e2e8f0;
+}
+
+html.dark-mode .vet-tabla tbody tr:hover {
+    background: #1f3042;
+}
+
+html.dark-mode .vet-select-estado,
+html.dark-mode .vet-filtro-select {
+    background: #131d27;
+    border-color: #33485b;
+    color: #e2e8f0;
+}

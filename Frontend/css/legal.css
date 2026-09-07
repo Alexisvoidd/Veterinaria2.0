@@ -1,0 +1,254 @@
+/* SECCIÓN DE CONTENIDO LEGAL */
+.legal-section {
+
+    /* Agrega espacio superior a la sección */
+    padding-top: 28px;
+
+    /* Agrega espacio inferior a la sección */
+    padding-bottom: 72px;
+
+    /* Define el fondo blanco */
+    background: #fff
+
+}
+
+/* TARJETA PRINCIPAL DEL CONTENIDO LEGAL */
+.legal-card {
+
+    /* Agrega un borde sutil */
+    border: 1px solid #e1eaf2;
+
+    /* Redondea las esquinas */
+    border-radius: 18px;
+
+    /* Define un fondo ligeramente azulado */
+    background: #fbfdff;
+
+    /* Aplica una sombra suave */
+    box-shadow: 0 8px 25px rgba(27, 78, 155, .06);
+
+    /* Agrega espacio interno */
+    padding: 28px 32px 34px
+
+}
+
+/* INFORMACIÓN COMPLEMENTARIA DEL DOCUMENTO */
+.legal-meta {
+
+    /* Usa Flexbox para organizar la información */
+    display: flex;
+
+    /* Permite que los elementos bajen de línea */
+    flex-wrap: wrap;
+
+    /* Separa los elementos horizontal y verticalmente */
+    gap: 10px 18px;
+
+    /* Agrega separación inferior */
+    margin-bottom: 22px;
+
+    /* Define el color de la información */
+    color: #74869a;
+
+    /* Define el tamaño del texto */
+    font-size: .82rem
+
+}
+
+/* TÍTULOS DE LAS SECCIONES LEGALES */
+.legal-card h2 {
+
+    /* Define el margen del título */
+    margin: 28px 0 10px;
+
+    /* Define el tamaño del título */
+    font-size: 1.18rem;
+
+    /* Define el color del título */
+    color: #244a72
+
+}
+
+/* PRIMER TÍTULO DE LA TARJETA LEGAL */
+.legal-card h2:first-of-type {
+
+    /* Reduce el margen superior del primer título */
+    margin-top: 8px
+
+}
+
+/* PÁRRAFOS Y ELEMENTOS DE LISTA DEL CONTENIDO LEGAL */
+.legal-card p,
+.legal-card li {
+
+    /* Define el color del texto */
+    color: #5c6f84;
+
+    /* Define el tamaño del texto */
+    font-size: .92rem;
+
+    /* Define el espacio entre líneas */
+    line-height: 1.75
+
+}
+
+/* PÁRRAFOS DEL CONTENIDO LEGAL */
+.legal-card p {
+
+    /* Elimina el margen superior y agrega separación inferior */
+    margin: 0 0 12px
+
+}
+
+/* LISTAS DEL CONTENIDO LEGAL */
+.legal-card ul {
+
+    /* Elimina el margen superior y agrega separación inferior */
+    margin: 0 0 14px;
+
+    /* Agrega espacio para las viñetas */
+    padding-left: 20px
+
+}
+
+/* ENLACES DEL CONTENIDO LEGAL */
+.legal-card a {
+
+    /* Usa el color principal del sitio */
+    color: var(--primary);
+
+    /* Resalta el enlace */
+    font-weight: 700;
+
+    /* Elimina el subrayado */
+    text-decoration: none
+
+}
+
+/* EFECTO AL PASAR EL CURSOR SOBRE LOS ENLACES */
+.legal-card a:hover {
+
+    /* Muestra el subrayado */
+    text-decoration: underline
+
+}
+
+/* CONTENEDOR DE BOTONES Y ACCIONES */
+.legal-actions {
+
+    /* Usa Flexbox para organizar los botones */
+    display: flex;
+
+    /* Permite que los botones bajen de línea */
+    flex-wrap: wrap;
+
+    /* Separa los botones */
+    gap: 10px;
+
+    /* Separa las acciones del contenido superior */
+    margin-top: 28px
+
+}
+
+/* MODO OSCURO DE LA SECCIÓN LEGAL */
+html.dark-mode .legal-section {
+
+    /* Define el fondo oscuro de la sección */
+    background: #101820;
+
+}
+
+/* MODO OSCURO DE LA TARJETA LEGAL */
+html.dark-mode .legal-card {
+
+    /* Define el fondo oscuro de la tarjeta */
+    background: #182431;
+
+    /* Define el color del borde */
+    border-color: #33485b;
+
+    /* Aplica una sombra oscura */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
+
+}
+
+/* INFORMACIÓN SECUNDARIA EN MODO OSCURO */
+html.dark-mode .legal-meta {
+
+    /* Define un color claro para los metadatos */
+    color: #9eacba;
+
+}
+
+/* TÍTULOS LEGALES EN MODO OSCURO */
+html.dark-mode .legal-card h2 {
+
+    /* Define el color claro de los títulos */
+    color: #f1f5f9;
+
+}
+
+/* PÁRRAFOS Y LISTAS EN MODO OSCURO */
+html.dark-mode .legal-card p,
+html.dark-mode .legal-card li {
+
+    /* Define el color claro del contenido */
+    color: #cbd5df;
+
+}
+
+/* ENLACES LEGALES EN MODO OSCURO */
+html.dark-mode .legal-card a {
+
+    /* Define el color azul del enlace */
+    color: #4ba3e3;
+
+}
+
+/* EFECTO HOVER DE LOS ENLACES EN MODO OSCURO */
+html.dark-mode .legal-card a:hover {
+
+    /* Aclara el color del enlace al pasar el cursor */
+    color: #7bc2f2;
+
+}
+
+
+/* BOTONES Y ACCIONES EN MODO OSCURO */
+html.dark-mode .legal-actions {
+
+    /* Define el color del texto de las acciones */
+    color: #d2dbe5;
+
+}
+
+
+/* REDUCE LAS ANIMACIONES CUANDO EL USUARIO LO SOLICITA */
+html.reduce-motion .legal-section *,
+
+/* Aplica la reducción de movimiento a pseudo-elementos antes */
+html.reduce-motion .legal-section *::before,
+
+/* Aplica la reducción de movimiento a pseudo-elementos después */
+html.reduce-motion .legal-section *::after {
+
+    /* Desactiva todas las animaciones */
+    animation: none !important;
+
+    /* Desactiva todas las transiciones */
+    transition: none !important;
+
+}
+
+/* AJUSTES PARA PANTALLAS PEQUEÑAS */
+@media (max-width: 620px) {
+
+    /* TARJETA LEGAL EN DISPOSITIVOS MÓVILES */
+    .legal-card {
+
+        /* Reduce el espacio interno para pantallas pequeñas */
+        padding: 22px 18px 28px
+
+    }
+
+}

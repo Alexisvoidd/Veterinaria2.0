@@ -1,0 +1,3393 @@
+:root {
+  --primary: #1b4e9b;
+  --primary-hover: #164283;
+  --primary-light: #ebf3fc;
+  --secondary: #4ba3e3;
+  --tertiary: #6fced9;
+  --deep-navy: #0d254d;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
+  --font-headings: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --sidebar-width: 240px;
+}
+
+/* Configura todos los elementos */
+*,
+
+/* Configura los pseudoelementos before */
+*::before,
+
+/* Configura los pseudoelementos after */
+*::after {
+  /* Incluye padding y borde dentro del tamaño */
+  box-sizing: border-box;
+
+  /* Elimina los márgenes predeterminados */
+  margin: 0;
+
+  /* Elimina los rellenos predeterminados */
+  padding: 0;
+}
+
+/* Configura el cuerpo de la página */
+body {
+  /* Define la fuente general */
+  font-family: var(--font-body);
+
+  /* Define el color de fondo */
+  background-color: var(--bg-page);
+
+  /* Define el color general del texto */
+  color: var(--text-dark);
+
+  /* Define la altura de línea */
+  line-height: 1.5;
+
+  /* Ocupa como mínimo toda la altura de la pantalla */
+  min-height: 100vh;
+}
+
+/* Layout general */
+.dash-layout {
+  /* Organiza los elementos horizontalmente */
+  display: flex;
+
+  /* Ocupa como mínimo toda la altura */
+  min-height: 100vh;
+}
+
+.dash-sidebar {
+  width: var(--sidebar-width);
+  background-color: #f8fafc;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 1.75rem 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+/* Contenedor de la marca */
+.dash-sidebar__brand {
+  /* Separa la marca de los enlaces */
+  margin-bottom: 2.5rem;
+
+  /* Agrega espacio a la izquierda */
+  padding-left: 0.5rem;
+}
+
+/* Enlace del logo */
+.dash-sidebar__logo-link {
+  /* Permite controlar el elemento como bloque en línea */
+  display: inline-block;
+
+  /* Elimina el subrayado */
+  text-decoration: none;
+}
+
+/* Imagen del logo */
+.dash-sidebar__logo-img {
+  /* Define el ancho del logo */
+  width: 150px;
+
+  /* Mantiene la proporción de la imagen */
+  height: auto;
+
+  /* Evita espacios inferiores de imágenes */
+  display: block;
+}
+
+/* Navegación lateral */
+.dash-sidebar__nav {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Organiza los enlaces verticalmente */
+  flex-direction: column;
+
+  /* Separa los elementos */
+  gap: 0.5rem;
+
+  /* Ocupa el espacio disponible */
+  flex: 1;
+}
+
+/* Elementos de navegación */
+.dash-nav-item {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Separa el icono del texto */
+  gap: 0.85rem;
+
+  /* Agrega espacio interno */
+  padding: 0.75rem 1rem;
+
+  /* Redondea las esquinas */
+  border-radius: 8px;
+
+  /* Elimina el subrayado */
+  text-decoration: none;
+
+  /* Elimina el fondo predeterminado */
+  background: none;
+
+  /* Elimina el borde predeterminado */
+  border: none;
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Alinea el texto a la izquierda */
+  text-align: left;
+
+  /* Cambia el cursor al pasar */
+  cursor: pointer;
+
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del texto */
+  font-size: 0.88rem;
+
+  /* Define el grosor del texto */
+  font-weight: 600;
+
+  /* Define el color del texto */
+  color: var(--text-muted);
+
+  /* Suaviza las transiciones */
+  transition: all 0.2s ease;
+}
+
+/* Iconos de navegación */
+.dash-nav-item .material-symbols-outlined {
+  /* Define el tamaño del icono */
+  font-size: 1.25rem;
+
+  /* Hereda el color del elemento */
+  color: inherit;
+}
+
+/* Estado hover de navegación */
+.dash-nav-item:hover {
+  background-color: #f1f5f9;
+  color: var(--primary);
+}
+
+/* Elemento de navegación activo */
+.dash-nav-item.active {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(27, 78, 155, 0.25);
+}
+
+/* Icono del elemento activo */
+.dash-nav-item.active .material-symbols-outlined {
+  color: #ffffff;
+}
+
+/* Pie del menú lateral */
+.dash-sidebar__footer {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.dash-home-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: var(--font-headings);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: #ebf3fc;
+  transition: all 0.2s ease;
+}
+
+.dash-home-btn:hover {
+  background-color: #dbeafe;
+  color: var(--primary-hover);
+  transform: translateX(2px);
+}
+
+.dash-home-btn .material-symbols-outlined {
+  font-size: 1.2rem;
+}
+
+.dash-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: var(--font-headings);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.dash-logout-btn:hover {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.dash-logout-btn .material-symbols-outlined {
+  font-size: 1.2rem;
+}
+
+/* Overlay móvil */
+.dash-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.dash-backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dash-main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-topbar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 80;
+}
+
+.dash-menu-toggle {
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+}
+
+.dash-topbar__title {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--primary);
+}
+
+.dash-topbar__avatar {
+  width: 36px;
+  height: 36px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.dash-content-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.5rem 2.5rem 4rem;
+}
+
+/* Sistema de Pestañas */
+.dash-tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.dash-tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Encabezados de Sección */
+.dash-greeting,
+.dash-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.dash-greeting__title {
+  font-family: var(--font-headings);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--deep-navy);
+  margin-bottom: 0.35rem;
+}
+
+.dash-greeting__subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.dash-btn-primary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.35rem;
+  border-radius: 10px;
+  font-family: var(--font-headings);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(27, 78, 155, 0.25);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.dash-btn-primary-action:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(27, 78, 155, 0.35);
+}
+
+.dash-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.dash-kpi-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 2px 8px rgba(13, 37, 77, 0.03);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.dash-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(13, 37, 77, 0.06);
+}
+
+.dash-kpi-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.dash-kpi-icon-wrap .material-symbols-outlined {
+  font-size: 1.45rem;
+}
+
+.dash-kpi-icon--blue {
+  background-color: #38bdf8;
+}
+
+.dash-kpi-icon--teal {
+  background-color: #0d9488;
+}
+
+.dash-kpi-icon--slate {
+  background-color: #94a3b8;
+}
+
+.dash-kpi-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-kpi-label {
+  font-family: var(--font-headings);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-light);
+  margin-bottom: 0.15rem;
+}
+
+.dash-kpi-value {
+  font-family: var(--font-headings);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--deep-navy);
+}
+
+.dash-kpi-value--text {
+  font-size: 1.05rem;
+}
+
+.dash-featured-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1.1fr;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.dash-hero-card {
+  background: linear-gradient(135deg, #1b4e9b 0%, #153e7e 100%);
+  border-radius: 14px;
+  padding: 2rem 2.25rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(27, 78, 155, 0.22);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dash-hero-card__watermark {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.dash-hero-card__watermark .material-symbols-outlined {
+  font-size: 10rem;
+  line-height: 1;
+}
+
+.dash-hero-card__top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.dash-hero-card__badge {
+  padding: 0.35rem 0.85rem;
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  font-family: var(--font-headings);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.dash-hero-card__status-pill {
+  padding: 0.25rem 0.65rem;
+  background-color: #22c55e;
+  color: #ffffff;
+  border-radius: 14px;
+  font-family: var(--font-headings);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.dash-hero-card__title {
+  font-family: var(--font-headings);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.dash-hero-card__datetime {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.25rem;
+}
+
+.dash-hero-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.dash-hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dash-hero-meta-item .material-symbols-outlined {
+  font-size: 1.15rem;
+}
+
+.dash-hero-card__btn {
+  align-self: flex-start;
+  background-color: #ffffff;
+  color: var(--primary);
+  border: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 24px;
+  font-family: var(--font-headings);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+}
+
+.dash-hero-card__btn:hover {
+  background-color: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.dash-quick-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(13, 37, 77, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-quick-card__title {
+  font-family: var(--font-headings);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--deep-navy);
+  margin-bottom: 1.25rem;
+}
+
+.dash-quick-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dash-quick-action-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  background-color: #f1f5f9;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--deep-navy);
+  font-family: var(--font-headings);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dash-quick-action-item:hover {
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
+  transform: translateX(3px);
+}
+
+.dash-quick-action-icon {
+  font-size: 1.35rem;
+  color: var(--primary);
+}
+
+.dash-pets-section {
+  margin-bottom: 2rem;
+}
+
+.dash-pets-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.dash-pets-section__title {
+  font-family: var(--font-headings);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--deep-navy);
+}
+
+/* Cantidad de mascotas registradas */
+.dash-pets-count-badge {
+  /* Define el tamaño del texto */
+  font-size: 0.82rem;
+
+  /* Define el color del texto */
+  color: var(--text-muted);
+
+  /* Define el grosor del texto */
+  font-weight: 600;
+}
+
+/* Contenedor de las tarjetas de mascotas */
+.dash-pets-grid {
+  /* Activa el sistema de cuadrícula */
+  display: grid;
+
+  /* Divide el contenido en dos columnas */
+  grid-template-columns: repeat(2, 1fr);
+
+  /* Define el espacio entre las tarjetas */
+  gap: 1.5rem;
+}
+
+/* Tarjeta individual de mascota */
+.dash-pet-card {
+  /* Define el fondo de la tarjeta */
+  background-color: var(--bg-card);
+
+  /* Agrega un borde */
+  border: 1px solid var(--border-color);
+
+  /* Redondea las esquinas */
+  border-radius: 14px;
+
+  /* Oculta el contenido que sobresale */
+  overflow: hidden;
+
+  /* Activa flexbox */
+  display: flex;
+
+  /* Agrega una sombra ligera */
+  box-shadow: 0 2px 10px rgba(13, 37, 77, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Efecto al pasar el cursor sobre la tarjeta */
+.dash-pet-card:hover {
+  /* Eleva ligeramente la tarjeta */
+  transform: translateY(-2px);
+
+  /* Aumenta la sombra */
+  box-shadow: 0 8px 20px rgba(13, 37, 77, 0.08);
+}
+
+/* Contenedor de la imagen de la mascota */
+.dash-pet-card__photo-wrap {
+  /* Define el ancho del contenedor */
+  width: 140px;
+
+  /* Define la altura mínima */
+  min-height: 140px;
+
+  /* Evita que el contenedor reduzca su tamaño */
+  flex-shrink: 0;
+
+  /* Activa flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Centra horizontalmente el contenido */
+  justify-content: center;
+
+  /* Permite posicionar elementos internos */
+  position: relative;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  user-select: none;
+}
+
+/* Fondo específico para perros */
+.dash-pet-card__photo-wrap--perro {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+/* Fondo específico para gatos */
+.dash-pet-card__photo-wrap--gato {
+  background: linear-gradient(135deg, #f3e8ff 0%, #ddd6fe 100%);
+}
+
+/* Fondo específico para aves */
+.dash-pet-card__photo-wrap--ave {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+}
+
+/* Fondo específico para conejos */
+.dash-pet-card__photo-wrap--conejo {
+  background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+}
+
+/* Fondo específico para hámsters */
+.dash-pet-card__photo-wrap--hamster {
+  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+}
+
+/* Fondo específico para reptiles */
+.dash-pet-card__photo-wrap--reptil {
+  background: linear-gradient(135deg, #ecfccb 0%, #d9f99d 100%);
+}
+
+/* Fondo específico para peces */
+.dash-pet-card__photo-wrap--pez {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+}
+
+/* Fondo para otros tipos de mascotas */
+.dash-pet-card__photo-wrap--otro {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+/* Estilo del icono o emoji de la mascota */
+.dash-pet-card__emoji {
+  /* Define el tamaño del icono */
+  font-size: 4rem;
+
+  /* Define la altura de línea */
+  line-height: 1;
+
+  /* Agrega una sombra al icono */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
+
+  /* Suaviza la animación */
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Efecto del icono al pasar sobre la tarjeta */
+.dash-pet-card:hover .dash-pet-card__emoji {
+  /* Aumenta y gira ligeramente el icono */
+  transform: scale(1.15) rotate(4deg);
+}
+
+/* Imagen de la mascota */
+.dash-pet-card__photo {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Ocupa toda la altura disponible */
+  height: 100%;
+
+  /* Ajusta la imagen sin deformarla */
+  object-fit: cover;
+
+  /* Evita espacios adicionales */
+  display: block;
+}
+
+.dash-pet-photo-preview {
+  width: 120px;
+  height: 120px;
+  margin-top: 0.65rem;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+}
+
+.dash-form-help {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+/* Empty State Moderno */
+.dash-empty-state {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Centra horizontalmente los elementos */
+  align-items: center;
+
+  /* Centra verticalmente los elementos */
+  justify-content: center;
+
+  /* Agrega espacio interno */
+  padding: 3rem 1.5rem;
+
+  /* Define el fondo */
+  background-color: var(--bg-card);
+  border: 2px dashed #cbd5e1;
+  border-radius: 16px;
+
+  /* Centra el texto */
+  text-align: center;
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Incluye borde y padding en el tamaño */
+  box-sizing: border-box;
+}
+
+/* Contenedor del icono del estado vacío */
+.dash-empty-state__icon-wrap {
+  /* Define el ancho del contenedor */
+  width: 68px;
+
+  /* Define la altura del contenedor */
+  height: 68px;
+
+  /* Crea un contenedor circular */
+  border-radius: 50%;
+
+  /* Define el fondo del icono */
+  background-color: var(--primary-light);
+
+  /* Define el color del icono */
+  color: var(--primary);
+
+  /* Activa flexbox */
+  display: flex;
+
+  /* Centra verticalmente el icono */
+  align-items: center;
+
+  /* Centra horizontalmente el icono */
+  justify-content: center;
+
+  /* Separa el icono del contenido siguiente */
+  margin-bottom: 1.2rem;
+}
+
+/* Icono del estado vacío */
+.dash-empty-state__icon-wrap .material-symbols-outlined {
+  /* Define el tamaño del icono */
+  font-size: 2.2rem;
+}
+
+/* Título del estado vacío */
+.dash-empty-state__title {
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del título */
+  font-size: 1.25rem;
+
+  /* Define el grosor del título */
+  font-weight: 700;
+
+  /* Define el color del título */
+  color: var(--deep-navy);
+
+  /* Separa el título del texto */
+  margin-bottom: 0.5rem;
+}
+
+/* Descripción del estado vacío */
+.dash-empty-state__desc {
+  /* Define el tamaño del texto */
+  font-size: 0.95rem;
+
+  /* Define el color del texto */
+  color: var(--text-muted);
+
+  /* Limita el ancho del texto */
+  max-width: 460px;
+
+  /* Define la altura de línea */
+  line-height: 1.5;
+
+  /* Separa la descripción del botón */
+  margin-bottom: 1.5rem;
+}
+
+/* Botón del estado vacío */
+.dash-empty-state__btn {
+  /* Permite organizar el contenido del botón */
+  display: inline-flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Separa el icono del texto */
+  gap: 0.5rem;
+
+  /* Define el color principal del botón */
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+
+  /* Agrega espacio interno */
+  padding: 0.75rem 1.6rem;
+
+  /* Redondea el botón */
+  border-radius: 8px;
+
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del texto */
+  font-size: 0.9rem;
+
+  /* Define el grosor del texto */
+  font-weight: 600;
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Agrega sombra */
+  box-shadow: 0 4px 14px rgba(27, 78, 155, 0.25);
+
+  /* Suaviza las transiciones */
+  transition: all 0.2s ease;
+
+  /* Elimina el subrayado */
+  text-decoration: none;
+}
+
+/* Efecto hover del botón vacío */
+.dash-empty-state__btn:hover {
+  /* Cambia el fondo al color hover */
+  background-color: var(--primary-hover);
+
+  /* Eleva ligeramente el botón */
+  transform: translateY(-2px);
+
+  /* Aumenta la sombra */
+  box-shadow: 0 6px 18px rgba(27, 78, 155, 0.35);
+}
+
+/* Estado vacío de la tarjeta principal */
+.dash-hero-card--empty {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+/* Título de la tarjeta hero vacía */
+.dash-hero-card--empty .dash-hero-card__title {
+  /* Reduce el tamaño del título */
+  font-size: 1.35rem;
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.5rem;
+}
+
+/* Fecha de la tarjeta hero vacía */
+.dash-hero-card--empty .dash-hero-card__datetime {
+  color: #94a3b8;
+  font-size: 0.9rem;
+
+  /* Agrega separación inferior */
+  margin-bottom: 1.25rem;
+}
+
+/* Detalles de la tarjeta de mascota */
+.dash-pet-card__details {
+  /* Agrega espacio interno */
+  padding: 1.25rem 1.5rem;
+
+  /* Activa flexbox */
+  display: flex;
+
+  /* Organiza el contenido verticalmente */
+  flex-direction: column;
+
+  /* Centra el contenido verticalmente */
+  justify-content: center;
+
+  /* Ocupa el espacio restante */
+  flex: 1;
+}
+
+/* Encabezado de la tarjeta de mascota */
+.dash-pet-card__head {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Separa los elementos */
+  gap: 0.5rem;
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.2rem;
+}
+
+/* Nombre de la mascota */
+.dash-pet-card__name {
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del nombre */
+  font-size: 1.35rem;
+
+  /* Define el grosor del nombre */
+  font-weight: 700;
+
+  /* Define el color del nombre */
+  color: var(--deep-navy);
+}
+
+/* Género de la mascota */
+.dash-pet-card__gender {
+  /* Define el tamaño del símbolo */
+  font-size: 1.2rem;
+
+  /* Define el grosor */
+  font-weight: bold;
+}
+
+/* Género masculino */
+.dash-pet-card__gender--male {
+  /* Usa el color principal */
+  color: var(--primary);
+}
+
+/* Género femenino */
+.dash-pet-card__gender--female {
+  /* Usa el color principal */
+  color: var(--primary);
+}
+
+/* Raza de la mascota */
+.dash-pet-card__breed {
+  /* Define el tamaño del texto */
+  font-size: 0.88rem;
+
+  /* Define el color del texto */
+  color: var(--text-muted);
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.75rem;
+}
+
+/* Contenedor de las etiquetas */
+.dash-pet-card__badges {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Permite que las etiquetas pasen a otra línea */
+  flex-wrap: wrap;
+
+  /* Separa las etiquetas */
+  gap: 0.5rem;
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.85rem;
+}
+
+/* Etiqueta general */
+.dash-badge {
+  /* Permite que ocupe solamente el espacio necesario */
+  display: inline-block;
+
+  /* Agrega espacio interno */
+  padding: 0.28rem 0.75rem;
+
+  /* Redondea la etiqueta */
+  border-radius: 16px;
+
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del texto */
+  font-size: 0.75rem;
+
+  /* Define el grosor */
+  font-weight: 600;
+}
+
+/* Etiqueta verde */
+.dash-badge--green {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+/* Etiqueta gris */
+.dash-badge--grey {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+/* Etiqueta azul */
+.dash-badge--blue {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+/* Botón de enlace */
+.dash-btn-link {
+  /* Permite organizar el contenido */
+  display: inline-flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Separa el icono del texto */
+  gap: 0.35rem;
+
+  /* Elimina el fondo */
+  background: none;
+
+  /* Elimina el borde */
+  border: none;
+
+  /* Usa el color principal */
+  color: var(--primary);
+
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del texto */
+  font-size: 0.82rem;
+
+  /* Define el grosor del texto */
+  font-weight: 700;
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Elimina el espacio interno */
+  padding: 0;
+
+  /* Suaviza el cambio de color */
+  transition: color 0.2s ease;
+}
+
+/* Efecto hover del botón de enlace */
+.dash-btn-link:hover {
+  /* Cambia al color hover */
+  color: var(--primary-hover);
+
+  /* Agrega subrayado */
+  text-decoration: underline;
+}
+
+/* Icono del botón de enlace */
+.dash-btn-link .material-symbols-outlined {
+  /* Define el tamaño del icono */
+  font-size: 1.1rem;
+}
+
+.dash-filters-bar {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Separa los filtros */
+  gap: 0.5rem;
+
+  /* Agrega separación inferior */
+  margin-bottom: 1.75rem;
+
+  /* Permite que los filtros pasen a otra línea */
+  flex-wrap: wrap;
+}
+
+/* Botón individual de filtro */
+.dash-filter-chip {
+  /* Agrega espacio interno */
+  padding: 0.55rem 1.15rem;
+
+  /* Define el fondo */
+  background-color: var(--bg-card);
+
+  /* Agrega un borde */
+  border: 1px solid var(--border-color);
+
+  /* Redondea el filtro */
+  border-radius: 20px;
+
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del texto */
+  font-size: 0.82rem;
+
+  /* Define el grosor */
+  font-weight: 600;
+
+  /* Define el color del texto */
+  color: var(--text-muted);
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Suaviza las transiciones */
+  transition: all 0.2s ease;
+}
+
+/* Estado hover del filtro */
+.dash-filter-chip:hover {
+  background-color: #f1f5f9;
+  color: var(--text-dark);
+}
+
+/* Filtro seleccionado */
+.dash-filter-chip.active {
+  /* Usa el color principal como fondo */
+  background-color: var(--primary);
+
+  /* Cambia el color del borde */
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+/* Lista de tarjetas */
+.dash-cards-list {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Organiza las tarjetas verticalmente */
+  flex-direction: column;
+
+  /* Separa las tarjetas */
+  gap: 1.25rem;
+}
+
+/* Tarjeta general de información */
+.dash-item-card {
+  /* Define el fondo */
+  background-color: var(--bg-card);
+
+  /* Agrega un borde */
+  border: 1px solid var(--border-color);
+
+  /* Redondea las esquinas */
+  border-radius: 14px;
+
+  /* Agrega espacio interno */
+  padding: 1.75rem;
+
+  /* Agrega una sombra ligera */
+  box-shadow: 0 2px 10px rgba(13, 37, 77, 0.03);
+}
+
+/* Encabezado de la tarjeta */
+.dash-item-card__header {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Centra verticalmente */
+  align-items: center;
+
+  /* Separa los elementos horizontalmente */
+  justify-content: space-between;
+
+  /* Agrega separación inferior */
+  margin-bottom: 1.25rem;
+
+  /* Define el espacio mínimo entre elementos */
+  gap: 1rem;
+}
+
+/* Contenedor del título de la tarjeta */
+.dash-item-card__title-wrap {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Centra verticalmente */
+  align-items: center;
+
+  /* Separa icono y texto */
+  gap: 1rem;
+}
+
+/* Icono de información */
+.dash-item-icon {
+  /* Define el ancho */
+  width: 40px;
+
+  /* Define la altura */
+  height: 40px;
+
+  /* Redondea el icono */
+  border-radius: 10px;
+
+  /* Activa flexbox */
+  display: flex;
+
+  /* Centra verticalmente */
+  align-items: center;
+
+  /* Centra horizontalmente */
+  justify-self: center;
+
+  /* Define el tamaño del icono */
+  font-family: "Material Symbols Outlined";
+  font-size: 2.8rem;
+  font-weight: 400;
+  font-style: normal;
+
+  /* Centra y mantiene proporcionado el glifo de Material Symbols */
+  line-height: 1;
+  text-align: center;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 500,
+    "GRAD" 0,
+    "opsz" 48;
+
+  /* Evita que reduzca su tamaño */
+  flex-shrink: 0;
+}
+
+/* Icono de la especie dentro del título de la cita */
+.dash-item-card__title > .material-symbols-outlined {
+  font-size: 1.35rem;
+  vertical-align: middle;
+}
+
+/* Icono azul */
+.dash-item-icon--blue {
+  background-color: #e0f2fe;
+  color: var(--primary);
+}
+
+/* Icono verde */
+.dash-item-icon--green {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+/* Título de la tarjeta */
+.dash-item-card__title {
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño */
+  font-size: 1.15rem;
+
+  /* Define el grosor */
+  font-weight: 700;
+
+  /* Define el color */
+  color: var(--deep-navy);
+}
+
+/* Subtítulo de la tarjeta */
+.dash-item-card__sub {
+  /* Define el tamaño del texto */
+  font-size: 0.82rem;
+
+  /* Define el color */
+  color: var(--text-muted);
+}
+
+/* Etiqueta de estado */
+.dash-status-pill {
+  /* Agrega espacio interno */
+  padding: 0.35rem 0.85rem;
+
+  /* Redondea la etiqueta */
+  border-radius: 16px;
+
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño */
+  font-size: 0.72rem;
+
+  /* Define el grosor */
+  font-weight: 700;
+
+  /* Aumenta ligeramente el espacio entre letras */
+  letter-spacing: 0.04em;
+}
+
+/* Estado confirmado */
+.dash-status-pill--confirmed {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+/* Estado completado */
+.dash-status-pill--completed {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+/* Estado pendiente */
+.dash-status-pill--pending {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+/* Estado cancelado */
+.dash-status-pill--cancelled {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Cuadrícula de información */
+.dash-item-card__grid {
+  /* Activa CSS Grid */
+  display: grid;
+
+  /* Divide la información en tres columnas */
+  grid-template-columns: repeat(3, 1fr);
+
+  /* Separa las columnas */
+  gap: 1rem;
+  background-color: #f8fafc;
+  padding: 1rem 1.25rem;
+
+  /* Redondea el contenedor */
+  border-radius: 10px;
+
+  /* Agrega separación inferior */
+  margin-bottom: 1rem;
+}
+
+/* Columna de información */
+.dash-item-info-col {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Organiza el contenido verticalmente */
+  flex-direction: column;
+
+  /* Separa los elementos */
+  gap: 0.2rem;
+}
+
+/* Etiqueta de información */
+.dash-item-label {
+  /* Define el tamaño */
+  font-size: 0.75rem;
+
+  /* Define el color */
+  color: var(--text-light);
+
+  /* Define el grosor */
+  font-weight: 600;
+}
+
+/* Valor de información */
+.dash-item-value {
+  /* Define el tamaño */
+  font-size: 0.88rem;
+
+  /* Define el color */
+  color: var(--deep-navy);
+
+  /* Define el grosor */
+  font-weight: 600;
+}
+
+/* Motivo o descripción de la tarjeta */
+.dash-item-card__reason {
+  /* Define el tamaño del texto */
+  font-size: 0.88rem;
+
+  /* Define el color */
+  color: var(--text-dark);
+
+  /* Agrega separación inferior */
+  margin-bottom: 1.25rem;
+
+  /* Define la altura de línea */
+  line-height: 1.5;
+}
+
+/* Pie de la tarjeta */
+.dash-item-card__footer {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Separa los botones */
+  gap: 0.75rem;
+}
+
+/* Botón de acción con borde */
+.dash-btn-action-outline {
+  /* Permite organizar icono y texto */
+  display: inline-flex;
+
+  /* Centra verticalmente */
+  align-items: center;
+
+  /* Separa icono y texto */
+  gap: 0.4rem;
+
+  /* Agrega espacio interno */
+  padding: 0.55rem 1.1rem;
+
+  /* Define el borde */
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  border-radius: 8px;
+
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño */
+  font-size: 0.82rem;
+
+  /* Define el grosor */
+  font-weight: 600;
+
+  /* Define el color */
+  color: var(--deep-navy);
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Suaviza las transiciones */
+  transition: all 0.2s ease;
+}
+
+/* Hover del botón de acción con borde */
+.dash-btn-action-outline:hover {
+  /* Cambia el color del borde */
+  border-color: var(--primary);
+
+  /* Cambia el color del texto */
+  color: var(--primary);
+  background-color: #f8fafc;
+}
+
+/* Botón de acción peligroso */
+.dash-btn-action-danger {
+  /* Permite organizar icono y texto */
+  display: inline-flex;
+
+  /* Centra verticalmente */
+  align-items: center;
+
+  /* Separa icono y texto */
+  gap: 0.4rem;
+
+  /* Agrega espacio interno */
+  padding: 0.55rem 1.1rem;
+  border: 1px solid #fecaca;
+  background-color: #fef2f2;
+  border-radius: 8px;
+
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño */
+  font-size: 0.82rem;
+
+  /* Define el grosor */
+  font-weight: 600;
+  color: #dc2626;
+  cursor: pointer;
+
+  /* Suaviza las transiciones */
+  transition: all 0.2s ease;
+}
+
+/* Hover del botón peligroso */
+.dash-btn-action-danger:hover {
+  background-color: #fee2e2;
+}
+
+.dash-filter-select-wrap {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Centra verticalmente */
+  align-items: center;
+
+  /* Separa etiqueta y selector */
+  gap: 0.5rem;
+}
+
+/* Etiqueta junto al selector */
+.dash-label-inline {
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño */
+  font-size: 0.85rem;
+
+  /* Define el grosor */
+  font-weight: 600;
+
+  /* Define el color */
+  color: var(--deep-navy);
+}
+
+/* Selector de filtros */
+.dash-select-filter {
+  /* Agrega espacio interno */
+  padding: 0.5rem 1rem;
+
+  /* Define el borde */
+  border: 1px solid var(--border-color);
+
+  /* Redondea el selector */
+  border-radius: 8px;
+
+  /* Usa la fuente general */
+  font-family: var(--font-body);
+
+  /* Define el tamaño del texto */
+  font-size: 0.85rem;
+
+  /* Define el fondo */
+  background-color: var(--bg-card);
+
+  /* Define el color del texto */
+  color: var(--text-dark);
+
+  /* Elimina el contorno predeterminado */
+  outline: none;
+}
+
+/* Lista de elementos de la línea de tiempo */
+.dash-timeline-list {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Separa los elementos */
+  gap: 1.5rem;
+}
+
+/* Tarjeta del historial */
+.dash-history-card {
+  /* Define el fondo */
+  background-color: var(--bg-card);
+
+  /* Agrega un borde */
+  border: 1px solid var(--border-color);
+
+  /* Redondea las esquinas */
+  border-radius: 14px;
+
+  /* Agrega espacio interno */
+  padding: 1.75rem;
+
+  /* Organiza el contenido horizontalmente */
+  display: flex;
+
+  /* Separa fecha y contenido */
+  gap: 1.75rem;
+
+  /* Agrega una sombra ligera */
+  box-shadow: 0 2px 10px rgba(13, 37, 77, 0.03);
+}
+
+/* Bloque de fecha del historial */
+.dash-history-card__badge-date {
+  /* Define el ancho */
+  width: 80px;
+
+  /* Define la altura */
+  height: 80px;
+  background-color: #f1f5f9;
+  border-radius: 12px;
+
+  /* Activa flexbox */
+  display: flex;
+
+  /* Organiza día y mes verticalmente */
+  flex-direction: column;
+
+  /* Centra horizontalmente */
+  align-items: center;
+
+  /* Centra verticalmente */
+  justify-content: center;
+
+  /* Evita que reduzca su tamaño */
+  flex-shrink: 0;
+  border: 1px solid #e2e8f0;
+}
+
+/* Día del historial */
+.dash-history-day {
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño */
+  font-size: 1.65rem;
+
+  /* Define un grosor alto */
+  font-weight: 800;
+
+  /* Define el color */
+  color: var(--deep-navy);
+
+  /* Ajusta la altura de línea */
+  line-height: 1;
+}
+
+/* Mes del historial */
+.dash-history-month {
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño */
+  font-size: 0.68rem;
+
+  /* Define el grosor */
+  font-weight: 700;
+
+  /* Define el color */
+  color: var(--text-muted);
+
+  /* Agrega espacio superior */
+  margin-top: 0.2rem;
+}
+
+/* Cuerpo de la tarjeta del historial */
+.dash-history-card__body {
+  /* Ocupa el espacio disponible */
+  flex: 1;
+
+  /* Activa flexbox */
+  display: flex;
+
+  /* Organiza el contenido verticalmente */
+  flex-direction: column;
+
+  /* Separa los elementos */
+  gap: 1rem;
+}
+
+/* Encabezado del historial */
+.dash-history-card__head {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Alinea los elementos desde arriba */
+  align-items: flex-start;
+
+  /* Distribuye los elementos */
+  justify-content: space-between;
+
+  /* Define el espacio entre elementos */
+  gap: 1rem;
+}
+
+/* Título del historial */
+.dash-history-card__title {
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño */
+  font-size: 1.2rem;
+
+  /* Define el grosor */
+  font-weight: 700;
+
+  /* Define el color */
+  color: var(--deep-navy);
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.2rem;
+}
+
+/* Veterinario asociado al historial */
+.dash-history-card__vet {
+  /* Define el tamaño */
+  font-size: 0.85rem;
+
+  /* Define el color */
+  color: var(--text-muted);
+}
+
+/* Cuadrícula de detalles del historial */
+.dash-history-details-grid {
+  /* Activa CSS Grid */
+  display: grid;
+
+  /* Divide los detalles en dos columnas */
+  grid-template-columns: 1fr 1fr;
+
+  /* Separa las columnas */
+  gap: 1rem;
+}
+
+/* Caja de información del historial */
+.dash-history-box {
+  background-color: #f8fafc;
+  padding: 1rem;
+
+  /* Redondea las esquinas */
+  border-radius: 8px;
+
+  /* Agrega un borde izquierdo */
+  border-left: 3px solid var(--primary);
+}
+
+/* Etiqueta de la caja del historial */
+.dash-history-box__label {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Centra verticalmente */
+  align-items: center;
+
+  /* Separa icono y texto */
+  gap: 0.35rem;
+
+  /* Usa la fuente de títulos */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño */
+  font-size: 0.78rem;
+
+  /* Define el grosor */
+  font-weight: 700;
+
+  /* Define el color */
+  color: var(--deep-navy);
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.35rem;
+}
+/* ICONO DE LA ETIQUETA DEL HISTORIAL */
+.dash-history-box__label .material-symbols-outlined {
+  /* Define el tamaño del icono */
+  font-size: 1rem;
+
+  /* Aplica el color principal */
+  color: var(--primary);
+}
+
+/* TEXTO DEL HISTORIAL */
+.dash-history-box__text {
+  /* Define el tamaño del texto */
+  font-size: 0.85rem;
+
+  /* Aplica el color del texto */
+  color: var(--text-dark);
+}
+
+/* SECCIÓN DE TRATAMIENTO */
+.dash-treatment-section {
+  background-color: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 8px;
+
+  /* Agrega espacio interno */
+  padding: 1rem;
+}
+
+/* TÍTULO DE TRATAMIENTO */
+.dash-treatment-title {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Define el espacio entre elementos */
+  gap: 0.4rem;
+
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del texto */
+  font-size: 0.85rem;
+
+  /* Define el grosor de la fuente */
+  font-weight: 700;
+  color: #15803d;
+  margin-bottom: 0.65rem;
+}
+
+/* CUADRÍCULA DE TRATAMIENTOS */
+.dash-treatment-grid {
+  /* Activa el sistema de cuadrícula */
+  display: grid;
+
+  /* Crea dos columnas iguales */
+  grid-template-columns: 1fr 1fr;
+
+  /* Define el espacio entre elementos */
+  gap: 0.75rem;
+}
+
+/* ELEMENTO INDIVIDUAL DEL TRATAMIENTO */
+.dash-treatment-pill {
+  background-color: #ffffff;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+
+  /* Agrega espacio interno */
+  padding: 0.6rem 0.85rem;
+
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Define el espacio entre elementos */
+  gap: 0.15rem;
+}
+
+/* TEXTO PRINCIPAL DEL TRATAMIENTO */
+.dash-treatment-pill strong {
+  /* Define el tamaño del texto */
+  font-size: 0.82rem;
+
+  /* Aplica un color verde oscuro */
+  color: #166534;
+}
+
+/* TEXTO SECUNDARIO DEL TRATAMIENTO */
+.dash-treatment-pill span {
+  /* Define el tamaño del texto */
+  font-size: 0.78rem;
+  color: #4b5563;
+}
+
+/* PIE DE LA TARJETA DEL HISTORIAL */
+.dash-history-card__foot {
+  /* Agrega espacio superior */
+  padding-top: 0.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* PRÓXIMA VISITA */
+.dash-next-visit {
+  /* Permite organizar el contenido en línea */
+  display: inline-flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Define el espacio entre elementos */
+  gap: 0.35rem;
+
+  /* Define el tamaño del texto */
+  font-size: 0.82rem;
+
+  /* Aplica el color de texto secundario */
+  color: var(--text-muted);
+}
+
+/* ICONO DE LA PRÓXIMA VISITA */
+.dash-next-visit .material-symbols-outlined {
+  /* Define el tamaño del icono */
+  font-size: 1.1rem;
+
+  /* Aplica el color principal */
+  color: var(--primary);
+}
+
+.dash-orders-list {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Organiza los pedidos verticalmente */
+  flex-direction: column;
+
+  /* Define el espacio entre pedidos */
+  gap: 1.25rem;
+}
+
+/* TARJETA DE PEDIDO */
+.dash-order-card {
+  /* Define el fondo de la tarjeta */
+  background-color: var(--bg-card);
+
+  /* Agrega un borde */
+  border: 1px solid var(--border-color);
+
+  /* Redondea las esquinas */
+  border-radius: 14px;
+
+  /* Agrega espacio interno */
+  padding: 1.75rem;
+
+  /* Agrega una sombra suave */
+  box-shadow: 0 2px 10px rgba(13, 37, 77, 0.03);
+}
+
+/* ENCABEZADO DEL PEDIDO */
+.dash-order-card__header {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Separa los elementos horizontalmente */
+  justify-content: space-between;
+
+  /* Agrega espacio inferior */
+  margin-bottom: 1.25rem;
+
+  /* Define el espacio entre elementos */
+  gap: 1rem;
+
+  /* Agrega espacio debajo del contenido */
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* IDENTIFICADOR DEL PEDIDO */
+.dash-order-id {
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del texto */
+  font-size: 1.15rem;
+
+  /* Define el grosor de la fuente */
+  font-weight: 700;
+
+  /* Aplica el color azul oscuro */
+  color: var(--deep-navy);
+
+  /* Convierte el elemento en bloque */
+  display: block;
+}
+
+/* FECHA DEL PEDIDO */
+.dash-order-date {
+  /* Define el tamaño del texto */
+  font-size: 0.82rem;
+
+  /* Aplica el color secundario */
+  color: var(--text-muted);
+}
+
+/* INSIGNIAS DEL PEDIDO */
+.dash-order-card__badges {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Define el espacio entre insignias */
+  gap: 0.75rem;
+}
+
+/* INSIGNIA DE MÉTODO DE PAGO */
+.dash-payment-pill {
+  /* Permite organizar el contenido en línea */
+  display: inline-flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Define el espacio entre elementos */
+  gap: 0.35rem;
+
+  /* Agrega espacio interno */
+  padding: 0.35rem 0.75rem;
+  background-color: #f1f5f9;
+  border-radius: 16px;
+
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del texto */
+  font-size: 0.72rem;
+
+  /* Define el grosor de la fuente */
+  font-weight: 700;
+
+  /* Aplica el color secundario */
+  color: var(--text-muted);
+}
+
+/* ICONO DEL MÉTODO DE PAGO */
+.dash-payment-pill .material-symbols-outlined {
+  /* Define el tamaño del icono */
+  font-size: 0.95rem;
+}
+
+/* LISTA DE PRODUCTOS DEL PEDIDO */
+.dash-order-items {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Organiza los productos verticalmente */
+  flex-direction: column;
+
+  /* Define el espacio entre productos */
+  gap: 0.65rem;
+
+  /* Agrega espacio inferior */
+  margin-bottom: 1.25rem;
+}
+
+/* FILA DE PRODUCTO DEL PEDIDO */
+.dash-order-item-row {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Separa la información y el subtotal */
+  justify-content: space-between;
+
+  /* Agrega espacio vertical */
+  padding: 0.5rem 0;
+
+  /* Define el tamaño del texto */
+  font-size: 0.88rem;
+}
+
+/* INFORMACIÓN DEL PRODUCTO */
+.dash-order-item-info {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Organiza la información verticalmente */
+  flex-direction: column;
+}
+
+/* NOMBRE DEL PRODUCTO */
+.dash-order-item-info strong {
+  /* Aplica el color azul oscuro */
+  color: var(--deep-navy);
+}
+
+/* INFORMACIÓN SECUNDARIA DEL PRODUCTO */
+.dash-order-item-info span {
+  /* Define el tamaño del texto */
+  font-size: 0.78rem;
+
+  /* Aplica el color secundario */
+  color: var(--text-muted);
+}
+
+/* SUBTOTAL DEL PRODUCTO */
+.dash-order-item-subtotal {
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Aplica el color azul oscuro */
+  color: var(--deep-navy);
+}
+
+/* PIE DE LA TARJETA DEL PEDIDO */
+.dash-order-card__footer {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Separa los elementos horizontalmente */
+  justify-content: space-between;
+
+  /* Agrega espacio superior */
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+  background-color: #fafbfd;
+  margin: 0 -1.75rem -1.75rem;
+
+  /* Agrega espacio interno */
+  padding: 1.25rem 1.75rem;
+
+  /* Redondea las esquinas inferiores */
+  border-radius: 0 0 14px 14px;
+}
+
+/* CONTENEDOR DEL TOTAL */
+.dash-order-total-wrap {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Alinea los elementos por su línea base */
+  align-items: baseline;
+
+  /* Define el espacio entre elementos */
+  gap: 0.5rem;
+}
+
+/* ETIQUETA DEL TOTAL */
+.dash-order-total-label {
+  /* Define el tamaño del texto */
+  font-size: 0.88rem;
+
+  /* Aplica el color secundario */
+  color: var(--text-muted);
+
+  /* Define el grosor de la fuente */
+  font-weight: 600;
+}
+
+/* VALOR TOTAL DEL PEDIDO */
+.dash-order-total-amount {
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del total */
+  font-size: 1.25rem;
+
+  /* Define un grosor de fuente alto */
+  font-weight: 800;
+
+  /* Aplica el color principal */
+  color: var(--primary);
+}
+
+.dash-profile-grid {
+  /* Activa el sistema de cuadrícula */
+  display: grid;
+
+  /* Define una columna fija y otra flexible */
+  grid-template-columns: 320px 1fr;
+
+  /* Define el espacio entre columnas */
+  gap: 1.75rem;
+
+  /* Alinea los elementos al inicio */
+  align-items: start;
+}
+
+/* RESUMEN DEL PERFIL */
+.dash-profile-card-summary {
+  /* Define el fondo de la tarjeta */
+  background-color: var(--bg-card);
+
+  /* Agrega un borde */
+  border: 1px solid var(--border-color);
+
+  /* Redondea las esquinas */
+  border-radius: 14px;
+
+  /* Agrega espacio interno */
+  padding: 2rem 1.5rem;
+
+  /* Centra el texto */
+  text-align: center;
+
+  /* Agrega una sombra suave */
+  box-shadow: 0 2px 10px rgba(13, 37, 77, 0.03);
+}
+
+/* CONTENEDOR DEL AVATAR */
+.dash-profile-avatar-wrap {
+  /* Permite posicionar elementos de forma absoluta */
+  position: relative;
+
+  /* Define el ancho del contenedor */
+  width: 96px;
+
+  /* Define la altura del contenedor */
+  height: 96px;
+
+  /* Centra el avatar horizontalmente */
+  margin: 0 auto 1.25rem;
+}
+
+/* AVATAR DEL PERFIL */
+.dash-profile-avatar {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Ocupa toda la altura disponible */
+  height: 100%;
+
+  /* Forma circularmente el avatar */
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, #153e7e 100%);
+  color: #ffffff;
+  display: flex;
+
+  /* Centra el contenido verticalmente */
+  align-items: center;
+
+  /* Centra el contenido horizontalmente */
+  justify-content: center;
+
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño de las iniciales */
+  font-size: 2.2rem;
+
+  /* Define el grosor de la fuente */
+  font-weight: 700;
+
+  /* Agrega una sombra al avatar */
+  box-shadow: 0 6px 16px rgba(27, 78, 155, 0.25);
+}
+
+/* BOTÓN DEL AVATAR */
+.dash-profile-avatar-btn {
+  /* Permite posicionar el botón de forma absoluta */
+  position: absolute;
+
+  /* Lo coloca en la parte inferior */
+  bottom: 0;
+
+  /* Lo coloca en el lado derecho */
+  right: 0;
+
+  /* Define el ancho del botón */
+  width: 32px;
+
+  /* Define la altura del botón */
+  height: 32px;
+
+  /* Forma circularmente el botón */
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+
+  /* Aplica el color principal */
+  color: var(--primary);
+
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Centra el contenido verticalmente */
+  align-items: center;
+
+  /* Centra el contenido horizontalmente */
+  justify-content: center;
+
+  /* Cambia el cursor al pasar sobre el botón */
+  cursor: pointer;
+
+  /* Agrega una sombra */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+  /* Suaviza los cambios visuales */
+  transition: all 0.2s ease;
+}
+
+/* EFECTO HOVER DEL BOTÓN DEL AVATAR */
+.dash-profile-avatar-btn:hover {
+  /* Cambia el fondo al color principal */
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+/* ICONO DEL BOTÓN DEL AVATAR */
+.dash-profile-avatar-btn .material-symbols-outlined {
+  /* Define el tamaño del icono */
+  font-size: 1.1rem;
+}
+
+/* NOMBRE DEL PERFIL */
+.dash-profile-name {
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del nombre */
+  font-size: 1.35rem;
+
+  /* Define el grosor de la fuente */
+  font-weight: 700;
+
+  /* Aplica el color azul oscuro */
+  color: var(--deep-navy);
+
+  /* Agrega un pequeño espacio inferior */
+  margin-bottom: 0.15rem;
+}
+
+/* IDENTIFICADOR DEL CLIENTE */
+.dash-profile-client-id {
+  /* Define el tamaño del texto */
+  font-size: 0.85rem;
+
+  /* Aplica el color secundario */
+  color: var(--text-muted);
+
+  /* Convierte el elemento en bloque */
+  display: block;
+}
+
+/* LISTA DE ESTADÍSTICAS DEL PERFIL */
+.dash-profile-stats-list {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Organiza las estadísticas verticalmente */
+  flex-direction: column;
+
+  /* Define el espacio entre estadísticas */
+  gap: 0.75rem;
+
+  /* Agrega espacio superior */
+  margin-top: 1.5rem;
+
+  /* Agrega espacio interno superior */
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+  text-align: left;
+}
+
+/* ELEMENTO INDIVIDUAL DE ESTADÍSTICA */
+.dash-profile-stat-item {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Separa etiqueta y valor */
+  justify-content: space-between;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Define el tamaño del texto */
+  font-size: 0.85rem;
+}
+
+/* ETIQUETA DE LA ESTADÍSTICA */
+.dash-profile-stat-item span {
+  /* Aplica el color secundario */
+  color: var(--text-muted);
+}
+
+/* VALOR DE LA ESTADÍSTICA */
+.dash-profile-stat-item strong {
+  /* Aplica el color azul oscuro */
+  color: var(--deep-navy);
+
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+}
+
+/* TARJETA DEL FORMULARIO */
+.dash-form-card {
+  /* Define el fondo de la tarjeta */
+  background-color: var(--bg-card);
+
+  /* Agrega un borde */
+  border: 1px solid var(--border-color);
+
+  /* Redondea las esquinas */
+  border-radius: 14px;
+
+  /* Agrega espacio interno */
+  padding: 2rem;
+
+  /* Agrega una sombra suave */
+  box-shadow: 0 2px 10px rgba(13, 37, 77, 0.03);
+}
+
+/* ENCABEZADO DE LA TARJETA DEL FORMULARIO */
+.dash-form-card__header {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Define el espacio entre elementos */
+  gap: 1rem;
+
+  /* Agrega espacio inferior */
+  margin-bottom: 1.75rem;
+
+  /* Agrega espacio interno inferior */
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* ICONO DE LA TARJETA DEL FORMULARIO */
+.dash-form-card__icon {
+  /* Define el ancho del icono */
+  width: 44px;
+
+  /* Define la altura del icono */
+  height: 44px;
+
+  /* Redondea las esquinas */
+  border-radius: 10px;
+  background-color: #ebf3fc;
+  color: var(--primary);
+
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Centra el contenido verticalmente */
+  align-items: center;
+
+  /* Centra el contenido horizontalmente */
+  justify-content: center;
+
+  /* Define el tamaño del icono */
+  font-size: 1.5rem;
+
+  /* Evita que el icono reduzca su tamaño */
+  flex-shrink: 0;
+}
+
+/* TÍTULO DEL FORMULARIO */
+.dash-form-card__title {
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del título */
+  font-size: 1.2rem;
+
+  /* Define el grosor de la fuente */
+  font-weight: 700;
+
+  /* Aplica el color azul oscuro */
+  color: var(--deep-navy);
+
+  /* Agrega espacio inferior */
+  margin-bottom: 0.2rem;
+}
+
+/* SUBTÍTULO DEL FORMULARIO */
+.dash-form-card__sub {
+  /* Define el tamaño del texto */
+  font-size: 0.85rem;
+
+  /* Aplica el color secundario */
+  color: var(--text-muted);
+}
+
+/* FORMULARIO DEL PERFIL */
+.dash-profile-form {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Define el espacio entre elementos */
+  gap: 1.25rem;
+}
+
+/* ACCIONES DEL PERFIL */
+.dash-profile-actions {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Alinea los botones a la derecha */
+  justify-content: flex-end;
+
+  /* Agrega espacio superior */
+  margin-top: 0.5rem;
+}
+
+/* BOTÓN DENTRO DE LAS ACCIONES DEL PERFIL */
+.dash-profile-actions .dash-btn {
+  /* Permite organizar el contenido en línea */
+  display: inline-flex;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Define el espacio entre icono y texto */
+  gap: 0.5rem;
+
+  /* Agrega espacio interno */
+  padding: 0.75rem 1.5rem;
+}
+
+/* ICONO DEL BOTÓN DEL PERFIL */
+.dash-profile-actions .dash-btn .material-symbols-outlined {
+  /* Define el tamaño del icono */
+  font-size: 1.15rem;
+}
+
+/* MODAL RECIBO */
+
+/* CONTENEDOR DEL RECIBO */
+.dash-receipt-content {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Define el espacio entre filas */
+  gap: 0.75rem;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+
+  /* Redondea las esquinas */
+  border-radius: 10px;
+
+  /* Agrega espacio interno */
+  padding: 1.25rem;
+
+  /* Agrega espacio inferior */
+  margin-bottom: 1.5rem;
+}
+
+/* FILA DEL RECIBO */
+.dash-receipt-row {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Separa los elementos horizontalmente */
+  justify-content: space-between;
+
+  /* Centra los elementos verticalmente */
+  align-items: center;
+
+  /* Define el tamaño del texto */
+  font-size: 0.88rem;
+}
+
+/* DIVISOR DEL RECIBO */
+.dash-receipt-divider {
+  /* Define el alto de la línea */
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 0.5rem 0;
+}
+
+/* TOTAL DEL RECIBO */
+.dash-receipt-row--total {
+  /* Define el tamaño del total */
+  font-size: 1.1rem;
+
+  /* Define un grosor alto */
+  font-weight: 800;
+
+  /* Aplica el color principal */
+  color: var(--primary);
+}
+
+.dash-modal {
+  /* Fija el modal respecto a la ventana */
+  position: fixed;
+
+  /* Ocupa toda la ventana */
+  inset: 0;
+
+  /* Coloca el modal por encima de otros elementos */
+  z-index: 200;
+
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Centra verticalmente el modal */
+  align-items: center;
+
+  /* Centra horizontalmente el modal */
+  justify-content: center;
+
+  /* Agrega espacio alrededor */
+  padding: 1rem;
+
+  /* Oculta visualmente el modal */
+  opacity: 0;
+
+  /* Hace invisible el modal */
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+/* MODAL ACTIVO */
+.dash-modal.activo {
+  /* Hace visible el modal */
+  opacity: 1;
+
+  /* Permite visualizar e interactuar con el modal */
+  visibility: visible;
+}
+
+/* FONDO OSCURO DEL MODAL */
+.dash-modal__backdrop {
+  /* Permite posicionar el fondo */
+  position: absolute;
+
+  /* Ocupa todo el contenedor */
+  inset: 0;
+
+  /* Aplica un fondo oscuro semitransparente */
+  background-color: rgba(15, 23, 42, 0.55);
+
+  /* Aplica desenfoque al fondo */
+  backdrop-filter: blur(4px);
+}
+
+/* VENTANA DEL MODAL */
+.dash-modal__dialog {
+  /* Permite controlar su posición */
+  position: relative;
+
+  /* Coloca la ventana sobre el fondo */
+  z-index: 10;
+  background-color: #ffffff;
+  width: 100%;
+
+  /* Limita el ancho máximo */
+  max-width: 520px;
+
+  /* Redondea las esquinas */
+  border-radius: 16px;
+
+  /* Agrega espacio interno */
+  padding: 2rem;
+
+  /* Agrega una sombra */
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+
+  /* Desplaza inicialmente la ventana hacia abajo */
+  transform: translateY(16px);
+
+  /* Suaviza el movimiento del modal */
+  transition: transform 0.25s ease;
+
+  /* Limita la altura del modal */
+  max-height: 90vh;
+
+  /* Permite desplazamiento vertical */
+  overflow-y: auto;
+}
+
+/* POSICIÓN DEL MODAL ACTIVO */
+.dash-modal.activo .dash-modal__dialog {
+  /* Devuelve la ventana a su posición original */
+  transform: translateY(0);
+}
+
+/* MODAL GRANDE */
+.dash-modal__dialog--large {
+  /* Aumenta el ancho máximo */
+  max-width: 680px;
+}
+
+/* BOTÓN PARA CERRAR EL MODAL */
+.dash-modal__close {
+  /* Permite posicionar el botón */
+  position: absolute;
+
+  /* Define la posición superior */
+  top: 1.25rem;
+
+  /* Define la posición derecha */
+  right: 1.25rem;
+
+  /* Elimina el fondo predeterminado */
+  background: none;
+
+  /* Elimina el borde */
+  border: none;
+
+  /* Aplica el color secundario */
+  color: var(--text-muted);
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Agrega espacio interno */
+  padding: 0.25rem;
+
+  /* Redondea el botón */
+  border-radius: 50%;
+
+  /* Activa el diseño flexible */
+  display: flex;
+}
+
+/* EFECTO HOVER DEL BOTÓN DE CIERRE */
+.dash-modal__close:hover {
+  background-color: #f1f5f9;
+  color: var(--text-dark);
+}
+
+/* ENCABEZADO DEL MODAL */
+.dash-modal__header {
+  /* Centra el contenido */
+  text-align: center;
+
+  /* Agrega espacio inferior */
+  margin-bottom: 1.75rem;
+}
+
+/* ICONO DEL ENCABEZADO DEL MODAL */
+.dash-modal__header-icon {
+  /* Define el tamaño del icono */
+  font-size: 2.5rem;
+
+  /* Aplica el color principal */
+  color: var(--primary);
+
+  /* Agrega espacio inferior */
+  margin-bottom: 0.5rem;
+}
+
+/* TÍTULO DEL ENCABEZADO DEL MODAL */
+.dash-modal__header h3 {
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del título */
+  font-size: 1.35rem;
+
+  /* Define el grosor de la fuente */
+  font-weight: 700;
+
+  /* Aplica el color azul oscuro */
+  color: var(--deep-navy);
+
+  /* Agrega espacio inferior */
+  margin-bottom: 0.35rem;
+}
+
+/* DESCRIPCIÓN DEL MODAL */
+.dash-modal__header p {
+  /* Define el tamaño del texto */
+  font-size: 0.88rem;
+
+  /* Aplica el color secundario */
+  color: var(--text-muted);
+}
+
+/* FORMULARIO DEL MODAL */
+.dash-modal__form {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Define el espacio entre elementos */
+  gap: 1.15rem;
+}
+
+/* FILA DEL FORMULARIO */
+.dash-form-row {
+  /* Activa el sistema de cuadrícula */
+  display: grid;
+
+  /* Crea dos columnas iguales */
+  grid-template-columns: 1fr 1fr;
+
+  /* Define el espacio entre columnas */
+  gap: 1rem;
+}
+
+/* GRUPO DEL FORMULARIO */
+.dash-form-group {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Define el espacio entre elementos */
+  gap: 0.35rem;
+}
+
+/* ETIQUETA DEL FORMULARIO */
+.dash-form-group label {
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del texto */
+  font-size: 0.82rem;
+
+  /* Define el grosor de la fuente */
+  font-weight: 600;
+
+  /* Aplica el color azul oscuro */
+  color: var(--deep-navy);
+}
+
+.dash-password-field {
+  position: relative;
+}
+
+.dash-password-field .dash-input {
+  padding-right: 3rem;
+}
+
+.dash-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0.7rem;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.dash-password-toggle:hover,
+.dash-password-toggle:focus-visible {
+  color: var(--primary);
+}
+
+.dash-password-toggle .material-symbols-outlined {
+  font-size: 1.2rem;
+}
+
+/* Tema oscuro para las secciones propias del dashboard */
+html.dark-mode .dash-kpi-card,
+html.dark-mode .dash-quick-card,
+html.dark-mode .dash-pet-card,
+html.dark-mode .dash-item-card,
+html.dark-mode .dash-order-card,
+html.dark-mode .dash-profile-card-summary,
+html.dark-mode .dash-form-card {
+  background-color: #182334 !important;
+  border-color: #2c3e54 !important;
+  color: #e7edf4 !important;
+}
+
+html.dark-mode .dash-kpi-label,
+html.dark-mode .dash-item-card__sub,
+html.dark-mode .dash-pet-card__breed,
+html.dark-mode .dash-order-date,
+html.dark-mode .dash-form-card__sub,
+html.dark-mode .dash-profile-stat-item span {
+  color: #b8c5d3 !important;
+}
+
+html.dark-mode .dash-kpi-value,
+html.dark-mode .dash-quick-card__title,
+html.dark-mode .dash-pet-card__name,
+html.dark-mode .dash-item-card__title,
+html.dark-mode .dash-order-id,
+html.dark-mode .dash-form-card__title,
+html.dark-mode .dash-profile-name,
+html.dark-mode .dash-profile-stat-item strong,
+html.dark-mode .dash-item-card__reason,
+html.dark-mode .dash-item-card__grid,
+html.dark-mode .dash-order-item-row {
+  color: #f1f5f9 !important;
+}
+
+html.dark-mode .dash-quick-action-item,
+html.dark-mode .dash-history-box,
+html.dark-mode .dash-payment-pill,
+html.dark-mode .dash-treatment-pill,
+html.dark-mode .dash-input,
+html.dark-mode .dash-select {
+  background-color: #202f42 !important;
+  border-color: #3a5068 !important;
+  color: #f1f5f9 !important;
+}
+
+html.dark-mode .dash-input::placeholder {
+  color: #9fb0c1 !important;
+}
+
+html.dark-mode .dash-item-card__footer,
+html.dark-mode .dash-order-card__header,
+html.dark-mode .dash-history-card__foot {
+  border-color: #33485b !important;
+}
+
+html.dark-mode .dash-sidebar {
+  background-color: #182334 !important;
+  border-color: #2c3e54 !important;
+}
+
+html.dark-mode .dash-nav-item {
+  color: #aebdcb !important;
+}
+
+html.dark-mode .dash-nav-item:hover {
+  background-color: #203249 !important;
+  color: #e7edf4 !important;
+}
+
+html.dark-mode .dash-nav-item.active {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+html.dark-mode .dash-sidebar__footer {
+  border-color: #2c3e54 !important;
+}
+
+html.dark-mode .dash-home-btn {
+  background-color: #203249 !important;
+  color: #7cc4f2 !important;
+}
+
+html.dark-mode .dash-home-btn:hover {
+  background-color: #29415b !important;
+  color: #a8dcff !important;
+}
+
+html.dark-mode .dash-logout-btn {
+  color: #7cc4f2 !important;
+}
+
+html.dark-mode .dash-logout-btn:hover {
+  background-color: #3a2630 !important;
+  color: #fca5a5 !important;
+}
+
+.dash-input,
+.dash-select {
+  /* Ocupan todo el ancho disponible */
+  width: 100%;
+
+  /* Agrega espacio interno */
+  padding: 0.75rem 1rem;
+
+  /* Agrega un borde */
+  border: 1px solid var(--border-color);
+
+  /* Redondea los campos */
+  border-radius: 8px;
+
+  /* Aplica la fuente del contenido */
+  font-family: var(--font-body);
+
+  /* Define el tamaño del texto */
+  font-size: 0.9rem;
+
+  /* Aplica el color del texto */
+  color: var(--text-dark);
+  background-color: #f8fafc;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* ESTADO FOCUS DE LOS CAMPOS */
+.dash-input:focus,
+.dash-select:focus {
+  /* Cambia el color del borde */
+  border-color: var(--primary);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(27, 78, 155, 0.15);
+}
+
+/* ACCIONES DEL MODAL */
+.dash-modal__actions {
+  /* Activa el diseño flexible */
+  display: flex;
+
+  /* Alinea los botones a la derecha */
+  justify-content: flex-end;
+
+  /* Define el espacio entre botones */
+  gap: 0.75rem;
+
+  /* Agrega espacio superior */
+  margin-top: 1rem;
+}
+
+/* BOTÓN GENERAL */
+.dash-btn {
+  /* Agrega espacio interno */
+  padding: 0.7rem 1.4rem;
+
+  /* Redondea el botón */
+  border-radius: 8px;
+
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del texto */
+  font-size: 0.88rem;
+
+  /* Define el grosor de la fuente */
+  font-weight: 700;
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Elimina el borde */
+  border: none;
+
+  /* Suaviza los cambios visuales */
+  transition: all 0.2s ease;
+}
+
+/* BOTÓN PRIMARIO */
+.dash-btn--primary {
+  /* Aplica el color principal como fondo */
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+/* EFECTO HOVER DEL BOTÓN PRIMARIO */
+.dash-btn--primary:hover {
+  /* Cambia al color principal alternativo */
+  background-color: var(--primary-hover);
+}
+
+/* BOTÓN SECUNDARIO */
+.dash-btn--secondary {
+  background-color: #f1f5f9;
+  color: var(--text-muted);
+}
+
+/* NOTIFICACIÓN TOAST */
+.dash-toast {
+  /* Fija la notificación respecto a la ventana */
+  position: fixed;
+
+  /* Define la distancia inferior */
+  bottom: 2rem;
+
+  /* Define la distancia derecha */
+  right: 2rem;
+
+  /* Define el fondo azul oscuro */
+  background-color: var(--deep-navy);
+  color: #ffffff;
+  padding: 0.85rem 1.5rem;
+
+  /* Redondea la notificación */
+  border-radius: 8px;
+
+  /* Aplica la fuente de encabezados */
+  font-family: var(--font-headings);
+
+  /* Define el tamaño del texto */
+  font-size: 0.88rem;
+
+  /* Define el grosor de la fuente */
+  font-weight: 600;
+
+  /* Agrega una sombra */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+  /* Coloca la notificación sobre otros elementos */
+  z-index: 300;
+
+  /* Oculta inicialmente la notificación */
+  opacity: 0;
+
+  /* Desplaza inicialmente la notificación */
+  transform: translateY(20px);
+
+  /* Evita interacciones mientras está oculta */
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* TOAST VISIBLE */
+.dash-toast.show {
+  /* Hace visible la notificación */
+  opacity: 1;
+
+  /* Devuelve la notificación a su posición */
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  /* CUADRÍCULA DESTACADA */
+  .dash-featured-grid {
+    /* Convierte la cuadrícula en una columna */
+    grid-template-columns: 1fr;
+  }
+
+  /* CUADRÍCULA DEL PERFIL */
+  .dash-profile-grid {
+    /* Convierte el perfil en una sola columna */
+    grid-template-columns: 1fr;
+  }
+
+  /* DETALLES DEL HISTORIAL */
+  .dash-history-details-grid {
+    /* Convierte los detalles en una columna */
+    grid-template-columns: 1fr;
+  }
+
+  /* CUADRÍCULA DE TRATAMIENTOS */
+  .dash-treatment-grid {
+    /* Convierte los tratamientos en una columna */
+    grid-template-columns: 1fr;
+  }
+
+  /* CUADRÍCULA DE INFORMACIÓN DE CITAS */
+  .dash-item-card__grid {
+    /* Mantiene dos columnas */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* AJUSTES PARA PANTALLAS DE HASTA 860PX */
+@media (max-width: 860px) {
+  /* BARRA LATERAL OCULTA */
+  .dash-sidebar {
+    /* Desplaza la barra lateral fuera de la pantalla */
+    transform: translateX(-100%);
+  }
+
+  /* BARRA LATERAL ABIERTA */
+  .dash-sidebar.open {
+    /* Devuelve la barra lateral a su posición */
+    transform: translateX(0);
+  }
+
+  /* CONTENIDO PRINCIPAL */
+  .dash-main {
+    /* Elimina el margen reservado para la barra lateral */
+    margin-left: 0;
+  }
+
+  /* BARRA SUPERIOR */
+  .dash-topbar {
+    /* Muestra la barra superior */
+    display: flex;
+  }
+
+  /* CONTENEDOR DEL CONTENIDO */
+  .dash-content-container {
+    /* Ajusta el espacio interno para pantallas pequeñas */
+    padding: 1.75rem 1.25rem 3rem;
+  }
+
+  /* CUADRÍCULA DE KPI */
+  .dash-kpi-grid {
+    /* Coloca los KPI en una columna */
+    grid-template-columns: 1fr;
+  }
+
+  /* CUADRÍCULA DE MASCOTAS */
+  .dash-pets-grid {
+    /* Coloca las mascotas en una columna */
+    grid-template-columns: 1fr;
+  }
+
+  /* TARJETA DEL HISTORIAL */
+  .dash-history-card {
+    /* Organiza el contenido verticalmente */
+    flex-direction: column;
+
+    /* Define el espacio entre elementos */
+    gap: 1rem;
+  }
+
+  /* FECHA DEL HISTORIAL */
+  .dash-history-card__badge-date {
+    /* Ocupa todo el ancho disponible */
+    width: 100%;
+
+    /* Define una altura menor */
+    height: 50px;
+
+    /* Organiza el contenido horizontalmente */
+    flex-direction: row;
+
+    /* Define el espacio entre elementos */
+    gap: 0.5rem;
+  }
+
+  /* ENCABEZADOS RESPONSIVOS */
+  .dash-greeting,
+  .dash-section-header {
+    /* Organiza los elementos verticalmente */
+    flex-direction: column;
+
+    /* Alinea los elementos al inicio */
+    align-items: flex-start;
+  }
+}
+
+/* AJUSTES PARA PANTALLAS DE HASTA 480PX */
+@media (max-width: 480px) {
+  /* TARJETA DE MASCOTA EN MÓVIL */
+  .dash-pet-card {
+    /* Organiza la tarjeta verticalmente */
+    flex-direction: column;
+  }
+
+  /* IMAGEN DE LA MASCOTA EN MÓVIL */
+  .dash-pet-card__photo-wrap {
+    /* Ocupa todo el ancho */
+    width: 100%;
+
+    /* Define la altura de la imagen */
+    height: 180px;
+  }
+
+  /* FILAS DEL FORMULARIO EN MÓVIL */
+  .dash-form-row {
+    /* Convierte las columnas en una sola */
+    grid-template-columns: 1fr;
+  }
+
+  /* INFORMACIÓN DE LA CITA EN MÓVIL */
+  .dash-item-card__grid {
+    /* Convierte la cuadrícula en una columna */
+    grid-template-columns: 1fr;
+  }
+
+  /* ENCABEZADO DEL PEDIDO EN MÓVIL */
+  .dash-order-card__header {
+    /* Organiza el encabezado verticalmente */
+    flex-direction: column;
+
+    /* Alinea el contenido al inicio */
+    align-items: flex-start;
+  }
+
+  /* PIE DEL PEDIDO EN MÓVIL */
+  .dash-order-card__footer {
+    /* Organiza el contenido verticalmente */
+    flex-direction: column;
+
+    /* Define el espacio entre elementos */
+    gap: 1rem;
+
+    /* Alinea los elementos al inicio */
+    align-items: flex-start;
+  }
+}
+
+.dash-history-card__treatment,
+.dash-order-products {
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}

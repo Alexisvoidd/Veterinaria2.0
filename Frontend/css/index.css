@@ -1,0 +1,2510 @@
+/* VARIABLES */
+
+/* Define las variables generales del proyecto */
+:root {
+
+  /* PALETA DE COLORES */
+
+  /* Define el color primario */
+  --color-primario: #00377a;
+
+  /* Define una versión oscura del color primario */
+  --color-primario-oscuro: #002554;
+
+  /* Define el color secundario */
+  --color-secundario: #006397;
+
+  /* Define el azul profundo utilizado en títulos */
+  --color-azul-profundo: #0d254d;
+
+
+  /* FONDOS Y SUPERFICIES */
+
+  /* Define el fondo cálido principal */
+  --color-fondo-calido: #faf9f6;
+
+  /* Define el color blanco para superficies */
+  --color-fondo-blanco: #ffffff;
+
+  /* Define un fondo suave para secciones */
+  --color-fondo-suave: #f4f6fa;
+
+  /* Define el fondo oscuro */
+  --color-fondo-oscuro: #0d254d;
+
+  /* Define un color neutro tipo arena */
+  --color-arena-neutro: #f2efe9;
+
+
+  /* TEXTOS Y BORDES */
+
+  /* Define el color principal del texto */
+  --color-texto-principal: #1a1b21;
+
+  /* Define el color para textos secundarios */
+  --color-texto-secundario: #434751;
+
+  /* Define el color para textos claros */
+  --color-texto-claro: #ffffff;
+
+  /* Define el color de los bordes suaves */
+  --color-borde-suave: #e2e8f0;
+
+  /* Define el color del borde de las tarjetas */
+  --color-borde-tarjeta: rgba(0, 55, 122, 0.08);
+
+
+  /* ACENTOS DE ESTADO */
+
+  /* Define el color utilizado para errores */
+  --color-error: #ba1a1a;
+
+  /* Define el color utilizado para estados exitosos */
+  --color-exito: #2e7d32;
+
+
+  /* TIPOGRAFÍAS */
+
+  /* Define la fuente utilizada en los títulos */
+  --fuente-titulos: 'Montserrat', sans-serif;
+
+  /* Define la fuente utilizada en el contenido */
+  --fuente-cuerpo: 'Open Sans', sans-serif;
+
+
+  /* SOMBRAS Y TRANSICIONES */
+
+  /* Define la sombra normal de las tarjetas */
+  --sombra-tarjeta: 0 8px 24px rgba(13, 37, 77, 0.06);
+
+  /* Define la sombra de las tarjetas al pasar el cursor */
+  --sombra-tarjeta-hover: 0 16px 36px rgba(13, 37, 77, 0.12);
+
+  /* Define la transición general de los elementos */
+  --transicion-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* VETSALUD - VARIABLES PARA TEMA OSCURO */
+
+/* Modifica las variables globales cuando se activa el modo oscuro */
+html.dark-mode {
+
+    /* Cambia el fondo cálido por un fondo oscuro */
+    --color-fondo-calido: #121a24;
+
+    /* Cambia el fondo blanco por una superficie oscura */
+    --color-fondo-blanco: #1a2533;
+
+    /* Cambia el fondo suave por un tono oscuro */
+    --color-fondo-suave: #202d3c;
+
+    /* Define el fondo oscuro del tema */
+    --color-fondo-oscuro: #0d1722;
+
+    /* Cambia el color arena por un tono oscuro */
+    --color-arena-neutro: #253241;
+
+
+    /* Cambia el color principal del texto */
+    --color-texto-principal: #f1f5f9;
+
+    /* Cambia el color secundario del texto */
+    --color-texto-secundario: #c1ccd8;
+
+    /* Mantiene el color claro para textos */
+    --color-texto-claro: #ffffff;
+
+
+    /* Cambia el color de los bordes */
+    --color-borde-suave: #344454;
+
+    /* Cambia el borde de las tarjetas */
+    --color-borde-tarjeta: rgba(255, 255, 255, 0.08);
+
+
+    /* Cambia el color primario para mejorar la visibilidad */
+    --color-primario: #4ba3e3;
+
+    /* Cambia el color primario oscuro */
+    --color-primario-oscuro: #75b9ed;
+
+    /* Cambia el color secundario */
+    --color-secundario: #69b7e8;
+
+    /* Cambia el azul profundo por un azul claro */
+    --color-azul-profundo: #dceeff;
+
+
+    /* Cambia la sombra normal por una sombra oscura */
+    --sombra-tarjeta: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+    /* Cambia la sombra hover por una sombra más intensa */
+    --sombra-tarjeta-hover: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+
+/* TEMA OSCURO GLOBAL */
+
+/* Configura el fondo y texto general del sitio en modo oscuro */
+html.dark-mode body {
+
+    /* Aplica el fondo definido para el modo oscuro */
+    background-color: var(--color-fondo-calido);
+
+    /* Aplica el color principal del texto */
+    color: var(--color-texto-principal);
+}
+
+
+/* FONDOS PRINCIPALES */
+
+/* Configura los fondos de las secciones principales en modo oscuro */
+html.dark-mode .inicio-seccion-servicios,
+html.dark-mode .inicio-seccion-destacada {
+
+    /* Aplica el fondo oscuro de las superficies */
+    background-color: var(--color-fondo-blanco);
+}
+
+
+/* Configura el fondo de la sección de testimonios */
+html.dark-mode .inicio-seccion-testimonios {
+
+    /* Aplica el fondo cálido oscuro */
+    background-color: var(--color-fondo-calido);
+}
+
+
+/* Configura el fondo de la sección FAQ */
+html.dark-mode .inicio-seccion-faq {
+
+    /* Aplica el fondo suave oscuro */
+    background-color: var(--color-fondo-suave);
+}
+
+
+/* TÍTULOS */
+
+/* Configura los títulos principales en modo oscuro */
+html.dark-mode .inicio-seccion-titulo,
+html.dark-mode .inicio-destacada-titulo,
+html.dark-mode .inicio-testimonio-nombre,
+html.dark-mode .inicio-faq-boton {
+
+    /* Aplica el color azul claro para títulos */
+    color: var(--color-azul-profundo);
+}
+
+
+/* TEXTOS */
+
+/* Configura los textos secundarios en modo oscuro */
+html.dark-mode .inicio-seccion-subtitulo,
+html.dark-mode .inicio-destacada-descripcion,
+html.dark-mode .inicio-testimonio-cita,
+html.dark-mode .inicio-testimonio-info,
+html.dark-mode .inicio-faq-respuesta {
+
+    /* Aplica el color secundario del tema oscuro */
+    color: var(--color-texto-secundario);
+}
+
+
+/* TARJETAS */
+
+/* Configura las tarjetas principales en modo oscuro */
+html.dark-mode .inicio-servicio-tarjeta-carrusel,
+html.dark-mode .inicio-testimonio-tarjeta,
+html.dark-mode .inicio-faq-item {
+
+    /* Aplica el fondo oscuro de las tarjetas */
+    background-color: var(--color-fondo-blanco);
+
+    /* Aplica el borde oscuro */
+    border-color: var(--color-borde-suave);
+}
+
+
+/* PIE DE TARJETAS */
+
+/* Configura el pie de las tarjetas de servicios */
+html.dark-mode .inicio-servicio-pie {
+
+    /* Aplica un fondo oscuro */
+    background-color: #263442;
+}
+
+
+/* Cambia el fondo del pie de tarjeta al pasar el cursor */
+html.dark-mode .inicio-servicio-tarjeta-carrusel:hover .inicio-servicio-pie {
+
+    /* Aplica un fondo ligeramente más claro */
+    background-color: #304253;
+}
+
+
+/* Configura el título del pie de las tarjetas */
+html.dark-mode .inicio-servicio-pie-titulo {
+
+    /* Aplica un color claro */
+    color: #edf4fa;
+}
+
+
+/* FLECHAS DEL CARRUSEL */
+
+/* Configura las flechas del carrusel en modo oscuro */
+html.dark-mode .inicio-carrusel-flecha {
+
+    /* Aplica el fondo de las tarjetas */
+    background-color: var(--color-fondo-blanco);
+
+    /* Aplica el borde con el color primario */
+    border-color: var(--color-primario);
+
+    /* Aplica el color primario */
+    color: var(--color-primario);
+}
+
+
+/* MODAL */
+
+/* Configura la tarjeta principal del modal */
+html.dark-mode .inicio-modal-tarjeta {
+
+    /* Aplica el fondo oscuro de las superficies */
+    background-color: var(--color-fondo-blanco);
+}
+
+
+/* Configura la caja para agendar dentro del modal */
+html.dark-mode .inicio-modal-caja-agendar {
+
+    /* Aplica un fondo oscuro suave */
+    background-color: var(--color-fondo-suave);
+
+    /* Aplica el borde correspondiente al tema */
+    border-color: var(--color-borde-suave);
+}
+
+
+/* Configura los campos del formulario del modal */
+html.dark-mode .inicio-modal-input,
+html.dark-mode .inicio-modal-select {
+
+    /* Aplica el fondo neutro oscuro */
+    background-color: var(--color-arena-neutro);
+
+    /* Aplica el color principal del texto */
+    color: var(--color-texto-principal);
+}
+
+
+/* Configura los campos cuando reciben el foco */
+html.dark-mode .inicio-modal-input:focus,
+html.dark-mode .inicio-modal-select:focus {
+
+    /* Cambia el fondo al recibir el foco */
+    background-color: var(--color-fondo-blanco);
+}
+
+
+/* Configura las etiquetas e información incluida del modal */
+html.dark-mode .inicio-modal-etiqueta,
+html.dark-mode .inicio-modal-servicio-item-incluye {
+
+    /* Aplica el color principal del texto */
+    color: var(--color-texto-principal);
+}
+
+
+/* Configura los subtítulos y descripciones largas */
+html.dark-mode .inicio-modal-subtitulo,
+html.dark-mode .inicio-modal-servicio-desc-larga {
+
+    /* Aplica el color secundario */
+    color: var(--color-texto-secundario);
+}
+
+
+/* REGLAS GENERALES */
+
+/* Aplica reglas generales a todos los elementos */
+* {
+
+  /* Incluye padding y borde dentro del tamaño total */
+  box-sizing: border-box;
+
+  /* Elimina los márgenes predeterminados */
+  margin: 0;
+
+  /* Elimina los espacios internos predeterminados */
+  padding: 0;
+}
+
+
+/* Configura el elemento HTML principal */
+html {
+
+  /* Activa desplazamiento suave entre secciones */
+  scroll-behavior: smooth;
+}
+
+
+/* Configura el cuerpo general de la página */
+body {
+
+  /* Aplica la fuente principal del contenido */
+  font-family: var(--fuente-cuerpo);
+
+  /* Aplica el fondo general */
+  background-color: var(--color-fondo-calido);
+
+  /* Aplica el color principal del texto */
+  color: var(--color-texto-principal);
+
+  /* Define la altura de línea */
+  line-height: 1.6;
+
+  /* Garantiza una altura mínima de toda la pantalla */
+  min-height: 100vh;
+
+  /* Mejora el suavizado de fuentes en navegadores compatibles */
+  -webkit-font-smoothing: antialiased;
+
+  /* Evita el desplazamiento horizontal */
+  overflow-x: hidden;
+}
+
+
+/* Configura la estructura principal de la página de inicio */
+.inicio-pagina {
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Garantiza una altura mínima de pantalla completa */
+  min-height: 100vh;
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+}
+
+
+/* Configura el contenedor general de las secciones */
+.inicio-contenedor {
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Define el ancho máximo del contenido */
+  max-width: 1260px;
+
+  /* Centra horizontalmente el contenedor */
+  margin: 0 auto;
+
+  /* Agrega espacio horizontal interno */
+  padding: 0 1.5rem;
+}
+
+
+/* SECCIÓN HERO */
+
+/* Configura la sección principal de presentación */
+.inicio-seccion-hero {
+
+  /* Permite posicionar elementos internos de forma absoluta */
+  position: relative;
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Define una altura equivalente a toda la ventana */
+  height: 100vh;
+
+  /* Establece una altura mínima */
+  min-height: 650px;
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Coloca el contenido hacia la parte inferior */
+  justify-content: flex-end;
+
+  /* Centra horizontalmente el contenido */
+  align-items: center;
+
+  /* Oculta elementos que sobresalgan */
+  overflow: hidden;
+
+  /* Define un fondo oscuro de respaldo */
+  background-color: #111111;
+
+  /* Agrega espacio inferior */
+  padding-bottom: 3.5rem;
+
+  /* Agrega espacio superior */
+  padding-top: 5rem;
+}
+
+
+/* Ajusta la sección hero para pantallas medianas y grandes */
+@media (min-width: 768px) {
+
+  /* Configura la sección hero en pantallas grandes */
+  .inicio-seccion-hero {
+
+    /* Mantiene la altura completa de la pantalla */
+    height: 100vh;
+
+    /* Aumenta la altura mínima */
+    min-height: 700px;
+
+    /* Aumenta el espacio inferior */
+    padding-bottom: 4rem;
+  }
+}
+
+
+/* IMAGEN DE FONDO */
+
+/* Configura la imagen de fondo del hero */
+.inicio-hero-imagen-fondo {
+
+  /* Posiciona la imagen de forma absoluta */
+  position: absolute;
+
+  /* Coloca la imagen en los cuatro extremos */
+  inset: 0;
+
+  /* Ocupa todo el ancho */
+  width: 100%;
+
+  /* Ocupa toda la altura */
+  height: 100%;
+
+  /* Ajusta la imagen para cubrir el contenedor */
+  object-fit: cover;
+
+  /* Define la posición vertical de la imagen */
+  object-position: center 25%;
+
+  /* Coloca la imagen detrás del contenido */
+  z-index: 1;
+
+  /* Suaviza la transformación de la imagen */
+  transition: transform 0.8s ease-out;
+}
+
+
+/* Aplica un pequeño zoom a la imagen al pasar el cursor */
+.inicio-seccion-hero:hover .inicio-hero-imagen-fondo {
+
+  /* Aumenta ligeramente el tamaño de la imagen */
+  transform: scale(1.02);
+}
+
+
+/* CAPA DE DEGRADADO */
+
+/* Configura la capa oscura sobre la imagen del hero */
+.inicio-hero-degradado-fondo {
+
+  /* Posiciona la capa de forma absoluta */
+  position: absolute;
+
+  /* Ocupa todo el contenedor */
+  inset: 0;
+
+  /* Coloca la capa encima de la imagen */
+  z-index: 2;
+
+  /* Aplica el degradado para mejorar la lectura del texto */
+  background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.86) 0%, rgba(0, 0, 0, 0.65) 24%, rgba(0, 0, 0, 0.22) 42%, transparent 58%);
+
+  /* Permite que los clics atraviesen la capa */
+  pointer-events: none;
+}
+
+
+/* CONTENIDO CENTRADO */
+
+/* Configura el contenido central del hero */
+.inicio-hero-contenido-centrado {
+
+  /* Mantiene el contenido dentro del flujo */
+  position: relative;
+
+  /* Coloca el contenido por encima de la capa */
+  z-index: 5;
+
+  /* Centra el texto */
+  text-align: center;
+
+  /* Define el ancho máximo del contenido */
+  max-width: 960px;
+
+  /* Centra horizontalmente el bloque */
+  margin: 0 auto;
+
+  /* Agrega espacio horizontal */
+  padding: 0 1.5rem;
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Organiza el contenido verticalmente */
+  flex-direction: column;
+
+  /* Centra los elementos horizontalmente */
+  align-items: center;
+}
+
+
+/* Configura el título principal del hero */
+.inicio-hero-titulo {
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Define el tamaño del título */
+  font-size: 2.2rem;
+
+  /* Hace el título más grueso */
+  font-weight: 800;
+
+  /* Aplica color blanco */
+  color: #ffffff;
+
+  /* Define la altura de línea */
+  line-height: 1.18;
+
+  /* Agrega espacio debajo del título */
+  margin-bottom: 1rem;
+
+  /* Ajusta ligeramente el espacio entre letras */
+  letter-spacing: -0.02em;
+
+  /* Agrega sombra para mejorar la lectura */
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Ajusta el tamaño del título en pantallas medianas */
+@media (min-width: 640px) {
+
+  /* Aumenta el tamaño del título */
+  .inicio-hero-titulo {
+
+    /* Define el tamaño para pantallas medianas */
+    font-size: 2.8rem;
+  }
+}
+
+
+/* Ajusta el tamaño del título en pantallas grandes */
+@media (min-width: 992px) {
+
+  /* Aumenta el tamaño del título */
+  .inicio-hero-titulo {
+
+    /* Define el tamaño para pantallas grandes */
+    font-size: 3.3rem;
+  }
+}
+
+
+/* Configura la descripción principal del hero */
+.inicio-hero-descripcion {
+
+  /* Aplica la fuente del contenido */
+  font-family: var(--fuente-cuerpo);
+
+  /* Define el tamaño del texto */
+  font-size: 0.95rem;
+
+  /* Aplica color blanco */
+  color: #ffffff;
+
+  /* Define la altura de línea */
+  line-height: 1.55;
+
+  /* Agrega espacio debajo */
+  margin-bottom: 1.75rem;
+
+  /* Limita el ancho del texto */
+  max-width: 860px;
+
+  /* Agrega sombra al texto */
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+
+  /* Define el grosor normal */
+  font-weight: 400;
+}
+
+
+/* Ajusta la descripción en pantallas medianas */
+@media (min-width: 640px) {
+
+  /* Aumenta ligeramente el tamaño de la descripción */
+  .inicio-hero-descripcion {
+
+    /* Define el nuevo tamaño */
+    font-size: 1.025rem;
+  }
+}
+
+
+/* Configura el botón principal del hero */
+.inicio-hero-boton-solicitar {
+
+  /* Permite alinear el contenido del botón */
+  display: inline-flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Centra horizontalmente el contenido */
+  justify-content: center;
+
+  /* Define separación entre texto e icono */
+  gap: 0.6rem;
+
+  /* Aplica el fondo azul del botón */
+  background-color: #1B4E9B;
+
+  /* Aplica el color claro del texto */
+  color: var(--color-fondo-blanco);
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Hace el texto más grueso */
+  font-weight: 700;
+
+  /* Define el tamaño del texto */
+  font-size: 1rem;
+
+  /* Define el espacio interno */
+  padding: 0.85rem 2.4rem;
+
+  /* Redondea las esquinas */
+  border-radius: 0.45rem;
+
+  /* Elimina el borde */
+  border: none;
+
+  /* Cambia el cursor a una mano */
+  cursor: pointer;
+
+  /* Elimina la decoración del enlace */
+  text-decoration: none;
+
+  /* Aplica sombra al botón */
+  box-shadow: 0 4px 18px rgba(27, 78, 155, 0.4);
+
+  /* Aplica la transición general */
+  transition: var(--transicion-suave);
+}
+
+
+/* Configura el botón del hero al pasar el cursor */
+.inicio-hero-boton-solicitar:hover {
+
+  /* Oscurece el fondo del botón */
+  background-color: var(--color-primario-oscuro);
+
+  /* Aumenta la sombra */
+  box-shadow: 0 8px 24px rgba(27, 78, 155, 0.55);
+
+  /* Eleva ligeramente el botón */
+  transform: translateY(-2px);
+}
+
+
+/* Configura el botón al momento de hacer clic */
+.inicio-hero-boton-solicitar:active {
+
+  /* Devuelve el botón y reduce ligeramente su tamaño */
+  transform: translateY(0) scale(0.98);
+}
+
+
+/* SECCIÓN DE SERVICIOS */
+
+/* Configura la sección de servicios */
+.inicio-seccion-servicios {
+
+  /* Define el espacio superior e inferior */
+  padding: 5.5rem 0 6rem 0;
+
+  /* Aplica fondo blanco */
+  background-color: var(--color-fondo-blanco);
+
+  /* Permite posicionar elementos internos */
+  position: relative;
+}
+
+
+/* Configura el encabezado de las secciones */
+.inicio-seccion-encabezado {
+
+  /* Centra el texto */
+  text-align: center;
+
+  /* Agrega espacio debajo del encabezado */
+  margin-bottom: 3.5rem;
+}
+
+
+/* Configura los títulos de las secciones */
+.inicio-seccion-titulo {
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Define el tamaño */
+  font-size: 2rem;
+
+  /* Hace el título más grueso */
+  font-weight: 700;
+
+  /* Aplica el azul profundo */
+  color: var(--color-azul-profundo);
+
+  /* Agrega espacio debajo */
+  margin-bottom: 1rem;
+
+  /* Ajusta la separación entre letras */
+  letter-spacing: -0.02em;
+
+  /* Limita el ancho del título */
+  max-width: 920px;
+
+  /* Centra el margen izquierdo */
+  margin-left: auto;
+
+  /* Centra el margen derecho */
+  margin-right: auto;
+}
+
+
+/* Ajusta el tamaño del título en pantallas medianas */
+@media (min-width: 640px) {
+
+  /* Configura el título de sección */
+  .inicio-seccion-titulo {
+
+    /* Aumenta el tamaño */
+    font-size: 2.2rem;
+  }
+}
+
+
+/* Configura el subtítulo de las secciones */
+.inicio-seccion-subtitulo {
+
+  /* Define el tamaño del texto */
+  font-size: 0.975rem;
+
+  /* Aplica el color secundario */
+  color: var(--color-texto-secundario);
+
+  /* Limita el ancho del texto */
+  max-width: 800px;
+
+  /* Centra el contenido */
+  margin: 0 auto;
+
+  /* Define la altura de línea */
+  line-height: 1.65;
+}
+
+
+/* ENVOLTORIO DEL CARRUSEL */
+
+/* Configura el contenedor del carrusel */
+.inicio-carrusel-contenedor {
+
+  /* Permite posicionar las flechas */
+  position: relative;
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+}
+
+
+/* Configura las flechas del carrusel */
+.inicio-carrusel-flecha {
+
+  /* Posiciona las flechas de forma absoluta */
+  position: absolute;
+
+  /* Coloca la flecha en el centro vertical */
+  top: 50%;
+
+  /* Ajusta la posición vertical */
+  transform: translateY(-50%);
+
+  /* Define el ancho */
+  width: 44px;
+
+  /* Define la altura */
+  height: 44px;
+
+  /* Hace circular el botón */
+  border-radius: 50%;
+
+  /* Aplica fondo blanco */
+  background: var(--color-fondo-blanco);
+
+  /* Define el borde azul */
+  border: 2px solid #1B4E9B;
+
+  /* Aplica el color azul */
+  color: #1B4E9B;
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el icono */
+  align-items: center;
+
+  /* Centra horizontalmente el icono */
+  justify-content: center;
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Coloca la flecha por encima de las tarjetas */
+  z-index: 20;
+
+  /* Aplica sombra */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+
+  /* Define una transición suave */
+  transition: all 0.25s ease;
+}
+
+
+/* Configura la flecha al pasar el cursor */
+.inicio-carrusel-flecha:hover {
+
+  /* Cambia el fondo a azul */
+  background: #1B4E9B;
+
+  /* Cambia el color a blanco */
+  color: #ffffff;
+
+  /* Aumenta ligeramente el tamaño */
+  transform: translateY(-50%) scale(1.08);
+}
+
+
+/* Configura la flecha al hacer clic */
+.inicio-carrusel-flecha:active {
+
+  /* Reduce ligeramente el tamaño */
+  transform: translateY(-50%) scale(0.95);
+}
+
+
+/* Posiciona la flecha izquierda */
+.inicio-carrusel-flecha.izquierda {
+
+  /* Desplaza la flecha hacia la izquierda */
+  left: -20px;
+}
+
+
+/* Posiciona la flecha derecha */
+.inicio-carrusel-flecha.derecha {
+
+  /* Desplaza la flecha hacia la derecha */
+  right: -20px;
+}
+
+
+/* Ajusta las flechas en dispositivos móviles */
+@media (max-width: 768px) {
+
+  /* Configura la posición de la flecha izquierda */
+  .inicio-carrusel-flecha.izquierda {
+
+    /* Acerca la flecha al contenido */
+    left: 4px;
+  }
+
+  /* Configura la posición de la flecha derecha */
+  .inicio-carrusel-flecha.derecha {
+
+    /* Acerca la flecha al contenido */
+    right: 4px;
+  }
+}
+
+
+/* PISTA DE TARJETAS DESLIZABLES */
+
+/* Configura la pista horizontal del carrusel */
+.inicio-carrusel-pista {
+
+  /* Coloca las tarjetas en fila */
+  display: flex;
+
+  /* Define separación entre tarjetas */
+  gap: 1.5rem;
+
+  /* Permite desplazamiento horizontal */
+  overflow-x: auto;
+
+  /* Activa desplazamiento suave */
+  scroll-behavior: smooth;
+
+  /* Ajusta el comportamiento del desplazamiento */
+  scroll-snap-type: x mandatory;
+
+  /* Agrega espacio interno */
+  padding: 1.25rem 0.5rem;
+
+  /* Ocupa todo el ancho */
+  width: 100%;
+
+  /* Oculta la barra de desplazamiento en navegadores compatibles */
+  scrollbar-width: none;
+}
+
+
+/* Oculta la barra de desplazamiento en WebKit */
+.inicio-carrusel-pista::-webkit-scrollbar {
+
+  /* Oculta visualmente la barra */
+  display: none;
+}
+
+
+/* TARJETA DEL CARRUSEL */
+
+/* Configura cada tarjeta de servicio */
+.inicio-servicio-tarjeta-carrusel {
+
+  /* Define el tamaño inicial de la tarjeta */
+  flex: 0 0 calc(25% - 1.15rem);
+
+  /* Define el ancho mínimo */
+  min-width: 260px;
+
+  /* Define el ancho máximo */
+  max-width: 320px;
+
+  /* Aplica el fondo */
+  background-color: var(--color-fondo-blanco);
+
+  /* Redondea las esquinas */
+  border-radius: 0.75rem;
+
+  /* Oculta el contenido que sobresalga */
+  overflow: hidden;
+
+  /* Aplica sombra */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Organiza el contenido verticalmente */
+  flex-direction: column;
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Alinea las tarjetas al desplazamiento */
+  scroll-snap-align: start;
+
+  /* Elimina decoración de enlaces */
+  text-decoration: none;
+
+  /* Hereda el color del contenido */
+  color: inherit;
+
+  /* Define la transición */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+
+  /* Define un borde suave */
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+
+/* Ajusta las tarjetas para pantallas medianas */
+@media (max-width: 1024px) {
+
+  /* Configura el ancho de las tarjetas */
+  .inicio-servicio-tarjeta-carrusel {
+
+    /* Muestra aproximadamente tres tarjetas */
+    flex: 0 0 calc(33.333% - 1rem);
+  }
+}
+
+
+/* Ajusta las tarjetas para tablets */
+@media (max-width: 768px) {
+
+  /* Configura el ancho de las tarjetas */
+  .inicio-servicio-tarjeta-carrusel {
+
+    /* Muestra aproximadamente dos tarjetas */
+    flex: 0 0 calc(50% - 0.75rem);
+  }
+}
+
+
+/* Ajusta las tarjetas para móviles */
+@media (max-width: 480px) {
+
+  /* Configura el ancho de la tarjeta */
+  .inicio-servicio-tarjeta-carrusel {
+
+    /* Permite visualizar gran parte de una tarjeta */
+    flex: 0 0 85%;
+  }
+}
+
+
+/* Aplica efectos al pasar el cursor sobre una tarjeta */
+.inicio-servicio-tarjeta-carrusel:hover {
+
+  /* Eleva la tarjeta */
+  transform: translateY(-8px);
+
+  /* Aumenta la sombra */
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+}
+
+
+/* Configura el contenedor de la imagen */
+.inicio-servicio-imagen-contenedor {
+
+  /* Ocupa todo el ancho */
+  width: 100%;
+
+  /* Define la altura de la imagen */
+  height: 200px;
+
+  /* Oculta contenido sobrante */
+  overflow: hidden;
+
+  /* Define un fondo de respaldo */
+  background-color: #e5e7eb;
+}
+
+
+/* Configura la imagen de cada servicio */
+.inicio-servicio-imagen-foto {
+
+  /* Ocupa todo el ancho */
+  width: 100%;
+
+  /* Ocupa toda la altura */
+  height: 100%;
+
+  /* Ajusta la imagen al contenedor */
+  object-fit: cover;
+
+  /* Define la transición del zoom */
+  transition: transform 0.5s ease;
+}
+
+
+/* Aplica zoom a la imagen al pasar sobre la tarjeta */
+.inicio-servicio-tarjeta-carrusel:hover .inicio-servicio-imagen-foto {
+
+  /* Aumenta ligeramente la imagen */
+  transform: scale(1.06);
+}
+
+
+/* Configura el pie de la tarjeta */
+.inicio-servicio-pie {
+
+  /* Aplica el fondo gris */
+  background-color: #d7dbe2;
+
+  /* Define el espacio interno */
+  padding: 1.25rem 1rem;
+
+  /* Define una altura mínima */
+  min-height: 5.5rem;
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Centra horizontalmente el contenido */
+  justify-content: center;
+
+  /* Centra el texto */
+  text-align: center;
+
+  /* Suaviza el cambio de fondo */
+  transition: background-color 0.2s ease;
+}
+
+
+/* Cambia el fondo del pie al pasar el cursor */
+.inicio-servicio-tarjeta-carrusel:hover .inicio-servicio-pie {
+
+  /* Aplica un gris ligeramente más oscuro */
+  background-color: #cbd2dc;
+}
+
+
+/* Configura el título del pie de la tarjeta */
+.inicio-servicio-pie-titulo {
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Define el tamaño del texto */
+  font-size: 0.95rem;
+
+  /* Hace el texto más grueso */
+  font-weight: 700;
+
+  /* Aplica un color oscuro */
+  color: #1e293b;
+
+  /* Define la altura de línea */
+  line-height: 1.35;
+}
+
+
+/* SECCIÓN DESTACADA */
+
+/* Configura la sección de contenido destacado */
+.inicio-seccion-destacada {
+
+  /* Define el espacio vertical */
+  padding: 5rem 0;
+
+  /* Aplica el fondo */
+  background-color: var(--color-fondo-blanco);
+
+  /* Permite posicionamiento interno */
+  position: relative;
+}
+
+
+/* Ajusta el espaciado de una sección destacada alternativa */
+.inicio-seccion-destacada-alt {
+
+  /* Reduce el espacio superior */
+  padding-top: 1rem;
+
+  /* Define el espacio inferior */
+  padding-bottom: 5.5rem;
+}
+
+
+/* Configura la cuadrícula de contenido destacado */
+.inicio-destacada-grid {
+
+  /* Activa CSS Grid */
+  display: grid;
+
+  /* Utiliza una sola columna inicialmente */
+  grid-template-columns: 1fr;
+
+  /* Define separación entre elementos */
+  gap: 3rem;
+
+  /* Centra verticalmente los elementos */
+  align-items: center;
+}
+
+
+/* Ajusta la sección destacada en pantallas grandes */
+@media (min-width: 992px) {
+
+  /* Configura dos columnas en pantallas grandes */
+  .inicio-destacada-grid {
+
+    /* Divide el contenido en dos columnas */
+    grid-template-columns: 1fr 1fr;
+
+    /* Aumenta la separación */
+    gap: 4.5rem;
+  }
+
+
+  /* Invierte el orden de la imagen */
+  .inicio-destacada-grid.invertido .inicio-destacada-imagen-wrap {
+
+    /* Coloca la imagen primero */
+    order: 1;
+  }
+
+
+  /* Invierte el orden del contenido */
+  .inicio-destacada-grid.invertido .inicio-destacada-contenido {
+
+    /* Coloca el contenido después de la imagen */
+    order: 2;
+  }
+}
+
+
+/* Configura el contenido textual destacado */
+.inicio-destacada-contenido {
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Alinea los elementos al inicio */
+  align-items: flex-start;
+}
+
+
+/* Configura el título de contenido destacado */
+.inicio-destacada-titulo {
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Define el tamaño */
+  font-size: 2rem;
+
+  /* Hace el título más grueso */
+  font-weight: 800;
+
+  /* Aplica azul profundo */
+  color: var(--color-azul-profundo);
+
+  /* Agrega espacio debajo */
+  margin-bottom: 1.25rem;
+
+  /* Define la altura de línea */
+  line-height: 1.25;
+
+  /* Ajusta la separación de letras */
+  letter-spacing: -0.02em;
+}
+
+
+/* Ajusta el título destacado en pantallas medianas */
+@media (min-width: 640px) {
+
+  /* Aumenta el tamaño del título */
+  .inicio-destacada-titulo {
+
+    /* Define el tamaño para pantallas mayores */
+    font-size: 2.35rem;
+  }
+}
+
+
+/* Configura la descripción del contenido destacado */
+.inicio-destacada-descripcion {
+
+  /* Define el tamaño del texto */
+  font-size: 0.975rem;
+
+  /* Aplica el color secundario */
+  color: var(--color-texto-secundario);
+
+  /* Define la separación entre líneas */
+  line-height: 1.75;
+}
+
+
+/* Configura los botones generales de inicio */
+.inicio-boton {
+
+  /* Permite alinear el contenido */
+  display: inline-flex;
+
+  /* Centra verticalmente */
+  align-items: center;
+
+  /* Centra horizontalmente */
+  justify-content: center;
+
+  /* Aplica fondo azul */
+  background-color: #1B4E9B;
+
+  /* Aplica texto blanco */
+  color: #ffffff;
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Hace el texto grueso */
+  font-weight: 700;
+
+  /* Define el tamaño */
+  font-size: 0.925rem;
+
+  /* Define el espacio interno */
+  padding: 0.75rem 1.8rem;
+
+  /* Redondea las esquinas */
+  border-radius: 0.45rem;
+
+  /* Elimina el borde */
+  border: none;
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Aplica sombra */
+  box-shadow: 0 4px 14px #1B4E9B;
+
+  /* Aplica una transición */
+  transition: var(--transicion-suave);
+
+  /* Ajusta el ancho al contenido */
+  width: fit-content;
+
+  /* Agrega espacio superior */
+  margin-top: 1.6rem;
+  
+  text-decoration: none; /* Quita el subrayado */
+
+}
+
+
+/* Configura los botones al pasar el cursor */
+.inicio-boton:hover {
+
+  /* Oscurece el fondo */
+  background-color: var(--color-primario-oscuro);
+
+  /* Aumenta la sombra */
+  box-shadow: 0 8px 22px #1B4E9B;
+
+  /* Eleva el botón */
+  transform: translateY(-2px);
+
+  /* Mantiene el texto blanco */
+  color: #ffffff;
+}
+
+
+/* Configura el botón al hacer clic */
+.inicio-boton:active {
+
+  /* Reduce ligeramente el tamaño */
+  transform: translateY(0) scale(0.98);
+}
+
+
+/* Configura el contenedor de la imagen destacada */
+.inicio-destacada-imagen-wrap {
+
+  /* Permite posicionamiento interno */
+  position: relative;
+
+  /* Ocupa todo el ancho */
+  width: 100%;
+
+  /* Define la altura */
+  height: 360px;
+
+  /* Redondea las esquinas */
+  border-radius: 1.25rem;
+
+  /* Oculta contenido sobrante */
+  overflow: hidden;
+
+  /* Aplica sombra */
+  box-shadow: 0 16px 38px rgba(13, 37, 77, 0.12);
+}
+
+
+/* Aumenta la altura de la imagen en pantallas medianas */
+@media (min-width: 640px) {
+
+  /* Configura la altura */
+  .inicio-destacada-imagen-wrap {
+
+    /* Aumenta la altura de la imagen */
+    height: 420px;
+  }
+}
+
+
+/* Configura la imagen destacada */
+.inicio-destacada-imagen {
+
+  /* Ocupa todo el ancho */
+  width: 100%;
+
+  /* Ocupa toda la altura */
+  height: 100%;
+
+  /* Ajusta la imagen al contenedor */
+  object-fit: cover;
+
+  /* Centra la imagen */
+  object-position: center;
+
+  /* Define la transición del zoom */
+  transition: transform 0.6s ease;
+}
+
+
+/* Aplica un pequeño zoom a la imagen destacada */
+.inicio-destacada-imagen-wrap:hover .inicio-destacada-imagen {
+
+  /* Aumenta ligeramente la imagen */
+  transform: scale(1.03);
+}
+
+
+/* SECCIÓN TESTIMONIOS */
+
+/* Configura la sección de testimonios */
+.inicio-seccion-testimonios {
+
+  /* Define el espacio vertical */
+  padding: 5.5rem 0 6rem 0;
+
+  /* Aplica el fondo cálido */
+  background-color: var(--color-fondo-calido);
+
+  /* Permite posicionamiento interno */
+  position: relative;
+}
+
+
+/* Configura la cuadrícula de testimonios */
+.inicio-testimonios-cuadricula {
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Centra las tarjetas horizontalmente */
+  justify-content: center;
+
+  /* Permite que las tarjetas pasen a otra línea */
+  flex-wrap: wrap;
+
+  /* Define separación entre tarjetas */
+  gap: 1.5rem;
+
+  /* Ocupa todo el ancho */
+  width: 100%;
+}
+
+
+/* Configura cada tarjeta de testimonio */
+.inicio-testimonio-tarjeta {
+
+  /* Permite que la tarjeta crezca y se reduzca */
+  flex: 1 1 300px;
+
+  /* Define un ancho máximo */
+  max-width: 360px;
+
+  /* Define el espacio interno */
+  padding: 1.8rem;
+
+  /* Aplica el fondo */
+  background-color: var(--color-fondo-blanco);
+
+  /* Redondea las esquinas */
+  border-radius: 0.75rem;
+
+  /* Aplica sombra */
+  box-shadow: var(--sombra-tarjeta);
+
+  /* Aplica un borde suave */
+  border: 1px solid var(--color-borde-tarjeta);
+
+  /* Mantiene el cursor normal */
+  cursor: default;
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Organiza el contenido verticalmente */
+  flex-direction: column;
+
+  /* Distribuye el contenido verticalmente */
+  justify-content: space-between;
+
+  /* Aplica una transición suave */
+  transition: var(--transicion-suave);
+}
+
+
+/* Aplica un efecto hover a las tarjetas */
+.inicio-testimonio-tarjeta:hover {
+
+  /* Eleva ligeramente la tarjeta */
+  transform: translateY(-4px);
+
+  /* Aumenta la sombra */
+  box-shadow: var(--sombra-tarjeta-hover);
+}
+
+
+/* Configura la cita del testimonio */
+.inicio-testimonio-cita {
+
+  /* Aplica estilo cursivo */
+  font-style: italic;
+
+  /* Aplica el color secundario */
+  color: var(--color-texto-secundario);
+
+  /* Agrega espacio debajo */
+  margin-bottom: 1.25rem;
+
+  /* Define la altura de línea */
+  line-height: 1.65;
+
+  /* Define el tamaño */
+  font-size: 0.925rem;
+}
+
+
+/* Configura la información del autor */
+.inicio-testimonio-autor {
+
+  /* Agrega una línea superior */
+  border-top: 1px solid var(--color-borde-suave);
+
+  /* Agrega espacio encima */
+  padding-top: 0.85rem;
+}
+
+
+/* Configura el nombre del testimonio */
+.inicio-testimonio-nombre {
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Hace el texto más grueso */
+  font-weight: 700;
+
+  /* Aplica azul profundo */
+  color: var(--color-azul-profundo);
+
+  /* Define el tamaño */
+  font-size: 0.95rem;
+}
+
+
+/* Configura la información secundaria del testimonio */
+.inicio-testimonio-info {
+
+  /* Define el tamaño */
+  font-size: 0.825rem;
+
+  /* Aplica color gris */
+  color: #737782;
+
+  /* Convierte el elemento en bloque */
+  display: block;
+}
+
+
+/* SECCIÓN FAQ */
+
+/* Configura la sección de preguntas frecuentes */
+.inicio-seccion-faq {
+
+  /* Define el espacio vertical */
+  padding: 5rem 0 6rem 0;
+
+  /* Aplica el fondo suave */
+  background-color: var(--color-fondo-suave);
+}
+
+
+/* Configura la lista de preguntas */
+.inicio-faq-lista {
+
+  /* Define un ancho máximo */
+  max-width: 820px;
+
+  /* Centra la lista */
+  margin: 0 auto;
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Organiza las preguntas verticalmente */
+  flex-direction: column;
+
+  /* Define separación */
+  gap: 1rem;
+}
+
+
+/* Configura cada elemento FAQ */
+.inicio-faq-item {
+
+  /* Aplica el fondo */
+  background-color: var(--color-fondo-blanco);
+
+  /* Aplica un borde */
+  border: 1px solid var(--color-borde-tarjeta);
+
+  /* Redondea las esquinas */
+  border-radius: 1rem;
+
+  /* Oculta el contenido sobrante */
+  overflow: hidden;
+
+  /* Aplica sombra */
+  box-shadow: 0 4px 12px rgba(13, 37, 77, 0.04);
+
+  /* Aplica transición */
+  transition: var(--transicion-suave);
+}
+
+
+/* Cambia el borde de la pregunta al pasar el cursor */
+.inicio-faq-item:hover {
+
+  /* Hace el borde más visible */
+  border-color: rgba(0, 55, 122, 0.18);
+}
+
+
+/* Configura una pregunta cuando está abierta */
+.inicio-faq-item.abierto {
+
+  /* Aplica el color primario al borde */
+  border-color: var(--color-primario);
+
+  /* Aumenta la sombra */
+  box-shadow: 0 8px 24px rgba(0, 55, 122, 0.08);
+}
+
+
+/* Configura el botón de cada pregunta */
+.inicio-faq-boton {
+
+  /* Ocupa todo el ancho */
+  width: 100%;
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Distribuye el texto y el icono */
+  justify-content: space-between;
+
+  /* Define el espacio interno */
+  padding: 1.3rem 1.6rem;
+
+  /* Hace transparente el fondo */
+  background: transparent;
+
+  /* Elimina el borde */
+  border: none;
+
+  /* Alinea el texto a la izquierda */
+  text-align: left;
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Define el tamaño */
+  font-size: 1rem;
+
+  /* Hace el texto grueso */
+  font-weight: 700;
+
+  /* Aplica el azul profundo */
+  color: var(--color-azul-profundo);
+
+  /* Define separación entre elementos */
+  gap: 1rem;
+
+  /* Suaviza el cambio de color */
+  transition: color 0.2s ease;
+}
+
+
+/* Cambia el color del botón cuando la pregunta está abierta */
+.inicio-faq-item.abierto .inicio-faq-boton {
+
+  /* Aplica el color primario */
+  color: var(--color-primario);
+}
+
+
+/* Configura el icono de las preguntas */
+.inicio-faq-icono {
+
+  /* Define el tamaño del icono */
+  font-size: 1.5rem;
+
+  /* Aplica el color secundario */
+  color: var(--color-secundario);
+
+  /* Define la transición de rotación */
+  transition: transform 0.3s ease;
+
+  /* Evita que el icono se reduzca */
+  flex-shrink: 0;
+}
+
+
+/* Rota el icono cuando la pregunta está abierta */
+.inicio-faq-item.abierto .inicio-faq-icono {
+
+  /* Gira el icono 45 grados */
+  transform: rotate(45deg);
+
+  /* Cambia el color al primario */
+  color: var(--color-primario);
+}
+
+
+/* Configura inicialmente la respuesta FAQ */
+.inicio-faq-respuesta {
+
+  /* Oculta la respuesta */
+  display: none;
+
+  /* Define el espacio interno */
+  padding: 0 1.6rem 1.4rem 1.6rem;
+
+  /* Define el tamaño del texto */
+  font-size: 0.95rem;
+
+  /* Aplica el color secundario */
+  color: var(--color-texto-secundario);
+
+  /* Define la altura de línea */
+  line-height: 1.65;
+}
+
+
+/* Muestra la respuesta cuando la pregunta está abierta */
+.inicio-faq-item.abierto .inicio-faq-respuesta {
+
+  /* Muestra la respuesta */
+  display: block;
+
+  /* Aplica la animación de entrada */
+  animation: animarFaq 0.3s ease-out;
+}
+
+
+/* Define la animación de apertura de las respuestas */
+@keyframes animarFaq {
+
+  /* Define el estado inicial */
+  from { opacity: 0; transform: translateY(-8px); }
+
+  /* Define el estado final */
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* MODAL */
+
+/* Configura el fondo que cubre toda la pantalla */
+.inicio-modal-fondo {
+
+  /* Posiciona el modal sobre toda la pantalla */
+  position: fixed;
+
+  /* Ocupa todos los extremos */
+  inset: 0;
+
+  /* Aplica un fondo oscuro semitransparente */
+  background: rgba(13, 37, 77, 0.65);
+
+  /* Desenfoca el contenido detrás */
+  backdrop-filter: blur(6px);
+
+  /* Aplica el desenfoque para WebKit */
+  -webkit-backdrop-filter: blur(6px);
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el modal */
+  align-items: center;
+
+  /* Centra horizontalmente el modal */
+  justify-content: center;
+
+  /* Define espacio alrededor */
+  padding: 1.5rem;
+
+  /* Coloca el modal sobre otros elementos */
+  z-index: 2000;
+
+  /* Lo hace inicialmente transparente */
+  opacity: 0;
+
+  /* Lo oculta visualmente */
+  visibility: hidden;
+
+  /* Define la transición de aparición */
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+
+/* Muestra el fondo del modal cuando está activo */
+.inicio-modal-fondo.activo {
+
+  /* Hace visible el modal */
+  opacity: 1;
+
+  /* Permite visualizar e interactuar con él */
+  visibility: visible;
+}
+
+
+/* Configura la tarjeta interna del modal */
+.inicio-modal-tarjeta {
+
+  /* Aplica el fondo */
+  background: var(--color-fondo-blanco);
+
+  /* Redondea las esquinas */
+  border-radius: 1.25rem;
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Define un ancho máximo */
+  max-width: 560px;
+
+  /* Define el espacio interno */
+  padding: 2.2rem;
+
+  /* Aplica una sombra intensa */
+  box-shadow: 0 24px 60px rgba(13, 37, 77, 0.3);
+
+  /* Permite posicionar el botón de cerrar */
+  position: relative;
+
+  /* Limita la altura del modal */
+  max-height: 90vh;
+
+  /* Permite desplazamiento vertical */
+  overflow-y: auto;
+
+  /* Define el estado inicial de la animación */
+  transform: scale(0.95) translateY(20px);
+
+  /* Define la transición de entrada */
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+/* Configura la tarjeta cuando el modal está activo */
+.inicio-modal-fondo.activo .inicio-modal-tarjeta {
+
+  /* Devuelve la tarjeta a su tamaño normal */
+  transform: scale(1) translateY(0);
+}
+
+
+/* Configura el botón para cerrar el modal */
+.inicio-modal-cerrar {
+
+  /* Posiciona el botón de forma absoluta */
+  position: absolute;
+
+  /* Define la posición superior */
+  top: 1.25rem;
+
+  /* Define la posición derecha */
+  right: 1.25rem;
+
+  /* Hace transparente el fondo */
+  background: transparent;
+
+  /* Elimina el borde */
+  border: none;
+
+  /* Aplica el color secundario */
+  color: var(--color-texto-secundario);
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Define el espacio interno */
+  padding: 0.4rem;
+
+  /* Hace circular el botón */
+  border-radius: 50%;
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el icono */
+  align-items: center;
+
+  /* Centra horizontalmente el icono */
+  justify-content: center;
+
+  /* Define la transición */
+  transition: all 0.2s ease;
+}
+
+
+/* Cambia el botón de cerrar al pasar el cursor */
+.inicio-modal-cerrar:hover {
+
+  /* Aplica un fondo neutro */
+  background-color: var(--color-arena-neutro);
+
+  /* Cambia el color */
+  color: var(--color-azul-profundo);
+}
+
+
+/* Configura el encabezado del modal */
+.inicio-modal-encabezado {
+
+  /* Agrega espacio debajo */
+  margin-bottom: 1.75rem;
+}
+
+
+/* Configura el título del modal */
+.inicio-modal-titulo {
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Define el tamaño */
+  font-size: 1.6rem;
+
+  /* Hace el título grueso */
+  font-weight: 800;
+
+  /* Aplica azul profundo */
+  color: var(--color-azul-profundo);
+
+  /* Agrega espacio inferior */
+  margin-bottom: 0.4rem;
+}
+
+
+/* Configura el subtítulo del modal */
+.inicio-modal-subtitulo {
+
+  /* Define el tamaño */
+  font-size: 0.9rem;
+
+  /* Aplica el color secundario */
+  color: var(--color-texto-secundario);
+}
+
+
+/* Configura el contenido del servicio dentro del modal */
+.inicio-modal-servicio-cuerpo {
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Organiza el contenido verticalmente */
+  flex-direction: column;
+
+  /* Define separación entre elementos */
+  gap: 1.35rem;
+}
+
+
+/* Configura el contenedor de la imagen del servicio */
+.inicio-modal-servicio-img-wrap {
+
+  /* Ocupa todo el ancho */
+  width: 100%;
+
+  /* Define la altura */
+  height: 220px;
+
+  /* Redondea las esquinas */
+  border-radius: 0.75rem;
+
+  /* Oculta contenido sobrante */
+  overflow: hidden;
+
+  /* Aplica sombra */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Configura la imagen del servicio */
+.inicio-modal-servicio-img {
+
+  /* Ocupa todo el ancho */
+  width: 100%;
+
+  /* Ocupa toda la altura */
+  height: 100%;
+
+  /* Ajusta la imagen al contenedor */
+  object-fit: cover;
+}
+
+
+/* Configura la información del servicio */
+.inicio-modal-servicio-info {
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Organiza el contenido verticalmente */
+  flex-direction: column;
+
+  /* Define separación */
+  gap: 0.6rem;
+}
+
+
+/* Configura la descripción larga del servicio */
+.inicio-modal-servicio-desc-larga {
+
+  /* Define el tamaño */
+  font-size: 0.95rem;
+
+  /* Aplica el color secundario */
+  color: var(--color-texto-secundario);
+
+  /* Define la altura de línea */
+  line-height: 1.65;
+}
+
+
+/* Configura la lista de elementos incluidos */
+.inicio-modal-servicio-lista-incluye {
+
+  /* Elimina los estilos de lista */
+  list-style: none;
+
+  /* Activa CSS Grid */
+  display: grid;
+
+  /* Utiliza una columna inicialmente */
+  grid-template-columns: 1fr;
+
+  /* Define separación entre elementos */
+  gap: 0.5rem;
+
+  /* Agrega un pequeño espacio superior */
+  margin-top: 0.35rem;
+}
+
+
+/* Divide la lista en dos columnas en pantallas mayores */
+@media (min-width: 520px) {
+
+  /* Configura dos columnas */
+  .inicio-modal-servicio-lista-incluye {
+
+    /* Divide el contenido en dos columnas */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* Configura cada elemento incluido */
+.inicio-modal-servicio-item-incluye {
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Define separación entre icono y texto */
+  gap: 0.5rem;
+
+  /* Define el tamaño */
+  font-size: 0.85rem;
+
+  /* Hace el texto más grueso */
+  font-weight: 600;
+
+  /* Aplica el color principal */
+  color: var(--color-texto-principal);
+}
+
+
+/* Configura el icono de cada elemento incluido */
+.inicio-modal-servicio-item-incluye span {
+
+  /* Aplica el color de éxito */
+  color: var(--color-exito);
+
+  /* Define el tamaño del icono */
+  font-size: 1.2rem;
+}
+
+
+/* Configura la caja para agendar */
+.inicio-modal-caja-agendar {
+
+  /* Aplica el fondo suave */
+  background-color: var(--color-fondo-suave);
+
+  /* Aplica un borde */
+  border: 1px solid var(--color-borde-suave);
+
+  /* Redondea las esquinas */
+  border-radius: 0.85rem;
+
+  /* Define el espacio interno */
+  padding: 1.25rem;
+
+  /* Agrega un pequeño espacio superior */
+  margin-top: 0.25rem;
+}
+
+
+/* Configura el título de la caja para agendar */
+.inicio-modal-caja-agendar-titulo {
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Define el tamaño */
+  font-size: 1.1rem;
+
+  /* Hace el texto grueso */
+  font-weight: 700;
+
+  /* Aplica azul profundo */
+  color: var(--color-azul-profundo);
+
+  /* Agrega espacio inferior */
+  margin-bottom: 0.85rem;
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente */
+  align-items: center;
+
+  /* Define separación */
+  gap: 0.45rem;
+}
+
+
+/* Configura el formulario del modal */
+.inicio-modal-formulario {
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Organiza los campos verticalmente */
+  flex-direction: column;
+
+  /* Define separación entre campos */
+  gap: 1.2rem;
+}
+
+
+/* Configura la fila doble del formulario */
+.inicio-modal-fila-doble {
+
+  /* Activa CSS Grid */
+  display: grid;
+
+  /* Utiliza una columna inicialmente */
+  grid-template-columns: 1fr;
+
+  /* Define separación */
+  gap: 1.2rem;
+}
+
+
+/* Divide la fila en dos columnas en pantallas mayores */
+@media (min-width: 520px) {
+
+  /* Configura dos columnas */
+  .inicio-modal-fila-doble {
+
+    /* Divide el contenido en dos columnas */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* Configura cada campo del formulario */
+.inicio-modal-campo {
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Organiza etiqueta y campo verticalmente */
+  flex-direction: column;
+}
+
+
+/* Configura las etiquetas del formulario */
+.inicio-modal-etiqueta {
+
+  /* Define el tamaño */
+  font-size: 0.85rem;
+
+  /* Hace la etiqueta más gruesa */
+  font-weight: 700;
+
+  /* Aplica el color principal */
+  color: var(--color-texto-principal);
+
+  /* Agrega espacio debajo */
+  margin-bottom: 0.4rem;
+}
+
+
+/* Configura los campos de entrada y selección */
+.inicio-modal-input,
+.inicio-modal-select {
+
+  /* Ocupan todo el ancho disponible */
+  width: 100%;
+
+  /* Aplica el fondo neutro */
+  background-color: var(--color-arena-neutro);
+
+  /* Define un borde transparente */
+  border: 1.5px solid transparent;
+
+  /* Redondea las esquinas */
+  border-radius: 0.55rem;
+
+  /* Define el espacio interno */
+  padding: 0.75rem 1rem;
+
+  /* Aplica la fuente del contenido */
+  font-family: var(--fuente-cuerpo);
+
+  /* Define el tamaño */
+  font-size: 0.9rem;
+
+  /* Aplica el color del texto */
+  color: var(--color-texto-principal);
+
+  /* Elimina el contorno predeterminado */
+  outline: none;
+
+  /* Define la transición */
+  transition: all 0.25s ease;
+}
+
+
+/* Configura los campos cuando reciben el foco */
+.inicio-modal-input:focus,
+.inicio-modal-select:focus {
+
+  /* Cambia el fondo al recibir el foco */
+  background-color: var(--color-fondo-blanco);
+
+  /* Aplica el borde primario */
+  border-color: var(--color-primario);
+
+  /* Agrega un resplandor alrededor del campo */
+  box-shadow: 0 0 0 3px rgba(0, 55, 122, 0.15);
+}
+
+
+/* Configura el botón para enviar el formulario */
+.inicio-modal-boton-enviar {
+
+  /* Ocupa todo el ancho */
+  width: 100%;
+
+  /* Aplica el fondo azul */
+  background-color: #1B4E9B;
+
+  /* Aplica texto claro */
+  color: var(--color-fondo-blanco);
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Hace el texto grueso */
+  font-weight: 700;
+
+  /* Define el tamaño */
+  font-size: 1rem;
+
+  /* Define el espacio interno */
+  padding: 0.9rem 1.5rem;
+
+  /* Elimina el borde */
+  border: none;
+
+  /* Redondea las esquinas */
+  border-radius: 0.55rem;
+
+  /* Cambia el cursor */
+  cursor: pointer;
+
+  /* Agrega espacio superior */
+  margin-top: 0.5rem;
+
+  /* Aplica sombra */
+  box-shadow: 0 6px 18px rgba(27, 78, 155, 0.35);
+
+  /* Aplica transición */
+  transition: var(--transicion-suave);
+}
+
+
+/* Configura el botón de envío al pasar el cursor */
+.inicio-modal-boton-enviar:hover {
+
+  /* Oscurece el fondo */
+  background-color: var(--color-primario-oscuro);
+
+  /* Aumenta la sombra */
+  box-shadow: 0 8px 24px rgba(27, 78, 155, 0.45);
+
+  /* Eleva ligeramente el botón */
+  transform: translateY(-2px);
+}
+
+
+/* ALERTA TOAST */
+
+/* Configura la notificación flotante */
+.inicio-alerta-toast {
+
+  /* Fija la notificación en la pantalla */
+  position: fixed;
+
+  /* Define la posición superior */
+  top: 1.5rem;
+
+  /* Define la posición derecha */
+  right: 1.5rem;
+
+  /* Aplica el fondo */
+  background: var(--color-fondo-blanco);
+
+  /* Redondea las esquinas */
+  border-radius: 0.85rem;
+
+  /* Define el espacio interno */
+  padding: 1rem 1.35rem;
+
+  /* Aplica sombra */
+  box-shadow: 0 14px 36px rgba(13, 37, 77, 0.2);
+
+  /* Aplica un borde lateral de color primario */
+  border-left: 4px solid var(--color-primario);
+
+  /* Activa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Define separación entre icono y texto */
+  gap: 0.85rem;
+
+  /* Coloca la alerta por encima de otros elementos */
+  z-index: 3000;
+
+  /* Aplica la animación de entrada */
+  animation: deslizarToastInicio 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+/* Configura la alerta cuando representa un error */
+.inicio-alerta-toast.error {
+
+  /* Cambia el borde lateral al color de error */
+  border-left-color: var(--color-error);
+}
+
+
+/* Configura el icono de la alerta */
+.inicio-alerta-icono {
+
+  /* Define el tamaño del icono */
+  font-size: 1.6rem;
+
+  /* Aplica el color primario */
+  color: var(--color-primario);
+}
+
+
+/* Cambia el color del icono cuando es un error */
+.inicio-alerta-toast.error .inicio-alerta-icono {
+
+  /* Aplica el color de error */
+  color: var(--color-error);
+}
+
+
+/* Configura el título de la alerta */
+.inicio-alerta-titulo {
+
+  /* Aplica la fuente de títulos */
+  font-family: var(--fuente-titulos);
+
+  /* Hace el texto grueso */
+  font-weight: 700;
+
+  /* Define el tamaño */
+  font-size: 0.9rem;
+
+  /* Aplica azul profundo */
+  color: var(--color-azul-profundo);
+}
+
+
+/* Configura el mensaje de la alerta */
+.inicio-alerta-mensaje {
+
+  /* Define el tamaño */
+  font-size: 0.825rem;
+
+  /* Aplica el color secundario */
+  color: var(--color-texto-secundario);
+}
+
+
+/* Define la animación de entrada del toast */
+@keyframes deslizarToastInicio {
+
+  /* Define el estado inicial */
+  from { opacity: 0; transform: translateY(-25px); }
+
+  /* Define el estado final */
+  to { opacity: 1; transform: translateY(0); }
+}

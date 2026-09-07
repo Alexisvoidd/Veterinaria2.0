@@ -1,0 +1,956 @@
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <!-- Material Symbols -->
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    >
+
+    <!-- Estilos generales -->
+    <link
+        rel="stylesheet"
+        href="../css/base.css"
+    >
+
+    <!-- CSS de accesibilidad -->
+    <link
+        rel="stylesheet"
+        href="../css/accessibility.css"
+    >
+
+    <!-- Flaticon -->
+    <link
+        rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-straight/css/uicons-bold-straight.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-straight/css/uicons-thin-straight.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    >
+
+    <!-- CSS del blog -->
+    <link
+        rel="stylesheet"
+        href="../css/blog.css"
+    >
+
+    <!-- CSS del navbar -->
+    <link
+        rel="stylesheet"
+        href="../components/nav/nav.css"
+    >
+
+    <title>Blog | VetSalud</title>
+
+</head>
+
+
+<!-- IMPORTANTE:
+     El atributo data-page permite identificar
+     qué página está actualmente activa.
+
+     En esta página debe ser "blog" y no "inicio".
+-->
+
+<!-- Inicia el contenido visible de la página.
+     data-page="blog" identifica esta página como el blog. -->
+<body data-page="blog">
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <!-- Contenedor vacío donde JavaScript cargará
+         automáticamente el navbar. -->
+    <div id="nav-container"></div>
+
+
+    <!-- =========================
+         HERO DEL BLOG
+    ========================== -->
+
+    <!-- Sección principal de presentación del blog. -->
+    <section class="inicio">
+
+        <!-- Contenedor que agrupa el texto principal
+             del hero. -->
+        <div class="inicio_contenido">
+
+            <!-- Etiqueta que identifica la sección
+                 como un blog veterinario. -->
+            <span class="etiqueta">
+                BLOG VETERINARIO
+            </span>
+
+            <!-- Título principal de la sección hero. -->
+            <h1>
+                Todo lo que necesitas saber para cuidar bien a tu mascota
+            </h1>
+
+            <!-- Texto descriptivo que explica
+                 el contenido disponible en el blog. -->
+            <p>
+                Encuentra aquí información, consejos y recomendaciones
+                de nuestros profesionales para que tu mascota siempre
+                esté sana, feliz y llena de vida.
+            </p>
+
+            <!-- Enlace que lleva directamente
+                 a la sección de artículos. -->
+            <a
+                href="#articulos"
+                class="btn_principal"
+            >
+
+                <!-- Texto visible del botón. -->
+                Ver artículos
+
+                <!-- Icono de flecha que acompaña
+                     el texto del botón. -->
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+
+            <!-- Cierra el enlace del botón. -->
+            </a>
+
+        <!-- Cierra el contenedor del contenido del hero. -->
+        </div>
+
+
+        <!-- Contenedor de la imagen principal
+             del hero del blog. -->
+        <div class="inicio_imagen">
+
+            <!-- Imagen utilizada como representación
+                 visual del blog veterinario. -->
+            <img
+                src="../assets/images/productos/queinclu.jpg"
+                alt="Mascotas en consulta veterinaria"
+            >
+
+        <!-- Cierra el contenedor de la imagen. -->
+        </div>
+
+    <!-- Cierra la sección hero. -->
+    </section>
+
+
+
+    <!-- =========================
+         BLOG
+    ========================== -->
+
+    <!-- Contenedor principal del contenido
+         de la página. -->
+    <main>
+
+        <!-- Sección que contiene todos los artículos.
+             El ID permite llegar aquí desde el botón
+             "Ver artículos". -->
+        <section
+            class="blog"
+            id="articulos"
+        >
+
+            <!-- Contenedor del título de la sección
+                 y los botones de categorías. -->
+            <div class="seccion_tit">
+
+                <!-- Contenedor de los textos
+                     de presentación de los artículos. -->
+                <div>
+
+                    <!-- Texto pequeño que identifica
+                         la finalidad de la sección. -->
+                    <span>
+                        INFORMACIÓN PARA TI
+                    </span>
+
+                    <!-- Título de la sección de artículos. -->
+                    <h2>
+                        Artículos recientes
+                    </h2>
+
+                <!-- Cierra el contenedor de textos. -->
+                </div>
+
+
+                <!-- CATEGORÍAS -->
+
+                <!-- Contenedor de los botones utilizados
+                     para filtrar los artículos. -->
+                <div class="categorias">
+
+                    <!-- Botón para mostrar todos los artículos.
+                         data-categoria permite identificar
+                         el filtro seleccionado. -->
+                    <button
+                        class="categoria_activa"
+                        data-categoria="todos"
+                    >
+                        Todos
+                    </button>
+
+                    <!-- Botón para mostrar únicamente
+                         artículos de salud. -->
+                    <button
+                        class="categoria_activa"
+                        data-categoria="salud"
+                    >
+                        Salud
+                    </button>
+
+                    <!-- Botón para mostrar únicamente
+                         artículos de cuidado. -->
+                    <button
+                        class="categoria_activa"
+                        data-categoria="cuidado"
+                    >
+                        Cuidado
+                    </button>
+
+                    <!-- Botón para mostrar únicamente
+                         artículos de alimentación. -->
+                    <button
+                        class="categoria_activa"
+                        data-categoria="alimentacion"
+                    >
+                        Alimentación
+                    </button>
+
+                    <!-- Botón para mostrar únicamente
+                         artículos de prevención. -->
+                    <button
+                        class="categoria_activa"
+                        data-categoria="prevencion"
+                    >
+                        Prevención
+                    </button>
+
+                    <!-- Botón para mostrar únicamente
+                         artículos relacionados con actividad física. -->
+                    <button
+                        class="categoria_activa"
+                        data-categoria="actividad_fisica"
+                    >
+                        Actividad física
+                    </button>
+
+                <!-- Cierra el contenedor de categorías. -->
+                </div>
+
+            <!-- Cierra el encabezado de la sección. -->
+            </div>
+
+
+
+            <!-- =========================
+                 GRID DE ARTÍCULOS
+            ========================== -->
+
+            <!-- Contenedor que organiza los artículos
+                 mediante una cuadrícula definida por CSS. -->
+            <div class="articulos_grid">
+
+
+                <!-- ARTÍCULO 1 -->
+
+                <!-- Primer artículo del blog.
+                     data-categoria indica que pertenece
+                     a la categoría Salud. -->
+                <article
+                    class="articulo"
+                    data-categoria="salud"
+                    data-titulo="Importancia de las vacunas"
+                >
+
+                    <!-- Contenedor de la imagen del artículo. -->
+                    <div class="imagen_art1">
+
+                        <!-- Imagen relacionada con la vacunación
+                             de mascotas. -->
+                        <img
+                            src="../assets/images/productos/salud.avif"
+                            alt="Vacunación de mascotas"
+                        >
+
+                    <!-- Cierra el contenedor de imagen. -->
+                    </div>
+
+
+                    <!-- Contenedor del contenido textual
+                         del artículo. -->
+                    <div class="contenido_art">
+
+                        <!-- Muestra la categoría del artículo. -->
+                        <span class="categoria_articulo">
+                            Salud
+                        </span>
+
+                        <!-- Título del artículo. -->
+                        <h3>
+                            ¿Importancia de las vacunas en tu mascota?
+                        </h3>
+
+                        <!-- Descripción corta del artículo. -->
+                        <p>
+                            Son vitales porque estimulan sus defensas
+                            y crean protección contra virus y bacterias
+                            graves o mortales, como el parvovirus,
+                            el moquillo o la rabia.
+                        </p>
+
+                        <!-- Botón que permite abrir
+                             el contenido completo del artículo.
+                             data-articulo identifica el artículo
+                             que debe mostrar JavaScript. -->
+                        <button class="leer-mas" data-articulo="vacunas">
+                            Leer más
+
+                            <!-- Icono de flecha del botón. -->
+                            <i class="fi fi-bs-arrow-right"></i>
+
+                        <!-- Cierra el botón. -->
+                        </button>
+
+                    <!-- Cierra el contenido del artículo. -->
+                    </div>
+
+                <!-- Cierra el artículo 1. -->
+                </article>
+
+
+
+                <!-- ARTÍCULO 2 -->
+
+                <!-- Segundo artículo del blog.
+                     Pertenece a la categoría Alimentación. -->
+                <article
+                    class="articulo"
+                    data-categoria="alimentacion"
+                    data-titulo="Alimentación saludable"
+                >
+
+                    <!-- Contenedor de la imagen del artículo. -->
+                    <div class="imagen_art1">
+
+                        <!-- Imagen relacionada con alimentación
+                             saludable para mascotas. -->
+                        <img
+                            src="../assets/images/productos/alim.jpg"
+                            alt="Alimentación saludable para mascotas"
+                        >
+
+                    <!-- Cierra el contenedor de imagen. -->
+                    </div>
+
+
+                    <!-- Contenedor del contenido del artículo. -->
+                    <div class="contenido_art">
+
+                        <!-- Categoría del artículo. -->
+                        <span class="categoria_articulo">
+                            Alimentación
+                        </span>
+
+                        <!-- Título del artículo. -->
+                        <h3>
+                            Alimentación saludable para tu mascota
+                        </h3>
+
+                        <!-- Descripción corta del artículo. -->
+                        <p>
+                            Una buena alimentación es fundamental,
+                            especialmente cuando se mantiene un balance
+                            equilibrado para que tu mascota tenga más
+                            energía y una mejor calidad de vida.
+                        </p>
+
+
+                        <!-- Botón utilizado para abrir
+                             el artículo completo. -->
+                        <button class="leer-mas" data-articulo="alimentacion">
+
+                            <!-- Texto del botón. -->
+                            Leer más
+
+                            <!-- Icono de flecha. -->
+                            <i class="fi fi-bs-arrow-right"></i>
+
+                        <!-- Cierra el botón. -->
+                        </button>
+
+                    <!-- Cierra el contenido del artículo. -->
+                    </div>
+
+                <!-- Cierra el artículo 2. -->
+                </article>
+
+
+
+                <!-- ARTÍCULO 3 -->
+
+                <!-- Tercer artículo del blog.
+                     Pertenece a la categoría Cuidado. -->
+                <article
+                    class="articulo"
+                    data-categoria="cuidado"
+                    data-titulo="Cuidados dentales"
+                >
+
+                    <!-- Contenedor de la imagen. -->
+                    <div class="imagen_art1">
+
+                        <!-- Imagen relacionada con
+                             el cuidado dental. -->
+                        <img
+                            src="../assets/images/productos/dental.jpg"
+                            alt="Cuidado dental de mascotas"
+                        >
+
+                    <!-- Cierra el contenedor de imagen. -->
+                    </div>
+
+
+                    <!-- Contenedor del contenido del artículo. -->
+                    <div class="contenido_art">
+
+                        <!-- Categoría del artículo. -->
+                        <span class="categoria_articulo">
+                            Cuidado
+                        </span>
+
+                        <!-- Título del artículo. -->
+                        <h3>
+                            Importancia del cuidado dental en tu mascota
+                        </h3>
+
+                        <!-- Descripción corta del artículo. -->
+                        <p>
+                            La limpieza dental de tu mascota ayuda
+                            a prevenir enfermedades y mantener una
+                            buena salud oral.
+                        </p>
+
+                        <!-- Botón para abrir
+                             el artículo completo. -->
+                        <button class="leer-mas" data-articulo="dental">
+
+                            <!-- Texto del botón. -->
+                            Leer más
+
+                            <!-- Icono de flecha. -->
+                            <i class="fi fi-bs-arrow-right"></i>
+
+                        <!-- Cierra el botón. -->
+                        </button>
+
+                    <!-- Cierra el contenido del artículo. -->
+                    </div>
+
+                <!-- Cierra el artículo 3. -->
+                </article>
+
+
+
+                <!-- ARTÍCULO 4 -->
+
+                <!-- Cuarto artículo del blog.
+                     Pertenece a la categoría Prevención. -->
+                <article
+                    class="articulo"
+                    data-categoria="prevencion"
+                    data-titulo="Visita veterinaria"
+                >
+
+                    <!-- Contenedor de la imagen. -->
+                    <div class="imagen_art1">
+
+                        <!-- Imagen relacionada con una consulta
+                             veterinaria. -->
+                        <img
+                            src="../assets/images/productos/veterinaris.jpg"
+                            alt="Consulta veterinaria"
+                        >
+
+                    <!-- Cierra el contenedor de imagen. -->
+                    </div>
+
+
+                    <!-- Contenedor del contenido del artículo. -->
+                    <div class="contenido_art">
+
+                        <!-- Categoría del artículo. -->
+                        <span class="categoria_articulo">
+                            Prevención
+                        </span>
+
+                        <!-- Título del artículo. -->
+                        <h3>
+                            ¿Cada cuánto debes llevar a tu mascota al veterinario?
+                        </h3>
+
+                        <!-- Descripción corta del artículo. -->
+                        <p>
+                            Las revisiones permiten detectar problemas
+                            de salud antes de que se conviertan en
+                            enfermedades graves.
+                        </p>
+
+                        <!-- Botón para abrir
+                             el contenido completo. -->
+                        <button class="leer-mas" data-articulo="consulta">
+
+                            <!-- Texto del botón. -->
+                            Leer más
+
+                            <!-- Icono de flecha. -->
+                            <i class="fi fi-bs-arrow-right"></i>
+
+                        <!-- Cierra el botón. -->
+                        </button>
+
+                    <!-- Cierra el contenido del artículo. -->
+                    </div>
+
+                <!-- Cierra el artículo 4. -->
+                </article>
+
+
+
+                <!-- ARTÍCULO 5 -->
+
+                <!-- Quinto artículo del blog.
+                     Pertenece a la categoría Actividad física. -->
+                <article
+                    class="articulo"
+                    data-categoria="actividad_fisica"
+                    data-titulo="Actividad física"
+                >
+
+                    <!-- Contenedor de la imagen. -->
+                    <div class="imagen_art1">
+
+                        <!-- Imagen relacionada con
+                             la actividad física de mascotas. -->
+                        <img
+                            src="../assets/images/productos/theforest.jpg"
+                            alt="Actividad física para mascotas"
+                        >
+
+                    <!-- Cierra el contenedor de imagen. -->
+                    </div>
+
+
+                    <!-- Contenedor del contenido del artículo. -->
+                    <div class="contenido_art">
+
+                        <!-- Categoría del artículo. -->
+                        <span class="categoria_articulo">
+                            Actividad física
+                        </span>
+
+                        <!-- Título del artículo. -->
+                        <h3>
+                            La importancia de la actividad física
+                        </h3>
+
+                        <!-- Descripción corta del artículo. -->
+                        <p>
+                            El ejercicio adecuado ayuda a mantener
+                            a tu mascota activa, saludable y con
+                            un buen estado físico.
+                        </p>
+
+                        <!-- Botón para abrir
+                             el contenido completo. -->
+                        <button class="leer-mas" data-articulo="actividad">
+
+                            <!-- Texto del botón. -->
+                            Leer más
+
+                            <!-- Icono de flecha. -->
+                            <i class="fi fi-bs-arrow-right"></i>
+
+                        <!-- Cierra el botón. -->
+                        </button>
+
+                    <!-- Cierra el contenido del artículo. -->
+                    </div>
+
+                <!-- Cierra el artículo 5. -->
+                </article>
+
+
+                <!-- =====================================================
+                    ARTÍCULO 6
+                ===================================================== -->
+
+                <!-- Sexto artículo del blog.
+                     Pertenece a la categoría Cuidado. -->
+                <article
+                    class="articulo"
+                    data-categoria="cuidado"
+                    data-articulo="confianza"
+                    data-titulo="Por qué las familias confían en VetSalud"
+                >
+
+                    <!-- Contenedor de la imagen. -->
+                    <div class="imagen_art1">
+
+                        <!-- Imagen relacionada con las mascotas
+                             y sus familias. -->
+                        <img
+                            src="../assets/images/productos/blog-1.png"
+                            alt="Mascotas junto a su familia"
+                        >
+
+                    <!-- Cierra el contenedor de imagen. -->
+                    </div>
+
+
+                    <!-- Contenedor del contenido del artículo. -->
+                    <div class="contenido_art">
+
+                        <!-- Categoría del artículo. -->
+                        <span class="categoria_articulo">
+                            Cuidado
+                        </span>
+
+                        <!-- Título del artículo. -->
+                        <h3>
+                            Por qué las familias confían en VetSalud
+                        </h3>
+
+                        <!-- Descripción corta del artículo. -->
+                        <p>
+                            En VetSalud combinamos experiencia, tecnología y un trato
+                            cercano para brindar una atención veterinaria pensada
+                            para el bienestar de cada mascota y su familia.
+                        </p>
+
+                        <!-- Botón para abrir
+                             el contenido completo del artículo. -->
+                        <button
+                            class="leer-mas"
+                            type="button"
+                            data-articulo="confianza"
+                        >
+
+                            <!-- Texto del botón. -->
+                            Leer más
+
+                            <!-- Icono de flecha. -->
+                            <i class="fi fi-bs-arrow-right"></i>
+
+                        <!-- Cierra el botón. -->
+                        </button>
+
+                    <!-- Cierra el contenido del artículo. -->
+                    </div>
+
+                <!-- Cierra el artículo 6. -->
+                </article>
+
+
+                <!-- =====================================================
+                    ARTÍCULO 7
+                ===================================================== -->
+
+                <!-- Séptimo artículo del blog.
+                     Pertenece a la categoría Prevención. -->
+                <article
+                    class="articulo"
+                    data-categoria="prevencion"
+                    data-articulo="recursos"
+                    data-titulo="Recursos del propietario"
+                >
+
+                    <!-- Contenedor de la imagen. -->
+                    <div class="imagen_art1">
+
+                        <!-- Imagen relacionada con mascotas
+                             y sus propietarios. -->
+                        <img
+                            src="../assets/images/productos/blog-2.jpg"
+                            alt="Mascotas junto a su familia"
+                        >
+
+                    <!-- Cierra el contenedor de imagen. -->
+                    </div>
+
+
+                    <!-- Contenedor del contenido del artículo. -->
+                    <div class="contenido_art">
+
+                        <!-- Categoría del artículo. -->
+                        <span class="categoria_articulo">
+                            Prevención
+                        </span>
+
+                        <!-- Título del artículo. -->
+                        <h3>
+                            Recursos del propietario
+                        </h3>
+
+                        <!-- Descripción corta del artículo. -->
+                        <p>
+                            Encuentra consejos prácticos para cuidar mejor a tu mascota,
+                            tomar decisiones responsables y mantenerla sana, feliz y
+                            protegida en cada etapa de su vida.
+                        </p>
+
+                        <!-- Botón para abrir
+                             el contenido completo. -->
+                        <button
+                            class="leer-mas"
+                            type="button"
+                            data-articulo="recursos"
+                        >
+
+                            <!-- Texto del botón. -->
+                            Leer más
+
+                            <!-- Icono de flecha. -->
+                            <i class="fi fi-bs-arrow-right"></i>
+
+                        <!-- Cierra el botón. -->
+                        </button>
+
+                    <!-- Cierra el contenido del artículo. -->
+                    </div>
+
+                <!-- Cierra el artículo 7. -->
+                </article>
+
+
+                <!-- =====================================================
+                    ARTÍCULO 8
+                ===================================================== -->
+
+                <!-- Octavo artículo del blog.
+                     Pertenece a la categoría Salud. -->
+                <article
+                    class="articulo"
+                    data-categoria="salud"
+                    data-articulo="alertas"
+                    data-titulo="Señales de alerta en la salud de tu mascota"
+                >
+
+                    <!-- Contenedor de la imagen. -->
+                    <div class="imagen_art1">
+
+                        <!-- Imagen relacionada con la salud
+                             y bienestar de una mascota. -->
+                        <img
+                            src="../assets/images/productos/blog-3.jpg"
+                            alt="Salud y bienestar de una mascota"
+                        >
+
+                    <!-- Cierra el contenedor de imagen. -->
+                    </div>
+
+
+                    <!-- Contenedor del contenido del artículo. -->
+                    <div class="contenido_art">
+
+                        <!-- Categoría del artículo. -->
+                        <span class="categoria_articulo">
+                            Salud
+                        </span>
+
+                        <!-- Título del artículo. -->
+                        <h3>
+                            Señales de alerta en la salud de tu mascota
+                        </h3>
+
+                        <!-- Descripción corta del artículo. -->
+                        <p>
+                            Conocer los cambios en el comportamiento y los hábitos
+                            de tu mascota puede ayudarte a detectar a tiempo
+                            posibles problemas de salud.
+                        </p>
+
+                        <!-- Botón para abrir
+                             el contenido completo. -->
+                        <button
+                            class="leer-mas"
+                            type="button"
+                            data-articulo="alertas"
+                        >
+
+                            <!-- Texto del botón. -->
+                            Leer más
+
+                            <!-- Icono de flecha. -->
+                            <i class="fi fi-bs-arrow-right"></i>
+
+                        <!-- Cierra el botón. -->
+                        </button>
+
+                    <!-- Cierra el contenido del artículo. -->
+                    </div>
+
+                <!-- Cierra el artículo 8. -->
+                </article>
+
+
+                <!-- =====================================================
+                    ARTÍCULO 9
+                ===================================================== -->
+
+                <!-- Noveno artículo del blog.
+                     Pertenece a la categoría Alimentación. -->
+                <article
+                    class="articulo"
+                    data-categoria="alimentacion"
+                    data-articulo="alimentacion2"
+                    data-titulo="Cómo elegir una buena alimentación"
+                >
+
+                    <!-- Contenedor de la imagen. -->
+                    <div class="imagen_art1">
+
+                        <!-- Imagen relacionada con la alimentación
+                             saludable de las mascotas. -->
+                        <img
+                            src="../assets/images/productos/blog-4.jpeg"
+                            alt="Alimentación saludable para mascotas"
+                        >
+
+                    <!-- Cierra el contenedor de imagen. -->
+                    </div>
+
+
+                    <!-- Contenedor del contenido del artículo. -->
+                    <div class="contenido_art">
+
+                        <!-- Categoría del artículo. -->
+                        <span class="categoria_articulo">
+                            Alimentación
+                        </span>
+
+                        <!-- Título del artículo. -->
+                        <h3>
+                            Cómo elegir una buena alimentación
+                        </h3>
+
+                        <!-- Descripción corta del artículo. -->
+                        <p>
+                            Elegir correctamente el alimento de tu mascota puede
+                            marcar una gran diferencia en su crecimiento, energía
+                            y bienestar durante cada etapa de su vida.
+                        </p>
+
+                        <!-- Botón para abrir
+                             el contenido completo del artículo. -->
+                        <button
+                            class="leer-mas"
+                            type="button"
+                            data-articulo="alimentacion2"
+                        >
+
+                            <!-- Texto del botón. -->
+                            Leer más
+
+                            <!-- Icono de flecha. -->
+                            <i class="fi fi-bs-arrow-right"></i>
+
+                        <!-- Cierra el botón. -->
+                        </button>
+
+                    <!-- Cierra el contenido del artículo. -->
+                    </div>
+
+                <!-- Cierra el artículo 9. -->
+                </article>
+
+
+            <!-- Cierra la cuadrícula de artículos. -->
+            </div>
+
+        <!-- Cierra la sección del blog. -->
+        </section>
+
+    <!-- Cierra el contenido principal. -->
+    </main>
+
+
+    <!-- Contenedor donde se cargará
+         el componente de accesibilidad. -->
+    <div id="accessibility-container"></div>
+
+
+    <!-- ==========================================
+         FOOTER GLOBAL
+         ========================================== -->
+
+    <!-- Contenedor vacío donde JavaScript cargará
+         automáticamente el footer global. -->
+    <div id="footer-container"></div>
+
+
+    <!-- Scripts -->
+
+    <!-- Carga el JavaScript encargado de cargar
+         componentes globales como navbar y footer. -->
+    <script src="../js/component-loader.js"></script>
+
+    <!-- Carga el JavaScript específico
+         encargado de controlar el funcionamiento del blog. -->
+    <script src="../js/pages/blog.js"></script>
+
+    <script src="../components/accesibilidad/accesibilidad.js"></script>
+
+
+<!-- Cierra el body del documento. -->
+</body>
+
+<!-- Cierra el documento HTML. -->
+</html>

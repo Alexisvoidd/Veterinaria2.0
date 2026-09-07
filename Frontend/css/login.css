@@ -1,0 +1,1218 @@
+/* VARIABLES PRINCIPALES DE VETSALUD */
+:root {
+
+  /* PALETA PRINCIPAL DE LA MARCA */
+
+  /* Define el color principal */
+  --color-primario: #00377a;
+
+  /* Define una versión más oscura del color principal */
+  --color-primario-oscuro: #002554;
+
+  /* Define el color secundario */
+  --color-secundario: #006397;
+
+  /* Define el azul profundo utilizado en títulos */
+  --color-azul-profundo: #0d254d;
+
+
+  /* FONDOS Y SUPERFICIES */
+
+  /* Define el color de fondo cálido principal */
+  --color-fondo-calido: #faf9f6;
+
+  /* Define el color neutro tipo arena */
+  --color-arena-neutro: #f2efe9;
+
+  /* Define el color blanco */
+  --color-blanco: #ffffff;
+
+  /* Define el color utilizado como fondo de imágenes */
+  --color-fondo-imagen: #d9d9e1;
+
+
+  /* TEXTOS Y BORDES */
+
+  /* Define el color principal de los textos */
+  --color-texto-principal: #1a1b21;
+
+  /* Define el color secundario de los textos */
+  --color-texto-secundario: #434751;
+
+  /* Define el color de los bordes suaves */
+  --color-borde-suave: #c3c6d3;
+
+  /* Define el color utilizado para textos de ejemplo */
+  --color-placeholder: #9e9ea7;
+
+
+  /* ESTADOS DE VALIDACIÓN */
+
+  /* Define el color utilizado para errores */
+  --color-error: #ba1a1a;
+
+  /* Define el color utilizado para mensajes exitosos */
+  --color-exito: #2e7d32;
+
+
+  /* TIPOGRAFÍAS */
+
+  /* Define la fuente utilizada para títulos */
+  --fuente-titulos: 'Montserrat', sans-serif;
+
+  /* Define la fuente utilizada para textos generales */
+  --fuente-cuerpo: 'Open Sans', sans-serif;
+}
+
+
+/* CONFIGURACIÓN GENERAL DE TODOS LOS ELEMENTOS */
+* {
+
+  /* Incluye padding y borde dentro del tamaño total */
+  box-sizing: border-box;
+
+  /* Elimina los márgenes predeterminados */
+  margin: 0;
+
+  /* Elimina el padding predeterminado */
+  padding: 0;
+}
+
+
+/* CONFIGURACIÓN GENERAL DEL CUERPO */
+body {
+
+  /* Define la fuente principal de la página */
+  font-family: var(--fuente-cuerpo);
+
+  /* Define el color de fondo general */
+  background-color: var(--color-fondo-calido);
+
+  /* Define el color principal del texto */
+  color: var(--color-texto-principal);
+
+  /* Garantiza una altura mínima de toda la ventana */
+  min-height: 100vh;
+
+  /* Suaviza la representación de las fuentes en WebKit */
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ENVOLTORIO PRINCIPAL DE LA PÁGINA */
+.login-pagina {
+
+  /* Usa Flexbox para organizar el contenido */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+
+  /* Permite que la página ocupe como mínimo toda la pantalla */
+  min-height: 100vh;
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+}
+
+
+/* CONTENEDOR PRINCIPAL DIVIDIDO EN DOS SECCIONES */
+.login-contenedor {
+
+  /* Permite posicionar elementos de forma absoluta dentro */
+  position: relative;
+
+  /* Usa Flexbox para dividir las secciones */
+  display: flex;
+
+  /* Permite que el contenedor crezca dentro de la página */
+  flex: 1 0 auto;
+
+  /* Define una altura mínima de toda la pantalla */
+  min-height: 100vh;
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Evita desplazamiento horizontal */
+  overflow-x: hidden;
+}
+
+
+/* BOTÓN PARA VOLVER AL INICIO */
+.login-boton-inicio {
+
+  /* Permite posicionar el botón respecto al contenedor */
+  position: absolute;
+
+  /* Separa el botón del borde superior */
+  top: 1.25rem;
+
+  /* Separa el botón del borde izquierdo */
+  left: 1.25rem;
+
+  /* Coloca el botón por encima de otros elementos */
+  z-index: 50;
+
+  /* Usa Flexbox para organizar su contenido */
+  display: inline-flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Separa el icono del texto */
+  gap: 0.45rem;
+
+  /* Define el espacio interno */
+  padding: 0.55rem 1rem;
+
+  /* Define un fondo blanco semitransparente */
+  background: rgba(255, 255, 255, 0.88);
+
+  /* Aplica desenfoque al fondo */
+  backdrop-filter: blur(12px);
+
+  /* Aplica compatibilidad de desenfoque para WebKit */
+  -webkit-backdrop-filter: blur(12px);
+
+  /* Define un borde semitransparente */
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  /* Redondea completamente el botón */
+  border-radius: 2rem;
+
+  /* Define el color del texto */
+  color: var(--color-azul-profundo);
+
+  /* Define la fuente del botón */
+  font-family: var(--fuente-titulos);
+
+  /* Define el grosor de la fuente */
+  font-weight: 600;
+
+  /* Define el tamaño del texto */
+  font-size: 0.85rem;
+
+  /* Elimina el subrayado del enlace */
+  text-decoration: none;
+
+  /* Agrega una sombra suave */
+  box-shadow: 0 4px 14px rgba(13, 37, 77, 0.12);
+
+  /* Define una transición suave para los cambios */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Cambia el cursor a indicador de interacción */
+  cursor: pointer;
+}
+
+
+/* EFECTO HOVER DEL BOTÓN DE INICIO */
+.login-boton-inicio:hover {
+
+  /* Define el fondo blanco al pasar el cursor */
+  background: var(--color-blanco);
+
+  /* Cambia el color del texto */
+  color: var(--color-primario);
+
+  /* Aumenta ligeramente la sombra */
+  box-shadow: 0 6px 18px rgba(13, 37, 77, 0.18);
+
+  /* Eleva ligeramente el botón */
+  transform: translateY(-2px);
+}
+
+
+/* EFECTO AL PRESIONAR EL BOTÓN DE INICIO */
+.login-boton-inicio:active {
+
+  /* Devuelve el botón a su posición y reduce ligeramente su tamaño */
+  transform: translateY(0) scale(0.98);
+}
+
+
+/* ICONO DEL BOTÓN DE INICIO */
+.login-boton-inicio-icono {
+
+  /* Define el tamaño del icono */
+  font-size: 1.15rem;
+
+  /* Define una transición para el movimiento del icono */
+  transition: transform 0.2s ease;
+}
+
+
+/* MOVIMIENTO DEL ICONO AL PASAR EL CURSOR */
+.login-boton-inicio:hover .login-boton-inicio-icono {
+
+  /* Desplaza el icono ligeramente hacia la izquierda */
+  transform: translateX(-3px);
+}
+
+
+/* SECCIÓN VISUAL DEL LOGIN */
+.login-seccion-visual {
+
+  /* Oculta la sección visual inicialmente */
+  display: none;
+
+  /* Permite posicionar elementos internos */
+  position: relative;
+
+  /* Ocupa la mitad del ancho */
+  width: 50%;
+
+  /* Define el fondo de respaldo de la imagen */
+  background-color: var(--color-fondo-imagen);
+
+  /* Oculta cualquier contenido que sobresalga */
+  overflow: hidden;
+}
+
+
+/* MUESTRA LA SECCIÓN VISUAL EN PANTALLAS GRANDES */
+@media (min-width: 768px) {
+
+  /* CONTENEDOR VISUAL DEL LOGIN */
+  .login-seccion-visual {
+
+    /* Muestra la sección visual */
+    display: block;
+  }
+}
+
+
+/* IMAGEN DE FONDO DEL LOGIN */
+.login-imagen-fondo {
+
+  /* Posiciona la imagen de forma absoluta */
+  position: absolute;
+
+  /* Coloca la imagen en el borde superior */
+  top: 0;
+
+  /* Coloca la imagen en el borde izquierdo */
+  left: 0;
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Ocupa toda la altura disponible */
+  height: 100%;
+
+  /* Hace que la imagen cubra todo el contenedor */
+  object-fit: cover;
+
+  /* Alinea la imagen hacia la parte superior central */
+  object-position: top center;
+
+  /* Define una transición para el efecto de zoom */
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+/* EFECTO DE ZOOM SOBRE LA IMAGEN */
+.login-seccion-visual:hover .login-imagen-fondo {
+
+  /* Aumenta ligeramente el tamaño de la imagen */
+  transform: scale(1.04);
+}
+
+
+/* CAPA DEGRADADA SOBRE LA IMAGEN */
+.login-capa-degradado {
+
+  /* Posiciona la capa sobre toda la imagen */
+  position: absolute;
+
+  /* Ocupa toda la parte superior */
+  inset: 0;
+
+  /* Aplica un degradado oscuro de abajo hacia arriba */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.1) 60%,
+    transparent 100%
+  );
+
+  /* Evita que la capa bloquee los clics */
+  pointer-events: none;
+}
+
+
+/* CONTENEDOR DE LA TARJETA FLOTANTE */
+.login-contenedor-tarjeta-flotante {
+
+  /* Posiciona la tarjeta de forma absoluta */
+  position: absolute;
+
+  /* Separa la tarjeta del borde inferior */
+  bottom: 2rem;
+
+  /* Separa la tarjeta del borde izquierdo */
+  left: 2rem;
+
+  /* Separa la tarjeta del borde derecho */
+  right: 2rem;
+
+  /* Limita el ancho máximo de la tarjeta */
+  max-width: 440px;
+
+  /* Coloca la tarjeta por encima de otros elementos */
+  z-index: 10;
+}
+
+
+/* TARJETA FLOTANTE DE INFORMACIÓN */
+.login-tarjeta-flotante {
+
+  /* Define un fondo blanco semitransparente */
+  background: rgba(255, 255, 255, 0.88);
+
+  /* Aplica desenfoque al contenido detrás */
+  backdrop-filter: blur(14px);
+
+  /* Aplica compatibilidad de desenfoque para WebKit */
+  -webkit-backdrop-filter: blur(14px);
+
+  /* Define un borde blanco semitransparente */
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  /* Redondea las esquinas */
+  border-radius: 1rem;
+
+  /* Agrega espacio interno */
+  padding: 1.5rem 1.75rem;
+
+  /* Aplica una sombra para separar la tarjeta del fondo */
+  box-shadow: 0 10px 30px rgba(13, 37, 77, 0.15);
+}
+
+
+/* TÍTULO DE LA TARJETA FLOTANTE */
+.login-tarjeta-titulo {
+
+  /* Define la fuente del título */
+  font-family: var(--fuente-titulos);
+
+  /* Define el grosor del título */
+  font-weight: 700;
+
+  /* Define el tamaño del título */
+  font-size: 1.35rem;
+
+  /* Define el color del título */
+  color: var(--color-azul-profundo);
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.5rem;
+
+  /* Define el espacio entre líneas */
+  line-height: 1.3;
+}
+
+
+/* DESCRIPCIÓN DE LA TARJETA FLOTANTE */
+.login-tarjeta-descripcion {
+
+  /* Define el tamaño del texto */
+  font-size: 0.925rem;
+
+  /* Define el color del texto */
+  color: var(--color-texto-secundario);
+
+  /* Define el espacio entre líneas */
+  line-height: 1.5;
+}
+
+
+/* SECCIÓN DEL FORMULARIO */
+.login-seccion-formulario {
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Organiza el contenido verticalmente */
+  flex-direction: column;
+
+  /* Centra el contenido verticalmente */
+  justify-content: center;
+
+  /* Centra el contenido horizontalmente */
+  align-items: center;
+
+  /* Agrega espacio interno */
+  padding: 2.5rem 1.5rem;
+}
+
+
+/* AJUSTE DEL FORMULARIO EN PANTALLAS MEDIANAS */
+@media (min-width: 768px) {
+
+  /* SECCIÓN DEL FORMULARIO */
+  .login-seccion-formulario {
+
+    /* Ocupa la mitad de la pantalla */
+    width: 50%;
+
+    /* Aumenta el espacio lateral */
+    padding: 3rem 4rem;
+  }
+}
+
+
+/* AJUSTE DEL FORMULARIO EN PANTALLAS GRANDES */
+@media (min-width: 1024px) {
+
+  /* SECCIÓN DEL FORMULARIO */
+  .login-seccion-formulario {
+
+    /* Aumenta aún más el espacio lateral */
+    padding: 3rem 5.5rem;
+  }
+}
+
+
+/* CONTENEDOR DEL FORMULARIO */
+.login-caja-formulario {
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Limita el ancho máximo */
+  max-width: 420px;
+}
+
+
+/* CONTENEDOR DEL LOGO */
+.login-logo-contenedor {
+
+  /* Agrega separación inferior */
+  margin-bottom: 2rem;
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra el logo horizontalmente */
+  justify-content: center;
+}
+
+
+/* ALINEACIÓN DEL LOGO EN ESCRITORIO */
+@media (min-width: 768px) {
+
+  /* CONTENEDOR DEL LOGO */
+  .login-logo-contenedor {
+
+    /* Alinea el logo hacia la izquierda */
+    justify-content: flex-start;
+  }
+}
+
+
+/* IMAGEN DEL LOGO */
+.login-logo-imagen {
+
+  /* Define la altura del logo */
+  height: 52px;
+
+  /* Mantiene la proporción original */
+  width: auto;
+
+  /* Mantiene la imagen dentro de su espacio */
+  object-fit: contain;
+}
+
+
+/* ENCABEZADO DEL FORMULARIO */
+.login-encabezado {
+
+  /* Agrega separación inferior */
+  margin-bottom: 2rem;
+
+  /* Centra el contenido */
+  text-align: center;
+}
+
+
+/* ALINEACIÓN DEL ENCABEZADO EN ESCRITORIO */
+@media (min-width: 768px) {
+
+  /* ENCABEZADO DEL FORMULARIO */
+  .login-encabezado {
+
+    /* Alinea el contenido hacia la izquierda */
+    text-align: left;
+  }
+}
+
+
+/* TÍTULO PRINCIPAL DEL LOGIN */
+.login-titulo {
+
+  /* Define la fuente del título */
+  font-family: var(--fuente-titulos);
+
+  /* Define el grosor del título */
+  font-weight: 700;
+
+  /* Define el tamaño del título */
+  font-size: 2.1rem;
+
+  /* Define el color del título */
+  color: var(--color-azul-profundo);
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.5rem;
+
+  /* Reduce ligeramente el espacio entre letras */
+  letter-spacing: -0.02em;
+}
+
+
+/* SUBTÍTULO DEL LOGIN */
+.login-subtitulo {
+
+  /* Define el tamaño del subtítulo */
+  font-size: 0.95rem;
+
+  /* Define el color del texto */
+  color: var(--color-texto-secundario);
+
+  /* Define el espacio entre líneas */
+  line-height: 1.45;
+}
+
+
+/* FORMULARIO DE INICIO DE SESIÓN */
+.formulario-login {
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Organiza los campos verticalmente */
+  flex-direction: column;
+
+  /* Separa los campos */
+  gap: 1.25rem;
+}
+
+
+/* GRUPO DE CADA CAMPO */
+.campo-grupo {
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+}
+
+
+/* ETIQUETA DE LOS CAMPOS */
+.campo-etiqueta {
+
+  /* Define el tamaño del texto */
+  font-size: 0.875rem;
+
+  /* Resalta la etiqueta */
+  font-weight: 700;
+
+  /* Define el color de la etiqueta */
+  color: var(--color-texto-principal);
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.45rem;
+}
+
+
+/* FILA SUPERIOR DEL CAMPO */
+.campo-fila-superior {
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Separa los elementos hacia los extremos */
+  justify-content: space-between;
+
+  /* Centra verticalmente los elementos */
+  align-items: center;
+
+  /* Agrega separación inferior */
+  margin-bottom: 0.45rem;
+}
+
+
+/* ENLACE PARA RECUPERAR CONTRASEÑA */
+.campo-enlace-olvido {
+
+  /* Define el tamaño del enlace */
+  font-size: 0.825rem;
+
+  /* Resalta el enlace */
+  font-weight: 700;
+
+  /* Define el color del enlace */
+  color: var(--color-secundario);
+
+  /* Elimina el subrayado */
+  text-decoration: none;
+
+  /* Suaviza el cambio de color */
+  transition: color 0.2s ease;
+}
+
+
+/* EFECTO HOVER DEL ENLACE DE CONTRASEÑA */
+.campo-enlace-olvido:hover {
+
+  /* Cambia al color principal */
+  color: var(--color-primario);
+
+  /* Agrega subrayado */
+  text-decoration: underline;
+}
+
+
+/* CONTENEDOR DEL INPUT */
+.campo-envoltorio-input {
+
+  /* Permite posicionar el icono dentro */
+  position: relative;
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+}
+
+
+/* ICONO IZQUIERDO DEL INPUT */
+.campo-icono-izquierdo {
+
+  /* Posiciona el icono de forma absoluta */
+  position: absolute;
+
+  /* Separa el icono del lado izquierdo */
+  left: 0.95rem;
+
+  /* Define el color del icono */
+  color: var(--color-texto-secundario);
+
+  /* Evita que el icono interfiera con el clic */
+  pointer-events: none;
+
+  /* Define el tamaño del icono */
+  font-size: 1.25rem;
+
+  /* Usa Flexbox para su contenido */
+  display: flex;
+
+  /* Centra verticalmente el icono */
+  align-items: center;
+}
+
+
+/* CAMPOS DE ENTRADA */
+.campo-entrada {
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Define el fondo del campo */
+  background-color: var(--color-arena-neutro);
+
+  /* Define un borde transparente */
+  border: 1.5px solid transparent;
+
+  /* Redondea las esquinas */
+  border-radius: 0.55rem;
+
+  /* Agrega espacio interno */
+  padding: 0.8rem 1rem 0.8rem 2.85rem;
+
+  /* Define la fuente del campo */
+  font-family: var(--fuente-cuerpo);
+
+  /* Define el tamaño del texto */
+  font-size: 0.925rem;
+
+  /* Define el color del texto */
+  color: var(--color-texto-principal);
+
+  /* Suaviza los cambios visuales */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Elimina el contorno predeterminado */
+  outline: none;
+}
+
+
+/* TEXTO DE EJEMPLO DE LOS INPUTS */
+.campo-entrada::placeholder {
+
+  /* Define el color del texto de ejemplo */
+  color: var(--color-placeholder);
+}
+
+
+/* ESTADO FOCUS DE LOS INPUTS */
+.campo-entrada:focus {
+
+  /* Cambia el fondo al blanco */
+  background-color: var(--color-blanco);
+
+  /* Cambia el color del borde */
+  border-color: var(--color-primario);
+
+  /* Agrega un halo alrededor del campo */
+  box-shadow: 0 0 0 3.5px rgba(0, 55, 122, 0.14);
+}
+
+
+/* INPUT QUE CONTIENE EL BOTÓN DE OJO */
+.campo-entrada-con-ojo {
+
+  /* Agrega espacio para el botón del ojo */
+  padding-right: 2.85rem;
+}
+
+
+/* BOTÓN PARA MOSTRAR U OCULTAR CONTRASEÑA */
+.campo-boton-ojo {
+
+  /* Posiciona el botón de forma absoluta */
+  position: absolute;
+
+  /* Separa el botón del lado derecho */
+  right: 0.65rem;
+
+  /* Define un fondo transparente */
+  background: transparent;
+
+  /* Elimina el borde */
+  border: none;
+
+  /* Define el color del icono */
+  color: var(--color-texto-secundario);
+
+  /* Cambia el cursor al pasar sobre el botón */
+  cursor: pointer;
+
+  /* Agrega espacio interno */
+  padding: 0.35rem;
+
+  /* Redondea ligeramente el botón */
+  border-radius: 0.35rem;
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el icono */
+  align-items: center;
+
+  /* Centra horizontalmente el icono */
+  justify-content: center;
+
+  /* Suaviza los cambios de color y fondo */
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+
+/* EFECTO HOVER DEL BOTÓN DE OJO */
+.campo-boton-ojo:hover {
+
+  /* Oscurece el icono */
+  color: var(--color-texto-principal);
+
+  /* Agrega un fondo ligeramente oscuro */
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* FILA DE OPCIONES DEL LOGIN */
+.login-fila-opciones {
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente los elementos */
+  align-items: center;
+
+  /* Ajusta el margen superior */
+  margin-top: -0.25rem;
+}
+
+
+/* ETIQUETA DEL CHECKBOX */
+.login-etiqueta-checkbox {
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Separa el checkbox del texto */
+  gap: 0.55rem;
+
+  /* Define el tamaño del texto */
+  font-size: 0.875rem;
+
+  /* Define el color del texto */
+  color: var(--color-texto-secundario);
+
+  /* Cambia el cursor para indicar interacción */
+  cursor: pointer;
+
+  /* Evita seleccionar accidentalmente el texto */
+  user-select: none;
+}
+
+
+/* CHECKBOX DEL LOGIN */
+.login-checkbox {
+
+  /* Define el ancho del checkbox */
+  width: 1.1rem;
+
+  /* Define la altura del checkbox */
+  height: 1.1rem;
+
+  /* Define el color principal del checkbox */
+  accent-color: var(--color-primario);
+
+  /* Cambia el cursor al pasar sobre el checkbox */
+  cursor: pointer;
+
+  /* Redondea ligeramente el checkbox */
+  border-radius: 0.25rem;
+}
+
+
+/* BOTÓN PRINCIPAL DE INICIO DE SESIÓN */
+.login-boton-enviar {
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+
+  /* Define el fondo del botón */
+  background-color: var(--color-primario);
+
+  /* Define el color del texto */
+  color: var(--color-blanco);
+
+  /* Define la fuente del botón */
+  font-family: var(--fuente-titulos);
+
+  /* Define el grosor del texto */
+  font-weight: 600;
+
+  /* Define el tamaño del texto */
+  font-size: 0.95rem;
+
+  /* Agrega espacio interno */
+  padding: 0.9rem 1.5rem;
+
+  /* Elimina el borde */
+  border: none;
+
+  /* Redondea las esquinas */
+  border-radius: 0.65rem;
+
+  /* Cambia el cursor al pasar sobre el botón */
+  cursor: pointer;
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Centra horizontalmente el contenido */
+  justify-content: center;
+
+  /* Separa el texto del icono */
+  gap: 0.5rem;
+
+  /* Agrega una sombra al botón */
+  box-shadow: 0 4px 14px rgba(0, 55, 122, 0.22);
+
+  /* Define una transición suave */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Agrega una pequeña separación superior */
+  margin-top: 0.5rem;
+}
+
+
+/* EFECTO HOVER DEL BOTÓN DE LOGIN */
+.login-boton-enviar:hover {
+
+  /* Oscurece el fondo del botón */
+  background-color: var(--color-primario-oscuro);
+
+  /* Aumenta la sombra */
+  box-shadow: 0 6px 18px rgba(0, 55, 122, 0.32);
+
+  /* Eleva ligeramente el botón */
+  transform: translateY(-1px);
+}
+
+
+/* EFECTO AL PRESIONAR EL BOTÓN DE LOGIN */
+.login-boton-enviar:active {
+
+  /* Reduce ligeramente el tamaño del botón */
+  transform: scale(0.985);
+}
+
+
+/* MOVIMIENTO DEL ICONO DEL BOTÓN */
+.login-boton-enviar:hover .login-boton-icono {
+
+  /* Desplaza el icono hacia la derecha */
+  transform: translateX(4px);
+}
+
+
+/* ICONO DEL BOTÓN DE LOGIN */
+.login-boton-icono {
+
+  /* Define el tamaño del icono */
+  font-size: 1.15rem;
+
+  /* Suaviza el movimiento del icono */
+  transition: transform 0.2s ease;
+}
+
+
+/* PIE DEL FORMULARIO */
+.login-pie {
+
+  /* Agrega separación superior */
+  margin-top: 2rem;
+
+  /* Centra el texto */
+  text-align: center;
+}
+
+
+/* ALINEACIÓN DEL PIE EN ESCRITORIO */
+@media (min-width: 768px) {
+
+  /* PIE DEL FORMULARIO */
+  .login-pie {
+
+    /* Alinea el texto hacia la izquierda */
+    text-align: left;
+  }
+}
+
+
+/* TEXTO DEL PIE DEL LOGIN */
+.login-pie-texto {
+
+  /* Define el tamaño del texto */
+  font-size: 0.9rem;
+
+  /* Define el color del texto */
+  color: var(--color-texto-secundario);
+}
+
+
+/* ENLACE PARA REGISTRARSE */
+.login-enlace-registro {
+
+  /* Resalta el enlace */
+  font-weight: 700;
+
+  /* Define el color principal */
+  color: var(--color-primario);
+
+  /* Mantiene el subrayado */
+  text-decoration: underline;
+
+  /* Separa el subrayado del texto */
+  text-underline-offset: 3px;
+
+  /* Define el grosor del subrayado */
+  text-decoration-thickness: 2px;
+
+  /* Agrega separación a la izquierda */
+  margin-left: 0.35rem;
+
+  /* Suaviza el cambio de color */
+  transition: color 0.2s ease;
+}
+
+
+/* EFECTO HOVER DEL ENLACE DE REGISTRO */
+.login-enlace-registro:hover {
+
+  /* Cambia al color primario oscuro */
+  color: var(--color-primario-oscuro);
+}
+
+
+/* ALERTA TOAST */
+.login-alerta-toast {
+
+  /* Fija la alerta respecto a la ventana */
+  position: fixed;
+
+  /* Separa la alerta del borde superior */
+  top: 1.5rem;
+
+  /* Separa la alerta del borde derecho */
+  right: 1.5rem;
+
+  /* Define el fondo de la alerta */
+  background: var(--color-blanco);
+
+  /* Redondea las esquinas */
+  border-radius: 0.75rem;
+
+  /* Agrega espacio interno */
+  padding: 1rem 1.25rem;
+
+  /* Aplica una sombra */
+  box-shadow: 0 12px 30px rgba(13, 37, 77, 0.18);
+
+  /* Agrega una línea de color en el lado izquierdo */
+  border-left: 4px solid var(--color-primario);
+
+  /* Usa Flexbox */
+  display: flex;
+
+  /* Centra verticalmente el contenido */
+  align-items: center;
+
+  /* Separa el icono del contenido */
+  gap: 0.75rem;
+
+  /* Coloca la alerta por encima de otros elementos */
+  z-index: 10000;
+
+  /* Ejecuta la animación de entrada */
+  animation: deslizarToast 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+/* VARIANTE DE ERROR DEL TOAST */
+.login-alerta-toast.error {
+
+  /* Cambia el borde izquierdo al color de error */
+  border-left-color: var(--color-error);
+}
+
+
+/* ICONO DE LA ALERTA */
+.login-alerta-icono {
+
+  /* Define el tamaño del icono */
+  font-size: 1.5rem;
+
+  /* Usa el color principal */
+  color: var(--color-primario);
+}
+
+
+/* ICONO DE UNA ALERTA DE ERROR */
+.login-alerta-toast.error .login-alerta-icono {
+
+  /* Cambia el icono al color de error */
+  color: var(--color-error);
+}
+
+
+/* TÍTULO DE LA ALERTA */
+.login-alerta-titulo {
+
+  /* Define la fuente del título */
+  font-family: var(--fuente-titulos);
+
+  /* Define el grosor del título */
+  font-weight: 700;
+
+  /* Define el tamaño del título */
+  font-size: 0.85rem;
+
+  /* Define el color del título */
+  color: var(--color-azul-profundo);
+}
+
+
+/* MENSAJE DE LA ALERTA */
+.login-alerta-mensaje {
+
+  /* Define el tamaño del mensaje */
+  font-size: 0.8rem;
+
+  /* Define el color secundario */
+  color: var(--color-texto-secundario);
+}
+
+
+/* LOGIN - MODO OSCURO */
+/* TARJETA "CUIDADO PROFESIONAL" */
+
+/* TARJETA FLOTANTE EN MODO OSCURO */
+html.dark-mode .login-tarjeta-flotante {
+
+  /* Define un fondo oscuro semitransparente */
+  background: rgba(17, 28, 39, 0.90);
+
+  /* Define un borde azul semitransparente */
+  border-color: rgba(75, 163, 227, 0.25);
+
+  /* Aplica una sombra oscura */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* TÍTULO DE LA TARJETA EN MODO OSCURO */
+html.dark-mode .login-tarjeta-titulo {
+
+  /* Define un color claro para el título */
+  color: #f1f5f9;
+}
+
+
+/* DESCRIPCIÓN DE LA TARJETA EN MODO OSCURO */
+html.dark-mode .login-tarjeta-descripcion {
+
+  /* Define un color claro para la descripción */
+  color: #cbd5df;
+}
+
+
+/* ANIMACIÓN DE ENTRADA DEL TOAST */
+@keyframes deslizarToast {
+
+  /* ESTADO INICIAL DE LA ANIMACIÓN */
+  from {
+
+    /* Comienza completamente transparente */
+    opacity: 0;
+
+    /* Comienza desplazado hacia arriba */
+    transform: translateY(-20px);
+  }
+
+  /* ESTADO FINAL DE LA ANIMACIÓN */
+  to {
+
+    /* Termina completamente visible */
+    opacity: 1;
+
+    /* Regresa a su posición original */
+    transform: translateY(0);
+  }
+}

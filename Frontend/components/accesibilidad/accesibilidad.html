@@ -1,0 +1,278 @@
+<!-- Contenedor principal de accesibilidad -->
+<div class="accessibility-wrapper">
+
+    <!-- BOTÓN FLOTANTE -->
+    <button
+        type="button"
+        class="accessibility-button"
+        id="accessibility-button"
+        aria-label="Abrir opciones de accesibilidad"
+        aria-expanded="false"
+    >
+
+        <!-- Icono de accesibilidad -->
+        <span class="material-symbols-outlined">
+            accessibility_new
+        </span>
+
+    </button>
+
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div
+        class="accessibility-panel"
+        id="accessibility-panel"
+        aria-hidden="true"
+    >
+
+        <!-- ENCABEZADO -->
+        <div class="accessibility-header">
+
+            <!-- Contenedor de los títulos -->
+            <div>
+
+                <!-- Etiqueta del panel -->
+                <span class="accessibility-label">
+                    Accesibilidad
+                </span>
+
+                <!-- Título principal -->
+                <h2>
+                    Opciones de accesibilidad
+                </h2>
+
+            </div>
+
+
+            <!-- BOTÓN CERRAR -->
+            <button
+                type="button"
+                class="accessibility-close"
+                id="accessibility-close"
+                aria-label="Cerrar opciones de accesibilidad"
+            >
+
+                <!-- Icono para cerrar -->
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- OPCIONES DE ACCESIBILIDAD -->
+        <div class="accessibility-options">
+
+
+            <!-- TEMA OSCURO -->
+            <button
+                type="button"
+                class="accessibility-option"
+                id="accessibility-dark"
+            >
+
+                <!-- Icono del tema oscuro -->
+                <span class="material-symbols-outlined option-icon">
+                    dark_mode
+                </span>
+
+                <!-- Información de la opción -->
+                <span class="option-content">
+
+                    <!-- Nombre de la opción -->
+                    <strong>Tema oscuro</strong>
+
+                    <!-- Descripción de la opción -->
+                    <small>
+                        Cambiar apariencia de la página
+                    </small>
+
+                </span>
+
+                <!-- Estado de la opción -->
+                <span class="option-status">
+                    Desactivado
+                </span>
+
+            </button>
+
+
+            <!-- AUMENTAR TEXTO -->
+            <button
+                type="button"
+                class="accessibility-option"
+                id="accessibility-font-plus"
+            >
+
+                <!-- Icono para aumentar texto -->
+                <span class="material-symbols-outlined option-icon">
+                    text_increase
+                </span>
+
+                <!-- Información de la opción -->
+                <span class="option-content">
+
+                    <!-- Nombre de la opción -->
+                    <strong>Aumentar texto</strong>
+
+                    <!-- Descripción de la opción -->
+                    <small>
+                        Hacer el contenido más grande
+                    </small>
+
+                </span>
+
+            </button>
+
+
+            <!-- REDUCIR TEXTO -->
+            <button
+                type="button"
+                class="accessibility-option"
+                id="accessibility-font-minus"
+            >
+
+                <!-- Icono para reducir texto -->
+                <span class="material-symbols-outlined option-icon">
+                    text_decrease
+                </span>
+
+                <!-- Información de la opción -->
+                <span class="option-content">
+
+                    <!-- Nombre de la opción -->
+                    <strong>Reducir texto</strong>
+
+                    <!-- Descripción de la opción -->
+                    <small>
+                        Hacer el contenido más pequeño
+                    </small>
+
+                </span>
+
+            </button>
+
+
+            <!-- ALTO CONTRASTE -->
+            <button
+                type="button"
+                class="accessibility-option"
+                id="accessibility-contrast"
+            >
+
+                <!-- Icono de contraste -->
+                <span class="material-symbols-outlined option-icon">
+                    contrast
+                </span>
+
+                <!-- Información de la opción -->
+                <span class="option-content">
+
+                    <!-- Nombre de la opción -->
+                    <strong>Alto contraste</strong>
+
+                    <!-- Descripción de la opción -->
+                    <small>
+                        Mejorar la diferencia entre elementos
+                    </small>
+
+                </span>
+
+                <!-- Estado de la opción -->
+                <span class="option-status">
+                    Desactivado
+                </span>
+
+            </button>
+
+
+            <!-- RESALTAR ELEMENTOS -->
+            <button
+                type="button"
+                class="accessibility-option"
+                id="accessibility-highlight"
+            >
+
+                <!-- Icono para resaltar -->
+                <span class="material-symbols-outlined option-icon">
+                    highlight
+                </span>
+
+                <!-- Información de la opción -->
+                <span class="option-content">
+
+                    <!-- Nombre de la opción -->
+                    <strong>Resaltar botones y enlaces</strong>
+
+                    <!-- Descripción de la opción -->
+                    <small>
+                        Hacer visibles los elementos interactivos
+                    </small>
+
+                </span>
+
+                <!-- Estado de la opción -->
+                <span class="option-status">
+                    Desactivado
+                </span>
+
+            </button>
+
+
+            <!-- REDUCIR ANIMACIONES -->
+            <button
+                type="button"
+                class="accessibility-option"
+                id="accessibility-motion"
+            >
+
+                <!-- Icono para reducir movimiento -->
+                <span class="material-symbols-outlined option-icon">
+                    motion_photos_off
+                </span>
+
+                <!-- Información de la opción -->
+                <span class="option-content">
+
+                    <!-- Nombre de la opción -->
+                    <strong>Reducir animaciones</strong>
+
+                    <!-- Descripción de la opción -->
+                    <small>
+                        Disminuir movimientos y transiciones
+                    </small>
+
+                </span>
+
+                <!-- Estado de la opción -->
+                <span class="option-status">
+                    Desactivado
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- BOTÓN RESTABLECER -->
+        <button
+            type="button"
+            class="accessibility-reset"
+            id="accessibility-reset"
+        >
+
+            <!-- Icono para restablecer -->
+            <span class="material-symbols-outlined">
+                restart_alt
+            </span>
+
+            <!-- Texto del botón -->
+            Restablecer configuración
+
+        </button>
+
+    </div>
+
+</div>

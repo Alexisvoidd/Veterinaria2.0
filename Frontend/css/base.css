@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@500;600;700&family=Raleway:wght@400;500;600;700;800&display=swap'); /* Importa las fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0'); /* Importa los iconos */
+
+:root { /* Define las variables */
+    --primary: #1B4E9B; /* Color principal */
+    --secondary: #4BA3E3; /* Color secundario */
+    --tertiary: #6FCED9; /* Color terciario */
+    --neutral: #76777D; /* Color neutro */
+    --ink: #17365f; /* Color del texto */
+    --soft: #f5f9fd; /* Fondo suave */
+    --white: #fff; /* Color blanco */
+    --line: #dce8f4; /* Color de líneas */
+    --shadow: 0 14px 40px rgba(27, 78, 155, .10); /* Sombra general */
+    --danger: #c74343; /* Color de error */
+    --success: #18765f /* Color de éxito */
+}
+
+* { /* Selecciona todos los elementos */
+    box-sizing: border-box /* Incluye borde y padding en el tamaño */
+}
+
+html { /* Configura el documento HTML */
+    scroll-behavior: smooth /* Suaviza el desplazamiento */
+}
+
+body { /* Configura el cuerpo */
+    margin: 0; /* Elimina el margen */
+    color: var(--ink); /* Define el color del texto */
+    background: #fff; /* Define el fondo */
+    font-family: 'Raleway', sans-serif /* Define la fuente */
+}
+
+button,
+input,
+select,
+textarea { /* Selecciona los campos del formulario */
+    font: inherit /* Hereda la fuente */
+}
+
+h1,
+h2,
+h3,
+h4 { /* Selecciona los títulos */
+    font-family: 'Host Grotesk', sans-serif /* Define la fuente de títulos */
+}
+
+a {
+    color: inherit; /* Hereda el color */
+    text-decoration: none; /* Quita el subrayado */
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none; /* Mantiene los enlaces sin subrayado */
+}
+
+.page-shell { /* Contenedor general de la página */
+    min-height: calc(100vh - 82px) /* Define la altura mínima */
+}
+
+.page-container { /* Contenedor principal */
+    width: min(1160px, calc(100% - 40px)); /* Define el ancho máximo */
+    margin: auto /* Centra el contenido */
+}
+
+.page-hero { /* Encabezado de la página */
+    padding: 74px 0 42px; /* Define el espacio interno */
+    background: linear-gradient(135deg, #f5faff 0%, #fff 70%) /* Crea un degradado */
+}
+
+.eyebrow { /* Etiqueta superior */
+    display: inline-flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 8px; /* Separa los elementos */
+    color: var(--primary); /* Define el color */
+    font-size: .76rem; /* Define el tamaño */
+    font-weight: 800; /* Define el grosor */
+    letter-spacing: .12em; /* Separa las letras */
+    text-transform: uppercase /* Convierte el texto en mayúsculas */
+}
+
+.eyebrow::before { /* Crea la línea decorativa */
+    content: ''; /* Genera el elemento */
+    width: 26px; /* Define el ancho */
+    height: 2px; /* Define el alto */
+    background: var(--secondary); /* Define el color */
+    border-radius: 4px /* Redondea la línea */
+}
+
+.page-hero h1 { /* Título principal */
+    font-size: clamp(2.2rem, 5vw, 3.8rem); /* Define un tamaño adaptable */
+    line-height: 1.04; /* Define la altura de línea */
+    margin: 13px 0 14px; /* Define los márgenes */
+    color: #123e78 /* Define el color */
+}
+
+.page-hero p { /* Descripción del encabezado */
+    max-width: 700px; /* Limita el ancho */
+    margin: 0; /* Elimina el margen */
+    color: #63748a; /* Define el color */
+    line-height: 1.8 /* Define la altura de línea */
+}
+
+.section { /* Sección general */
+    padding: 58px 0 /* Define el espacio vertical */
+}
+
+/* BOTONES GENERALES */
+
+.btn {
+    border: 0; /* Elimina el borde */
+    border-radius: 10px; /* Redondea las esquinas */
+    padding: 13px 22px; /* Define el espacio interno */
+
+    cursor: pointer; /* Cambia el cursor */
+    text-decoration: none; /* Elimina el subrayado */
+
+    font-weight: 700; /* Define el grosor */
+    font-size: 0.9rem; /* Define el tamaño */
+
+    display: inline-flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+
+    gap: 10px; /* Separa los elementos */
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease; /* Suaviza los cambios */
+}
+
+
+/* BOTÓN PRINCIPAL */
+
+.btn-primary {
+    color: #ffffff; /* Define el color del texto */
+
+    box-shadow:
+        0 7px 18px rgba(27, 78, 155, 0.25); /* Agrega sombra */
+}
+
+
+.btn-primary:hover {
+    background: #164283; /* Cambia el fondo */
+
+    color: #ffffff; /* Mantiene el texto blanco */
+
+    transform: translateY(-2px); /* Eleva el botón */
+
+    box-shadow:
+        0 10px 25px rgba(27, 78, 155, 0.32); /* Aumenta la sombra */
+}
+
+
+/* BOTÓN CLARO */
+
+.btn-light {
+    color: #ffffff; /* Define el color del texto */
+
+    box-shadow:
+        0 7px 18px rgba(14, 107, 201, 0.25); /* Agrega sombra */
+}
+
+
+.btn-light:hover {
+    background: #0b5aa9; /* Cambia el fondo */
+
+    color: #ffffff; /* Mantiene el texto blanco */
+
+    transform: translateY(-2px); /* Eleva el botón */
+
+    box-shadow:
+        0 10px 25px rgba(14, 107, 201, 0.32); /* Aumenta la sombra */
+}
+
+
+/* ICONOS */
+
+.btn .material-symbols-outlined {
+    font-size: 19px; /* Define el tamaño del icono */
+}
+
+/* ICONOS */
+
+.btn .material-symbols-outlined {
+    font-size: 19px; /* Define el tamaño */
+}
+
+
+/* ICONOS DE LOS BOTONES */
+
+.btn .material-symbols-outlined {
+    font-size: 19px; /* Tamaño del icono */
+}
+
+.btn,
+.btn-primary,
+.btn-light,
+.btn_principal {
+    text-decoration: none; /* Quita el subrayado */
+}
+
+.field { /* Contenedor de campo */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Coloca elementos verticalmente */
+    gap: 7px /* Separa los elementos */
+}
+
+.field label { /* Etiquetas de campos */
+    font-size: .82rem; /* Define el tamaño */
+    font-weight: 800; /* Define el grosor */
+    color: #315273 /* Define el color */
+}
+
+.field input,
+.field select,
+.field textarea { /* Campos del formulario */
+    width: 100%; /* Ocupa todo el ancho */
+    border: 1px solid #d6e2ee; /* Define el borde */
+    border-radius: 10px; /* Redondea las esquinas */
+    background: #fff; /* Define el fondo */
+    padding: 12px 13px; /* Define el espacio interno */
+    color: #203c5e; /* Define el color del texto */
+    outline: none; /* Elimina el contorno */
+    transition: .2s /* Suaviza los cambios */
+}
+
+.field textarea { /* Área de texto */
+    min-height: 130px; /* Define la altura mínima */
+    resize: vertical /* Permite cambiar la altura */
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus { /* Campos enfocados */
+    border-color: var(--secondary); /* Cambia el color del borde */
+    box-shadow: 0 0 0 3px rgba(75, 163, 227, .12) /* Agrega resplandor */
+}
+
+.field input.invalid,
+.field select.invalid,
+.field textarea.invalid { /* Campos inválidos */
+    border-color: #d65a5a /* Marca el campo con error */
+}
+
+.field small.error { /* Mensaje de error */
+    display: none; /* Oculta el mensaje */
+    color: var(--danger); /* Define el color */
+    font-size: .73rem /* Define el tamaño */
+}
+
+.field.has-error small.error { /* Error visible */
+    display: block /* Muestra el mensaje */
+}
+
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea { /* Campos con error */
+    border-color: #d65a5a /* Cambia el borde */
+}
+
+.form-message { /* Mensaje del formulario */
+    display: none; /* Oculta el mensaje */
+    border-radius: 10px; /* Redondea las esquinas */
+    padding: 13px 15px; /* Define el espacio interno */
+    font-size: .83rem; /* Define el tamaño */
+    line-height: 1.5 /* Define la altura de línea */
+}
+
+.form-message.show { /* Mensaje visible */
+    display: block /* Muestra el mensaje */
+}
+
+.form-message.success { /* Mensaje exitoso */
+    background: #eaf8f4; /* Define el fondo */
+    color: var(--success) /* Define el color */
+}
+
+.form-message.error { /* Mensaje de error */
+    background: #fff0f0; /* Define el fondo */
+    color: #a13c3c /* Define el color */
+}
+
+.empty-state { /* Estado vacío */
+    grid-column: 1/-1; /* Ocupa todas las columnas */
+    text-align: center; /* Centra el texto */
+    padding: 45px 20px; /* Define el espacio interno */
+    color: #718197; /* Define el color */
+    background: #f8fbfe; /* Define el fondo */
+    border: 1px dashed #c9d9e9; /* Define el borde */
+    border-radius: 14px /* Redondea las esquinas */
+}
+
+.material-symbols-outlined { /* Iconos Material */
+    vertical-align: middle /* Alinea verticalmente */
+}
+
+/* AJUSTE DEL ESPACIO DEL ENCABEZADO DE CONTACTANOS */
+.contact-section { /* Sección de contacto */
+    padding-top: 10px /* Reduce el espacio superior */
+}
+
+@media(max-width:620px) { /* Adaptación para móviles */
+
+    .page-container { /* Contenedor móvil */
+        width: min(100% - 28px, 1160px) /* Ajusta el ancho */
+    }
+
+    .page-hero { /* Encabezado móvil */
+        padding: 54px 0 34px /* Reduce el espacio */
+    }
+
+    .section { /* Secciones móviles */
+        padding: 42px 0 /* Reduce el espacio vertical */
+    }
+}

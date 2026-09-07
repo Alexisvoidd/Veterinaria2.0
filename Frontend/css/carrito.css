@@ -1,0 +1,507 @@
+body {
+  background: #f6f9fb;
+}
+
+/* Define el ancho y espaciado principal de la página del carrito */
+.carrito-pagina {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 130px 24px 70px;
+}
+
+/* Define el espacio inferior del encabezado del carrito */
+.carrito-encabezado {
+  margin-bottom: 30px;
+}
+
+/* Define el tamaño y margen del título principal */
+.carrito-encabezado h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 8px 0;
+}
+
+/* Organiza los productos y el resumen en dos columnas */
+.carrito-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Organiza los productos del carrito verticalmente */
+.carrito-items {
+  display: grid;
+  gap: 14px;
+}
+
+/* Define la estructura visual de cada producto */
+.item-carrito {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 18px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e3ebf0;
+  border-radius: 18px;
+  padding: 16px;
+}
+
+/* Define el tamaño y apariencia de la imagen del producto */
+.item-carrito img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f5f8fa;
+}
+
+/* Elimina el margen superior del título del producto */
+.item-carrito h3 {
+  margin: 0 0 5px;
+}
+
+/* Define el margen y color de la descripción del producto */
+.item-carrito p {
+  margin: 0 0 12px;
+  color: #64748b;
+}
+
+/* Organiza los controles de cantidad horizontalmente */
+.control-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Define el tamaño y apariencia de los botones de cantidad */
+.control-cantidad button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #d9e2e8;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Define la apariencia del botón para eliminar productos */
+.eliminar-item {
+  border: 0;
+  background: none;
+  color: #a33;
+  cursor: pointer;
+}
+
+/* Define la apariencia del resumen de compra */
+.resumen-compra {
+  background: #fff;
+  border: 1px solid #e3ebf0;
+  border-radius: 18px;
+  padding: 24px;
+  position: sticky;
+  top: 100px;
+}
+
+/* Organiza cada línea del resumen de compra */
+.resumen-linea {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #edf1f4;
+}
+
+/* Destaca la línea correspondiente al total */
+.resumen-linea.total {
+  font-size: 1.25rem;
+  border: 0;
+}
+
+/* Hace que el botón principal ocupe todo el ancho */
+.resumen-compra .btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Define el color del botón para continuar la compra */
+.resumen-compra #boton-comprar {
+  background: #1b4e9b;
+  color: #fff;
+}
+
+/* Refuerza el estado interactivo del botón principal */
+.resumen-compra #boton-comprar:hover,
+.resumen-compra #boton-comprar:focus-visible {
+  background: #164283;
+  color: #fff;
+}
+
+/* Define la apariencia y posición del botón secundario */
+.boton-secundario {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  text-decoration: none;
+}
+
+/* Define la apariencia del mensaje cuando el carrito está vacío */
+.carrito-vacio {
+  background: #fff;
+  border: 1px dashed #cbd8e1;
+  border-radius: 18px;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Reserva espacio para los mensajes del carrito */
+.mensaje-carrito {
+  min-height: 22px;
+  margin: 12px 0;
+}
+
+/* Oculta el modal del carrito por defecto */
+.modal-carrito {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+/* Muestra el modal cuando está activo */
+.modal-carrito.activo {
+  display: block;
+}
+
+/* Define el fondo oscuro detrás del modal */
+.modal-carrito__fondo {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+/* Define el tamaño y apariencia del cuadro del modal */
+.modal-carrito__dialog {
+  position: relative;
+  background: #fff;
+  width: min(620px, calc(100% - 30px));
+  max-height: 90vh;
+  overflow: auto;
+  margin: 5vh auto;
+  border-radius: 20px;
+  padding: 28px;
+}
+
+/* Posiciona y estiliza el botón para cerrar el modal */
+.modal-cerrar {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* Organiza los elementos del formulario del modal */
+.modal-carrito form {
+  display: grid;
+  gap: 14px;
+}
+
+/* Organiza cada etiqueta y su campo de formulario */
+.modal-carrito label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+/* Define la apariencia de los campos del formulario */
+.modal-carrito input,
+.modal-carrito select {
+  padding: 11px 12px;
+  border: 1px solid #d8e1e8;
+  border-radius: 10px;
+  font: inherit;
+}
+
+/* Adapta el diseño del carrito para pantallas medianas */
+@media (max-width: 850px) {
+  /* Convierte el carrito en una sola columna */
+  .carrito-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Desactiva la posición fija del resumen */
+  .resumen-compra {
+    position: static;
+  }
+}
+
+/* Adapta los productos para pantallas pequeñas */
+@media (max-width: 560px) {
+  /* Reduce las columnas del producto */
+  .item-carrito {
+    grid-template-columns: 75px 1fr;
+  }
+
+  /* Reduce el tamaño de la imagen del producto */
+  .item-carrito img {
+    width: 75px;
+    height: 75px;
+  }
+
+  /* Coloca el botón de eliminar debajo del contenido */
+  .eliminar-item {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+/* VETSALUD - CARRITO - MODO OSCURO */
+
+/* Define el fondo y color general del modo oscuro */
+html.dark-mode body {
+  background: #101820;
+  color: #d2dbe5;
+}
+
+/* ENCABEZADO */
+
+/* Define el color del título en modo oscuro */
+html.dark-mode .carrito-encabezado h1 {
+  color: #f1f5f9;
+}
+
+/* PRODUCTOS DEL CARRITO */
+
+/* Define el fondo y borde de los productos en modo oscuro */
+html.dark-mode .item-carrito {
+  background: #182431;
+  border-color: #33485b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* Define el fondo de las imágenes en modo oscuro */
+html.dark-mode .item-carrito img {
+  background: #111c27;
+}
+
+/* Define el color del nombre del producto */
+html.dark-mode .item-carrito h3 {
+  color: #f1f5f9;
+}
+
+/* Define el color de la descripción del producto */
+html.dark-mode .item-carrito p {
+  color: #b8c5d3;
+}
+
+/* CONTROL DE CANTIDAD */
+
+/* Define el aspecto de los botones de cantidad en modo oscuro */
+html.dark-mode .control-cantidad button {
+  background: #111c27;
+  border-color: #40566a;
+  color: #f1f5f9;
+}
+
+/* Cambia el aspecto de los botones de cantidad al pasar el cursor */
+html.dark-mode .control-cantidad button:hover {
+  background: #20364d;
+  border-color: #4ba3e3;
+}
+
+/* Define el color del botón eliminar en modo oscuro */
+html.dark-mode .eliminar-item {
+  color: #ff7b7b;
+}
+
+/* Aclara el color del botón eliminar al pasar el cursor */
+html.dark-mode .eliminar-item:hover {
+  color: #ff9b9b;
+}
+
+/* RESUMEN DE COMPRA */
+
+/* Define el fondo y borde del resumen en modo oscuro */
+html.dark-mode .resumen-compra {
+  background: #182431;
+  border-color: #33485b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* Define el color de los títulos del resumen */
+html.dark-mode .resumen-compra h2,
+html.dark-mode .resumen-compra h3 {
+  color: #f1f5f9;
+}
+
+/* Define el color y borde de las líneas del resumen */
+html.dark-mode .resumen-linea {
+  border-bottom-color: #33485b;
+  color: #cbd5df;
+}
+
+/* Destaca el color del total */
+html.dark-mode .resumen-linea.total {
+  color: #ffffff;
+}
+
+/* BOTONES */
+
+/* Define el color del botón principal en modo oscuro */
+html.dark-mode .resumen-compra .btn {
+  background: #00377a;
+  color: #ffffff;
+}
+
+/* Oscurece el botón principal al pasar el cursor */
+html.dark-mode .resumen-compra .btn:hover {
+  background: #002554;
+}
+
+/* Define el color del botón secundario */
+html.dark-mode .boton-secundario {
+  color: #4ba3e3;
+}
+
+/* Aclara el botón secundario al pasar el cursor */
+html.dark-mode .boton-secundario:hover {
+  color: #7bc2f2;
+}
+
+/* CARRITO VACÍO */
+
+/* Define el fondo y borde del carrito vacío */
+html.dark-mode .carrito-vacio {
+  background: #182431;
+  border-color: #40566a;
+  color: #d2dbe5;
+}
+
+/* Define el color de los títulos del carrito vacío */
+html.dark-mode .carrito-vacio h2,
+html.dark-mode .carrito-vacio h3 {
+  color: #f1f5f9;
+}
+
+/* Define el color del texto del carrito vacío */
+html.dark-mode .carrito-vacio p {
+  color: #b8c5d3;
+}
+
+/* MENSAJES */
+
+/* Define el color de los mensajes del carrito */
+html.dark-mode .mensaje-carrito {
+  color: #cbd5df;
+}
+
+/* MODAL */
+
+/* Define la oscuridad del fondo del modal */
+html.dark-mode .modal-carrito__fondo {
+  background: rgba(0, 0, 0, 0.78);
+}
+
+/* Define el fondo y sombra del cuadro del modal */
+html.dark-mode .modal-carrito__dialog {
+  background: #111c27;
+  color: #d2dbe5;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+}
+
+/* Define el color de los títulos del modal */
+html.dark-mode .modal-carrito__dialog h2,
+html.dark-mode .modal-carrito__dialog h3 {
+  color: #f1f5f9;
+}
+
+/* Define el color del botón cerrar */
+html.dark-mode .modal-cerrar {
+  color: #cbd5df;
+}
+
+/* Cambia el color del botón cerrar al pasar el cursor */
+html.dark-mode .modal-cerrar:hover {
+  color: #ffffff;
+}
+
+/* FORMULARIO DEL MODAL */
+
+/* Define el color de las etiquetas del formulario */
+html.dark-mode .modal-carrito label {
+  color: #d2dbe5;
+}
+
+/* Define el fondo, texto y borde de los campos */
+html.dark-mode .modal-carrito input,
+html.dark-mode .modal-carrito select {
+  background: #182431;
+  color: #f1f5f9;
+  border-color: #40566a;
+}
+
+/* Define el color del texto de ayuda de los campos */
+html.dark-mode .modal-carrito input::placeholder {
+  color: #7f91a3;
+}
+
+/* Define el estilo de los campos cuando reciben el foco */
+html.dark-mode .modal-carrito input:focus,
+html.dark-mode .modal-carrito select:focus {
+  border-color: #4ba3e3;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(75, 163, 227, 0.12);
+}
+
+/* SCROLLBAR DEL MODAL */
+
+/* Define el ancho de la barra de desplazamiento */
+html.dark-mode .modal-carrito__dialog::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Define el fondo de la pista de desplazamiento */
+html.dark-mode .modal-carrito__dialog::-webkit-scrollbar-track {
+  background: #111c27;
+}
+
+/* Define el aspecto de la barra de desplazamiento */
+html.dark-mode .modal-carrito__dialog::-webkit-scrollbar-thumb {
+  background: #40566a;
+  border-radius: 10px;
+}
+
+/* Cambia el color de la barra al pasar el cursor */
+html.dark-mode .modal-carrito__dialog::-webkit-scrollbar-thumb:hover {
+  background: #4ba3e3;
+}
+
+/* REDUCIR ANIMACIONES */
+
+/* Desactiva las animaciones cuando está activada la reducción de movimiento */
+html.reduce-motion .carrito-pagina *,
+html.reduce-motion .carrito-pagina *::before,
+html.reduce-motion .carrito-pagina *::after,
+html.reduce-motion .modal-carrito *,
+html.reduce-motion .modal-carrito *::before,
+html.reduce-motion .modal-carrito *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* RESPONSIVE */
+
+/* Ajusta el resumen en modo oscuro para pantallas medianas */
+@media (max-width: 850px) {
+  /* Mantiene el fondo oscuro del resumen */
+  html.dark-mode .resumen-compra {
+    background: #182431;
+  }
+}
+
+/* Ajusta los productos en modo oscuro para pantallas pequeñas */
+@media (max-width: 560px) {
+  /* Mantiene el fondo oscuro de los productos */
+  html.dark-mode .item-carrito {
+    background: #182431;
+  }
+}

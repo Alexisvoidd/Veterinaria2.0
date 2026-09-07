@@ -1,0 +1,1159 @@
+
+:root {
+  /* Azul marino principal de la marca */
+  /* Define el color principal de la interfaz */
+  --color-primario: #00377a;
+  /* Define una versión más oscura del color principal */
+  --color-primario-oscuro: #002554;
+  /* Define el color secundario de la marca */
+  --color-secundario: #006397;
+  /* Define el azul profundo utilizado en textos destacados */
+  --color-azul-profundo: #0d254d;
+
+  /* Fondos y superficies */
+  /* Define el color de fondo general */
+  --color-fondo-calido: #faf9f6;
+  /* Define el color neutro para superficies y campos */
+  --color-arena-neutro: #f2efe9;
+  /* Define un fondo suave para elementos informativos */
+  --color-fondo-suave: #f8fafc;
+  /* Define el color blanco principal */
+  --color-blanco: #ffffff;
+
+  /* Textos y bordes */
+  /* Define el color principal de los textos */
+  --color-texto-principal: #1a1b21;
+  /* Define el color secundario de los textos */
+  --color-texto-secundario: #434751;
+  /* Define el color utilizado para bordes suaves */
+  --color-borde-suave: #e2e8f0;
+
+  /* Estados de validación */
+  /* Define el color utilizado para errores */
+  --color-error: #ba1a1a;
+  /* Define el color utilizado para estados exitosos */
+  --color-exito: #2e7d32;
+
+  /* Tipografías */
+  /* Define la fuente utilizada en títulos */
+  --fuente-titulos: "Montserrat", sans-serif;
+  /* Define la fuente utilizada en textos generales */
+  --fuente-cuerpo: "Open Sans", sans-serif;
+}
+
+/* Selector universal para establecer valores base */
+* {
+  /* Incluye padding y border dentro del tamaño total del elemento */
+  box-sizing: border-box;
+  /* Elimina los márgenes predeterminados */
+  margin: 0;
+  /* Elimina los rellenos predeterminados */
+  padding: 0;
+}
+
+/* Estilos generales del cuerpo de la página */
+body {
+  /* Define la fuente general del sitio */
+  font-family: var(--fuente-cuerpo);
+  /* Define el color de fondo de la página */
+  background-color: var(--color-fondo-calido);
+  /* Define el color principal del texto */
+  color: var(--color-texto-principal);
+  /* Garantiza una altura mínima igual a la ventana */
+  min-height: 100vh;
+  /* Suaviza la representación de las fuentes en WebKit */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Contenedor general de la página de registro */
+.registro-pagina {
+  /* Utiliza un diseño flexible */
+  display: flex;
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+  /* Garantiza que ocupe como mínimo toda la pantalla */
+  min-height: 100vh;
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+}
+
+/* Contenedor principal del formulario de registro */
+.registro-contenedor {
+  /* Permite que el contenedor ocupe el espacio disponible */
+  flex: 1 0 auto;
+  /* Establece una altura mínima considerando el footer */
+  min-height: calc(100vh - 200px);
+  /* Utiliza un diseño flexible */
+  display: flex;
+  /* Centra el contenido horizontalmente */
+  justify-content: center;
+  /* Centra el contenido verticalmente */
+  align-items: center;
+  /* Agrega espacio interno vertical y horizontal */
+  padding: 2.5rem 1rem;
+  /* Permite posicionar elementos decorativos */
+  position: relative;
+  /* Oculta el desbordamiento horizontal */
+  overflow-x: hidden;
+}
+
+/* Ajustes del contenedor para pantallas medianas */
+@media (min-width: 640px) {
+  /* Contenedor principal en pantallas mayores a 640px */
+  .registro-contenedor {
+    /* Aumenta el espacio interno en pantallas grandes */
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* Primera esfera decorativa del fondo */
+.registro-esfera-decorativa-1 {
+  /* Permite posicionarla libremente dentro del contenedor */
+  position: absolute;
+  /* Ubica la esfera desde la parte superior */
+  top: 5%;
+  /* Ubica la esfera desde la izquierda */
+  left: 15%;
+  /* Define el ancho de la esfera */
+  width: 380px;
+  /* Define la altura de la esfera */
+  height: 380px;
+  /* Crea un degradado radial decorativo */
+  background: radial-gradient(
+    circle,
+    rgba(0, 55, 122, 0.06) 0%,
+    transparent 70%
+  );
+  /* Evita que interfiera con los clics */
+  pointer-events: none;
+  /* Coloca la esfera detrás del contenido */
+  z-index: 0;
+}
+
+/* Segunda esfera decorativa del fondo */
+.registro-esfera-decorativa-2 {
+  /* Permite posicionarla libremente dentro del contenedor */
+  position: absolute;
+  /* Ubica la esfera desde la parte inferior */
+  bottom: 5%;
+  /* Ubica la esfera desde la derecha */
+  right: 15%;
+  /* Define el ancho de la esfera */
+  width: 400px;
+  /* Define la altura de la esfera */
+  height: 400px;
+  /* Crea un degradado radial decorativo */
+  background: radial-gradient(
+    circle,
+    rgba(0, 99, 151, 0.06) 0%,
+    transparent 70%
+  );
+  /* Evita que interfiera con los clics */
+  pointer-events: none;
+  /* Coloca la esfera detrás del contenido */
+  z-index: 0;
+}
+
+/* Tarjeta principal que contiene el registro */
+.registro-tarjeta-principal {
+  /* Permite posicionar correctamente elementos internos */
+  position: relative;
+  /* Permite ocupar todo el ancho disponible */
+  width: 100%;
+  /* Limita el ancho máximo de la tarjeta */
+  max-width: 900px;
+  /* Define el fondo blanco de la tarjeta */
+  background-color: var(--color-blanco);
+  /* Redondea las esquinas de la tarjeta */
+  border-radius: 1.25rem;
+  /* Agrega un borde suave */
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  /* Agrega una sombra alrededor de la tarjeta */
+  box-shadow:
+    0 10px 35px -5px rgba(13, 37, 77, 0.08),
+    0 4px 10px -2px rgba(13, 37, 77, 0.03);
+  /* Oculta elementos que sobresalgan de la tarjeta */
+  overflow: hidden;
+  /* Coloca la tarjeta por encima de los elementos decorativos */
+  z-index: 1;
+}
+
+/* Encabezado de la tarjeta de registro */
+.registro-encabezado {
+  /* Centra horizontalmente el contenido */
+  text-align: center;
+  /* Define el espacio interno del encabezado */
+  padding: 2.25rem 1.5rem 1.75rem 1.5rem;
+  /* Crea un degradado vertical suave */
+  background: linear-gradient(180deg, #fbfcfe 0%, var(--color-blanco) 100%);
+  /* Agrega una línea inferior de separación */
+  border-bottom: 1px solid var(--color-arena-neutro);
+}
+
+/* Ajustes del encabezado para pantallas medianas */
+@media (min-width: 640px) {
+  /* Encabezado en pantallas mayores a 640px */
+  .registro-encabezado {
+    /* Aumenta el espacio interno del encabezado */
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+  }
+}
+
+/* Contenedor del logotipo */
+.registro-logo-contenedor {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Centra el logotipo horizontalmente */
+  justify-content: center;
+  /* Agrega espacio debajo del logotipo */
+  margin-bottom: 1rem;
+}
+
+/* Imagen del logotipo */
+.registro-logo-imagen {
+  /* Define la altura del logotipo */
+  height: 48px;
+  /* Mantiene automáticamente la proporción */
+  width: auto;
+  /* Mantiene la imagen dentro de sus dimensiones */
+  object-fit: contain;
+}
+
+/* Título principal del registro */
+.registro-titulo {
+  /* Utiliza la fuente destinada para títulos */
+  font-family: var(--fuente-titulos);
+  /* Define el grosor del título */
+  font-weight: 700;
+  /* Define el tamaño del título */
+  font-size: 1.75rem;
+  /* Define el color del título */
+  color: var(--color-azul-profundo);
+  /* Agrega separación debajo del título */
+  margin-bottom: 0.4rem;
+  /* Ajusta ligeramente el espaciado entre letras */
+  letter-spacing: -0.015em;
+}
+
+/* Ajuste del título para pantallas medianas */
+@media (min-width: 640px) {
+  /* Título en pantallas mayores a 640px */
+  .registro-titulo {
+    /* Aumenta el tamaño del título */
+    font-size: 2.1rem;
+  }
+}
+
+/* Texto descriptivo debajo del título */
+.registro-subtitulo {
+  /* Define el tamaño del subtítulo */
+  font-size: 0.925rem;
+  /* Define el color secundario del texto */
+  color: var(--color-texto-secundario);
+  /* Limita el ancho del texto */
+  max-width: 480px;
+  /* Centra el subtítulo */
+  margin: 0 auto;
+  /* Define la altura de las líneas */
+  line-height: 1.45;
+}
+
+/* Formulario principal de registro */
+.formulario-registro {
+  /* Define el espacio interno del formulario */
+  padding: 1.75rem 1.25rem 2rem 1.25rem;
+  /* Utiliza flexbox */
+  display: flex;
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+  /* Define la separación entre elementos */
+  gap: 1.75rem;
+}
+
+/* Ajustes del formulario para pantallas medianas */
+@media (min-width: 640px) {
+  /* Formulario en pantallas mayores a 640px */
+  .formulario-registro {
+    /* Aumenta el espacio interno */
+    padding: 2.25rem 2.25rem 2.5rem 2.25rem;
+    /* Aumenta la separación entre elementos */
+    gap: 2rem;
+  }
+}
+
+/* Cuadrícula principal de las columnas del formulario */
+.registro-cuadricula-columnas {
+  /* Utiliza CSS Grid */
+  display: grid;
+  /* Utiliza una sola columna inicialmente */
+  grid-template-columns: 1fr;
+  /* Define el espacio entre columnas y filas */
+  gap: 2rem;
+}
+
+/* Distribución en dos columnas para pantallas grandes */
+@media (min-width: 768px) {
+  /* Cuadrícula en pantallas mayores a 768px */
+  .registro-cuadricula-columnas {
+    /* Divide el contenido en dos columnas iguales */
+    grid-template-columns: 1fr 1fr;
+    /* Define la separación entre las columnas */
+    gap: 2.25rem;
+  }
+}
+
+/* Columna individual del formulario */
+.registro-columna {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+  /* Define la separación entre los elementos */
+  gap: 1rem;
+}
+
+/* Encabezado de cada sección del formulario */
+.registro-seccion-encabezado {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Centra verticalmente los elementos */
+  align-items: center;
+  /* Define la separación entre icono y título */
+  gap: 0.5rem;
+  /* Agrega espacio debajo del contenido */
+  padding-bottom: 0.5rem;
+  /* Agrega una línea inferior de separación */
+  border-bottom: 1.5px solid var(--color-arena-neutro);
+  /* Agrega una pequeña separación inferior */
+  margin-bottom: 0.25rem;
+}
+
+/* Icono de cada sección del formulario */
+.registro-seccion-icono {
+  /* Define el tamaño del icono */
+  font-size: 1.25rem;
+  /* Define el color del icono */
+  color: var(--color-primario);
+}
+
+/* Título de cada sección del formulario */
+.registro-seccion-titulo {
+  /* Utiliza la fuente destinada para títulos */
+  font-family: var(--fuente-titulos);
+  /* Define el tamaño del título */
+  font-size: 0.875rem;
+  /* Define el grosor del texto */
+  font-weight: 700;
+  /* Convierte el texto a mayúsculas */
+  text-transform: uppercase;
+  /* Define el espacio entre letras */
+  letter-spacing: 0.04em;
+  /* Define el color del título */
+  color: var(--color-primario);
+}
+
+/* Fila que contiene dos campos */
+.registro-fila-doble {
+  /* Utiliza CSS Grid */
+  display: grid;
+  /* Mantiene una sola columna inicialmente */
+  grid-template-columns: 1fr;
+  /* Define el espacio entre los campos */
+  gap: 0.85rem;
+}
+
+/* Divide la fila en dos columnas en pantallas pequeñas */
+@media (min-width: 480px) {
+  /* Fila doble en pantallas mayores a 480px */
+  .registro-fila-doble {
+    /* Divide el espacio en dos columnas iguales */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Grupo que contiene etiqueta y campo */
+.campo-grupo {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Organiza etiqueta y campo verticalmente */
+  flex-direction: column;
+}
+
+/* Etiqueta de los campos */
+.campo-etiqueta {
+  /* Define el tamaño de la etiqueta */
+  font-size: 0.825rem;
+  /* Define el grosor de la etiqueta */
+  font-weight: 700;
+  /* Define el color de la etiqueta */
+  color: var(--color-texto-secundario);
+  /* Agrega separación debajo de la etiqueta */
+  margin-bottom: 0.35rem;
+}
+
+/* Campos de entrada del formulario */
+.campo-entrada {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+  /* Define el fondo del campo */
+  background-color: var(--color-arena-neutro);
+  /* Define un borde inicialmente transparente */
+  border: 1.5px solid transparent;
+  /* Redondea las esquinas del campo */
+  border-radius: 0.55rem;
+  /* Define el espacio interno del campo */
+  padding: 0.72rem 0.95rem;
+  /* Utiliza la fuente general del proyecto */
+  font-family: var(--fuente-cuerpo);
+  /* Define el tamaño del texto */
+  font-size: 0.9rem;
+  /* Define el color del texto ingresado */
+  color: var(--color-texto-principal);
+  /* Suaviza los cambios visuales del campo */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Elimina el contorno predeterminado */
+  outline: none;
+}
+
+/* Texto de ejemplo dentro de los campos */
+.campo-entrada::placeholder {
+  /* Define el color del texto de ejemplo */
+  color: #9e9ea7;
+}
+
+/* Estado de enfoque de los campos */
+.campo-entrada:focus {
+  /* Cambia el fondo cuando el campo está activo */
+  background-color: var(--color-blanco);
+  /* Muestra el borde principal */
+  border-color: var(--color-primario);
+  /* Agrega un halo alrededor del campo */
+  box-shadow: 0 0 0 3px rgba(0, 55, 122, 0.14);
+}
+
+/* Contenedor de los campos que contienen iconos */
+.campo-envoltorio-input {
+  /* Permite posicionar elementos internos */
+  position: relative;
+  /* Utiliza flexbox */
+  display: flex;
+  /* Centra verticalmente el contenido */
+  align-items: center;
+}
+
+/* Campo que necesita espacio para el botón del ojo */
+.campo-entrada-con-ojo {
+  /* Reserva espacio para el icono del ojo */
+  padding-right: 2.85rem;
+}
+
+/* Botón utilizado para mostrar u ocultar la contraseña */
+.campo-boton-ojo {
+  /* Permite posicionar el botón dentro del campo */
+  position: absolute;
+  /* Separa el botón del borde derecho */
+  right: 0.65rem;
+  /* Utiliza flexbox */
+  display: flex;
+  /* Centra verticalmente el contenido */
+  align-items: center;
+  /* Centra horizontalmente el contenido */
+  justify-content: center;
+  /* Define el espacio interno del botón */
+  padding: 0.35rem;
+  /* Elimina el borde predeterminado */
+  border: none;
+  /* Redondea las esquinas del botón */
+  border-radius: 0.35rem;
+  /* Mantiene el fondo transparente */
+  background: transparent;
+  /* Define el color del icono */
+  color: var(--color-texto-secundario);
+  /* Cambia el cursor al pasar sobre el botón */
+  cursor: pointer;
+  /* Suaviza los cambios de color y fondo */
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Estado hover del botón del ojo */
+.campo-boton-ojo:hover {
+  /* Cambia el color del icono al pasar el cursor */
+  color: var(--color-texto-principal);
+  /* Agrega un fondo suave al botón */
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Selector desplegable del formulario */
+.campo-selector {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+  /* Define el fondo del selector */
+  background-color: var(--color-arena-neutro);
+  /* Define el borde inicial del selector */
+  border: 1.5px solid transparent;
+  /* Redondea las esquinas */
+  border-radius: 0.55rem;
+  /* Define el espacio interno */
+  padding: 0.72rem 0.95rem;
+  /* Utiliza la fuente general */
+  font-family: var(--fuente-cuerpo);
+  /* Define el tamaño del texto */
+  font-size: 0.9rem;
+  /* Define el color del texto */
+  color: var(--color-texto-principal);
+  /* Cambia el cursor para indicar que es seleccionable */
+  cursor: pointer;
+  /* Elimina el contorno predeterminado */
+  outline: none;
+  /* Suaviza los cambios visuales */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado de enfoque del selector */
+.campo-selector:focus {
+  /* Cambia el fondo cuando está activo */
+  background-color: var(--color-blanco);
+  /* Muestra el borde principal */
+  border-color: var(--color-primario);
+  /* Agrega un halo alrededor del selector */
+  box-shadow: 0 0 0 3px rgba(0, 55, 122, 0.14);
+}
+
+/* Estilos de validación de campos */
+
+/* Campos que presentan un error de validación */
+.campo-entrada.campo-invalido,
+.campo-selector.campo-invalido {
+  /* Cambia el borde al color de error */
+  border-color: var(--color-error) !important;
+  /* Cambia el fondo para indicar el error */
+  background-color: #fff8f8 !important;
+}
+
+/* Estado de enfoque de los campos inválidos */
+.campo-entrada.campo-invalido:focus,
+.campo-selector.campo-invalido:focus {
+  /* Mantiene el borde rojo durante el enfoque */
+  border-color: var(--color-error) !important;
+  /* Agrega un halo rojo alrededor del campo */
+  box-shadow: 0 0 0 3px rgba(186, 26, 26, 0.15) !important;
+}
+
+/* Mensaje que informa sobre un error del campo */
+.campo-mensaje-error {
+  /* Oculta el mensaje inicialmente */
+  display: none;
+  /* Define el tamaño del mensaje */
+  font-size: 0.76rem;
+  /* Define el color del mensaje de error */
+  color: var(--color-error);
+  /* Agrega separación superior */
+  margin-top: 0.35rem;
+  /* Define el grosor del texto */
+  font-weight: 600;
+  /* Define la altura de las líneas */
+  line-height: 1.3;
+  /* Aplica una animación al aparecer */
+  animation: aparecerError 0.25s ease-out;
+}
+
+/* Muestra el mensaje cuando el grupo tiene error */
+.campo-grupo.has-error .campo-mensaje-error {
+  /* Hace visible el mensaje de error */
+  display: block;
+}
+
+/* Cambia el color de la etiqueta cuando existe un error */
+.campo-grupo.has-error .campo-etiqueta {
+  /* Utiliza el color de error */
+  color: var(--color-error);
+}
+
+/* Animación de aparición del mensaje de error */
+@keyframes aparecerError {
+  /* Estado inicial de la animación */
+  from {
+    /* Hace invisible el mensaje */
+    opacity: 0;
+    /* Mueve ligeramente el mensaje hacia arriba */
+    transform: translateY(-4px);
+  }
+  /* Estado final de la animación */
+  to {
+    /* Hace visible el mensaje */
+    opacity: 1;
+    /* Devuelve el mensaje a su posición original */
+    transform: translateY(0);
+  }
+}
+
+/* Tarjeta informativa del formulario */
+.registro-tarjeta-aviso {
+  /* Utiliza flexbox */
+  display: flex;
+  /* Alinea el contenido desde la parte superior */
+  align-items: flex-start;
+  /* Define la separación entre icono y texto */
+  gap: 0.65rem;
+  /* Define el fondo del aviso */
+  background-color: var(--color-fondo-suave);
+  /* Define el borde del aviso */
+  border: 1px solid var(--color-borde-suave);
+  /* Redondea las esquinas */
+  border-radius: 0.75rem;
+  /* Define el espacio interno */
+  padding: 0.85rem 1rem;
+  /* Agrega separación superior */
+  margin-top: 0.5rem;
+}
+
+/* Icono del aviso */
+.registro-aviso-icono {
+  /* Define el tamaño del icono */
+  font-size: 1.15rem;
+  /* Define el color del icono */
+  color: var(--color-secundario);
+  /* Evita que el icono se reduzca */
+  flex-shrink: 0;
+  /* Ajusta ligeramente su posición vertical */
+  margin-top: 0.1rem;
+}
+
+/* Texto del aviso */
+.registro-aviso-texto {
+  /* Define el tamaño del texto */
+  font-size: 0.8rem;
+  /* Define el color del texto */
+  color: var(--color-texto-secundario);
+  /* Define la altura de las líneas */
+  line-height: 1.45;
+}
+
+/* Sección relacionada con la seguridad */
+.registro-seccion-seguridad {
+  /* Agrega una línea superior de separación */
+  border-top: 1.5px solid var(--color-arena-neutro);
+  /* Agrega espacio encima del contenido */
+  padding-top: 1.5rem;
+  /* Utiliza flexbox */
+  display: flex;
+  /* Organiza los elementos verticalmente */
+  flex-direction: column;
+  /* Define la separación entre elementos */
+  gap: 1rem;
+}
+
+/* Botón principal para registrar la cuenta */
+.registro-boton-enviar {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+  /* Define el color de fondo */
+  background-color: var(--color-primario);
+  /* Define el color del texto */
+  color: var(--color-blanco);
+  /* Utiliza la fuente de títulos */
+  font-family: var(--fuente-titulos);
+  /* Define el grosor del texto */
+  font-weight: 600;
+  /* Define el tamaño del texto */
+  font-size: 0.95rem;
+  /* Define el espacio interno del botón */
+  padding: 0.95rem 1.5rem;
+  /* Elimina el borde */
+  border: none;
+  /* Redondea las esquinas */
+  border-radius: 0.65rem;
+  /* Cambia el cursor al pasar sobre el botón */
+  cursor: pointer;
+  /* Utiliza flexbox */
+  display: flex;
+  /* Centra verticalmente el contenido */
+  align-items: center;
+  /* Centra horizontalmente el contenido */
+  justify-content: center;
+  /* Define la separación entre icono y texto */
+  gap: 0.5rem;
+  /* Agrega una sombra al botón */
+  box-shadow: 0 4px 14px rgba(0, 55, 122, 0.22);
+  /* Suaviza las transiciones del botón */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Agrega separación superior */
+  margin-top: 0.5rem;
+}
+
+/* Estado hover del botón de registro */
+.registro-boton-enviar:hover {
+  /* Oscurece el botón al pasar el cursor */
+  background-color: var(--color-primario-oscuro);
+  /* Aumenta la sombra del botón */
+  box-shadow: 0 6px 20px rgba(0, 55, 122, 0.32);
+  /* Eleva ligeramente el botón */
+  transform: translateY(-1px);
+}
+
+/* Estado activo del botón de registro */
+.registro-boton-enviar:active {
+  /* Reduce ligeramente el tamaño al hacer clic */
+  transform: scale(0.985);
+}
+
+/* Movimiento del icono cuando se pasa el cursor sobre el botón */
+.registro-boton-enviar:hover .registro-boton-icono {
+  /* Desplaza el icono ligeramente hacia la derecha */
+  transform: translateX(4px);
+}
+
+/* Icono del botón de registro */
+.registro-boton-icono {
+  /* Define el tamaño del icono */
+  font-size: 1.15rem;
+  /* Suaviza el movimiento del icono */
+  transition: transform 0.2s ease;
+}
+
+/* Pie de la tarjeta de registro */
+.registro-pie {
+  /* Define el fondo del pie */
+  background-color: #fbfcfe;
+  /* Define el espacio interno */
+  padding: 1.1rem 1.5rem;
+  /* Centra el contenido */
+  text-align: center;
+  /* Agrega una línea superior */
+  border-top: 1px solid var(--color-arena-neutro);
+}
+
+/* Texto del pie de registro */
+.registro-pie-texto {
+  /* Define el tamaño del texto */
+  font-size: 0.885rem;
+  /* Define el color del texto */
+  color: var(--color-texto-secundario);
+}
+
+/* Enlace para iniciar sesión */
+.registro-enlace-login {
+  /* Define el grosor del enlace */
+  font-weight: 700;
+  /* Define el color del enlace */
+  color: var(--color-primario);
+  /* Agrega subrayado */
+  text-decoration: underline;
+  /* Define la separación del subrayado */
+  text-underline-offset: 3px;
+  /* Define el grosor del subrayado */
+  text-decoration-thickness: 2px;
+  /* Agrega separación a la izquierda */
+  margin-left: 0.35rem;
+  /* Suaviza el cambio de color */
+  transition: color 0.2s ease;
+}
+
+/* Estado hover del enlace de inicio de sesión */
+.registro-enlace-login:hover {
+  /* Oscurece el enlace al pasar el cursor */
+  color: var(--color-primario-oscuro);
+}
+
+/* Alerta tipo toast del registro */
+.registro-alerta-toast {
+  /* Mantiene la alerta fija respecto a la ventana */
+  position: fixed;
+  /* Separa la alerta de la parte superior */
+  top: 1.5rem;
+  /* Separa la alerta del lado derecho */
+  right: 1.5rem;
+  /* Define el fondo de la alerta */
+  background: var(--color-blanco);
+  /* Redondea las esquinas */
+  border-radius: 0.75rem;
+  /* Define el espacio interno */
+  padding: 1rem 1.25rem;
+  /* Agrega una sombra */
+  box-shadow: 0 12px 30px rgba(13, 37, 77, 0.18);
+  /* Agrega una línea lateral para identificar el estado */
+  border-left: 4px solid var(--color-primario);
+  /* Utiliza flexbox */
+  display: flex;
+  /* Centra verticalmente el contenido */
+  align-items: center;
+  /* Define la separación entre los elementos */
+  gap: 0.75rem;
+  /* Coloca la alerta por encima de otros elementos */
+  z-index: 100;
+  /* Aplica la animación de entrada */
+  animation: deslizarToast 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Estado de error de la alerta */
+.registro-alerta-toast.error {
+  /* Cambia el borde lateral al color de error */
+  border-left-color: var(--color-error);
+}
+
+/* Icono de la alerta */
+.registro-alerta-icono {
+  /* Define el tamaño del icono */
+  font-size: 1.5rem;
+  /* Define el color principal del icono */
+  color: var(--color-primario);
+}
+
+/* Icono de una alerta con estado de error */
+.registro-alerta-toast.error .registro-alerta-icono {
+  /* Cambia el icono al color de error */
+  color: var(--color-error);
+}
+
+/* Título de la alerta */
+.registro-alerta-titulo {
+  /* Utiliza la fuente de títulos */
+  font-family: var(--fuente-titulos);
+  /* Define el grosor del título */
+  font-weight: 700;
+  /* Define el tamaño del título */
+  font-size: 0.85rem;
+  /* Define el color del título */
+  color: var(--color-azul-profundo);
+}
+
+/* Mensaje de la alerta */
+.registro-alerta-mensaje {
+  /* Define el tamaño del mensaje */
+  font-size: 0.8rem;
+  /* Define el color del mensaje */
+  color: var(--color-texto-secundario);
+}
+
+/* Modo oscuro de la página de registro */
+
+/* Fondo general y texto en modo oscuro */
+html.dark-mode body {
+  /* Define el fondo oscuro general */
+  background-color: #101820;
+  /* Define el color general del texto */
+  color: #d2dbe5;
+}
+
+/* Contenedor principal en modo oscuro */
+html.dark-mode .registro-contenedor {
+  /* Define un fondo degradado oscuro */
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      #182431 0%,
+      #101820 100%
+    );
+}
+
+/* Primera esfera decorativa en modo oscuro */
+html.dark-mode .registro-esfera-decorativa-1 {
+  /* Define el brillo azul de la primera esfera */
+  background:
+    radial-gradient(
+      circle,
+      rgba(75, 163, 227, 0.08) 0%,
+      transparent 70%
+    );
+}
+
+/* Segunda esfera decorativa en modo oscuro */
+html.dark-mode .registro-esfera-decorativa-2 {
+  /* Define el brillo azul de la segunda esfera */
+  background:
+    radial-gradient(
+      circle,
+      rgba(75, 163, 227, 0.06) 0%,
+      transparent 70%
+    );
+}
+
+/* Tarjeta principal en modo oscuro */
+html.dark-mode .registro-tarjeta-principal {
+  /* Define el fondo oscuro de la tarjeta */
+  background-color: #182431;
+  /* Define el color del borde */
+  border-color: #33485b;
+  /* Define la sombra oscura de la tarjeta */
+  box-shadow:
+    0 10px 35px -5px rgba(0, 0, 0, 0.35),
+    0 4px 10px -2px rgba(0, 0, 0, 0.20);
+}
+
+/* Encabezado de la tarjeta en modo oscuro */
+html.dark-mode .registro-encabezado {
+  /* Define el degradado oscuro del encabezado */
+  background:
+    linear-gradient(
+      180deg,
+      #1d2b39 0%,
+      #182431 100%
+    );
+  /* Cambia el color del borde inferior */
+  border-bottom-color: #33485b;
+}
+
+/* Título en modo oscuro */
+html.dark-mode .registro-titulo {
+  /* Define el color claro del título */
+  color: #f1f5f9;
+}
+
+/* Subtítulo en modo oscuro */
+html.dark-mode .registro-subtitulo {
+  /* Define el color secundario claro */
+  color: #b8c5d3;
+}
+
+/* Encabezados de sección en modo oscuro */
+html.dark-mode .registro-seccion-encabezado {
+  /* Cambia el color del borde inferior */
+  border-bottom-color: #33485b;
+}
+
+/* Iconos de sección en modo oscuro */
+html.dark-mode .registro-seccion-icono {
+  /* Define el color azul claro del icono */
+  color: #4ba3e3;
+}
+
+/* Títulos de sección en modo oscuro */
+html.dark-mode .registro-seccion-titulo {
+  /* Define el color azul claro del título */
+  color: #4ba3e3;
+}
+
+/* Etiquetas de campos en modo oscuro */
+html.dark-mode .campo-etiqueta {
+  /* Define el color claro de las etiquetas */
+  color: #d2dbe5;
+}
+
+/* Campos y selectores en modo oscuro */
+html.dark-mode .campo-entrada,
+html.dark-mode .campo-selector {
+  /* Define el fondo oscuro de los campos */
+  background-color: #111c27;
+  /* Define el borde visible de los campos */
+  border-color: #40566a;
+  /* Define el color claro del texto */
+  color: #f1f5f9;
+}
+
+/* Texto placeholder en modo oscuro */
+html.dark-mode .campo-entrada::placeholder {
+  /* Define un color tenue para el placeholder */
+  color: #7f91a3;
+}
+
+/* Estado focus de los campos en modo oscuro */
+html.dark-mode .campo-entrada:focus,
+html.dark-mode .campo-selector:focus {
+  /* Cambia el fondo cuando el campo está activo */
+  background-color: #182431;
+  /* Define el borde azul claro */
+  border-color: #4ba3e3;
+  /* Agrega un halo azul */
+  box-shadow: 0 0 0 3px rgba(75, 163, 227, 0.14);
+}
+
+/* Botón del ojo en modo oscuro */
+html.dark-mode .campo-boton-ojo {
+  /* Define el color del icono */
+  color: #9eacba;
+}
+
+/* Estado hover del botón del ojo en modo oscuro */
+html.dark-mode .campo-boton-ojo:hover {
+  /* Cambia el icono a blanco */
+  color: #ffffff;
+  /* Agrega un fondo azul transparente */
+  background-color: rgba(75, 163, 227, 0.10);
+}
+
+/* Campos inválidos en modo oscuro */
+html.dark-mode .campo-entrada.campo-invalido,
+html.dark-mode .campo-selector.campo-invalido {
+  /* Define un fondo oscuro rojizo para el error */
+  background-color: #29191b !important;
+  /* Define un borde rojo claro */
+  border-color: #ff6b6b !important;
+}
+
+/* Estado focus de campos inválidos en modo oscuro */
+html.dark-mode .campo-entrada.campo-invalido:focus,
+html.dark-mode .campo-selector.campo-invalido:focus {
+  /* Mantiene el borde rojo durante el enfoque */
+  border-color: #ff6b6b !important;
+  /* Agrega un halo rojo */
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15) !important;
+}
+
+/* Mensaje de error en modo oscuro */
+html.dark-mode .campo-mensaje-error {
+  /* Define un rojo claro para mejorar la visibilidad */
+  color: #ff8585;
+}
+
+/* Etiqueta de campo con error en modo oscuro */
+html.dark-mode .campo-grupo.has-error .campo-etiqueta {
+  /* Cambia la etiqueta al color de error */
+  color: #ff8585;
+}
+
+/* Tarjeta informativa en modo oscuro */
+html.dark-mode .registro-tarjeta-aviso {
+  /* Define el fondo oscuro del aviso */
+  background-color: #1d2b39;
+  /* Define el borde oscuro del aviso */
+  border-color: #40566a;
+}
+
+/* Icono del aviso en modo oscuro */
+html.dark-mode .registro-aviso-icono {
+  /* Define el color azul claro del icono */
+  color: #4ba3e3;
+}
+
+/* Texto del aviso en modo oscuro */
+html.dark-mode .registro-aviso-texto {
+  /* Define el color claro del texto */
+  color: #b8c5d3;
+}
+
+/* Sección de seguridad en modo oscuro */
+html.dark-mode .registro-seccion-seguridad {
+  /* Cambia el color de la línea superior */
+  border-top-color: #33485b;
+}
+
+/* Botón de registro en modo oscuro */
+html.dark-mode .registro-boton-enviar {
+  /* Define el fondo azul del botón */
+  background-color: #00377a;
+  /* Define el texto blanco */
+  color: #ffffff;
+  /* Define la sombra oscura del botón */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.30);
+}
+
+/* Estado hover del botón de registro en modo oscuro */
+html.dark-mode .registro-boton-enviar:hover {
+  /* Oscurece el botón al pasar el cursor */
+  background-color: #002554;
+  /* Aumenta la sombra del botón */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.40);
+}
+
+/* Pie de registro en modo oscuro */
+html.dark-mode .registro-pie {
+  /* Define el fondo oscuro del pie */
+  background-color: #111c27;
+  /* Define el color del borde superior */
+  border-top-color: #33485b;
+}
+
+/* Texto del pie en modo oscuro */
+html.dark-mode .registro-pie-texto {
+  /* Define el color claro del texto */
+  color: #b8c5d3;
+}
+
+/* Enlace de inicio de sesión en modo oscuro */
+html.dark-mode .registro-enlace-login {
+  /* Define el color azul claro del enlace */
+  color: #4ba3e3;
+}
+
+/* Estado hover del enlace en modo oscuro */
+html.dark-mode .registro-enlace-login:hover {
+  /* Aclara el enlace al pasar el cursor */
+  color: #7bc2f2;
+}
+
+/* Toast de registro en modo oscuro */
+html.dark-mode .registro-alerta-toast {
+  /* Define el fondo oscuro de la alerta */
+  background: #111c27;
+  /* Define el borde lateral azul */
+  border-left-color: #4ba3e3;
+  /* Define una sombra más fuerte */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.40);
+}
+
+/* Toast con error en modo oscuro */
+html.dark-mode .registro-alerta-toast.error {
+  /* Cambia el borde lateral al rojo */
+  border-left-color: #ff6b6b;
+}
+
+/* Icono del toast en modo oscuro */
+html.dark-mode .registro-alerta-icono {
+  /* Define el color azul claro del icono */
+  color: #4ba3e3;
+}
+
+/* Icono del toast con error en modo oscuro */
+html.dark-mode .registro-alerta-toast.error .registro-alerta-icono {
+  /* Cambia el icono al rojo */
+  color: #ff6b6b;
+}
+
+/* Título del toast en modo oscuro */
+html.dark-mode .registro-alerta-titulo {
+  /* Define el color claro del título */
+  color: #f1f5f9;
+}
+
+/* Mensaje del toast en modo oscuro */
+html.dark-mode .registro-alerta-mensaje {
+  /* Define el color secundario claro */
+  color: #b8c5d3;
+}
+
+/* Desactiva animaciones cuando el usuario prefiere reducir movimiento */
+
+/* Elementos del registro afectados por la reducción de movimiento */
+html.reduce-motion .registro-contenedor *,
+html.reduce-motion .registro-contenedor *::before,
+html.reduce-motion .registro-contenedor *::after,
+html.reduce-motion .registro-alerta-toast {
+  /* Desactiva las animaciones */
+  animation: none !important;
+  /* Desactiva las transiciones */
+  transition: none !important;
+}
+
+/* Animación de entrada del toast */
+@keyframes deslizarToast {
+  /* Estado inicial de la alerta */
+  from {
+    /* Comienza completamente transparente */
+    opacity: 0;
+    /* Comienza desplazada hacia arriba */
+    transform: translateY(-20px);
+  }
+  /* Estado final de la alerta */
+  to {
+    /* Termina completamente visible */
+    opacity: 1;
+    /* Termina en su posición original */
+    transform: translateY(0);
+  }
+}
+
+/* Animación de giro */
+@keyframes girar {
+  /* Estado inicial del giro */
+  from {
+    /* Comienza sin rotación */
+    transform: rotate(0deg);
+  }
+  /* Estado final del giro */
+  to {
+    /* Completa una vuelta de 360 grados */
+    transform: rotate(360deg);
+  }
+}

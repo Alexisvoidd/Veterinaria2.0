@@ -1,0 +1,991 @@
+
+/* RESET */
+* { /* Selecciona todos los elementos */
+    margin: 0; /* Elimina los márgenes */
+    padding: 0; /* Elimina el relleno */
+    box-sizing: border-box; /* Incluye borde y relleno en el tamaño */
+}
+
+html { /* Configura el documento */
+    scroll-behavior: smooth; /* Suaviza el desplazamiento */
+}
+
+body { /* Configura el cuerpo */
+    font-family: "Montserrat", sans-serif; /* Define la fuente */
+    background: #f8f9fc; /* Define el fondo */
+    color: #172b4d; /* Define el color del texto */
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
+}
+
+/* HERO */
+.inicio { /* Contenedor principal del hero */
+    width: 100%; /* Ocupa todo el ancho */
+    min-height: 560px; /* Define la altura mínima */
+    display: grid; /* Activa CSS Grid */
+    grid-template-columns: 1fr 1fr; /* Crea dos columnas */
+    align-items: center; /* Centra verticalmente */
+    gap: 60px; /* Separa las columnas */
+    padding: 80px max(36px, 7vw); /* Define el espacio interno */
+    background: #ffffff; /* Define el fondo */
+}
+
+/* CONTENIDO */
+.inicio_contenido { /* Contenedor del contenido */
+    max-width: 620px; /* Limita el ancho */
+}
+
+.etiqueta { /* Etiqueta superior */
+    display: inline-block; /* Permite controlar el elemento */
+    margin-bottom: 18px; /* Separa del contenido siguiente */
+    color: #4ba3e3; /* Define el color */
+    font-size: 0.82rem; /* Define el tamaño */
+    font-weight: 800; /* Define el grosor */
+    letter-spacing: 1.5px; /* Separa las letras */
+}
+
+/* TITULO */
+.inicio_contenido h1 { /* Título principal */
+    color: #1b4e9b; /* Define el color */
+    font-size: clamp(2.2rem, 4vw, 4rem); /* Define tamaño adaptable */
+    line-height: 1.08; /* Define la altura de línea */
+    margin-bottom: 22px; /* Separa el título */
+}
+
+/* TEXTO */
+.inicio_contenido p { /* Texto del hero */
+    max-width: 560px; /* Limita el ancho */
+    color: #5f7187; /* Define el color */
+    font-size: 1rem; /* Define el tamaño */
+    line-height: 1.8; /* Define la altura de línea */
+    margin-bottom: 30px; /* Separa del botón */
+}
+
+/* BOTON */
+.btn_principal { /* Botón principal */
+    display: inline-flex; /* Activa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 10px; /* Separa los elementos */
+    padding: 13px 22px; /* Define el espacio interno */
+    border-radius: 10px; /* Redondea las esquinas */
+    background: #1b4e9b; /* Define el fondo */
+    color: #ffffff; /* Define el color del texto */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 0.9rem; /* Define el tamaño */
+    font-weight: 700; /* Define el grosor */
+    box-shadow: 0 7px 18px rgba(27, 78, 155, 0.25); /* Agrega sombra */
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease; /* Suaviza cambios */
+}
+
+.btn_principal:hover { /* Estado hover */
+    background: #164283; /* Cambia el fondo */
+    transform: translateY(-2px); /* Eleva el botón */
+    box-shadow: 0 10px 25px rgba(27, 78, 155, 0.32); /* Aumenta la sombra */
+}
+
+.btn_principal .material-symbols-outlined { /* Icono del botón */
+    font-size: 19px; /* Define el tamaño */
+}
+
+/* IMAGEN HERO */
+.inicio_imagen { /* Contenedor de la imagen */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 430px; /* Define la altura */
+    overflow: hidden; /* Oculta el exceso */
+    border-radius: 22px; /* Redondea las esquinas */
+    box-shadow: 0 15px 40px rgba(23, 65, 112, 0.12); /* Agrega sombra */
+}
+
+.inicio_imagen img { /* Imagen del hero */
+    display: block; /* Elimina espacios adicionales */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    object-fit: cover; /* Ajusta la imagen */
+    transition: transform 0.5s ease; /* Suaviza la transformación */
+}
+
+.inicio_imagen:hover img { /* Hover sobre la imagen */
+    transform: scale(1.04); /* Amplía la imagen */
+}
+
+/* BLOG */
+.blog { /* Contenedor del blog */
+    width: min(1240px, calc(100% - 40px)); /* Define el ancho máximo */
+    margin: 0 auto; /* Centra el contenido */
+    padding: 90px 0; /* Define el espacio vertical */
+}
+
+/* ENCABEZADO */
+.seccion_tit { /* Encabezado de sección */
+    display: flex; /* Activa flexbox */
+    align-items: flex-end; /* Alinea al final */
+    justify-content: space-between; /* Distribuye el contenido */
+    gap: 30px; /* Separa los elementos */
+    margin-bottom: 40px; /* Separa del contenido */
+}
+
+.seccion_tit > div:first-child span { /* Etiqueta del encabezado */
+    display: block; /* Ocupa una línea */
+    margin-bottom: 8px; /* Separa del título */
+    color: #4ba3e3; /* Define el color */
+    font-size: 0.8rem; /* Define el tamaño */
+    font-weight: 800; /* Define el grosor */
+    letter-spacing: 1.5px; /* Separa las letras */
+}
+
+.seccion_tit h2 { /* Título de sección */
+    color: #1b4e9b; /* Define el color */
+    font-size: 2rem; /* Define el tamaño */
+    line-height: 1.2; /* Define la altura */
+}
+
+/* CATEGORÍAS */
+.categorias { /* Contenedor de categorías */
+    display: flex; /* Activa flexbox */
+    flex-wrap: wrap; /* Permite saltar de línea */
+    gap: 8px; /* Separa los botones */
+    justify-content: flex-end; /* Alinea al final */
+}
+
+.categorias button { /* Botones de categorías */
+    border: 1px solid #dce7f0; /* Define el borde */
+    background: #ffffff; /* Define el fondo */
+    color: #587089; /* Define el color */
+    border-radius: 9px; /* Redondea las esquinas */
+    padding: 9px 15px; /* Define el espacio interno */
+    font-family: inherit; /* Hereda la fuente */
+    font-size: 0.78rem; /* Define el tamaño */
+    font-weight: 700; /* Define el grosor */
+    cursor: pointer; /* Cambia el cursor */
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Suaviza cambios */
+}
+
+.categorias button:hover { /* Hover de categoría */
+    color: #1b4e9b; /* Cambia el color */
+    background: #edf6fd; /* Cambia el fondo */
+    border-color: #c8deef; /* Cambia el borde */
+    transform: translateY(-1px); /* Eleva el botón */
+}
+
+/* BOTÓN ACTIVO */
+.categorias button.activo, /* Selecciona categoría activa */
+.categorias button.categoria_seleccionada { /* Selecciona categoría elegida */
+    color: #ffffff; /* Define el color */
+    background: #1b4e9b; /* Define el fondo */
+    border-color: #1b4e9b; /* Define el borde */
+    box-shadow: 0 6px 16px rgba(27, 78, 155, 0.22); /* Agrega sombra */
+    transform: translateY(-1px); /* Eleva el botón */
+}
+
+/* GRID */
+.articulos_grid { /* Contenedor de artículos */
+    display: grid; /* Activa CSS Grid */
+    grid-template-columns: repeat(3, 1fr); /* Crea tres columnas */
+    gap: 28px; /* Separa las tarjetas */
+}
+
+/* TARJETA */
+.articulo { /* Tarjeta de artículo */
+    overflow: hidden; /* Oculta el contenido sobrante */
+    background: #ffffff; /* Define el fondo */
+    border: 1px solid #e6edf5; /* Define el borde */
+    border-radius: 16px; /* Redondea las esquinas */
+    box-shadow: 0 5px 20px rgba(23, 65, 112, 0.06); /* Agrega sombra */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Ordena verticalmente */
+    height: 100%; /* Ocupa toda la altura */
+    transition: transform 0.25s ease, box-shadow 0.25s ease; /* Suaviza cambios */
+}
+
+.articulo:hover { /* Hover de tarjeta */
+    transform: translateY(-5px); /* Eleva la tarjeta */
+    box-shadow: 0 14px 32px rgba(23, 65, 112, 0.12); /* Aumenta la sombra */
+}
+
+/* IMAGEN DE TARJETA */
+.imagen_art1 { /* Contenedor de imagen */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 220px; /* Define la altura */
+    overflow: hidden; /* Oculta el exceso */
+    flex-shrink: 0; /* Evita que se reduzca */
+}
+
+.imagen_art1 img { /* Imagen del artículo */
+    display: block; /* Elimina espacios */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    object-fit: cover; /* Ajusta la imagen */
+    transition: transform 0.4s ease; /* Suaviza la transformación */
+}
+
+.articulo:hover .imagen_art1 img { /* Hover de imagen */
+    transform: scale(1.05); /* Amplía la imagen */
+}
+
+/* CONTENIDO */
+.contenido_art { /* Contenido de tarjeta */
+    padding: 24px; /* Define el espacio interno */
+    flex: 1; /* Ocupa el espacio disponible */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Ordena verticalmente */
+}
+
+.categoria_articulo { /* Categoría del artículo */
+    display: inline-block; /* Permite controlar el elemento */
+    margin-bottom: 10px; /* Separa del título */
+    color: #4ba3e3; /* Define el color */
+    font-size: 0.75rem; /* Define el tamaño */
+    font-weight: 800; /* Define el grosor */
+    text-transform: uppercase; /* Convierte en mayúsculas */
+    letter-spacing: 0.8px; /* Separa las letras */
+}
+
+.contenido_art h3 { /* Título de tarjeta */
+    position: relative; /* Permite posicionamiento */
+    color: #1b4e9b; /* Define el color */
+    font-size: 1.12rem; /* Define el tamaño */
+    line-height: 1.4; /* Define la altura */
+    margin-bottom: 14px; /* Separa el título */
+    font-weight: 800; /* Define el grosor */
+}
+
+/* DETALLE AZUL */
+.contenido_art h3::after { /* Crea la línea decorativa */
+    content: ""; /* Genera el elemento */
+    display: block; /* Lo convierte en bloque */
+    width: 38px; /* Define el ancho */
+    height: 3px; /* Define el alto */
+    margin-top: 10px; /* Separa la línea */
+    border-radius: 10px; /* Redondea la línea */
+    background: #4ba3e3; /* Define el color */
+    transition: width 0.3s ease; /* Suaviza el cambio */
+}
+
+.articulo:hover .contenido_art h3::after { /* Hover de la línea */
+    width: 65px; /* Aumenta el ancho */
+}
+
+.contenido_art p { /* Descripción del artículo */
+    color: #6d7d91; /* Define el color */
+    font-size: 0.86rem; /* Define el tamaño */
+    line-height: 1.7; /* Define la altura */
+    margin-bottom: 20px; /* Separa el contenido */
+}
+
+/* LEER MÁS */
+.leer-mas { /* Botón leer más */
+    display: inline-flex; /* Activa flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 7px; /* Separa los elementos */
+    width: fit-content; /* Ajusta el ancho al contenido */
+    margin-top: auto; /* Empuja el botón hacia abajo */
+    border: 0; /* Elimina el borde */
+    background: transparent; /* Hace transparente el fondo */
+    color: #1b4e9b; /* Define el color */
+    padding: 0; /* Elimina el relleno */
+    font-family: inherit; /* Hereda la fuente */
+    font-size: 0.82rem; /* Define el tamaño */
+    font-weight: 800; /* Define el grosor */
+    cursor: pointer; /* Cambia el cursor */
+    transition: color 0.2s ease; /* Suaviza el cambio */
+}
+
+.leer-mas:hover { /* Hover de leer más */
+    color: #4ba3e3; /* Cambia el color */
+}
+
+.leer-mas i { /* Icono de leer más */
+    font-size: 14px; /* Define el tamaño */
+    transition: transform 0.2s ease; /* Suaviza el movimiento */
+}
+
+.leer-mas:hover i { /* Hover del icono */
+    transform: translateX(4px); /* Desplaza el icono */
+}
+
+/* ARTÍCULOS OCULTOS */
+.articulo.oculto { /* Artículos ocultos */
+    display: none !important; /* Oculta el artículo */
+}
+
+/* ANIMACIÓN */
+.articulo:not(.oculto) { /* Artículos visibles */
+    animation: aparecerArticulo 0.35s ease both; /* Aplica animación */
+}
+
+@keyframes aparecerArticulo { /* Define la animación */
+    from { /* Estado inicial */
+        opacity: 0; /* Hace invisible */
+        transform: translateY(15px); /* Desplaza hacia abajo */
+    }
+
+    to { /* Estado final */
+        opacity: 1; /* Hace visible */
+        transform: translateY(0); /* Regresa a su posición */
+    }
+}
+
+/* MODAL DE ARTÍCULO */
+.blog-modal { /* Contenedor del modal */
+    position: fixed; /* Fija el modal en pantalla */
+    inset: 0; /* Ocupa toda la pantalla */
+    z-index: 9999; /* Lo coloca por encima */
+    display: flex; /* Activa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    padding: 20px; /* Define el espacio */
+    opacity: 0; /* Oculta visualmente */
+    visibility: hidden; /* Oculta el elemento */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Suaviza la aparición */
+}
+
+.blog-modal.activo { /* Modal activo */
+    opacity: 1; /* Hace visible el modal */
+    visibility: visible; /* Permite verlo */
+}
+
+/* FONDO OSCURO */
+.blog-modal__overlay { /* Fondo del modal */
+    position: absolute; /* Posiciona el fondo */
+    inset: 0; /* Ocupa toda la pantalla */
+    background: rgba(0, 0, 0, 0.78); /* Oscurece el fondo */
+    backdrop-filter: blur(5px); /* Aplica desenfoque */
+}
+
+/* CONTENEDOR PRINCIPAL DEL MODAL */
+.blog-modal__contenido { /* Contenido principal */
+    position: relative; /* Permite posicionamiento interno */
+    z-index: 2; /* Lo coloca sobre el fondo */
+    width: min(1200px, 96vw); /* Define el ancho máximo */
+    max-height: 94vh; /* Limita la altura */
+    background: #ffffff; /* Define el fondo */
+    border-radius: 24px; /* Redondea las esquinas */
+    overflow: hidden; /* Oculta el exceso */
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.38); /* Agrega sombra */
+    transform: translateY(25px) scale(0.96); /* Define posición inicial */
+    transition: transform 0.35s ease, opacity 0.35s ease; /* Suaviza cambios */
+    opacity: 0; /* Oculta el contenido */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Ordena verticalmente */
+}
+
+.blog-modal.activo .blog-modal__contenido { /* Contenido del modal activo */
+    transform: translateY(0) scale(1); /* Regresa a tamaño normal */
+    opacity: 1; /* Hace visible el contenido */
+}
+
+/* BOTÓN CERRAR */
+.blog-modal__cerrar { /* Botón cerrar */
+    position: absolute; /* Posiciona sobre el modal */
+    top: 18px; /* Separa desde arriba */
+    right: 18px; /* Separa desde la derecha */
+    z-index: 10; /* Lo coloca encima */
+    width: 48px; /* Define el ancho */
+    height: 48px; /* Define el alto */
+    border: none; /* Elimina el borde */
+    border-radius: 50%; /* Lo hace circular */
+    background: rgba(0, 0, 0, 0.65); /* Define el fondo */
+    color: #ffffff; /* Define el color */
+    font-size: 30px; /* Define el tamaño */
+    line-height: 1; /* Define la altura */
+    cursor: pointer; /* Cambia el cursor */
+    display: flex; /* Activa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    transition: background 0.25s ease, transform 0.25s ease; /* Suaviza cambios */
+}
+
+.blog-modal__cerrar:hover { /* Hover del botón cerrar */
+    background: #000000; /* Oscurece el fondo */
+    transform: rotate(90deg); /* Gira el botón */
+}
+
+/* IMAGEN DEL MODAL */
+.blog-modal__imagen { /* Contenedor de imagen */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 700px; /* Define la altura */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el relleno */
+    overflow: hidden; /* Oculta el exceso */
+    background: #ffffff; /* Define el fondo */
+    display: block; /* Define el tipo de visualización */
+}
+
+.blog-modal__imagen img { /* Imagen del modal */
+    display: block; /* Elimina espacios */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el relleno */
+    border: none; /* Elimina el borde */
+    outline: none; /* Elimina el contorno */
+    object-fit: cover; /* Ajusta la imagen */
+    object-position: center; /* Centra la imagen */
+}
+
+/* CONFIGURACIÓN DUPLICADA DEL MODAL */
+.blog-modal__contenido { /* Configuración adicional */
+    width: min(1300px, 97vw); /* Define el ancho */
+    max-height: 98vh; /* Define la altura máxima */
+    background: #ffffff; /* Define el fondo */
+    border-radius: 24px; /* Redondea las esquinas */
+    overflow: hidden; /* Oculta el exceso */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Ordena verticalmente */
+}
+
+.blog-modal__contenido { /* Configuración adicional */
+    position: relative; /* Permite posicionamiento */
+    z-index: 2; /* Define la prioridad */
+    width: min(1200px, 96vw); /* Define el ancho */
+    max-height: 96vh; /* Limita la altura */
+    background: #ffffff; /* Define el fondo */
+    border-radius: 24px; /* Redondea las esquinas */
+    overflow: hidden; /* Oculta el exceso */
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.38); /* Agrega sombra */
+    transform: translateY(25px) scale(0.96); /* Define posición inicial */
+    transition: transform 0.35s ease, opacity 0.35s ease; /* Suaviza cambios */
+    opacity: 0; /* Oculta el contenido */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Ordena verticalmente */
+}
+
+.blog-modal__contenido { /* Configuración final */
+    position: relative; /* Permite posicionamiento */
+    z-index: 2; /* Define la prioridad */
+    width: min(1200px, 96vw); /* Define el ancho */
+    max-height: 94vh; /* Limita la altura */
+    background: #ffffff; /* Define el fondo */
+    border-radius: 24px; /* Redondea las esquinas */
+    overflow: hidden; /* Oculta el exceso */
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.38); /* Agrega sombra */
+    transform: translateY(25px) scale(0.96); /* Define posición inicial */
+    transition: transform 0.35s ease, opacity 0.35s ease; /* Suaviza cambios */
+    opacity: 0; /* Oculta el contenido */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Ordena verticalmente */
+}
+
+/* CUERPO DEL ARTÍCULO */
+.blog-modal__body { /* Cuerpo del modal */
+    padding: 38px 48px 45px; /* Define el espacio interno */
+    overflow-y: auto; /* Permite desplazamiento vertical */
+    flex: 1; /* Ocupa el espacio disponible */
+}
+
+/* CATEGORÍA */
+.blog-modal__categoria { /* Categoría del modal */
+    display: inline-flex; /* Activa flexbox */
+    align-items: center; /* Centra verticalmente */
+    padding: 8px 16px; /* Define el espacio */
+    margin-bottom: 16px; /* Separa del título */
+    border-radius: 30px; /* Redondea el elemento */
+    background: #eef4ff; /* Define el fondo */
+    color: #4ba3e3; /* Define el color */
+    font-size: 13px; /* Define el tamaño */
+    font-weight: 800; /* Define el grosor */
+    letter-spacing: 0.8px; /* Separa las letras */
+    text-transform: uppercase; /* Convierte en mayúsculas */
+}
+
+/* TÍTULO PRINCIPAL DEL MODAL */
+.blog-modal__body h2 { /* Título del modal */
+    margin: 0 0 24px; /* Define los márgenes */
+    color: #1b4e9b; /* Define el color */
+    font-size: clamp(28px, 3.2vw, 42px); /* Define tamaño adaptable */
+    line-height: 1.15; /* Define la altura */
+    font-weight: 800; /* Define el grosor */
+}
+
+/* TEXTO DEL ARTÍCULO */
+.blog-modal__texto { /* Contenedor del texto */
+    color: #555555; /* Define el color */
+    font-size: 17px; /* Define el tamaño */
+    line-height: 1.85; /* Define la altura */
+}
+
+.blog-modal__texto p { /* Párrafos del artículo */
+    margin: 0 0 20px; /* Define los márgenes */
+}
+
+.blog-modal__texto p:last-child { /* Último párrafo */
+    margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+/* TEXTO EN NEGRITA */
+.blog-modal__texto strong { /* Texto destacado */
+    color: #1b4e9b; /* Define el color */
+    font-weight: 700; /* Define el grosor */
+}
+
+/* SUBTÍTULOS DEL ARTÍCULO */
+.blog-modal__texto h3 { /* Subtítulos */
+    margin: 32px 0 13px; /* Define los márgenes */
+    color: #1b4e9b; /* Define el color */
+    font-size: 23px; /* Define el tamaño */
+    line-height: 1.3; /* Define la altura */
+    font-weight: 800; /* Define el grosor */
+}
+
+/* LISTAS */
+.blog-modal__texto ul { /* Lista del artículo */
+    margin: 12px 0 22px; /* Define los márgenes */
+    padding-left: 25px; /* Indenta la lista */
+}
+
+.blog-modal__texto li { /* Elementos de lista */
+    margin-bottom: 10px; /* Separa los elementos */
+    line-height: 1.75; /* Define la altura */
+    color: #555555; /* Define el color */
+}
+
+/* VIÑETAS EN AZUL */
+.blog-modal__texto li::marker { /* Viñetas de lista */
+    color: #4ba3e3; /* Define el color */
+}
+
+/* BARRA DE SCROLL */
+.blog-modal__body::-webkit-scrollbar { /* Barra de desplazamiento */
+    width: 8px; /* Define el ancho */
+}
+
+.blog-modal__body::-webkit-scrollbar-track { /* Fondo del scroll */
+    background: transparent; /* Hace transparente el fondo */
+}
+
+.blog-modal__body::-webkit-scrollbar-thumb { /* Control del scroll */
+    background: #c7d2df; /* Define el color */
+    border-radius: 20px; /* Redondea el control */
+}
+
+.blog-modal__body::-webkit-scrollbar-thumb:hover { /* Hover del scroll */
+    background: #9eacbb; /* Cambia el color */
+}
+
+/* BLOQUE DE INFORMACIÓN */
+.blog-modal__texto .info-articulo { /* Contenedor informativo */
+    display: grid; /* Activa CSS Grid */
+    grid-template-columns: repeat(2, 1fr); /* Crea dos columnas */
+    gap: 14px; /* Separa los bloques */
+    margin-top: 28px; /* Separa desde arriba */
+}
+
+.blog-modal__texto .info-articulo div { /* Bloques informativos */
+    padding: 16px 18px; /* Define el espacio */
+    background: #f7f9fc; /* Define el fondo */
+    border-radius: 12px; /* Redondea las esquinas */
+    border-left: 4px solid #1b4e9b; /* Agrega borde lateral */
+}
+
+/* ANIMACIÓN DEL CUERPO */
+.blog-modal.activo .blog-modal__body { /* Cuerpo activo */
+    animation: aparecerTexto 0.5s ease 0.15s both; /* Aplica animación */
+}
+
+/* MODO OSCURO */
+html.dark-mode body { /* Fondo general oscuro */
+    background: #101820; /* Define el fondo */
+    color: #d2dbe5; /* Define el color */
+}
+
+html.dark-mode .inicio { /* Hero oscuro */
+    background: #101820; /* Define el fondo */
+}
+
+html.dark-mode .inicio_contenido h1 { /* Título oscuro */
+    color: #f1f5f9; /* Define el color */
+}
+
+html.dark-mode .inicio_contenido p { /* Texto oscuro */
+    color: #b8c5d3; /* Define el color */
+}
+
+html.dark-mode .etiqueta { /* Etiqueta oscura */
+    color: #4ba3e3; /* Define el color */
+}
+
+html.dark-mode .btn_principal { /* Botón oscuro */
+    background: #00377a; /* Define el fondo */
+    color: #ffffff; /* Define el texto */
+}
+
+html.dark-mode .btn_principal:hover { /* Hover del botón oscuro */
+    background: #002554; /* Cambia el fondo */
+}
+
+html.dark-mode .inicio_imagen { /* Imagen hero oscura */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35); /* Agrega sombra */
+}
+
+html.dark-mode .blog { /* Blog oscuro */
+    background: transparent; /* Mantiene fondo transparente */
+}
+
+html.dark-mode .seccion_tit > div:first-child span { /* Etiqueta de sección */
+    color: #4ba3e3; /* Define el color */
+}
+
+html.dark-mode .seccion_tit h2 { /* Título de sección */
+    color: #f1f5f9; /* Define el color */
+}
+
+html.dark-mode .categorias button { /* Categorías oscuras */
+    background: #182431; /* Define el fondo */
+    color: #b8c5d3; /* Define el texto */
+    border-color: #33485b; /* Define el borde */
+}
+
+html.dark-mode .categorias button:hover { /* Hover de categorías */
+    background: #20364d; /* Cambia el fondo */
+    color: #ffffff; /* Cambia el texto */
+    border-color: #4ba3e3; /* Cambia el borde */
+}
+
+html.dark-mode .categorias button.activo,
+html.dark-mode .categorias button.categoria_seleccionada { /* Categoría seleccionada */
+    background: #00377a; /* Define el fondo */
+    color: #ffffff; /* Define el texto */
+    border-color: #00377a; /* Define el borde */
+}
+
+html.dark-mode .articulo { /* Tarjetas oscuras */
+    background: #182431; /* Define el fondo */
+    border-color: #33485b; /* Define el borde */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); /* Agrega sombra */
+}
+
+html.dark-mode .articulo:hover { /* Hover de tarjeta */
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.40); /* Aumenta la sombra */
+}
+
+html.dark-mode .categoria_articulo { /* Categoría de tarjeta */
+    color: #4ba3e3; /* Define el color */
+}
+
+html.dark-mode .contenido_art h3 { /* Título de tarjeta */
+    color: #f1f5f9; /* Define el color */
+}
+
+html.dark-mode .contenido_art p { /* Texto de tarjeta */
+    color: #b8c5d3; /* Define el color */
+}
+
+html.dark-mode .leer-mas { /* Leer más oscuro */
+    color: #4ba3e3; /* Define el color */
+}
+
+html.dark-mode .leer-mas:hover { /* Hover de leer más */
+    color: #7bc2f2; /* Cambia el color */
+}
+
+html.dark-mode .blog-modal { /* Modal oscuro */
+    background: transparent; /* Mantiene el fondo */
+}
+
+html.dark-mode .blog-modal__overlay { /* Fondo del modal */
+    background: rgba(0, 0, 0, 0.82); /* Oscurece el fondo */
+}
+
+html.dark-mode .blog-modal__contenido { /* Contenedor del modal */
+    background: #111c27; /* Define el fondo */
+    color: #d2dbe5; /* Define el texto */
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55); /* Agrega sombra */
+}
+
+html.dark-mode .blog-modal__imagen { /* Imagen del modal */
+    background: #111c27; /* Define el fondo */
+}
+
+html.dark-mode .blog-modal__cerrar { /* Botón cerrar oscuro */
+    background: rgba(0, 0, 0, 0.70); /* Define el fondo */
+    color: #ffffff; /* Define el texto */
+}
+
+html.dark-mode .blog-modal__cerrar:hover { /* Hover del cierre */
+    background: #000000; /* Oscurece el botón */
+}
+
+html.dark-mode .blog-modal__body { /* Cuerpo del modal */
+    background: #111c27; /* Define el fondo */
+}
+
+html.dark-mode .blog-modal__categoria { /* Categoría del modal */
+    background: #20364d; /* Define el fondo */
+    color: #4ba3e3; /* Define el texto */
+}
+
+html.dark-mode .blog-modal__body h2 { /* Título del modal */
+    color: #f1f5f9; /* Define el color */
+}
+
+html.dark-mode .blog-modal__texto { /* Texto del modal */
+    color: #cbd5df; /* Define el color */
+}
+
+html.dark-mode .blog-modal__texto p { /* Párrafos del modal */
+    color: #cbd5df; /* Define el color */
+}
+
+html.dark-mode .blog-modal__texto strong { /* Texto destacado */
+    color: #ffffff; /* Define el color */
+}
+
+html.dark-mode .blog-modal__texto h3 { /* Subtítulos del modal */
+    color: #f1f5f9; /* Define el color */
+}
+
+html.dark-mode .blog-modal__texto li { /* Elementos de lista */
+    color: #cbd5df; /* Define el color */
+}
+
+html.dark-mode .blog-modal__texto li::marker { /* Viñetas */
+    color: #4ba3e3; /* Define el color */
+}
+
+html.dark-mode .blog-modal__texto .info-articulo div { /* Bloques informativos */
+    background: #182431; /* Define el fondo */
+    color: #cbd5df; /* Define el texto */
+    border-left-color: #4ba3e3; /* Define el borde */
+}
+
+html.dark-mode .blog-modal__body::-webkit-scrollbar-track { /* Fondo del scroll */
+    background: #111c27; /* Define el fondo */
+}
+
+html.dark-mode .blog-modal__body::-webkit-scrollbar-thumb { /* Control del scroll */
+    background: #40566a; /* Define el color */
+}
+
+html.dark-mode .blog-modal__body::-webkit-scrollbar-thumb:hover { /* Hover del scroll */
+    background: #4ba3e3; /* Cambia el color */
+}
+
+html.dark-mode .blog-modal__texto,
+html.dark-mode .blog-modal__texto p,
+html.dark-mode .blog-modal__texto li { /* Protección del texto */
+    color: #cbd5df; /* Mantiene el color */
+}
+
+html.dark-mode .blog-modal__texto h2,
+html.dark-mode .blog-modal__texto h3,
+html.dark-mode .blog-modal__body h2 { /* Protección de títulos */
+    color: #f1f5f9; /* Mantiene el color */
+}
+
+/* REDUCIR ANIMACIONES */
+html.reduce-motion .inicio_imagen img,
+html.reduce-motion .articulo,
+html.reduce-motion .articulo img,
+html.reduce-motion .btn_principal,
+html.reduce-motion .categorias button,
+html.reduce-motion .leer-mas,
+html.reduce-motion .blog-modal,
+html.reduce-motion .blog-modal__contenido { /* Elementos sin animación */
+    animation: none !important; /* Desactiva animaciones */
+    transition: none !important; /* Desactiva transiciones */
+}
+
+/* RESPONSIVE MODO OSCURO */
+@media (max-width: 900px) { /* Adaptación para pantallas medianas */
+    html.dark-mode .inicio { /* Hero en pantallas medianas */
+        background: #101820; /* Mantiene el fondo */
+    }
+}
+
+@media (max-width: 768px) { /* Adaptación para tablets */
+    html.dark-mode .blog { /* Blog en tablet */
+        background: transparent; /* Mantiene el fondo */
+    }
+}
+
+@keyframes aparecerTexto { /* Define animación del texto */
+    from { /* Estado inicial */
+        opacity: 0; /* Oculta el contenido */
+        transform: translateY(10px); /* Desplaza hacia abajo */
+    }
+
+    to { /* Estado final */
+        opacity: 1; /* Muestra el contenido */
+        transform: translateY(0); /* Regresa a su posición */
+    }
+}
+
+/* BLOQUEAR SCROLL DE LA PÁGINA */
+body.modal-blog-abierto { /* Página con modal abierto */
+    overflow: hidden; /* Bloquea el desplazamiento */
+}
+
+/* TABLET */
+@media (max-width: 900px) { /* Estilos para tablet */
+    .inicio { /* Hero en tablet */
+        grid-template-columns: 1fr; /* Usa una sola columna */
+        gap: 40px; /* Reduce la separación */
+        padding: 60px 30px; /* Ajusta el espacio */
+    }
+
+    .inicio_contenido { /* Contenido en tablet */
+        max-width: 100%; /* Ocupa todo el ancho */
+    }
+
+    .inicio_imagen { /* Imagen en tablet */
+        height: 380px; /* Reduce la altura */
+    }
+
+    .articulos_grid { /* Grid de artículos */
+        grid-template-columns: repeat(2, 1fr); /* Usa dos columnas */
+    }
+
+    .seccion_tit { /* Encabezado en tablet */
+        align-items: flex-start; /* Alinea al inicio */
+        flex-direction: column; /* Ordena verticalmente */
+    }
+
+    .categorias { /* Categorías en tablet */
+        justify-content: flex-start; /* Alinea al inicio */
+    }
+
+    .blog-modal__contenido { /* Modal en tablet */
+        width: 94vw; /* Ajusta el ancho */
+        max-height: 93vh; /* Ajusta la altura */
+    }
+
+    .blog-modal__imagen { /* Imagen del modal */
+        height: 360px; /* Reduce la altura */
+    }
+
+    .blog-modal__body { /* Cuerpo del modal */
+        padding: 32px 36px 40px; /* Ajusta el espacio */
+    }
+}
+
+/* TABLET PEQUEÑA */
+@media (max-width: 768px) { /* Estilos para tablet pequeña */
+    .blog { /* Blog en tablet pequeña */
+        width: min(100% - 30px, 700px); /* Ajusta el ancho */
+        padding: 65px 0; /* Ajusta el espacio */
+    }
+
+    .articulos_grid { /* Grid de artículos */
+        grid-template-columns: 1fr; /* Usa una columna */
+    }
+
+    .blog-modal { /* Modal pequeño */
+        padding: 12px; /* Reduce el espacio */
+    }
+
+    .blog-modal__contenido { /* Contenido del modal */
+        width: 96vw; /* Ajusta el ancho */
+        max-height: 92vh; /* Ajusta la altura */
+        border-radius: 20px; /* Reduce el redondeo */
+    }
+
+    .blog-modal__imagen { /* Imagen del modal */
+        height: 320px; /* Reduce la altura */
+    }
+
+    .blog-modal__body { /* Cuerpo del modal */
+        padding: 28px 28px 34px; /* Ajusta el espacio */
+    }
+
+    .blog-modal__body h2 { /* Título del modal */
+        font-size: 30px; /* Reduce el tamaño */
+    }
+
+    .blog-modal__texto { /* Texto del modal */
+        font-size: 16px; /* Reduce el tamaño */
+        line-height: 1.75; /* Ajusta la altura */
+    }
+
+    .blog-modal__texto h3 { /* Subtítulos */
+        font-size: 21px; /* Reduce el tamaño */
+    }
+}
+
+/* CELULAR */
+@media (max-width: 480px) { /* Estilos para celular */
+    .inicio { /* Hero móvil */
+        padding: 50px 20px; /* Reduce el espacio */
+    }
+
+    .inicio_contenido h1 { /* Título móvil */
+        font-size: 2.2rem; /* Define el tamaño */
+    }
+
+    .inicio_imagen { /* Imagen móvil */
+        height: 280px; /* Reduce la altura */
+        border-radius: 18px; /* Reduce el redondeo */
+    }
+
+    .blog { /* Blog móvil */
+        width: calc(100% - 24px); /* Ajusta el ancho */
+        padding: 50px 0; /* Reduce el espacio */
+    }
+
+    .seccion_tit h2 { /* Título móvil */
+        font-size: 1.7rem; /* Reduce el tamaño */
+    }
+
+    .categorias { /* Categorías móvil */
+        gap: 6px; /* Reduce la separación */
+    }
+
+    .categorias button { /* Botones móvil */
+        padding: 8px 11px; /* Reduce el espacio */
+        font-size: 0.72rem; /* Reduce el tamaño */
+    }
+
+    .contenido_art { /* Contenido móvil */
+        padding: 20px; /* Reduce el espacio */
+    }
+
+    /* MODAL */
+    .blog-modal { /* Modal móvil */
+        padding: 8px; /* Reduce el espacio */
+    }
+
+    .blog-modal__contenido { /* Contenido móvil */
+        width: 97vw; /* Ajusta el ancho */
+        max-height: 94vh; /* Ajusta la altura */
+        border-radius: 17px; /* Reduce el redondeo */
+    }
+
+    .blog-modal__imagen { /* Imagen móvil */
+        height: 250px; /* Reduce la altura */
+    }
+
+    .blog-modal__cerrar { /* Botón cerrar móvil */
+        top: 10px; /* Ajusta la posición superior */
+        right: 10px; /* Ajusta la posición derecha */
+        width: 40px; /* Reduce el ancho */
+        height: 40px; /* Reduce el alto */
+        font-size: 25px; /* Reduce el tamaño */
+    }
+
+    .blog-modal__body { /* Cuerpo móvil */
+        padding: 24px 20px 30px; /* Ajusta el espacio */
+    }
+
+    .blog-modal__categoria { /* Categoría móvil */
+        padding: 7px 13px; /* Reduce el espacio */
+        font-size: 11px; /* Reduce el tamaño */
+    }
+
+    .blog-modal__body h2 { /* Título móvil */
+        font-size: 25px; /* Reduce el tamaño */
+        margin-bottom: 18px; /* Reduce el margen */
+    }
+
+    .blog-modal__texto { /* Texto móvil */
+        font-size: 15px; /* Reduce el tamaño */
+        line-height: 1.7; /* Ajusta la altura */
+    }
+
+    .blog-modal__texto h3 { /* Subtítulos móvil */
+        margin-top: 25px; /* Reduce el margen superior */
+        font-size: 19px; /* Reduce el tamaño */
+    }
+
+    .blog-modal__texto .info-articulo { /* Información móvil */
+        grid-template-columns: 1fr; /* Usa una columna */
+    }
+}

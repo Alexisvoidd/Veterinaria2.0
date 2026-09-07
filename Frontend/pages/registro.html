@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrarse - VetSalud</title>
+
+    <!-- Fuentes oficiales de Google: Montserrat, Open Sans, Jost y Raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700;800&family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos de Material Symbols Outlined y Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Hojas de estilos -->
+    <link rel="stylesheet" href="../css/registro.css" />
+  </head>
+  <body data-page="registro">
+    <div class="registro-pagina">
+      <!-- Navegación modular -->
+      <div id="nav-container"></div>
+
+      <div class="registro-contenedor">
+        <!-- Esferas decorativas de fondo -->
+        <div class="registro-esfera-decorativa-1"></div>
+        <div class="registro-esfera-decorativa-2"></div>
+
+        <!-- Tarjeta principal -->
+        <div class="registro-tarjeta-principal">
+          <!-- Encabezado superior con logo y títulos -->
+          <header class="registro-encabezado">
+            <div class="registro-logo-contenedor">
+              <a href="index.html">
+                <img
+                  src="../assets/logo.png"
+                  alt="Logotipo VetSalud Veterinaria"
+                  class="registro-logo-imagen"
+                />
+              </a>
+            </div>
+            <h1 class="registro-titulo">Únete a nuestra comunidad</h1>
+            <p class="registro-subtitulo">
+              Crea una cuenta para gestionar el historial médico y citas de tu
+              mascota.
+            </p>
+          </header>
+
+          <!-- Formulario principal con validaciones personalizadas -->
+          <form class="formulario-registro" id="form-registro" novalidate>
+            <div class="registro-cuadricula-columnas">
+              <!-- COLUMNA 1: DATOS DEL PROPIETARIO -->
+              <div class="registro-columna">
+                <div class="registro-seccion-encabezado">
+                  <span class="material-symbols-outlined registro-seccion-icono"
+                    >person</span
+                  >
+                  <h2 class="registro-seccion-titulo">Datos del Propietario</h2>
+                </div>
+
+                <!-- Tipo y Número de Documento -->
+                <div class="registro-fila-doble">
+                  <div class="campo-grupo" id="grupo-tipoDocumento">
+                    <label for="tipoDocumento" class="campo-etiqueta">
+                      Tipo de documento *
+                    </label>
+                    <select
+                      id="tipoDocumento"
+                      name="tipoDocumento"
+                      required
+                      class="campo-selector"
+                    >
+                      <option value="" disabled selected>
+                        Seleccionar tipo
+                      </option>
+                      <option value="CC">Cédula de Ciudadanía (C.C)</option>
+                      <option value="TI">Tarjeta de Identidad (T.I)</option>
+                      <option value="PAS">Pasaporte</option>
+                    </select>
+                    <small
+                      class="campo-mensaje-error"
+                      id="error-tipoDocumento"
+                    ></small>
+                  </div>
+                  <div class="campo-grupo" id="grupo-numeroDocumento">
+                    <label for="numeroDocumento" class="campo-etiqueta">
+                      Número de documento *
+                    </label>
+                    <input
+                      type="text"
+                      id="numeroDocumento"
+                      name="numeroDocumento"
+                      placeholder="123456789"
+                      required
+                      inputmode="numeric"
+                      pattern="[0-9]{6,12}"
+                      maxlength="12"
+                      class="campo-entrada"
+                    />
+                    <small
+                      class="campo-mensaje-error"
+                      id="error-numeroDocumento"
+                    ></small>
+                  </div>
+                </div>
+
+                <!-- Nombres y Apellidos -->
+                <div class="registro-fila-doble">
+                  <div class="campo-grupo" id="grupo-nombres">
+                    <label for="nombres" class="campo-etiqueta">
+                      Nombres *
+                    </label>
+                    <input
+                      type="text"
+                      id="nombres"
+                      name="nombres"
+                      placeholder="Samuel"
+                      required
+                      class="campo-entrada"
+                    />
+                    <small
+                      class="campo-mensaje-error"
+                      id="error-nombres"
+                    ></small>
+                  </div>
+                  <div class="campo-grupo" id="grupo-apellidos">
+                    <label for="apellidos" class="campo-etiqueta">
+                      Apellidos *
+                    </label>
+                    <input
+                      type="text"
+                      id="apellidos"
+                      name="apellidos"
+                      placeholder="López"
+                      required
+                      class="campo-entrada"
+                    />
+                    <small
+                      class="campo-mensaje-error"
+                      id="error-apellidos"
+                    ></small>
+                  </div>
+                </div>
+
+                <!-- Fecha de Nacimiento del Propietario -->
+                <div class="campo-grupo" id="grupo-fechaNacimiento">
+                  <label for="fechaNacimiento" class="campo-etiqueta">
+                    Fecha de nacimiento *
+                  </label>
+                  <input
+                    type="date"
+                    id="fechaNacimiento"
+                    name="fechaNacimiento"
+                    required
+                    class="campo-entrada"
+                  />
+                  <small
+                    class="campo-mensaje-error"
+                    id="error-fechaNacimiento"
+                  ></small>
+                </div>
+
+                <!-- Teléfonos de Contacto -->
+                <div class="registro-fila-doble">
+                  <div class="campo-grupo" id="grupo-telefono1">
+                    <label for="telefono1" class="campo-etiqueta">
+                      Teléfono principal *
+                    </label>
+                    <input
+                      type="tel"
+                      id="telefono1"
+                      name="telefono1"
+                      placeholder="3001234567"
+                      required
+                      inputmode="numeric"
+                      pattern="[0-9]{7,15}"
+                      maxlength="15"
+                      class="campo-entrada"
+                    />
+                    <small
+                      class="campo-mensaje-error"
+                      id="error-telefono1"
+                    ></small>
+                  </div>
+                  <div class="campo-grupo" id="grupo-telefono2">
+                    <label for="telefono2" class="campo-etiqueta">
+                      Teléfono secundario
+                    </label>
+                    <input
+                      type="tel"
+                      id="telefono2"
+                      name="telefono2"
+                      placeholder="3109876543"
+                      inputmode="numeric"
+                      pattern="[0-9]{7,15}"
+                      maxlength="15"
+                      class="campo-entrada"
+                    />
+                    <small
+                      class="campo-mensaje-error"
+                      id="error-telefono2"
+                    ></small>
+                  </div>
+                </div>
+
+                <!-- Correo Electrónico -->
+                <div class="campo-grupo" id="grupo-correo">
+                  <label for="correo" class="campo-etiqueta">
+                    Correo electrónico *
+                  </label>
+                  <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="samuel@ejemplo.com"
+                    required
+                    class="campo-entrada"
+                    autocomplete="email"
+                  />
+                  <small class="campo-mensaje-error" id="error-correo"></small>
+                </div>
+
+                <!-- Dirección -->
+                <div class="campo-grupo" id="grupo-direccion">
+                  <label for="direccion" class="campo-etiqueta">
+                    Dirección de residencia
+                  </label>
+                  <input
+                    type="text"
+                    id="direccion"
+                    name="direccion"
+                    placeholder="Calle 123 #45-67"
+                    class="campo-entrada"
+                  />
+                  <small
+                    class="campo-mensaje-error"
+                    id="error-direccion"
+                  ></small>
+                </div>
+              </div>
+
+              <!-- COLUMNA 2: DATOS DE LA MASCOTA -->
+              <div class="registro-columna">
+                <div class="registro-seccion-encabezado">
+                  <span class="material-symbols-outlined registro-seccion-icono"
+                    >pets</span
+                  >
+                  <h2 class="registro-seccion-titulo">Datos de la Mascota</h2>
+                </div>
+
+                <!-- Nombre de la Mascota -->
+                <div class="campo-grupo" id="grupo-nombreMascota">
+                  <label for="nombreMascota" class="campo-etiqueta">
+                    Nombre de la mascota *
+                  </label>
+                  <input
+                    type="text"
+                    id="nombreMascota"
+                    name="nombreMascota"
+                    placeholder="Bella"
+                    required
+                    class="campo-entrada"
+                  />
+                  <small
+                    class="campo-mensaje-error"
+                    id="error-nombreMascota"
+                  ></small>
+                </div>
+
+                <!-- Especie y Raza -->
+                <div class="registro-fila-doble">
+                  <div class="campo-grupo" id="grupo-especie">
+                    <label for="especie" class="campo-etiqueta">
+                      Especie *
+                    </label>
+                    <select
+                      id="especie"
+                      name="especie"
+                      required
+                      class="campo-selector"
+                    >
+                      <option value="" disabled selected>
+                        Seleccionar especie
+                      </option>
+                      <option value="perro">Perro (Canino)</option>
+                      <option value="gato">Gato (Felino)</option>
+                      <option value="ave">Ave</option>
+                      <option value="conejo">Conejo</option>
+                      <option value="exotico">Exótico / Otro</option>
+                    </select>
+                    <small
+                      class="campo-mensaje-error"
+                      id="error-especie"
+                    ></small>
+                  </div>
+                  <div class="campo-grupo" id="grupo-raza">
+                    <label for="raza" class="campo-etiqueta"> Raza </label>
+                    <input
+                      type="text"
+                      id="raza"
+                      name="raza"
+                      placeholder="Golden Retriever"
+                      class="campo-entrada"
+                    />
+                    <small class="campo-mensaje-error" id="error-raza"></small>
+                  </div>
+                </div>
+
+                <!-- Sexo y Fecha de Nacimiento de la Mascota -->
+                <div class="registro-fila-doble">
+                  <div class="campo-grupo" id="grupo-sexo">
+                    <label for="sexo" class="campo-etiqueta"> Sexo * </label>
+                    <select
+                      id="sexo"
+                      name="sexo"
+                      required
+                      class="campo-selector"
+                    >
+                      <option value="" disabled selected>
+                        Seleccionar sexo
+                      </option>
+                      <option value="macho">Macho</option>
+                      <option value="hembra">Hembra</option>
+                    </select>
+                    <small class="campo-mensaje-error" id="error-sexo"></small>
+                  </div>
+                  <div class="campo-grupo" id="grupo-fechaNacimientoMascota">
+                    <label for="fechaNacimientoMascota" class="campo-etiqueta">
+                      Fecha de nacimiento
+                    </label>
+                    <input
+                      type="date"
+                      id="fechaNacimientoMascota"
+                      name="fechaNacimientoMascota"
+                      class="campo-entrada"
+                    />
+                    <small
+                      class="campo-mensaje-error"
+                      id="error-fechaNacimientoMascota"
+                    ></small>
+                  </div>
+                </div>
+
+                <!-- Aviso informativo adicional -->
+                <div class="registro-tarjeta-aviso">
+                  <span class="material-symbols-outlined registro-aviso-icono"
+                    >info</span
+                  >
+                  <p class="registro-aviso-texto">
+                    Podrás registrar más mascotas y consultar su historial
+                    clínico completo una vez ingreses a tu cuenta.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECCIÓN: SEGURIDAD -->
+            <div class="registro-seccion-seguridad">
+              <div class="registro-seccion-encabezado">
+                <span class="material-symbols-outlined registro-seccion-icono"
+                  >lock</span
+                >
+                <h2 class="registro-seccion-titulo">Seguridad</h2>
+              </div>
+
+              <div class="registro-fila-doble">
+                <div class="campo-grupo" id="grupo-password">
+                  <label for="password" class="campo-etiqueta">
+                    Contraseña *
+                  </label>
+                  <div class="campo-envoltorio-input">
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="Mínimo 8 caracteres"
+                      required
+                      minlength="8"
+                      class="campo-entrada campo-entrada-con-ojo"
+                      autocomplete="new-password"
+                    />
+                    <button
+                      type="button"
+                      class="campo-boton-ojo"
+                      aria-label="Ver contraseña"
+                    >
+                      <span class="material-symbols-outlined"
+                        >visibility_off</span
+                      >
+                    </button>
+                  </div>
+                  <small
+                    class="campo-mensaje-error"
+                    id="error-password"
+                  ></small>
+                </div>
+                <div class="campo-grupo" id="grupo-confirmPassword">
+                  <label for="confirmPassword" class="campo-etiqueta">
+                    Confirmar contraseña *
+                  </label>
+                  <div class="campo-envoltorio-input">
+                    <input
+                      type="password"
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      placeholder="Repite la contraseña"
+                      required
+                      minlength="8"
+                      class="campo-entrada campo-entrada-con-ojo"
+                      autocomplete="new-password"
+                    />
+                    <button
+                      type="button"
+                      class="campo-boton-ojo"
+                      aria-label="Ver contraseña"
+                    >
+                      <span class="material-symbols-outlined"
+                        >visibility_off</span
+                      >
+                    </button>
+                  </div>
+                  <small
+                    class="campo-mensaje-error"
+                    id="error-confirmPassword"
+                  ></small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botón de Enviar -->
+            <button
+              type="submit"
+              class="registro-boton-enviar"
+              id="btn-submit-registro"
+            >
+              <span>Crear Cuenta</span>
+              <span class="material-symbols-outlined registro-boton-icono"
+                >arrow_forward</span
+              >
+            </button>
+          </form>
+
+          <!-- Pie de la tarjeta -->
+          <footer class="registro-pie">
+            <p class="registro-pie-texto">
+              ¿Ya tienes una cuenta?
+              <a href="login.html" class="registro-enlace-login">
+                Iniciar sesión
+              </a>
+            </p>
+          </footer>
+        </div>
+      </div>
+
+      <div id="accessibility-container"></div>
+    <!-- ==========================================
+         FOOTER GLOBAL (cargado automáticamente)
+    =========================================== -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/pages/registro.js"></script>
+  </body>
+</html>

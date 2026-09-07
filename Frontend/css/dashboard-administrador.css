@@ -1,0 +1,505 @@
+/* =========================================================
+   VETSALUD - DASHBOARD-ADMINISTRADOR.CSS
+   =========================================================
+   Estilos específicos del panel de administración
+   ========================================================= */
+
+body {
+  background: #f5f8fa;
+}
+
+.admin-section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.admin-section-heading h1 {
+  font-family: var(--font-headings, "Montserrat", sans-serif);
+  font-size: 2rem;
+  color: var(--deep-navy, #0a2540);
+  font-weight: 700;
+}
+
+.admin-section-heading p {
+  color: var(--text-muted, #64748b);
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.admin-section-heading {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-section-heading h1 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.admin-resumen-grid .dash-form-card,
+.dash-tab-content > .dash-form-card {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.admin-resumen-grid .dash-form-card__icon {
+  width: 44px;
+  height: 44px;
+}
+
+.admin-resumen-grid .dash-form-card__icon.material-symbols-outlined {
+  font-size: 2.75rem;
+  line-height: 1;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 500,
+    "GRAD" 0,
+    "opsz" 48;
+}
+
+.tabla-contenedor table {
+  min-width: 680px;
+}
+
+.tabla-contenedor th {
+  background: #f8fafc;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.tabla-contenedor tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.tabla-contenedor tbody tr:hover {
+  background: #f8fbff;
+}
+
+.admin-producto-form input:focus,
+.admin-producto-form select:focus,
+.admin-producto-precio:focus,
+.admin-producto-stock:focus,
+.admin-producto-estado:focus,
+.admin-rol-select:focus,
+.admin-cita-estado:focus {
+  outline: 3px solid rgba(75, 163, 227, 0.25);
+  border-color: var(--secondary);
+}
+
+html.dark-mode .admin-section-heading {
+  border-color: #2c3e54;
+}
+
+html.dark-mode .admin-section-heading h1,
+html.dark-mode .admin-section-heading p,
+html.dark-mode .tabla-contenedor,
+html.dark-mode .tabla-contenedor td {
+  color: #e7edf4;
+}
+
+html.dark-mode .tabla-contenedor th {
+  background: #202f42;
+  color: #f1f5f9;
+  border-color: #3a5068;
+}
+
+html.dark-mode .tabla-contenedor td {
+  border-color: #33485b;
+}
+
+html.dark-mode .tabla-contenedor tbody tr:hover {
+  background: #203249;
+}
+
+html.dark-mode .admin-producto-form,
+html.dark-mode .admin-producto-form input,
+html.dark-mode .admin-producto-form select,
+html.dark-mode .admin-producto-precio,
+html.dark-mode .admin-producto-stock,
+html.dark-mode .admin-producto-estado,
+html.dark-mode .admin-rol-select,
+html.dark-mode .admin-cita-estado {
+  background: #202f42;
+  border-color: #3a5068;
+  color: #f1f5f9;
+}
+
+html.dark-mode .estado {
+  background: #2c3e54;
+  color: #e7edf4;
+}
+
+html.dark-mode .admin-producto-form input::placeholder {
+  color: #9fb0c1;
+}
+.admin-resumen-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.admin-cuenta-bloque {
+  margin-top: 1.5rem;
+}
+
+.admin-mascota-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.admin-mascota-form input,
+.admin-mascota-form select {
+  min-width: 0;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #d5e0e7;
+  border-radius: 7px;
+  background: #fff;
+  color: #334155;
+  font-family: inherit;
+}
+
+.admin-mascota-form input[type="file"] {
+  grid-column: span 2;
+}
+
+html.dark-mode .admin-mascota-form input,
+html.dark-mode .admin-mascota-form select {
+  background: #202f42;
+  border-color: #3a5068;
+  color: #f1f5f9;
+}
+
+.admin-perfil-lista {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+}
+
+.admin-perfil-lista div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #edf1f4;
+}
+
+.admin-perfil-lista dt {
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.admin-perfil-lista dd {
+  margin: 0;
+  text-align: right;
+  color: #17365f;
+  font-weight: 600;
+}
+
+html.dark-mode .admin-perfil-lista div {
+  border-color: #33485b;
+}
+
+html.dark-mode .admin-perfil-lista dt {
+  color: #b8c5d3;
+}
+
+html.dark-mode .admin-perfil-lista dd {
+  color: #f1f5f9;
+}
+
+/* =========================================================
+   TABLAS Y CONTENEDORES
+   ========================================================= */
+
+.tabla-contenedor {
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid #edf1f4;
+  white-space: nowrap;
+}
+
+th {
+  font-weight: 700;
+  color: #475569;
+  background: #f8fafc;
+  font-family: var(--font-headings, "Montserrat", sans-serif);
+}
+
+tbody tr:hover {
+  background: #f8fbfe;
+}
+
+/* =========================================================
+   BADGES DE ESTADO
+   ========================================================= */
+
+.estado {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  background: #eef5f8;
+  color: #334155;
+  text-transform: uppercase;
+}
+
+.estado.PENDIENTE {
+  background: #fff4d8;
+  color: #b45309;
+}
+
+.estado.CONFIRMADA {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.estado.ATENDIDA {
+  background: #e4f5ea;
+  color: #15803d;
+}
+
+.estado.CANCELADA,
+.estado.ANULADA,
+.estado.INACTIVO {
+  background: #fde7e7;
+  color: #b91c1c;
+}
+
+.estado.PAGADA,
+.estado.ACTIVO {
+  background: #e4f5ea;
+  color: #15803d;
+}
+
+.stock-bajo {
+  font-weight: 700;
+  color: #dc2626 !important;
+}
+
+/* =========================================================
+   INPUTS, SELECTS Y BOTONES DE TABLAS
+   ========================================================= */
+
+.admin-producto-precio,
+.admin-producto-stock,
+.admin-producto-estado,
+.admin-rol-select,
+.admin-usuario-estado,
+.admin-mascota-estado,
+.admin-cita-estado,
+.admin-venta-estado {
+  padding: 6px 10px;
+  border: 1px solid #d5e0e7;
+  border-radius: 7px;
+  background: #fff;
+  font-size: 0.85rem;
+  color: #334155;
+  font-family: inherit;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-producto-precio:focus,
+.admin-producto-stock:focus,
+.admin-producto-estado:focus,
+.admin-rol-select:focus,
+.admin-usuario-estado:focus,
+.admin-mascota-estado:focus,
+.admin-cita-estado:focus,
+.admin-venta-estado:focus {
+  outline: none;
+  border-color: #1b4e9b;
+  box-shadow: 0 0 0 3px rgba(27, 78, 155, 0.15);
+}
+
+.admin-producto-precio {
+  width: 100px;
+}
+
+.admin-producto-stock {
+  width: 80px;
+}
+
+.admin-producto-guardar {
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 7px;
+  background: #1b4e9b;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.admin-producto-guardar:hover {
+  background: #164283;
+}
+
+.admin-producto-guardar:active {
+  transform: scale(0.98);
+}
+
+/* =========================================================
+   FORMULARIO DE NUEVO PRODUCTO
+   ========================================================= */
+
+.admin-producto-form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(130px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.admin-producto-form input,
+.admin-producto-form select {
+  min-width: 0;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #d5e0e7;
+  border-radius: 7px;
+  background: #fff;
+  font-size: 0.88rem;
+  color: #334155;
+  font-family: inherit;
+}
+
+.admin-producto-form input:focus,
+.admin-producto-form select:focus {
+  outline: none;
+  border-color: #1b4e9b;
+  box-shadow: 0 0 0 3px rgba(27, 78, 155, 0.15);
+}
+
+.admin-producto-form button {
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 7px;
+  background: #1b4e9b;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.admin-producto-form button:hover {
+  background: #164283;
+}
+
+/* =========================================================
+   MENSAJE DE ERROR O FEEDBACK
+   ========================================================= */
+
+.mensaje-admin {
+  min-height: 20px;
+  margin-top: 15px;
+  color: #b91c1c;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* =========================================================
+   TOAST DE NOTIFICACIÓN
+   ========================================================= */
+
+.login-alerta-toast {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 12px 30px rgba(13, 37, 77, 0.18);
+  border-left: 4px solid #1b4e9b;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 10000;
+  animation: deslizarToast 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.login-alerta-toast.error {
+  border-left-color: #ef4444;
+}
+
+.login-alerta-icono {
+  font-size: 1.5rem;
+  color: #1b4e9b;
+}
+
+.login-alerta-toast.error .login-alerta-icono {
+  color: #ef4444;
+}
+
+.login-alerta-titulo {
+  font-family: var(--font-headings, "Montserrat", sans-serif);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #0a2540;
+}
+
+.login-alerta-mensaje {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+@keyframes deslizarToast {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .admin-resumen-grid {
+    grid-template-columns: 1fr;
+  }
+  .admin-producto-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-mascota-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-mascota-form input[type="file"] {
+    grid-column: auto;
+  }
+
+  .admin-producto-form {
+    grid-template-columns: 1fr;
+  }
+}

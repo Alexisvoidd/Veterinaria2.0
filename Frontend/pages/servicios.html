@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Servicios veterinarios especializados de VetSalud: Diagnóstico avanzado, análisis de laboratorio, radiografía digital y farmacia interna."
+    />
+    <title>Servicios Veterinarios | VetSalud</title>
+
+    <!-- Fuentes oficiales de Google: Montserrat y Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos de Material Symbols Outlined y Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Estilos base y de servicios -->
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/servicios.css" />
+  </head>
+
+  <body data-page="servicios">
+    <!-- ==========================================
+         NAVBAR GLOBAL (cargado automáticamente)
+    =========================================== -->
+    <div id="nav-container"></div>
+
+    <main class="servicios-pagina">
+      <!-- ==========================================
+             BANNER / ENCABEZADO SUPERIOR DEL SERVICIO
+        =========================================== -->
+      <header class="servicios-hero-encabezado">
+        <div class="servicios-contenedor">
+          <div class="servicios-migajas">
+            <a href="index.html">Inicio</a>
+            <span class="material-symbols-outlined">chevron_right</span>
+            <a href="servicios.html">Servicios</a>
+            <span class="material-symbols-outlined">chevron_right</span>
+            <span class="servicios-migaja-activa" id="migaja-servicio-actual"
+              >Diagnóstico avanzado</span
+            >
+          </div>
+          <h1 class="servicios-titulo-principal" id="servicio-titulo-dinamico">
+            Diagnóstico avanzado
+          </h1>
+        </div>
+      </header>
+
+      <!-- ==========================================
+             CONTENIDO PRINCIPAL EN 2 COLUMNAS
+        =========================================== -->
+      <section class="servicios-seccion-detalle">
+        <div class="servicios-contenedor">
+          <div class="servicios-grid-layout">
+            <!-- ======================================
+                         COLUMNA IZQUIERDA: DETALLE DEL SERVICIO
+                    ======================================= -->
+            <article
+              class="servicios-columna-contenido"
+              id="servicio-contenido-principal"
+            >
+              <!-- Imagen principal del servicio -->
+              <div class="servicios-imagen-destacada-wrap">
+                <img
+                  src="../assets/images/productos/servicio_img_1.jpg"
+                  alt="Diagnóstico avanzado en clínica veterinaria VetSalud"
+                  class="servicios-imagen-destacada"
+                  id="servicio-imagen-dinamica"
+                  loading="eager"
+                />
+              </div>
+
+              <!-- Bloque de contenido 1 -->
+              <div class="servicios-bloque-texto">
+                <p class="servicios-parrafo">
+                  En medicina veterinaria, un diagnóstico rápido y preciso es
+                  fundamental. VetSalud cuenta con un completo equipo de
+                  diagnóstico en nuestra clínica, lo que elimina la necesidad de
+                  enviar muestras a laboratorios externos y esperar días para
+                  obtener los resultados. Esta capacidad es esencial para
+                  emergencias, exámenes prequirúrgicos y el manejo de
+                  enfermedades crónicas.
+                </p>
+              </div>
+
+              <!-- Bloque de contenido 2: Farmacia y análisis -->
+              <div class="servicios-bloque-texto">
+                <h2 class="servicios-subtitulo">
+                  Farmacia y análisis de sangre internos
+                </h2>
+                <p class="servicios-parrafo">
+                  Nuestro laboratorio realiza hemogramas completos, análisis
+                  bioquímicos, análisis de orina y pruebas de tiroides con
+                  rapidez. Esto significa que a menudo podemos conocer los
+                  resultados de pruebas importantes el mismo día de su visita,
+                  lo que nos permite comenzar el tratamiento de inmediato.
+                  Además, contamos con una farmacia interna completamente
+                  equipada, lo que garantiza que reciba los medicamentos
+                  necesarios incluso antes de salir del estacionamiento.
+                </p>
+                <a href="tienda.html" class="servicios-enlace-subrayado">
+                  Farmacia en línea
+                </a>
+              </div>
+
+              <!-- Bloque de contenido 3: Radiografía digital -->
+              <div class="servicios-bloque-texto">
+                <h2 class="servicios-subtitulo">Radiografía digital</h2>
+                <p class="servicios-parrafo">
+                  Nuestra avanzada tecnología de rayos X digitales proporciona
+                  imágenes inmediatas y de alta resolución de las estructuras
+                  internas de su mascota. Esta herramienta no invasiva es
+                  invaluable para evaluaciones ortopédicas, la localización de
+                  cuerpos extraños y la evaluación del tamaño del corazón, lo
+                  que garantiza que nuestra planificación quirúrgica y las
+                  decisiones de medicina interna se basen en la información más
+                  precisa posible.
+                </p>
+              </div>
+
+              <!-- Bloque de contenido 4: Respuestas rápidas -->
+              <div class="servicios-bloque-texto">
+                <h2 class="servicios-subtitulo">
+                  Respuestas rápidas cuando el tiempo es crucial.
+                </h2>
+                <p class="servicios-parrafo">
+                  Programe hoy mismo la visita de diagnóstico de su mascota para
+                  obtener respuestas rápidas, un plan claro y los medicamentos a
+                  mano antes de ir, para que pueda actuar con confianza cuando
+                  cada minuto cuenta.
+                </p>
+                <a href="agendar-citas.html" class="servicios-enlace-subrayado">
+                  Programe su diagnóstico ahora
+                </a>
+              </div>
+
+              <!-- Selector rápido de otros servicios VetSalud -->
+              <div class="servicios-otros-selector">
+                <h3 class="servicios-otros-titulo">
+                  Explora otros servicios de VetSalud
+                </h3>
+                <div class="servicios-pills-grid" id="servicios-pills">
+                  <button
+                    type="button"
+                    class="servicio-pill activo"
+                    data-servicio="diagnostico"
+                  >
+                    <i class="fa-solid fa-microscope"></i> Diagnóstico avanzado
+                  </button>
+                  <button
+                    type="button"
+                    class="servicio-pill"
+                    data-servicio="unas"
+                  >
+                    <i class="fa-solid fa-paw"></i> Recorte de uñas
+                  </button>
+                  <button
+                    type="button"
+                    class="servicio-pill"
+                    data-servicio="vacunacion"
+                  >
+                    <i class="fa-solid fa-syringe"></i> Dosis y Vacunación
+                  </button>
+                  <button
+                    type="button"
+                    class="servicio-pill"
+                    data-servicio="bienestar"
+                  >
+                    <i class="fa-solid fa-heart-pulse"></i> Exámenes de
+                    bienestar
+                  </button>
+                  <button
+                    type="button"
+                    class="servicio-pill"
+                    data-servicio="esterilizacion"
+                  >
+                    <i class="fa-solid fa-shield-cat"></i> Esterilización
+                  </button>
+                  <button
+                    type="button"
+                    class="servicio-pill"
+                    data-servicio="cirugia"
+                  >
+                    <i class="fa-solid fa-user-doctor"></i> Procedimientos
+                    quirúrgicos
+                  </button>
+                  <button
+                    type="button"
+                    class="servicio-pill"
+                    data-servicio="dental"
+                  >
+                    <i class="fa-solid fa-tooth"></i> Limpieza dental
+                  </button>
+                  <button
+                    type="button"
+                    class="servicio-pill"
+                    data-servicio="microchips"
+                  >
+                    <i class="fa-solid fa-id-card"></i> Microchips y pruebas
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- ======================================
+                         COLUMNA DERECHA: ACCESO A CITAS
+                    ======================================= -->
+            <aside class="servicios-columna-formulario">
+              <div class="servicios-formulario-sticky-card">
+                <div class="servicios-form">
+                  <h2 class="servicios-subtitulo">Agenda tu cita</h2>
+                  <p class="servicios-parrafo">
+                    Inicia sesión para continuar. Al volver, este servicio
+                    quedará seleccionado y solo tendrás que elegir tu mascota,
+                    fecha y hora.
+                  </p>
+                  <a
+                    href="agendar-citas.html"
+                    class="servicios-btn-enviar"
+                    data-requiere-sesion
+                  >
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Agendar este servicio</span>
+                  </a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <div id="accessibility-container"></div>
+    <!-- ==========================================
+         FOOTER GLOBAL (cargado automáticamente)
+    =========================================== -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/pages/servicios.js"></script>
+  </body>
+</html>

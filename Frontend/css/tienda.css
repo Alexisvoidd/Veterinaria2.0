@@ -1,0 +1,1102 @@
+/* BARRA SUPERIOR DE LA TIENDA */
+.store-toolbar {
+    /* Organiza los elementos en una fila flexible */
+    display: flex;
+    /* Alinea los elementos por la parte inferior */
+    align-items: flex-end;
+    /* Distribuye los elementos dejando espacio entre ellos */
+    justify-content: space-between;
+    /* Define la separación entre los elementos */
+    gap: 25px;
+    /* Define el espacio inferior de la barra */
+    margin-bottom: 22px
+}
+
+/* TÍTULO DE LA BARRA DE TIENDA */
+.store-toolbar h2 {
+    /* Define el tamaño del título */
+    font-size: 1.8rem;
+    /* Elimina el margen superior y define el inferior */
+    margin: 0 0 5px;
+    /* Define el color del título */
+    color: #173f75
+}
+
+/* TEXTO DESCRIPTIVO DE LA BARRA */
+.store-toolbar p {
+    /* Elimina los márgenes del párrafo */
+    margin: 0;
+    /* Define el color del texto */
+    color: #77879a;
+    /* Define el tamaño del texto */
+    font-size: .82rem
+}
+
+/* CONTENEDOR DE HERRAMIENTAS DE TIENDA */
+.store-tools {
+    /* Organiza las herramientas en fila */
+    display: flex;
+    /* Define la separación entre herramientas */
+    gap: 9px;
+    /* Permite que las herramientas bajen a otra línea */
+    flex-wrap: wrap;
+    /* Alinea las herramientas hacia la derecha */
+    justify-content: flex-end
+}
+
+/* CAJA DE BÚSQUEDA */
+.search-box {
+    /* Define la altura de la caja */
+    height: 43px;
+    /* Define el ancho mínimo de la búsqueda */
+    min-width: 235px;
+    /* Organiza el contenido internamente */
+    display: flex;
+    /* Centra verticalmente el contenido */
+    align-items: center;
+    /* Define la separación entre icono e input */
+    gap: 8px;
+    /* Define el borde de la caja */
+    border: 1px solid #d6e2ee;
+    /* Redondea las esquinas */
+    border-radius: 10px;
+    /* Define el espacio interno horizontal */
+    padding: 0 11px;
+    /* Define el fondo blanco */
+    background: #fff
+}
+
+/* ICONO DE LA CAJA DE BÚSQUEDA */
+.search-box .material-symbols-outlined {
+    /* Define el tamaño del icono */
+    font-size: 20px;
+    /* Define el color del icono */
+    color: #7190ad
+}
+
+/* CAMPO DE TEXTO DE BÚSQUEDA */
+.search-box input {
+    /* Elimina el borde predeterminado */
+    border: 0;
+    /* Elimina el contorno predeterminado */
+    outline: 0;
+    /* Permite que el input ocupe el espacio disponible */
+    width: 100%;
+    /* Define el color del texto */
+    color: #23466c
+}
+
+/* SELECTOR DE FILTROS */
+.store-tools select {
+    /* Define la altura del selector */
+    height: 43px;
+    /* Define el borde */
+    border: 1px solid #d6e2ee;
+    /* Redondea las esquinas */
+    border-radius: 10px;
+    /* Define el fondo blanco */
+    background: #fff;
+    /* Define el color del texto */
+    color: #315273;
+    /* Define el espacio interno horizontal */
+    padding: 0 10px;
+    /* Elimina el contorno al seleccionar */
+    outline: 0
+}
+
+/* BOTÓN DEL CARRITO */
+.cart-button {
+    /* Define la altura del botón */
+    height: 43px;
+    /* Elimina el borde */
+    border: 0;
+    /* Redondea las esquinas */
+    border-radius: 10px;
+    /* Define el color principal del botón */
+    background: var(--primary);
+    /* Define el color del texto */
+    color: #fff;
+    /* Define el espacio interno horizontal */
+    padding: 0 12px;
+    /* Organiza el contenido del botón */
+    display: inline-flex;
+    /* Centra verticalmente el contenido */
+    align-items: center;
+    /* Define la separación entre elementos */
+    gap: 7px;
+    /* Cambia el cursor para indicar que es interactivo */
+    cursor: pointer;
+    /* Define el grosor del texto */
+    font-weight: 800;
+    /* Define el tamaño del texto */
+    font-size: .75rem;
+    /* Añade una sombra al botón */
+    box-shadow: 0 7px 16px rgba(27, 78, 155, .15)
+}
+
+/* ICONO DEL BOTÓN DEL CARRITO */
+.cart-button .material-symbols-outlined {
+    /* Define el tamaño del icono */
+    font-size: 19px
+}
+
+/* CONTADOR DEL CARRITO */
+.cart-button b {
+    /* Define el ancho mínimo del contador */
+    min-width: 21px;
+    /* Define la altura del contador */
+    height: 21px;
+    /* Hace circular el contador */
+    border-radius: 50%;
+    /* Centra el contenido */
+    display: grid;
+    /* Centra el contenido horizontal y verticalmente */
+    place-items: center;
+    /* Define el fondo del contador */
+    background: var(--tertiary);
+    /* Define el color del número */
+    color: #123e78;
+    /* Define el tamaño del número */
+    font-size: .67rem
+}
+
+/* CONTENEDOR DE CATEGORÍAS */
+.category-chips {
+    /* Organiza las categorías en fila */
+    display: flex;
+    /* Define la separación entre categorías */
+    gap: 8px;
+    /* Permite varias líneas de categorías */
+    flex-wrap: wrap;
+    /* Define el espacio inferior */
+    margin-bottom: 25px
+}
+
+/* BOTÓN DE CATEGORÍA */
+.chip {
+    /* Define el borde de la categoría */
+    border: 1px solid #d4e3f1;
+    /* Define el fondo */
+    background: #fff;
+    /* Define el color del texto */
+    color: #52708f;
+    /* Crea botones completamente redondeados */
+    border-radius: 999px;
+    /* Define el espacio interno */
+    padding: 8px 14px;
+    /* Indica que es un elemento interactivo */
+    cursor: pointer;
+    /* Define el tamaño del texto */
+    font-size: .78rem;
+    /* Define el grosor del texto */
+    font-weight: 700;
+    /* Define la duración de la transición */
+    transition: .2s
+}
+
+/* ESTADO HOVER Y CATEGORÍA ACTIVA */
+.chip:hover,
+.chip.active {
+    /* Cambia el fondo al interactuar o estar activo */
+    background: #eaf4fc;
+    /* Cambia el color del texto */
+    color: var(--primary);
+    /* Cambia el color del borde */
+    border-color: #b8d9ef
+}
+
+/* CUADRÍCULA DE PRODUCTOS */
+.product-grid {
+    /* Utiliza CSS Grid para organizar productos */
+    display: grid;
+    /* Muestra cuatro columnas iguales */
+    grid-template-columns: repeat(4, 1fr);
+    /* Define la separación entre productos */
+    gap: 19px
+}
+
+/* TARJETA DE PRODUCTO */
+.product-card {
+    /* Define el borde de la tarjeta */
+    border: 1px solid #e0eaf3;
+    /* Define el fondo blanco */
+    background: #fff;
+    /* Redondea las esquinas */
+    border-radius: 17px;
+    /* Oculta el contenido que sobresale */
+    overflow: hidden;
+    /* Añade sombra a la tarjeta */
+    box-shadow: 0 7px 25px rgba(27, 78, 155, .06);
+    /* Organiza el contenido verticalmente */
+    display: flex;
+    /* Coloca los elementos en columna */
+    flex-direction: column;
+    /* Define la transición de la tarjeta */
+    transition: .22s
+}
+
+/* EFECTO HOVER DE LA TARJETA */
+.product-card:hover {
+    /* Eleva ligeramente la tarjeta */
+    transform: translateY(-4px);
+    /* Aumenta la sombra al pasar el cursor */
+    box-shadow: var(--shadow)
+}
+
+/* IMAGEN DEL PRODUCTO */
+.product-image {
+    /* Define la altura de la imagen */
+    height: 205px;
+    /* Define el fondo de respaldo */
+    background: #f7fbfe;
+    /* Hace que la imagen se comporte como bloque */
+    display: block;
+    /* Ocupa todo el ancho disponible */
+    width: 100%;
+    /* Ajusta la imagen sin deformarla */
+    object-fit: cover
+}
+
+/* CUERPO DE LA TARJETA */
+.product-body {
+    /* Define el espacio interno */
+    padding: 17px;
+    /* Organiza el contenido */
+    display: flex;
+    /* Coloca los elementos verticalmente */
+    flex-direction: column;
+    /* Permite ocupar el espacio restante */
+    flex: 1
+}
+
+/* CATEGORÍA DEL PRODUCTO */
+.product-category {
+    /* Define el tamaño del texto */
+    font-size: .66rem;
+    /* Convierte el texto a mayúsculas */
+    text-transform: uppercase;
+    /* Aumenta el espaciado entre letras */
+    letter-spacing: .09em;
+    /* Define el color */
+    color: #6f9ac0;
+    /* Define el grosor */
+    font-weight: 800
+}
+
+/* TÍTULO DEL PRODUCTO */
+.product-body h3 {
+    /* Define el tamaño del título */
+    font-size: 1.03rem;
+    /* Define los márgenes del título */
+    margin: 7px 0 8px;
+    /* Define el color */
+    color: #1d4775
+}
+
+/* DESCRIPCIÓN DEL PRODUCTO */
+.product-body p {
+    /* Define el tamaño del texto */
+    font-size: .77rem;
+    /* Define la altura de línea */
+    line-height: 1.55;
+    /* Define el color */
+    color: #78889a;
+    /* Define el margen inferior */
+    margin: 0 0 15px
+}
+
+/* PIE DE LA TARJETA DEL PRODUCTO */
+.product-footer {
+    /* Empuja el pie hacia la parte inferior */
+    margin-top: auto;
+    /* Organiza los elementos horizontalmente */
+    display: flex;
+    /* Centra verticalmente los elementos */
+    align-items: center;
+    /* Separa precio y acciones */
+    justify-content: space-between;
+    /* Define la separación interna */
+    gap: 8px
+}
+
+/* PRECIO DEL PRODUCTO */
+.price {
+    /* Define la familia tipográfica del precio */
+    font-family: 'Host Grotesk', sans-serif;
+    /* Define el tamaño */
+    font-size: 1.1rem;
+    /* Define el grosor */
+    font-weight: 700;
+    /* Usa el color principal */
+    color: var(--primary)
+}
+
+/* ACCIONES DEL PRODUCTO */
+.product-actions {
+    /* Organiza los botones */
+    display: flex;
+    /* Define la separación entre botones */
+    gap: 6px
+}
+
+/* BOTONES DE DETALLE Y AGREGAR */
+.detail-btn,
+.add-btn {
+    /* Elimina el borde */
+    border: 0;
+    /* Redondea las esquinas */
+    border-radius: 9px;
+    /* Define el espacio interno */
+    padding: 9px 10px;
+    /* Indica que son interactivos */
+    cursor: pointer;
+    /* Define el grosor */
+    font-weight: 800;
+    /* Define el tamaño del texto */
+    font-size: .72rem
+}
+
+/* BOTÓN DE DETALLE */
+.detail-btn {
+    /* Define el fondo */
+    background: #f0f6fb;
+    /* Define el color del texto */
+    color: #52708f
+}
+
+/* BOTÓN PARA AGREGAR AL CARRITO */
+.add-btn {
+    /* Define el fondo */
+    background: #eaf3fc;
+    /* Define el color principal */
+    color: var(--primary)
+}
+
+/* EFECTO HOVER DE LOS BOTONES */
+.add-btn:hover,
+.detail-btn:hover {
+    /* Reduce ligeramente el brillo */
+    filter: brightness(.97)
+}
+
+/* ETIQUETA DEL PRODUCTO */
+.product-badge {
+    /* Permite que ocupe solo el tamaño necesario */
+    display: inline-block;
+    /* Permite posicionarla dentro de la imagen */
+    position: absolute;
+    /* Define la distancia superior */
+    top: 11px;
+    /* Define la distancia izquierda */
+    left: 11px;
+    /* Define el fondo */
+    background: #fff;
+    /* Define el color */
+    color: var(--primary);
+    /* Define el tamaño */
+    font-size: .66rem;
+    /* Define el grosor */
+    font-weight: 800;
+    /* Hace la etiqueta redondeada */
+    border-radius: 999px;
+    /* Define el espacio interno */
+    padding: 6px 8px;
+    /* Añade sombra */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05)
+}
+
+/* CONTENEDOR DE LA IMAGEN */
+.product-image-wrap {
+    /* Permite posicionar elementos encima de la imagen */
+    position: relative
+}
+
+/* MODAL GENERAL */
+.modal {
+    /* Fija el modal a la ventana */
+    position: fixed;
+    /* Ocupa toda la ventana */
+    inset: 0;
+    /* Coloca el modal por encima de otros elementos */
+    z-index: 1200;
+    /* Oculta el modal inicialmente */
+    display: none
+}
+
+/* MODAL ABIERTO */
+.modal.is-open {
+    /* Muestra el modal cuando está activo */
+    display: block
+}
+
+/* FONDO OSCURO DEL MODAL */
+.modal__backdrop {
+    /* Posiciona el fondo dentro del modal */
+    position: absolute;
+    /* Ocupa toda el área */
+    inset: 0;
+    /* Oscurece el contenido detrás */
+    background: rgba(14, 37, 62, .54);
+    /* Aplica desenfoque al contenido posterior */
+    backdrop-filter: blur(3px)
+}
+
+/* VENTANA DEL MODAL */
+.modal__dialog {
+    /* Permite posicionar elementos internos */
+    position: relative;
+    /* Define el ancho máximo y adaptable */
+    width: min(760px, calc(100% - 28px));
+    /* Limita la altura */
+    max-height: 88vh;
+    /* Permite desplazamiento interno */
+    overflow: auto;
+    /* Centra horizontalmente el modal */
+    margin: 6vh auto;
+    /* Define el fondo */
+    background: #fff;
+    /* Redondea las esquinas */
+    border-radius: 20px;
+    /* Añade una sombra amplia */
+    box-shadow: 0 30px 80px rgba(14, 37, 62, .25);
+    /* Define el espacio interno */
+    padding: 30px
+}
+
+/* BOTÓN PARA CERRAR EL MODAL */
+.modal__close {
+    /* Posiciona el botón dentro del modal */
+    position: absolute;
+    /* Define la distancia derecha */
+    right: 14px;
+    /* Define la distancia superior */
+    top: 14px;
+    /* Define el ancho */
+    width: 38px;
+    /* Define la altura */
+    height: 38px;
+    /* Elimina el borde */
+    border: 0;
+    /* Hace circular el botón */
+    border-radius: 50%;
+    /* Define el fondo */
+    background: #eff6fb;
+    /* Define el color del icono */
+    color: var(--primary);
+    /* Indica que es interactivo */
+    cursor: pointer;
+    /* Utiliza Grid para centrar el icono */
+    display: grid;
+    /* Centra el contenido */
+    place-items: center
+}
+
+/* DETALLE DEL PRODUCTO */
+.product-detail {
+    /* Organiza el detalle con Grid */
+    display: grid;
+    /* Define dos columnas proporcionales */
+    grid-template-columns: .9fr 1.1fr;
+    /* Define la separación entre columnas */
+    gap: 28px;
+    /* Centra verticalmente el contenido */
+    align-items: center
+}
+
+/* IMAGEN DEL DETALLE */
+.product-detail img {
+    /* Ocupa todo el ancho disponible */
+    width: 100%;
+    /* Redondea la imagen */
+    border-radius: 15px;
+    /* Define el fondo de respaldo */
+    background: #f7fbfe
+}
+
+/* CATEGORÍA DEL DETALLE */
+.product-detail__cat {
+    /* Define el tamaño del texto */
+    font-size: .7rem;
+    /* Aumenta la separación entre letras */
+    letter-spacing: .1em;
+    /* Convierte el texto en mayúsculas */
+    text-transform: uppercase;
+    /* Define el color */
+    color: #6f9ac0;
+    /* Define el grosor */
+    font-weight: 800
+}
+
+/* TÍTULO DEL DETALLE */
+.product-detail h2 {
+    /* Define el tamaño del título */
+    font-size: 2rem;
+    /* Define el color */
+    color: #183f70;
+    /* Define los márgenes */
+    margin: 8px 0
+}
+
+/* DESCRIPCIÓN DEL DETALLE */
+.product-detail__desc {
+    /* Define el color */
+    color: #6d7f92;
+    /* Define la altura de línea */
+    line-height: 1.75;
+    /* Define el tamaño */
+    font-size: .86rem
+}
+
+/* LISTA DE CARACTERÍSTICAS */
+.detail-list {
+    /* Elimina el relleno */
+    padding: 0;
+    /* Define los márgenes */
+    margin: 20px 0;
+    /* Elimina las viñetas */
+    list-style: none;
+    /* Organiza los elementos con Grid */
+    display: grid;
+    /* Define la separación entre elementos */
+    gap: 9px
+}
+
+/* ELEMENTOS DE LA LISTA */
+.detail-list li {
+    /* Organiza el contenido en fila */
+    display: flex;
+    /* Define la separación entre icono y texto */
+    gap: 8px;
+    /* Alinea el contenido arriba */
+    align-items: flex-start;
+    /* Define el tamaño del texto */
+    font-size: .78rem;
+    /* Define el color */
+    color: #506a84
+}
+
+/* ICONOS DE LA LISTA */
+.detail-list .material-symbols-outlined {
+    /* Define el tamaño del icono */
+    font-size: 18px;
+    /* Define el color secundario */
+    color: var(--secondary)
+}
+
+/* PRECIO EN EL DETALLE */
+.detail-price {
+    /* Define fuente, grosor y tamaño */
+    font: 700 1.6rem 'Host Grotesk';
+    /* Define el color principal */
+    color: var(--primary);
+    /* Hace que ocupe una línea */
+    display: block;
+    /* Define el margen inferior */
+    margin-bottom: 15px
+}
+
+/* PANEL LATERAL DEL CARRITO */
+.cart-panel {
+    /* Fija el carrito a la ventana */
+    position: fixed;
+    /* Coloca el carrito por encima del modal */
+    z-index: 1300;
+    /* Lo pega al lado derecho */
+    right: 0;
+    /* Lo pega a la parte superior */
+    top: 0;
+    /* Lo extiende hasta abajo */
+    bottom: 0;
+    /* Define el ancho máximo del panel */
+    width: min(430px, 100%);
+    /* Oculta el panel fuera de la pantalla */
+    transform: translateX(105%);
+    /* Define la transición de entrada y salida */
+    transition: .28s;
+    /* Añade sombra lateral */
+    box-shadow: -20px 0 55px rgba(16, 45, 77, .18);
+    /* Organiza el contenido */
+    display: flex;
+    /* Coloca el contenido en columna */
+    flex-direction: column
+}
+
+/* CARRITO ABIERTO */
+.cart-panel.is-open {
+    /* Desplaza el carrito a su posición visible */
+    transform: translateX(0)
+}
+
+/* CABECERA DEL CARRITO */
+.cart-panel__head {
+    /* Define el espacio interno */
+    padding: 23px 22px 16px;
+    /* Añade una línea inferior */
+    border-bottom: 1px solid #e4edf5;
+    /* Organiza los elementos */
+    display: flex;
+    /* Centra verticalmente */
+    align-items: center;
+    /* Separa título y botón */
+    justify-content: space-between
+}
+
+/* TÍTULO DE LA CABECERA DEL CARRITO */
+.cart-panel__head h2 {
+    /* Define el margen */
+    margin: 3px 0 0;
+    /* Define el color */
+    color: #173f75
+}
+
+/* BOTÓN DE LA CABECERA DEL CARRITO */
+.cart-panel__head button {
+    /* Elimina el borde */
+    border: 0;
+    /* Define el fondo */
+    background: #edf5fb;
+    /* Define el color */
+    color: var(--primary);
+    /* Define el ancho */
+    width: 38px;
+    /* Define la altura */
+    height: 38px;
+    /* Hace circular el botón */
+    border-radius: 50%;
+    /* Indica que es interactivo */
+    cursor: pointer
+}
+
+/* CONTENEDOR DE PRODUCTOS DEL CARRITO */
+.cart-items {
+    /* Define el espacio interno */
+    padding: 16px 20px;
+    /* Permite desplazamiento */
+    overflow: auto;
+    /* Ocupa el espacio disponible */
+    flex: 1
+}
+
+/* MENSAJE DE CARRITO VACÍO */
+.cart-empty {
+    /* Centra el texto */
+    text-align: center;
+    /* Define el espacio interno */
+    padding: 60px 20px;
+    /* Define el color */
+    color: #7b8b9b
+}
+
+/* ELEMENTO INDIVIDUAL DEL CARRITO */
+.cart-item {
+    /* Organiza el producto mediante Grid */
+    display: grid;
+    /* Define columnas para imagen, información y acciones */
+    grid-template-columns: 72px 1fr auto;
+    /* Define la separación */
+    gap: 11px;
+    /* Centra los elementos verticalmente */
+    align-items: center;
+    /* Define el espacio vertical */
+    padding: 12px 0;
+    /* Añade una línea inferior */
+    border-bottom: 1px solid #edf2f7
+}
+
+/* IMAGEN DEL PRODUCTO EN EL CARRITO */
+.cart-item img {
+    /* Define el ancho */
+    width: 72px;
+    /* Define la altura */
+    height: 72px;
+    /* Ajusta la imagen al espacio */
+    object-fit: cover;
+    /* Redondea la imagen */
+    border-radius: 11px;
+    /* Define el fondo */
+    background: #f7fbfe
+}
+
+/* NOMBRE DEL PRODUCTO EN EL CARRITO */
+.cart-item h3 {
+    /* Define fuente, grosor y tamaño */
+    font: 600 .85rem 'Host Grotesk';
+    /* Define el margen */
+    margin: 0 0 5px;
+    /* Define el color */
+    color: #244a72
+}
+
+/* INFORMACIÓN DEL PRODUCTO EN EL CARRITO */
+.cart-item p {
+    /* Elimina el margen */
+    margin: 0;
+    /* Define el color */
+    color: #6f8093;
+    /* Define el tamaño */
+    font-size: .72rem
+}
+
+/* CONTROL DE CANTIDAD */
+.qty-control {
+    /* Organiza los controles horizontalmente */
+    display: flex;
+    /* Centra verticalmente */
+    align-items: center;
+    /* Define la separación */
+    gap: 7px;
+    /* Separa el control del contenido superior */
+    margin-top: 8px
+}
+
+/* BOTONES DEL CONTROL DE CANTIDAD */
+.qty-control button {
+    /* Define el borde */
+    border: 1px solid #d7e4ef;
+    /* Define el fondo */
+    background: #fff;
+    /* Define el ancho */
+    width: 25px;
+    /* Define la altura */
+    height: 25px;
+    /* Redondea las esquinas */
+    border-radius: 7px;
+    /* Define el color */
+    color: var(--primary);
+    /* Indica que es interactivo */
+    cursor: pointer
+}
+
+/* NÚMERO DE CANTIDAD */
+.qty-control span {
+    /* Define el tamaño */
+    font-size: .75rem;
+    /* Define el grosor */
+    font-weight: 800
+}
+
+/* BOTÓN PARA ELIMINAR PRODUCTO */
+.remove-item {
+    /* Elimina el borde */
+    border: 0;
+    /* Hace transparente el fondo */
+    background: transparent;
+    /* Define el color */
+    color: #a7b2be;
+    /* Indica que es interactivo */
+    cursor: pointer
+}
+
+/* PARTE INFERIOR DEL CARRITO */
+.cart-panel__bottom {
+    /* Define el espacio interno */
+    padding: 17px 20px 20px;
+    /* Añade un borde superior */
+    border-top: 1px solid #e4edf5;
+    /* Define el fondo */
+    background: #fbfdff
+}
+
+/* TOTAL DEL CARRITO */
+.cart-total {
+    /* Organiza los elementos horizontalmente */
+    display: flex;
+    /* Separa etiqueta y precio */
+    justify-content: space-between;
+    /* Centra verticalmente */
+    align-items: center;
+    /* Define el margen inferior */
+    margin-bottom: 13px;
+    /* Define el color */
+    color: #62758a;
+    /* Define el tamaño */
+    font-size: .84rem
+}
+
+/* VALOR TOTAL */
+.cart-total strong {
+    /* Define fuente, grosor y tamaño */
+    font: 700 1.25rem 'Host Grotesk';
+    /* Define el color principal */
+    color: var(--primary)
+}
+
+/* BOTÓN DENTRO DEL PANEL DEL CARRITO */
+.cart-panel__bottom .btn {
+    /* Hace que el botón ocupe todo el ancho */
+    width: 100%
+}
+
+/* FONDO DEL CARRITO */
+.cart-backdrop {
+    /* Oculta el fondo inicialmente */
+    display: none;
+    /* Fija el fondo a la ventana */
+    position: fixed;
+    /* Ocupa toda la ventana */
+    inset: 0;
+    /* Oscurece el contenido posterior */
+    background: rgba(14, 37, 62, .35);
+    /* Coloca el fondo debajo del carrito */
+    z-index: 1250
+}
+
+/* FONDO DEL CARRITO ACTIVO */
+.cart-backdrop.is-open {
+    /* Muestra el fondo cuando el carrito está abierto */
+    display: block
+}
+
+/* DIÁLOGO DE CHECKOUT */
+.checkout-dialog {
+    /* Define un ancho máximo adaptable */
+    width: min(820px, calc(100% - 28px))
+}
+
+/* TÍTULO DEL CHECKOUT */
+.checkout-heading h2 {
+    /* Define el tamaño */
+    font-size: 1.75rem;
+    /* Define el color */
+    color: #183f70;
+    /* Define los márgenes */
+    margin: 8px 0
+}
+
+/* TEXTO DEL CHECKOUT */
+.checkout-heading p {
+    /* Define los márgenes */
+    margin: 0 0 20px;
+    /* Define el color */
+    color: #77899c;
+    /* Define el tamaño */
+    font-size: .8rem
+}
+
+/* RESUMEN DEL CHECKOUT */
+.checkout-summary {
+    /* Define el fondo */
+    background: #f5faff;
+    /* Define el borde */
+    border: 1px solid #dcebf6;
+    /* Redondea las esquinas */
+    border-radius: 13px;
+    /* Define el espacio interno */
+    padding: 13px;
+    /* Define el espacio inferior */
+    margin-bottom: 19px;
+    /* Define el tamaño del texto */
+    font-size: .78rem;
+    /* Define el color */
+    color: #526b84
+}
+
+/* CUADRÍCULA DEL FORMULARIO DE CHECKOUT */
+.checkout-grid {
+    /* Utiliza Grid para organizar campos */
+    display: grid;
+    /* Crea dos columnas iguales */
+    grid-template-columns: 1fr 1fr;
+    /* Define la separación */
+    gap: 17px
+}
+
+/* CAMPO DE ANCHO COMPLETO */
+.field-full {
+    /* Hace que el campo ocupe ambas columnas */
+    grid-column: 1/-1
+}
+
+/* BOTÓN DE CONFIRMACIÓN */
+.checkout-submit {
+    /* Separa el botón del contenido superior */
+    margin-top: 18px;
+    /* Ocupa todo el ancho */
+    width: 100%
+}
+
+/* RESPONSIVE: TRES COLUMNAS */
+@media(max-width:1050px) {
+    /* Ajusta la cuadrícula de productos */
+    .product-grid {
+        /* Reduce la cuadrícula a tres columnas */
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+/* RESPONSIVE: TABLET Y PANTALLAS MEDIANAS */
+@media(max-width:820px) {
+    /* Ajusta la barra superior */
+    .store-toolbar {
+        /* Permite que los elementos ocupen todo el ancho */
+        align-items: stretch;
+        /* Coloca los elementos en columna */
+        flex-direction: column
+    }
+
+    /* Ajusta las herramientas */
+    .store-tools {
+        /* Alinea las herramientas hacia la izquierda */
+        justify-content: flex-start
+    }
+
+    /* Ajusta la cuadrícula de productos */
+    .product-grid {
+        /* Reduce a dos columnas */
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    /* Ajusta el detalle del producto */
+    .product-detail {
+        /* Coloca las columnas una debajo de otra */
+        grid-template-columns: 1fr
+    }
+
+    /* Ajusta la imagen del detalle */
+    .product-detail img {
+        /* Limita la altura de la imagen */
+        max-height: 330px;
+        /* Recorta la imagen manteniendo proporción */
+        object-fit: cover
+    }
+}
+
+/* RESPONSIVE: MÓVILES */
+@media(max-width:560px) {
+    /* Ajusta las herramientas para móviles */
+    .store-tools {
+        /* Utiliza una cuadrícula */
+        display: grid;
+        /* Crea dos columnas */
+        grid-template-columns: 1fr 1fr
+    }
+
+    /* Ajusta la caja de búsqueda */
+    .search-box {
+        /* Elimina el ancho mínimo */
+        min-width: 0;
+        /* Hace que ocupe las dos columnas */
+        grid-column: 1/-1
+    }
+
+    /* Centra el contenido del botón del carrito */
+    .cart-button {
+        /* Centra horizontalmente su contenido */
+        justify-content: center
+    }
+
+    /* Ajusta los productos */
+    .product-grid {
+        /* Muestra un producto por fila */
+        grid-template-columns: 1fr
+    }
+
+    /* Ajusta el formulario de checkout */
+    .checkout-grid {
+        /* Muestra una sola columna */
+        grid-template-columns: 1fr
+    }
+
+    /* Ajusta el campo completo */
+    .field-full {
+        /* Permite que vuelva a ocupar una sola columna */
+        grid-column: auto
+    }
+
+    /* Reduce el espacio interno del modal */
+    .modal__dialog {
+        /* Disminuye el padding en móviles */
+        padding: 23px
+    }
+
+    /* Reduce el título del detalle */
+    .product-detail h2 {
+        /* Define un tamaño menor para móviles */
+        font-size: 1.55rem
+    }
+}
+
+/* MEJORAS DE FILTROS Y DISPONIBILIDAD */
+
+/* INTERRUPTOR DE DISPONIBILIDAD */
+.availability-toggle {
+    /* Organiza sus elementos horizontalmente */
+    display: flex;
+    /* Centra verticalmente los elementos */
+    align-items: center;
+    /* Define la separación */
+    gap: 8px;
+    /* Define el tamaño del texto */
+    font-size: .9rem;
+    /* Evita que el texto se divida en varias líneas */
+    white-space: nowrap;
+}
+
+/* INDICADOR DE STOCK DEL PRODUCTO */
+.product-stock {
+    /* Posiciona el indicador dentro de la imagen */
+    position: absolute;
+    /* Define la distancia derecha */
+    right: 12px;
+    /* Define la distancia inferior */
+    bottom: 12px;
+    /* Define el fondo */
+    background: #fff;
+    /* Define el espacio interno */
+    padding: 6px 9px;
+    /* Hace redondeado el indicador */
+    border-radius: 999px;
+    /* Define el tamaño del texto */
+    font-size: .78rem;
+    /* Define el grosor del texto */
+    font-weight: 700;
+    /* Añade una sombra */
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+/* INDICADOR DE PRODUCTO AGOTADO */
+.product-stock.agotado {
+    /* Define el color para indicar falta de stock */
+    color: #9b2c2c;
+}
+
+/* INFORMACIÓN DE STOCK EN EL DETALLE */
+.stock-detail {
+    /* Organiza la información horizontalmente */
+    display: flex;
+    /* Separa los datos */
+    justify-content: space-between;
+    /* Define la separación mínima */
+    gap: 16px;
+    /* Define el espacio interno */
+    padding: 12px 14px;
+    /* Define los márgenes verticales */
+    margin: 16px 0;
+    /* Define el borde */
+    border: 1px solid #e1e9ef;
+    /* Redondea las esquinas */
+    border-radius: 12px;
+}
+
+/* TEXTO DESTACADO DEL STOCK */
+.stock-detail span {
+    /* Resalta la información de stock */
+    font-weight: 700;
+}
+
+/* BOTÓN AGREGAR DESHABILITADO */
+.add-btn:disabled {
+    /* Cambia el cursor para indicar que no está disponible */
+    cursor: not-allowed;
+    /* Reduce la opacidad para mostrar que está deshabilitado */
+    opacity: .55;
+}
+
+/* RESPONSIVE DEL INTERRUPTOR DE DISPONIBILIDAD */
+@media (max-width: 900px) {
+    /* Ajusta el interruptor en pantallas pequeñas */
+    .availability-toggle {
+        /* Hace que ocupe todo el ancho */
+        width: 100%;
+    }
+}
