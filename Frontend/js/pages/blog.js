@@ -1,30 +1,24 @@
 /* ESPERA A QUE TODO EL HTML HAYA CARGADO */
 document.addEventListener("DOMContentLoaded", () => {
+  // CONTENIDO DE LOS ARTÍCULOS
 
-    /* =========================================================
-       CONTENIDO DE LOS ARTÍCULOS
-    ========================================================= */
+  /* OBJETO QUE ALMACENA TODOS LOS ARTÍCULOS DEL BLOG */
+  const articulos = {
+    // ARTÍCULO 1
 
-    /* OBJETO QUE ALMACENA TODOS LOS ARTÍCULOS DEL BLOG */
-    const articulos = {
+    // DATOS DEL ARTÍCULO SOBRE VACUNAS
+    vacunas: {
+      // Define la categoría del artículo
+      categoria: "Salud",
 
-        /* =====================================================
-           ARTÍCULO 1
-        ===================================================== */
+      // Define el título del artículo
+      titulo: "¿Importancia de las vacunas en tu mascota?",
 
-        /* DATOS DEL ARTÍCULO SOBRE VACUNAS */
-        vacunas: {
-            /* Define la categoría del artículo */
-            categoria: "Salud",
+      // Define la imagen principal del artículo
+      imagen: "../assets/images/productos/salud.avif",
 
-            /* Define el título del artículo */
-            titulo: "¿Importancia de las vacunas en tu mascota?",
-
-            /* Define la imagen principal del artículo */
-            imagen: "../assets/images/productos/salud.avif",
-
-            /* CONTENIDO COMPLETO DEL ARTÍCULO */
-            contenido: `
+      // CONTENIDO COMPLETO DEL ARTÍCULO
+      contenido: `
                 <p>
                     Las vacunas son una de las herramientas más importantes
                     para proteger a tu mascota frente a diferentes enfermedades.
@@ -65,26 +59,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     las vacunas que necesita tu mascota y mantener su
                     protección al día.
                 </p>
-            `
-        },
+            `,
+    },
 
-        /* =====================================================
-           ARTÍCULO 2
-        ===================================================== */
+    // ARTÍCULO 2
 
-        /* DATOS DEL ARTÍCULO SOBRE ALIMENTACIÓN */
-        alimentacion: {
-            /* Define la categoría */
-            categoria: "Alimentación",
+    // DATOS DEL ARTÍCULO SOBRE ALIMENTACIÓN
+    alimentacion: {
+      // Define la categoría
+      categoria: "Alimentación",
 
-            /* Define el título */
-            titulo: "Alimentación saludable para tu mascota",
+      // Define el título
+      titulo: "Alimentación saludable para tu mascota",
 
-            /* Define la imagen */
-            imagen: "../assets/images/productos/alim.jpg",
+      // Define la imagen
+      imagen: "../assets/images/productos/alim.jpg",
 
-            /* CONTENIDO COMPLETO DEL ARTÍCULO */
-            contenido: `
+      // CONTENIDO COMPLETO DEL ARTÍCULO
+      contenido: `
                 <p>
                     Una alimentación equilibrada es fundamental para que tu
                     mascota tenga energía, mantenga una buena condición corporal
@@ -130,26 +122,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     Si tienes dudas sobre qué alimentación es adecuada para tu
                     mascota, nuestros profesionales pueden orientarte.
                 </p>
-            `
-        },
+            `,
+    },
 
-        /* =====================================================
-           ARTÍCULO 3
-        ===================================================== */
+    // ARTÍCULO 3
 
-        /* DATOS DEL ARTÍCULO SOBRE SALUD DENTAL */
-        dental: {
-            /* Define la categoría */
-            categoria: "Cuidado",
+    // DATOS DEL ARTÍCULO SOBRE SALUD DENTAL
+    dental: {
+      // Define la categoría
+      categoria: "Cuidado",
 
-            /* Define el título */
-            titulo: "Importancia del cuidado dental en tu mascota",
+      // Define el título
+      titulo: "Importancia del cuidado dental en tu mascota",
 
-            /* Define la imagen */
-            imagen: "../assets/images/productos/dental.jpg",
+      // Define la imagen
+      imagen: "../assets/images/productos/dental.jpg",
 
-            /* CONTENIDO COMPLETO DEL ARTÍCULO */
-            contenido: `
+      // CONTENIDO COMPLETO DEL ARTÍCULO
+      contenido: `
                 <p>
                     La salud dental es una parte fundamental del cuidado
                     general de perros y gatos. Una boca saludable contribuye
@@ -186,26 +176,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     dentales antes de que avancen y establecer las medidas
                     de cuidado más adecuadas.
                 </p>
-            `
-        },
+            `,
+    },
 
-        /* =====================================================
-           ARTÍCULO 4
-        ===================================================== */
+    // ARTÍCULO 4
 
-        /* DATOS DEL ARTÍCULO SOBRE CONSULTAS VETERINARIAS */
-        consulta: {
-            /* Define la categoría */
-            categoria: "Prevención",
+    // DATOS DEL ARTÍCULO SOBRE CONSULTAS VETERINARIAS 
+    consulta: {
+      // Define la categoría 
+      categoria: "Prevención",
 
-            /* Define el título */
-            titulo: "¿Cada cuánto debes llevar a tu mascota al veterinario?",
+      // Define el título 
+      titulo: "¿Cada cuánto debes llevar a tu mascota al veterinario?",
 
-            /* Define la imagen */
-            imagen: "../assets/images/productos/veterinaris.jpg",
+      // Define la imagen 
+      imagen: "../assets/images/productos/veterinaris.jpg",
 
-            /* CONTENIDO COMPLETO DEL ARTÍCULO */
-            contenido: `
+      // CONTENIDO COMPLETO DEL ARTÍCULO 
+      contenido: `
                 <p>
                     Las visitas periódicas al veterinario son una parte
                     fundamental del cuidado responsable de cualquier mascota.
@@ -259,26 +247,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     alimentación, peso, actividad o hábitos, no esperes a la
                     siguiente revisión y consulta con un profesional.
                 </p>
-            `
-        },
+            `,
+    },
 
-        /* =====================================================
-           ARTÍCULO 5
-        ===================================================== */
+    //  ARTÍCULO 5
 
-        /* DATOS DEL ARTÍCULO SOBRE ACTIVIDAD FÍSICA */
-        actividad: {
-            /* Define la categoría */
-            categoria: "Actividad física",
+    // DATOS DEL ARTÍCULO SOBRE ACTIVIDAD FÍSICA 
+    actividad: {
+      // Define la categoría 
+      categoria: "Actividad física",
 
-            /* Define el título */
-            titulo: "La importancia de la actividad física",
+      // Define el título 
+      titulo: "La importancia de la actividad física",
 
-            /* Define la imagen */
-            imagen: "../assets/images/productos/theforest.jpg",
+      // Define la imagen 
+      imagen: "../assets/images/productos/theforest.jpg",
 
-            /* CONTENIDO COMPLETO DEL ARTÍCULO */
-            contenido: `
+      // CONTENIDO COMPLETO DEL ARTÍCULO 
+      contenido: `
                 <p>
                     La actividad física es esencial para que las mascotas
                     mantengan una buena condición corporal y un equilibrio
@@ -332,26 +318,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     moverse o cualquier cambio durante la actividad, es
                     recomendable consultar con un profesional veterinario.
                 </p>
-            `
-        },
+            `,
+    },
 
-        /* =====================================================
-           ARTÍCULO 6
-        ===================================================== */
+    // ARTÍCULO 6
 
-        /* DATOS DEL ARTÍCULO SOBRE LA CONFIANZA EN VETSALUD */
-        confianza: {
-            /* Define la categoría */
-            categoria: "Cuidado",
+    // DATOS DEL ARTÍCULO SOBRE LA CONFIANZA EN VETSALUD 
+    confianza: {
+      // Define la categoría 
+      categoria: "Cuidado",
 
-            /* Define el título */
-            titulo: "Por qué las familias confían en VetSalud",
+      // Define el título 
+      titulo: "Por qué las familias confían en VetSalud",
 
-            /* Define la imagen */
-            imagen: "../assets/images/productos/blog-1.png",
+      // Define la imagen 
+      imagen: "../assets/images/productos/blog-1.png",
 
-            /* CONTENIDO COMPLETO DEL ARTÍCULO */
-            contenido: `
+      // CONTENIDO COMPLETO DEL ARTÍCULO 
+      contenido: `
                 <p>
                     En VetSalud combinamos experiencia, tecnología y un trato
                     cercano para brindar una atención veterinaria pensada
@@ -401,26 +385,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     prevenir y mejorar el bienestar de quienes hacen parte
                     de nuestra familia.
                 </p>
-            `
-        },
+            `,
+    },
 
-        /* =====================================================
-           ARTÍCULO 7
-        ===================================================== */
+    // ARTÍCULO 7
 
-        /* DATOS DEL ARTÍCULO SOBRE RECURSOS PARA PROPIETARIOS */
-        recursos: {
-            /* Define la categoría */
-            categoria: "Prevención",
+    // DATOS DEL ARTÍCULO SOBRE RECURSOS PARA PROPIETARIOS 
+    recursos: {
+      // Define la categoría 
+      categoria: "Prevención",
 
-            /* Define el título */
-            titulo: "Recursos del propietario",
+      // Define el título 
+      titulo: "Recursos del propietario",
 
-            /* Define la imagen */
-            imagen: "../assets/images/productos/blog-2.jpg",
+      // Define la imagen 
+      imagen: "../assets/images/productos/blog-2.jpg",
 
-            /* CONTENIDO COMPLETO DEL ARTÍCULO */
-            contenido: `
+      // CONTENIDO COMPLETO DEL ARTÍCULO 
+      contenido: `
                 <p>
                     Ser responsable de una mascota implica mucho más que
                     ofrecerle alimento y cariño. También significa conocer
@@ -470,26 +452,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     sustituyen una valoración profesional cuando existe un
                     problema de salud.
                 </p>
-            `
-        },
+            `,
+    },
 
-        /* =====================================================
-           ARTÍCULO 8
-        ===================================================== */
+    // ARTÍCULO 8
 
-        /* DATOS DEL ARTÍCULO SOBRE SEÑALES DE ALERTA */
-        alertas: {
-            /* Define la categoría */
-            categoria: "Salud",
+    // DATOS DEL ARTÍCULO SOBRE SEÑALES DE ALERTA 
+    alertas: {
+      // Define la categoría 
+      categoria: "Salud",
 
-            /* Define el título */
-            titulo: "Señales de alerta en la salud de tu mascota",
+      // Define el título 
+      titulo: "Señales de alerta en la salud de tu mascota",
 
-            /* Define la imagen */
-            imagen: "../assets/images/productos/blog-3.jpg",
+      // Define la imagen 
+      imagen: "../assets/images/productos/blog-3.jpg",
 
-            /* CONTENIDO COMPLETO DEL ARTÍCULO */
-            contenido: `
+      // CONTENIDO COMPLETO DEL ARTÍCULO 
+      contenido: `
                 <p>
                     Conocer los cambios en el comportamiento y los hábitos
                     de tu mascota puede ayudarte a detectar a tiempo
@@ -541,26 +521,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     consulta con un profesional veterinario para obtener una
                     valoración adecuada.
                 </p>
-            `
-        },
+            `,
+    },
 
-        /* =====================================================
-           ARTÍCULO 9
-        ===================================================== */
+    // ARTÍCULO 9
 
-        /* DATOS DEL SEGUNDO ARTÍCULO SOBRE ALIMENTACIÓN */
-        alimentacion2: {
-            /* Define la categoría */
-            categoria: "Alimentación",
+    // DATOS DEL SEGUNDO ARTÍCULO SOBRE ALIMENTACIÓN 
+    alimentacion2: {
+      // Define la categoría 
+      categoria: "Alimentación",
 
-            /* Define el título */
-            titulo: "Cómo elegir una buena alimentación",
+      // Define el título 
+      titulo: "Cómo elegir una buena alimentación",
 
-            /* Define la imagen */
-            imagen: "../assets/images/productos/blog-4.jpeg",
+      // Define la imagen 
+      imagen: "../assets/images/productos/blog-4.jpeg",
 
-            /* CONTENIDO COMPLETO DEL ARTÍCULO */
-            contenido: `
+      // CONTENIDO COMPLETO DEL ARTÍCULO 
+      contenido: `
                 <p>
                     Elegir correctamente el alimento de tu mascota es una
                     de las decisiones más importantes para mantener una buena
@@ -630,40 +608,28 @@ document.addEventListener("DOMContentLoaded", () => {
                     y controles veterinarios periódicos forman parte de un
                     cuidado integral.
                 </p>
-            `
-        }
+            `,
+    },
+  };
 
-    };
+  // REFERENCIAS A ELEMENTOS DEL HTML
 
+  // Obtiene todos los botones de categorías 
+  const botonesCategoria = document.querySelectorAll(".categorias button");
 
-    /* =========================================================
-       REFERENCIAS A ELEMENTOS DEL HTML
-    ========================================================= */
+  // Obtiene todas las tarjetas de artículos 
+  const tarjetas = document.querySelectorAll(".articulos_grid .articulo");
 
-    /* Obtiene todos los botones de categorías */
-    const botonesCategoria =
-        document.querySelectorAll(".categorias button");
+  // CREAR MODAL
 
-    /* Obtiene todas las tarjetas de artículos */
-    const tarjetas =
-        document.querySelectorAll(
-            ".articulos_grid .articulo"
-        );
+  // Crea dinámicamente el contenedor principal del modal 
+  const modal = document.createElement("div");
 
+  // Asigna la clase principal del modal 
+  modal.className = "blog-modal";
 
-    /* =========================================================
-       CREAR MODAL
-    ========================================================= */
-
-    /* Crea dinámicamente el contenedor principal del modal */
-    const modal =
-        document.createElement("div");
-
-    /* Asigna la clase principal del modal */
-    modal.className = "blog-modal";
-
-    /* Inserta la estructura HTML completa del modal */
-    modal.innerHTML = `
+  /* Inserta la estructura HTML completa del modal */
+  modal.innerHTML = `
 
         <!-- FONDO DEL MODAL -->
         <div class="blog-modal__overlay"></div>
@@ -722,371 +688,233 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     `;
 
-    /* Agrega el modal al final del body */
-    document.body.appendChild(modal);
+  /* Agrega el modal al final del body */
+  document.body.appendChild(modal);
 
-
-    /* =========================================================
+  /* =========================================================
        ELEMENTOS DEL MODAL
     ========================================================= */
 
-    /* Obtiene la imagen del modal */
-    const modalImagen =
-        modal.querySelector(
-            "#modal-articulo-imagen"
-        );
+  /* Obtiene la imagen del modal */
+  const modalImagen = modal.querySelector("#modal-articulo-imagen");
 
-    /* Obtiene el elemento de categoría */
-    const modalCategoria =
-        modal.querySelector(
-            "#modal-articulo-categoria"
-        );
+  /* Obtiene el elemento de categoría */
+  const modalCategoria = modal.querySelector("#modal-articulo-categoria");
 
-    /* Obtiene el título del modal */
-    const modalTitulo =
-        modal.querySelector(
-            "#modal-articulo-titulo"
-        );
+  /* Obtiene el título del modal */
+  const modalTitulo = modal.querySelector("#modal-articulo-titulo");
 
-    /* Obtiene el contenedor del texto */
-    const modalTexto =
-        modal.querySelector(
-            "#modal-articulo-texto"
-        );
+  /* Obtiene el contenedor del texto */
+  const modalTexto = modal.querySelector("#modal-articulo-texto");
 
-    /* Obtiene el botón de cerrar */
-    const botonCerrar =
-        modal.querySelector(
-            ".blog-modal__cerrar"
-        );
+  /* Obtiene el botón de cerrar */
+  const botonCerrar = modal.querySelector(".blog-modal__cerrar");
 
-    /* Obtiene el fondo del modal */
-    const overlay =
-        modal.querySelector(
-            ".blog-modal__overlay"
-        );
+  /* Obtiene el fondo del modal */
+  const overlay = modal.querySelector(".blog-modal__overlay");
 
-
-    /* =========================================================
+  /* =========================================================
        ABRIR MODAL
     ========================================================= */
 
-    /* Función encargada de abrir un artículo específico */
-    function abrirModal(id) {
+  /* Función encargada de abrir un artículo específico */
+  function abrirModal(id) {
+    /* Busca el artículo utilizando su identificador */
+    const articulo = articulos[id];
 
-        /* Busca el artículo utilizando su identificador */
-        const articulo =
-            articulos[id];
+    /* Comprueba que el artículo exista */
+    if (!articulo) {
+      /* Muestra un error en la consola si no existe */
+      console.error("Artículo no encontrado:", id);
 
-        /* Comprueba que el artículo exista */
-        if (!articulo) {
-
-            /* Muestra un error en la consola si no existe */
-            console.error(
-                "Artículo no encontrado:",
-                id
-            );
-
-            /* Detiene la función */
-            return;
-        }
-
-        /* Asigna la imagen del artículo al modal */
-        modalImagen.src =
-            articulo.imagen;
-
-        /* Utiliza el título como texto alternativo */
-        modalImagen.alt =
-            articulo.titulo;
-
-        /* Coloca la categoría del artículo */
-        modalCategoria.textContent =
-            articulo.categoria;
-
-        /* Coloca el título del artículo */
-        modalTitulo.textContent =
-            articulo.titulo;
-
-        /* Inserta el contenido HTML del artículo */
-        modalTexto.innerHTML =
-            articulo.contenido;
-
-        /* Agrega la clase que hace visible el modal */
-        modal.classList.add("activo");
-
-        /* Bloquea el comportamiento de desplazamiento del body */
-        document.body.classList.add(
-            "modal-blog-abierto"
-        );
-
-        /* Busca el cuerpo interno del modal */
-        const cuerpo =
-            modal.querySelector(
-                ".blog-modal__body"
-            );
-
-        /* Comprueba que el cuerpo exista */
-        if (cuerpo) {
-
-            /* Regresa el desplazamiento interno al inicio */
-            cuerpo.scrollTop = 0;
-        }
-
+      /* Detiene la función */
+      return;
     }
 
+    /* Asigna la imagen del artículo al modal */
+    modalImagen.src = articulo.imagen;
 
-    /* =========================================================
+    /* Utiliza el título como texto alternativo */
+    modalImagen.alt = articulo.titulo;
+
+    /* Coloca la categoría del artículo */
+    modalCategoria.textContent = articulo.categoria;
+
+    /* Coloca el título del artículo */
+    modalTitulo.textContent = articulo.titulo;
+
+    /* Inserta el contenido HTML del artículo */
+    modalTexto.innerHTML = articulo.contenido;
+
+    /* Agrega la clase que hace visible el modal */
+    modal.classList.add("activo");
+
+    /* Bloquea el comportamiento de desplazamiento del body */
+    document.body.classList.add("modal-blog-abierto");
+
+    /* Busca el cuerpo interno del modal */
+    const cuerpo = modal.querySelector(".blog-modal__body");
+
+    /* Comprueba que el cuerpo exista */
+    if (cuerpo) {
+      /* Regresa el desplazamiento interno al inicio */
+      cuerpo.scrollTop = 0;
+    }
+  }
+
+  /* =========================================================
        CERRAR MODAL
     ========================================================= */
 
-    /* Función encargada de cerrar el modal */
-    function cerrarModal() {
+  /* Función encargada de cerrar el modal */
+  function cerrarModal() {
+    /* Elimina la clase que muestra el modal */
+    modal.classList.remove("activo");
 
-        /* Elimina la clase que muestra el modal */
-        modal.classList.remove(
-            "activo"
-        );
+    /* Permite nuevamente el desplazamiento del body */
+    document.body.classList.remove("modal-blog-abierto");
+  }
 
-        /* Permite nuevamente el desplazamiento del body */
-        document.body.classList.remove(
-            "modal-blog-abierto"
-        );
-
-    }
-
-
-    /* =========================================================
+  /* =========================================================
        BOTONES "LEER MÁS"
     ========================================================= */
 
-    /* Escucha los clics realizados en todo el documento */
-    document.addEventListener(
-        "click",
-        (evento) => {
+  /* Escucha los clics realizados en todo el documento */
+  document.addEventListener("click", (evento) => {
+    /* Busca el botón "Leer más" más cercano al clic */
+    const boton = evento.target.closest(".leer-mas");
 
-            /* Busca el botón "Leer más" más cercano al clic */
-            const boton =
-                evento.target.closest(
-                    ".leer-mas"
-                );
+    /* Si el clic no fue sobre un botón válido, no continúa */
+    if (!boton) {
+      return;
+    }
 
-            /* Si el clic no fue sobre un botón válido, no continúa */
-            if (!boton) {
-                return;
-            }
+    /* Evita la acción predeterminada del enlace o botón */
+    evento.preventDefault();
 
-            /* Evita la acción predeterminada del enlace o botón */
-            evento.preventDefault();
+    /* Obtiene el identificador del artículo */
+    const id = boton.getAttribute("data-articulo");
 
-            /* Obtiene el identificador del artículo */
-            const id =
-                boton.getAttribute(
-                    "data-articulo"
-                );
+    /* Comprueba que exista el identificador */
+    if (!id) {
+      /* Muestra un error indicando que falta data-articulo */
+      console.error("El botón no tiene data-articulo:", boton);
 
-            /* Comprueba que exista el identificador */
-            if (!id) {
+      /* Detiene la ejecución */
+      return;
+    }
 
-                /* Muestra un error indicando que falta data-articulo */
-                console.error(
-                    "El botón no tiene data-articulo:",
-                    boton
-                );
+    /* Abre el artículo correspondiente */
+    abrirModal(id);
+  });
 
-                /* Detiene la ejecución */
-                return;
-            }
-
-            /* Abre el artículo correspondiente */
-            abrirModal(id);
-
-        }
-    );
-
-
-    /* =========================================================
+  /* =========================================================
        CERRAR MODAL
     ========================================================= */
 
-    /* Cierra el modal al pulsar el botón */
-    botonCerrar.addEventListener(
-        "click",
-        cerrarModal
-    );
+  /* Cierra el modal al pulsar el botón */
+  botonCerrar.addEventListener("click", cerrarModal);
 
-    /* Cierra el modal al pulsar el fondo */
-    overlay.addEventListener(
-        "click",
-        cerrarModal
-    );
+  /* Cierra el modal al pulsar el fondo */
+  overlay.addEventListener("click", cerrarModal);
 
-    /* Escucha las teclas presionadas por el usuario */
-    document.addEventListener(
-        "keydown",
-        (evento) => {
+  /* Escucha las teclas presionadas por el usuario */
+  document.addEventListener("keydown", (evento) => {
+    /* Comprueba si se presionó Escape y el modal está abierto */
+    if (evento.key === "Escape" && modal.classList.contains("activo")) {
+      /* Cierra el modal */
+      cerrarModal();
+    }
+  });
 
-            /* Comprueba si se presionó Escape y el modal está abierto */
-            if (
-                evento.key === "Escape" &&
-                modal.classList.contains("activo")
-            ) {
-
-                /* Cierra el modal */
-                cerrarModal();
-
-            }
-
-        }
-    );
-
-
-    /* =========================================================
+  /* =========================================================
        FILTRO DE ARTÍCULOS
     ========================================================= */
 
-    /* Filtra las tarjetas según la categoría seleccionada */
-    function filtrarArticulos(
-        categoriaSeleccionada
-    ) {
+  /* Filtra las tarjetas según la categoría seleccionada */
+  function filtrarArticulos(categoriaSeleccionada) {
+    /* Recorre todas las tarjetas disponibles */
+    tarjetas.forEach((tarjeta) => {
+      /* Obtiene la categoría de la tarjeta */
+      const categoriaTarjeta = tarjeta.getAttribute("data-categoria");
 
-        /* Recorre todas las tarjetas disponibles */
-        tarjetas.forEach(
-            (tarjeta) => {
+      /* Determina si la tarjeta debe mostrarse */
+      const mostrar =
+        categoriaSeleccionada === "todos" ||
+        categoriaTarjeta === categoriaSeleccionada;
 
-                /* Obtiene la categoría de la tarjeta */
-                const categoriaTarjeta =
-                    tarjeta.getAttribute(
-                        "data-categoria"
-                    );
+      /* Comprueba si debe mostrarse */
+      if (mostrar) {
+        /* Elimina la clase que oculta la tarjeta */
+        tarjeta.classList.remove("oculto");
+      } else {
+        /* Agrega la clase que oculta la tarjeta */
+        tarjeta.classList.add("oculto");
+      }
+    });
+  }
 
-                /* Determina si la tarjeta debe mostrarse */
-                const mostrar =
-                    categoriaSeleccionada === "todos" ||
-                    categoriaTarjeta ===
-                    categoriaSeleccionada;
-
-                /* Comprueba si debe mostrarse */
-                if (mostrar) {
-
-                    /* Elimina la clase que oculta la tarjeta */
-                    tarjeta.classList.remove(
-                        "oculto"
-                    );
-
-                } else {
-
-                    /* Agrega la clase que oculta la tarjeta */
-                    tarjeta.classList.add(
-                        "oculto"
-                    );
-
-                }
-
-            }
-        );
-
-    }
-
-
-    /* =========================================================
+  /* =========================================================
        BOTONES DE CATEGORÍA
     ========================================================= */
 
-    /* Recorre todos los botones de categoría */
-    botonesCategoria.forEach(
-        (boton) => {
+  /* Recorre todos los botones de categoría */
+  botonesCategoria.forEach((boton) => {
+    /* Agrega un evento de clic a cada categoría */
+    boton.addEventListener("click", (evento) => {
+      /* Evita el comportamiento predeterminado */
+      evento.preventDefault();
 
-            /* Agrega un evento de clic a cada categoría */
-            boton.addEventListener(
-                "click",
-                (evento) => {
+      /* Obtiene la categoría del botón */
+      const categoria = boton.getAttribute("data-categoria");
 
-                    /* Evita el comportamiento predeterminado */
-                    evento.preventDefault();
+      /* Comprueba que exista una categoría */
+      if (!categoria) {
+        return;
+      }
 
-                    /* Obtiene la categoría del botón */
-                    const categoria =
-                        boton.getAttribute(
-                            "data-categoria"
-                        );
+      /* Recorre todos los botones de categoría */
+      botonesCategoria.forEach((btn) => {
+        /* Quita el estado activo */
+        btn.classList.remove("activo");
 
-                    /* Comprueba que exista una categoría */
-                    if (!categoria) {
-                        return;
-                    }
+        /* Quita la clase de categoría seleccionada */
+        btn.classList.remove("categoria_seleccionada");
+      });
 
-                    /* Recorre todos los botones de categoría */
-                    botonesCategoria.forEach(
-                        (btn) => {
+      /* Marca el botón actual como activo */
+      boton.classList.add("activo");
 
-                            /* Quita el estado activo */
-                            btn.classList.remove(
-                                "activo"
-                            );
+      /* Marca el botón como categoría seleccionada */
+      boton.classList.add("categoria_seleccionada");
 
-                            /* Quita la clase de categoría seleccionada */
-                            btn.classList.remove(
-                                "categoria_seleccionada"
-                            );
+      /* Filtra los artículos según la categoría */
+      filtrarArticulos(categoria);
+    });
+  });
 
-                        }
-                    );
-
-                    /* Marca el botón actual como activo */
-                    boton.classList.add(
-                        "activo"
-                    );
-
-                    /* Marca el botón como categoría seleccionada */
-                    boton.classList.add(
-                        "categoria_seleccionada"
-                    );
-
-                    /* Filtra los artículos según la categoría */
-                    filtrarArticulos(
-                        categoria
-                    );
-
-                }
-            );
-
-        }
-    );
-
-
-    /* =========================================================
+  /* =========================================================
        ESTADO INICIAL
     ========================================================= */
 
-    /* Busca el botón correspondiente a "Todos" */
-    const botonTodos =
-        document.querySelector(
-            '.categorias button[data-categoria="todos"]'
-        );
+  /* Busca el botón correspondiente a "Todos" */
+  const botonTodos = document.querySelector(
+    '.categorias button[data-categoria="todos"]',
+  );
 
-    /* Comprueba que exista el botón */
-    if (botonTodos) {
+  /* Comprueba que exista el botón */
+  if (botonTodos) {
+    /* Marca "Todos" como botón activo */
+    botonTodos.classList.add("activo");
 
-        /* Marca "Todos" como botón activo */
-        botonTodos.classList.add(
-            "activo"
-        );
+    /* Marca "Todos" como categoría seleccionada */
+    botonTodos.classList.add("categoria_seleccionada");
+  }
 
-        /* Marca "Todos" como categoría seleccionada */
-        botonTodos.classList.add(
-            "categoria_seleccionada"
-        );
-
-    }
-
-
-    /* =========================================================
+  /* =========================================================
        MOSTRAR TODOS AL CARGAR
     ========================================================= */
 
-    /* Muestra todos los artículos inicialmente */
-    filtrarArticulos(
-        "todos"
-    );
-
+  /* Muestra todos los artículos inicialmente */
+  filtrarArticulos("todos");
 });

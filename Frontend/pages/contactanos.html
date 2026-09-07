@@ -3,21 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="../css/base.css" />
     <meta name="description" content="Contacta a VetSalud Veterinaria." />
     <title>Contáctanos | VetSalud</title>
-    <link rel="stylesheet" href="../css/contactanos.css" />
+
+    <!-- Iconos de Font Awesome y Material Symbols Outlined -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0"
+    />
+
+    <!-- Hojas de estilos base y de contacto -->
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/contactanos.css" />
   </head>
 
   <body data-page="contactanos">
+    <!-- Navegación modular -->
     <div id="nav-container"></div>
+
+    <!-- Contenido principal de la página -->
     <main class="page-shell">
+      <!-- Sección Hero: Título y descripción -->
       <section class="page-hero">
         <div class="page-container">
           <span class="eyebrow">Estamos para ayudarte</span>
@@ -28,10 +38,14 @@
           </p>
         </div>
       </section>
+
+      <!-- Sección de contacto con información y formulario -->
       <section class="section contact-section">
         <div class="page-container">
           <div class="contact-layout">
+            <!-- COLUMNA 1: INFORMACIÓN DE CONTACTO Y MAPA -->
             <div class="contact-info">
+              <!-- Tarjeta: Ubicación -->
               <div class="info-card">
                 <div class="info-icon">
                   <span class="material-symbols-outlined">location_on</span>
@@ -41,6 +55,8 @@
                   <p>Zona centro · Sogamoso, Boyacá, Colombia</p>
                 </div>
               </div>
+
+              <!-- Tarjeta: Teléfono y horarios -->
               <div class="info-card">
                 <div class="info-icon">
                   <span class="material-symbols-outlined">phone</span>
@@ -52,6 +68,8 @@
                   </p>
                 </div>
               </div>
+
+              <!-- Tarjeta: Correo electrónico -->
               <div class="info-card">
                 <div class="info-icon">
                   <span class="material-symbols-outlined">mail</span>
@@ -61,6 +79,8 @@
                   <p>contacto@vetsalud.com</p>
                 </div>
               </div>
+
+              <!-- Tarjeta: Mapa de referencia -->
               <div class="map-card">
                 <div class="map-heading">
                   <div>
@@ -74,7 +94,8 @@
                     title="Mapa de referencia de VetSalud en Sogamoso"
                     src="https://www.google.com/maps?q=Sogamoso%2C%20Boyac%C3%A1%2C%20Colombia&output=embed"
                     loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
                 <p class="map-note">
                   El mapa muestra una ubicación de referencia en el centro de
@@ -82,7 +103,10 @@
                 </p>
               </div>
             </div>
+
+            <!-- COLUMNA 2: FORMULARIO DE MENSAJE -->
             <div class="contact-card">
+              <!-- Encabezado del formulario -->
               <div class="form-heading">
                 <span class="eyebrow">Escríbenos</span>
                 <h2>Cuéntanos cómo podemos ayudarte</h2>
@@ -91,68 +115,85 @@
                   enviarla.
                 </p>
               </div>
+
+              <!-- Formulario de contacto -->
               <form id="contact-form" novalidate>
                 <div class="form-grid">
+                  <!-- Campo: Nombre -->
                   <div class="field" id="field-name">
-                    <label for="name">Nombre *</label
-                    ><input id="name" name="name" required /><small
-                      class="error"
-                      >Escribe al menos 3 caracteres.</small
-                    >
+                    <label for="name">Nombre *</label>
+                    <input id="name" name="name" required />
+                    <small class="error">Escribe al menos 3 caracteres.</small>
                   </div>
+
+                  <!-- Campo: Correo Electrónico -->
                   <div class="field" id="field-email">
-                    <label for="email">Correo *</label
-                    ><input
+                    <label for="email">Correo *</label>
+                    <input
                       id="email"
                       name="email"
                       type="email"
-                      required /><small class="error"
-                      >Ingresa un correo válido.</small
-                    >
+                      required
+                    />
+                    <small class="error">Ingresa un correo válido.</small>
                   </div>
+
+                  <!-- Campo: Teléfono -->
                   <div class="field" id="field-phone">
-                    <label for="phone">Teléfono *</label
-                    ><input
+                    <label for="phone">Teléfono *</label>
+                    <input
                       id="phone"
                       name="phone"
                       type="tel"
                       inputmode="numeric"
-                      required /><small class="error"
-                      >Ingresa un teléfono válido.</small
-                    >
+                      required
+                    />
+                    <small class="error">Ingresa un teléfono válido.</small>
                   </div>
+
+                  <!-- Campo: Asunto -->
                   <div class="field" id="field-subject">
-                    <label for="subject">Asunto *</label
-                    ><select id="subject" name="subject" required>
+                    <label for="subject">Asunto *</label>
+                    <select id="subject" name="subject" required>
                       <option value="">Selecciona una opción</option>
                       <option>Consulta general</option>
                       <option>Servicios</option>
                       <option>Tienda</option>
                       <option>Seguimiento de cita</option>
-                      <option>Otro</option></select
-                    ><small class="error">Selecciona un asunto.</small>
+                      <option>Otro</option>
+                    </select>
+                    <small class="error">Selecciona un asunto.</small>
                   </div>
+
+                  <!-- Campo: Mensaje -->
                   <div class="field field-full" id="field-message">
-                    <label for="message">Mensaje *</label
-                    ><textarea
+                    <label for="message">Mensaje *</label>
+                    <textarea
                       id="message"
                       name="message"
                       minlength="10"
                       maxlength="500"
                       required
-                      placeholder="Cuéntanos brevemente cómo podemos ayudarte..."></textarea
-                    ><small class="error"
+                      placeholder="Cuéntanos brevemente cómo podemos ayudarte..."
+                    ></textarea>
+                    <small class="error"
                       >Escribe un mensaje de al menos 10 caracteres.</small
-                    ><span class="counter" id="message-counter">0/500</span>
+                    >
+                    <span class="counter" id="message-counter">0/500</span>
                   </div>
                 </div>
+
+                <!-- Mensaje de respuesta del formulario -->
                 <div
                   id="contact-message"
                   class="form-message"
-                  role="alert"></div>
+                  role="alert"
+                ></div>
+
+                <!-- Botón de envío -->
                 <button class="btn btn-primary submit-btn" type="submit">
-                  <span class="material-symbols-outlined">send</span>Enviar
-                  mensaje
+                  <span class="material-symbols-outlined">send</span>
+                  <span>Enviar mensaje</span>
                 </button>
               </form>
             </div>
@@ -160,8 +201,11 @@
         </div>
       </section>
     </main>
+
+    <!-- Contenedor modular de accesibilidad -->
     <div id="accessibility-container"></div>
-    <!--  FOOTER GLOBAL -->
+
+    <!-- Footer global cargado automáticamente -->
     <div id="footer-container"></div>
 
     <!-- Scripts -->

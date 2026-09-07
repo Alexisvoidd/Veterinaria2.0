@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel de Administración | VetSalud</title>
 
+    <!-- Fuentes oficiales de Google: Montserrat y Open Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Iconos de Material Symbols Outlined -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
 
+    <!-- Hojas de estilos del panel de administración -->
     <link rel="stylesheet" href="../css/dashboard-cliente.css" />
     <link rel="stylesheet" href="../css/dashboard-administrador.css" />
   </head>
   <body data-page="dashboard-administrador">
+    <!-- Contenedor principal del layout -->
     <div class="dash-layout">
-      <!-- Sidebar -->
+      <!-- BARRA LATERAL (SIDEBAR) -->
       <aside class="dash-sidebar" id="dash-sidebar">
+        <!-- Logotipo oficial de VetSalud -->
         <div class="dash-sidebar__brand">
           <a
             href="index.html"
@@ -37,42 +43,53 @@
           </a>
         </div>
 
+        <!-- Menú de navegación administrativa -->
         <nav class="dash-sidebar__nav" aria-label="Navegación administrativa">
+          <!-- Pestaña: Resumen -->
           <button type="button" class="dash-nav-item active" data-tab="resumen">
             <span class="material-symbols-outlined">dashboard</span>
             <span>Resumen</span>
           </button>
+          <!-- Pestaña: Mi cuenta -->
           <button type="button" class="dash-nav-item" data-tab="mi-cuenta">
             <span class="material-symbols-outlined">account_circle</span>
             <span>Mi cuenta</span>
           </button>
+          <!-- Pestaña: Usuarios -->
           <button type="button" class="dash-nav-item" data-tab="usuarios">
             <span class="material-symbols-outlined">manage_accounts</span>
             <span>Usuarios</span>
           </button>
+          <!-- Pestaña: Mascotas -->
           <button type="button" class="dash-nav-item" data-tab="mascotas">
             <span class="material-symbols-outlined">pets</span>
             <span>Mascotas</span>
           </button>
+          <!-- Pestaña: Citas -->
           <button type="button" class="dash-nav-item" data-tab="citas">
             <span class="material-symbols-outlined">calendar_month</span>
             <span>Citas</span>
           </button>
+          <!-- Pestaña: Productos -->
           <button type="button" class="dash-nav-item" data-tab="productos">
             <span class="material-symbols-outlined">inventory_2</span>
             <span>Productos</span>
           </button>
+          <!-- Pestaña: Pedidos -->
           <button type="button" class="dash-nav-item" data-tab="pedidos">
             <span class="material-symbols-outlined">receipt_long</span>
             <span>Pedidos</span>
           </button>
         </nav>
 
+        <!-- Pie de la barra lateral con acciones globales -->
         <div class="dash-sidebar__footer">
+          <!-- Volver al Inicio -->
           <a href="index.html" class="dash-home-btn">
             <span class="material-symbols-outlined">home</span>
             <span>Volver al Inicio</span>
           </a>
+          <!-- Cerrar Sesión -->
           <a href="login.html" id="cerrar-sesion" class="dash-logout-btn">
             <span class="material-symbols-outlined">logout</span>
             <span>Cerrar Sesión</span>
@@ -80,13 +97,14 @@
         </div>
       </aside>
 
-      <!-- Backdrop móvil -->
+      <!-- Fondo oscuro de superposición para dispositivos móviles -->
       <div class="dash-backdrop" id="dash-backdrop"></div>
 
-      <!-- Main content -->
+      <!-- CONTENIDO PRINCIPAL DEL DASHBOARD -->
       <main class="dash-main">
-        <!-- Topbar -->
+        <!-- Barra superior del panel (Topbar) -->
         <header class="dash-topbar">
+          <!-- Botón de apertura de menú móvil -->
           <button
             type="button"
             class="dash-menu-toggle"
@@ -96,14 +114,17 @@
             <span class="material-symbols-outlined">menu</span>
           </button>
           <span class="dash-topbar__title">VetSalud</span>
+          <!-- Avatar del usuario administrador -->
           <div class="dash-topbar__user">
             <span class="dash-topbar__avatar" id="topbar-avatar">AD</span>
           </div>
         </header>
 
+        <!-- Contenedor dinámico de pestañas -->
         <div class="dash-content-container">
-          <!-- Pestaña: Resumen -->
+          <!-- Pestaña 1: Resumen y KPIs -->
           <section class="dash-tab-content active" id="tab-resumen">
+            <!-- Saludo y descripción general -->
             <header class="dash-greeting">
               <div class="dash-greeting__info">
                 <h1 class="dash-greeting__title" id="admin-saludo">
@@ -116,9 +137,12 @@
               </div>
             </header>
 
+            <!-- Cuadrícula de indicadores y métricas clave (KPIs) -->
             <div class="dash-kpi-grid admin-kpi-grid" id="indicadores"></div>
 
+            <!-- Grilla con tablas de resumen rápido -->
             <div class="admin-resumen-grid">
+              <!-- Próximas citas -->
               <article class="dash-form-card">
                 <div class="dash-form-card__header">
                   <span class="material-symbols-outlined dash-form-card__icon"
@@ -134,6 +158,7 @@
                 <div id="resumen-citas" class="tabla-contenedor"></div>
               </article>
 
+              <!-- Pedidos recientes -->
               <article class="dash-form-card">
                 <div class="dash-form-card__header">
                   <span class="material-symbols-outlined dash-form-card__icon"
@@ -151,7 +176,7 @@
             </div>
           </section>
 
-          <!-- Pestaña: Información personal del administrador -->
+          <!-- Pestaña 2: Información personal y mascotas -->
           <section class="dash-tab-content" id="tab-mi-cuenta">
             <div class="admin-section-heading">
               <h1>Mi cuenta</h1>
@@ -161,6 +186,7 @@
               </p>
             </div>
             <div class="admin-resumen-grid">
+              <!-- Datos personales del administrador -->
               <article class="dash-form-card">
                 <div class="dash-form-card__header">
                   <span class="material-symbols-outlined dash-form-card__icon"
@@ -173,6 +199,8 @@
                 </div>
                 <div id="admin-perfil" class="admin-perfil"></div>
               </article>
+
+              <!-- Formulario y lista de mascotas propias -->
               <article class="dash-form-card">
                 <div class="dash-form-card__header">
                   <span class="material-symbols-outlined dash-form-card__icon"
@@ -183,6 +211,7 @@
                     <p class="dash-form-card__sub">Tus mascotas registradas.</p>
                   </div>
                 </div>
+                <!-- Formulario para agregar una nueva mascota -->
                 <form id="admin-form-mascota" class="admin-mascota-form">
                   <input
                     name="nombre"
@@ -225,6 +254,8 @@
                 <div id="admin-mis-mascotas" class="tabla-contenedor"></div>
               </article>
             </div>
+
+            <!-- Citas personales asociadas -->
             <article class="dash-form-card admin-cuenta-bloque">
               <div class="dash-form-card__header">
                 <span class="material-symbols-outlined dash-form-card__icon"
@@ -239,6 +270,8 @@
               </div>
               <div id="admin-mis-citas" class="tabla-contenedor"></div>
             </article>
+
+            <!-- Historias clínicas de mascotas propias -->
             <article class="dash-form-card admin-cuenta-bloque">
               <div class="dash-form-card__header">
                 <span class="material-symbols-outlined dash-form-card__icon"
@@ -253,6 +286,8 @@
               </div>
               <div id="admin-mis-historias" class="tabla-contenedor"></div>
             </article>
+
+            <!-- Compras y pedidos personales -->
             <article class="dash-form-card admin-cuenta-bloque">
               <div class="dash-form-card__header">
                 <span class="material-symbols-outlined dash-form-card__icon"
@@ -269,7 +304,7 @@
             </article>
           </section>
 
-          <!-- Pestaña: Usuarios -->
+          <!-- Pestaña 3: Gestión de usuarios y roles -->
           <section class="dash-tab-content" id="tab-usuarios">
             <div class="admin-section-heading">
               <h1>Usuarios y roles</h1>
@@ -282,7 +317,7 @@
             </article>
           </section>
 
-          <!-- Pestaña: Mascotas -->
+          <!-- Pestaña 4: Gestión de mascotas registradas -->
           <section class="dash-tab-content" id="tab-mascotas">
             <div class="admin-section-heading">
               <h1>Mascotas registradas</h1>
@@ -296,7 +331,7 @@
             </article>
           </section>
 
-          <!-- Pestaña: Citas -->
+          <!-- Pestaña 5: Gestión de citas clínicas -->
           <section class="dash-tab-content" id="tab-citas">
             <div class="admin-section-heading">
               <h1>Gestión de citas</h1>
@@ -309,7 +344,7 @@
             </article>
           </section>
 
-          <!-- Pestaña: Productos -->
+          <!-- Pestaña 6: Productos e inventario -->
           <section class="dash-tab-content" id="tab-productos">
             <div class="admin-section-heading">
               <h1>Productos e inventario</h1>
@@ -323,7 +358,7 @@
             </article>
           </section>
 
-          <!-- Pestaña: Pedidos -->
+          <!-- Pestaña 7: Pedidos y ventas -->
           <section class="dash-tab-content" id="tab-pedidos">
             <div class="admin-section-heading">
               <h1>Pedidos y compras</h1>
@@ -337,11 +372,16 @@
             </article>
           </section>
 
+          <!-- Contenedor de mensajes y alertas del sistema -->
           <div id="mensaje-admin" class="mensaje-admin"></div>
         </div>
       </main>
     </div>
+
+    <!-- Contenedor modular de accesibilidad -->
     <div id="accessibility-container"></div>
+
+    <!-- Scripts -->
     <script src="../js/component-loader.js"></script>
     <script src="../js/pages/admin-modulos.js"></script>
   </body>

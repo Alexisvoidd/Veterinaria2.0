@@ -14,18 +14,20 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Hoja de Estilos Principal -->
+  <!-- Hoja de estilos principal -->
   <link rel="stylesheet" href="../css/index.css">
 </head>
 <body data-page="inicio">
 
   <div class="inicio-pagina">
 
-    
+    <!-- Navegación modular -->
     <div id="nav-container"></div>
 
+    <!-- Contenedor principal de la página de inicio -->
     <main id="hogar">
       
+      <!-- Sección 1: Hero de bienvenida -->
       <section class="inicio-seccion-hero">
         <!-- Imagen de fondo -->
         <img src="../assets/images/productos/fondo_pag_principal.jpg" alt="Perro y gato descansando juntos en VetSalud" class="inicio-hero-imagen-fondo">
@@ -41,16 +43,18 @@
           <p class="inicio-hero-descripcion">
             Bienvenidos a la Clínica Veterinaria VetSalud, donde la ciencia médica de vanguardia se une a la compasión más profunda. Nos dedicamos a garantizar que su perro o gato disfrute de una vida larga, feliz y saludable. Desde vacunas esenciales para cachorros y gatitos hasta cirugías complejas, nuestro equipo ofrece servicios veterinarios de primera categoría.
           </p>
+          <!-- Botón de llamado a la acción para agendar cita -->
           <a href="agendar-citas.html" class="inicio-hero-boton-solicitar" id="btn-hero-solicitar">
             <span>Solicite una cita</span>
           </a>
         </div>
       </section>
 
-    
+      <!-- Sección 2: Carrusel de servicios -->
       <section id="servicios" class="inicio-seccion-servicios">
         <div class="inicio-contenedor">
           
+          <!-- Encabezado de la sección de servicios -->
           <div class="inicio-seccion-encabezado">
             <h2 class="inicio-seccion-titulo">
               Servicios esenciales adaptados a las necesidades de su acompañante.
@@ -70,7 +74,7 @@
             <!-- Pista Deslizable con 8 Tarjetas vinculadas a agendar-citas -->
             <div class="inicio-carrusel-pista" id="carrusel-servicios-pista">
               
-              <!-- Tarjeta 1 -->
+              <!-- Tarjeta 1: Diagnóstico avanzado -->
               <a href="servicios.html?servicio=diagnostico" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Diagnóstico avanzado">
                 <div class="inicio-servicio-imagen-contenedor">
                   <img src="../assets/images/productos/servicio_img_1.jpg" alt="Diagnóstico avanzado" class="inicio-servicio-imagen-foto" loading="lazy">
@@ -80,7 +84,7 @@
                 </div>
               </a>
 
-              <!-- Tarjeta 2 -->
+              <!-- Tarjeta 2: Recorte de uñas -->
               <a href="servicios.html?servicio=unas" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Recorte de uñas">
                 <div class="inicio-servicio-imagen-contenedor">
                   <img src="../assets/images/productos/servicio_img_2.jpg" alt="Recorte de uñas cómodo para perros y gatos" class="inicio-servicio-imagen-foto" loading="lazy">
@@ -90,7 +94,7 @@
                 </div>
               </a>
 
-              <!-- Tarjeta 3 -->
+              <!-- Tarjeta 3: Vacunas de refuerzo -->
               <a href="servicios.html?servicio=vacunacion" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Dosis de refuerzo y vacunación">
                 <div class="inicio-servicio-imagen-contenedor">
                   <img src="../assets/images/productos/servicio_img_3.jpg" alt="Dosis de refuerzo y vacunación" class="inicio-servicio-imagen-foto" loading="lazy">
@@ -100,7 +104,7 @@
                 </div>
               </a>
 
-              <!-- Tarjeta 4 -->
+              <!-- Tarjeta 4: Exámenes de bienestar -->
               <a href="servicios.html?servicio=bienestar" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Exámenes de bienestar">
                 <div class="inicio-servicio-imagen-contenedor">
                   <img src="../assets/images/productos/servicio_img_4.jpg" alt="Exámenes de bienestar y prevención" class="inicio-servicio-imagen-foto" loading="lazy">
@@ -110,7 +114,7 @@
                 </div>
               </a>
 
-              <!-- Tarjeta 5 -->
+              <!-- Tarjeta 5: Esterilización -->
               <a href="servicios.html?servicio=esterilizacion" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Esterilización">
                 <div class="inicio-servicio-imagen-contenedor">
                   <img src="../assets/images/productos/servicio_img_5.jpg" alt="Cuidado reproductivo y esterilización" class="inicio-servicio-imagen-foto" loading="lazy">
@@ -120,7 +124,7 @@
                 </div>
               </a>
 
-              <!-- Tarjeta 6 -->
+              <!-- Tarjeta 6: Procedimientos quirúrgicos -->
               <a href="servicios.html?servicio=cirugia" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Procedimientos quirúrgicos">
                 <div class="inicio-servicio-imagen-contenedor">
                   <img src="../assets/images/productos/servicio_img_7.jpg" alt="Procedimientos quirúrgicos" class="inicio-servicio-imagen-foto" loading="lazy">
@@ -130,7 +134,7 @@
                 </div>
               </a>
 
-              <!-- Tarjeta 7 -->
+              <!-- Tarjeta 7: Limpieza dental -->
               <a href="servicios.html?servicio=dental" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Limpieza dental">
                 <div class="inicio-servicio-imagen-contenedor">
                   <img src="../assets/images/productos/servicio_img_6.jpg" alt="Limpieza dental profesional" class="inicio-servicio-imagen-foto" loading="lazy">
@@ -140,7 +144,7 @@
                 </div>
               </a>
 
-              <!-- Tarjeta 8 -->
+              <!-- Tarjeta 8: Microchips y diagnósticos -->
               <a href="servicios.html?servicio=microchips" class="inicio-servicio-tarjeta-carrusel" title="Ver detalles de Microchips y diagnósticos">
                 <div class="inicio-servicio-imagen-contenedor">
                   <img src="../assets/images/productos/servicio_img_8.jpg" alt="Microchips y diagnósticos" class="inicio-servicio-imagen-foto" loading="lazy">
@@ -161,8 +165,7 @@
         </div>
       </section>
 
-      
-      <!-- Sección Nosotros / Por qué confiar -->
+      <!-- Sección 3: Nosotros y por qué confiar -->
       <section id="nosotros" class="inicio-seccion-destacada">
         <div class="inicio-contenedor">
           <div class="inicio-destacada-grid">
@@ -176,7 +179,7 @@
               <a href="blog.html" class="inicio-boton">Más información</a>
             </div>
 
-            <!-- Imagen del equipo (3 veterinarios) -->
+            <!-- Imagen del equipo (veterinarios) -->
             <div class="inicio-destacada-imagen-wrap">
               <img src="../assets/images/productos/blog-1.png" alt="Equipo profesional de la Clínica Veterinaria VetSalud" class="inicio-destacada-imagen" loading="lazy">
             </div>
@@ -185,7 +188,7 @@
         </div>
       </section>
 
-      <!-- Sección Blog / Recursos del propietario -->
+      <!-- Sección 4: Blog y recursos del propietario -->
       <section id="blog" class="inicio-seccion-destacada inicio-seccion-destacada-alt">
         <div class="inicio-contenedor">
           <div class="inicio-destacada-grid invertido">
@@ -208,10 +211,11 @@
         </div>
       </section>
 
-      
+      <!-- Sección 5: Testimonios de familias -->
       <section id="testimonios" class="inicio-seccion-testimonios">
         <div class="inicio-contenedor">
           
+          <!-- Encabezado de testimonios -->
           <div class="inicio-seccion-encabezado">
             <h2 class="inicio-seccion-titulo">Testimonios de Familias Felices</h2>
             <p class="inicio-seccion-subtitulo">
@@ -219,8 +223,10 @@
             </p>
           </div>
 
+          <!-- Cuadrícula de testimonios -->
           <div class="inicio-testimonios-cuadricula">
             
+            <!-- Testimonio 1 -->
             <article class="inicio-testimonio-tarjeta">
               <p class="inicio-testimonio-cita">
                 "La atención en VetSalud es excepcional. Salvaron a mi perro en una emergencia con una dedicación y cariño incomparables."
@@ -231,6 +237,7 @@
               </div>
             </article>
 
+            <!-- Testimonio 2 -->
             <article class="inicio-testimonio-tarjeta">
               <p class="inicio-testimonio-cita">
                 "El equipo médico es muy profesional y empático. Las instalaciones están impecables y mi gata nunca se estresa durante sus consultas."
@@ -241,6 +248,7 @@
               </div>
             </article>
 
+            <!-- Testimonio 3 -->
             <article class="inicio-testimonio-tarjeta">
               <p class="inicio-testimonio-cita">
                 "Llevo más de 4 años confiando la salud de mis mascotas a VetSalud. Los mejores veterinarios y precios muy justos."
@@ -256,10 +264,11 @@
         </div>
       </section>
 
-      
+      <!-- Sección 6: Preguntas frecuentes (FAQ) -->
       <section id="faq" class="inicio-seccion-faq">
         <div class="inicio-contenedor">
           
+          <!-- Encabezado de FAQ -->
           <div class="inicio-seccion-encabezado">
             <h2 class="inicio-seccion-titulo">Preguntas Frecuentes</h2>
             <p class="inicio-seccion-subtitulo">
@@ -267,8 +276,10 @@
             </p>
           </div>
 
+          <!-- Lista de acordeones de preguntas frecuentes -->
           <div class="inicio-faq-lista">
             
+            <!-- FAQ 1: Horarios y urgencias -->
             <div class="inicio-faq-item abierto">
               <button type="button" class="inicio-faq-boton" aria-expanded="true">
                 <span>¿Atienden urgencias 24/7?</span>
@@ -279,6 +290,7 @@
               </div>
             </div>
 
+            <!-- FAQ 2: Documentos para primera cita -->
             <div class="inicio-faq-item">
               <button type="button" class="inicio-faq-boton" aria-expanded="false">
                 <span>¿Qué documentos necesito para la primera cita?</span>
@@ -289,6 +301,7 @@
               </div>
             </div>
 
+            <!-- FAQ 3: Agendar cita -->
             <div class="inicio-faq-item">
               <button type="button" class="inicio-faq-boton" aria-expanded="false">
                 <span>¿Cómo agendar un servicio o consulta especializada?</span>
@@ -299,6 +312,7 @@
               </div>
             </div>
 
+            <!-- FAQ 4: Planes de bienestar -->
             <div class="inicio-faq-item">
               <button type="button" class="inicio-faq-boton" aria-expanded="false">
                 <span>¿Tienen planes de salud preventiva?</span>
@@ -309,6 +323,7 @@
               </div>
             </div>
 
+            <!-- FAQ 5: Cirugías y anestesia segura -->
             <div class="inicio-faq-item">
               <button type="button" class="inicio-faq-boton" aria-expanded="false">
                 <span>¿Realizan cirugías complejas con anestesia segura?</span>
@@ -327,16 +342,14 @@
 
   </div>
   
+  <!-- Contenedor modular de accesibilidad -->
+  <div id="accessibility-container"></div>
+
+  <!-- Footer global cargado automáticamente -->
   <div id="footer-container"></div>
 
-
-  <!-- ACCESIBILIDAD -->
-<div id="accessibility-container"></div>
-
-<!-- COMPONENT LOADER -->
-<script src="../js/component-loader.js"></script>
-
-<!-- JS DE LA PÁGINA -->
-<script src="../js/pages/inicio.js"></script>
+  <!-- Scripts -->
+  <script src="../js/component-loader.js"></script>
+  <script src="../js/pages/inicio.js"></script>
 </body>
 </html>
