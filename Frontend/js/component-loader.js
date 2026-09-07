@@ -37,7 +37,20 @@ async function cargarComponente(selector, htmlPath, cssPath, jsPath) {
 
       document.head.appendChild(fuenteIconos);
     }
+    // CARGAR FONT AWESOME
 
+    if (!document.querySelector('link[data-fuente="font-awesome"]')) {
+      const fontAwesome = document.createElement("link");
+
+      fontAwesome.rel = "stylesheet";
+
+      fontAwesome.href =
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css";
+
+      fontAwesome.dataset.fuente = "font-awesome";
+
+      document.head.appendChild(fontAwesome);
+    }
     /* =====================================================
        CARGAR CSS DEL COMPONENTE
     ===================================================== */
