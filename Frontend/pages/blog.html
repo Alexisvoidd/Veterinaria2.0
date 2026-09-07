@@ -1,7 +1,7 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-
     <meta charset="UTF-8">
-
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
@@ -89,40 +89,27 @@
 </head>
 
 
-<!-- IMPORTANTE:
-     El atributo data-page permite identificar
-     qué página está actualmente activa.
+<!-- Identificador de página activa -->
 
-     En esta página debe ser "blog" y no "inicio".
--->
-
-<!-- Inicia el contenido visible de la página.
-     data-page="blog" identifica esta página como el blog. -->
+<!-- Inicia el contenido visible de la página. data-page="blog" identifica esta página como el blog. -->
 <body data-page="blog">
 
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
+    <!-- NAVBAR -->
 
-    <!-- Contenedor vacío donde JavaScript cargará
-         automáticamente el navbar. -->
+    <!-- Contenedor vacío donde JavaScript cargará automáticamente el navbar. -->
     <div id="nav-container"></div>
 
 
-    <!-- =========================
-         HERO DEL BLOG
-    ========================== -->
+    <!-- Hero del blog -->
 
     <!-- Sección principal de presentación del blog. -->
     <section class="inicio">
 
-        <!-- Contenedor que agrupa el texto principal
-             del hero. -->
+        <!-- Contenedor que agrupa el texto principal del hero. -->
         <div class="inicio_contenido">
 
-            <!-- Etiqueta que identifica la sección
-                 como un blog veterinario. -->
+            <!-- Etiqueta que identifica la sección como un blog veterinario. -->
             <span class="etiqueta">
                 BLOG VETERINARIO
             </span>
@@ -132,16 +119,14 @@
                 Todo lo que necesitas saber para cuidar bien a tu mascota
             </h1>
 
-            <!-- Texto descriptivo que explica
-                 el contenido disponible en el blog. -->
+            <!-- Texto descriptivo que explica el contenido disponible en el blog. -->
             <p>
                 Encuentra aquí información, consejos y recomendaciones
                 de nuestros profesionales para que tu mascota siempre
                 esté sana, feliz y llena de vida.
             </p>
 
-            <!-- Enlace que lleva directamente
-                 a la sección de artículos. -->
+            <!-- Enlace que lleva directamente a la sección de artículos. -->
             <a
                 href="#articulos"
                 class="btn_principal"
@@ -150,8 +135,7 @@
                 <!-- Texto visible del botón. -->
                 Ver artículos
 
-                <!-- Icono de flecha que acompaña
-                     el texto del botón. -->
+                <!-- Icono de flecha que acompaña el texto del botón. -->
                 <span class="material-symbols-outlined">
                     arrow_forward
                 </span>
@@ -163,12 +147,10 @@
         </div>
 
 
-        <!-- Contenedor de la imagen principal
-             del hero del blog. -->
+        <!-- Contenedor de la imagen principal del hero del blog. -->
         <div class="inicio_imagen">
 
-            <!-- Imagen utilizada como representación
-                 visual del blog veterinario. -->
+            <!-- Imagen utilizada como representación visual del blog veterinario. -->
             <img
                 src="../assets/images/productos/queinclu.jpg"
                 alt="Mascotas en consulta veterinaria"
@@ -182,32 +164,24 @@
 
 
 
-    <!-- =========================
-         BLOG
-    ========================== -->
+    <!-- BLOG -->
 
-    <!-- Contenedor principal del contenido
-         de la página. -->
+    <!-- Contenedor principal del contenido de la página. -->
     <main>
 
-        <!-- Sección que contiene todos los artículos.
-             El ID permite llegar aquí desde el botón
-             "Ver artículos". -->
+        <!-- Sección que contiene todos los artículos. El ID permite llegar aquí desde el botón "Ver artículos". -->
         <section
             class="blog"
             id="articulos"
         >
 
-            <!-- Contenedor del título de la sección
-                 y los botones de categorías. -->
+            <!-- Contenedor del título de la sección y los botones de categorías. -->
             <div class="seccion_tit">
 
-                <!-- Contenedor de los textos
-                     de presentación de los artículos. -->
+                <!-- Contenedor de los textos de presentación de los artículos. -->
                 <div>
 
-                    <!-- Texto pequeño que identifica
-                         la finalidad de la sección. -->
+                    <!-- Texto pequeño que identifica la finalidad de la sección. -->
                     <span>
                         INFORMACIÓN PARA TI
                     </span>
@@ -223,13 +197,10 @@
 
                 <!-- CATEGORÍAS -->
 
-                <!-- Contenedor de los botones utilizados
-                     para filtrar los artículos. -->
+                <!-- Contenedor de los botones utilizados para filtrar los artículos. -->
                 <div class="categorias">
 
-                    <!-- Botón para mostrar todos los artículos.
-                         data-categoria permite identificar
-                         el filtro seleccionado. -->
+                    <!-- Botón para mostrar todos los artículos. data-categoria permite identificar el filtro seleccionado. -->
                     <button
                         class="categoria_activa"
                         data-categoria="todos"
@@ -237,8 +208,7 @@
                         Todos
                     </button>
 
-                    <!-- Botón para mostrar únicamente
-                         artículos de salud. -->
+                    <!-- Botón para mostrar únicamente artículos de salud. -->
                     <button
                         class="categoria_activa"
                         data-categoria="salud"
@@ -246,8 +216,7 @@
                         Salud
                     </button>
 
-                    <!-- Botón para mostrar únicamente
-                         artículos de cuidado. -->
+                    <!-- Botón para mostrar únicamente artículos de cuidado. -->
                     <button
                         class="categoria_activa"
                         data-categoria="cuidado"
@@ -255,8 +224,7 @@
                         Cuidado
                     </button>
 
-                    <!-- Botón para mostrar únicamente
-                         artículos de alimentación. -->
+                    <!-- Botón para mostrar únicamente artículos de alimentación. -->
                     <button
                         class="categoria_activa"
                         data-categoria="alimentacion"
@@ -264,8 +232,7 @@
                         Alimentación
                     </button>
 
-                    <!-- Botón para mostrar únicamente
-                         artículos de prevención. -->
+                    <!-- Botón para mostrar únicamente artículos de prevención. -->
                     <button
                         class="categoria_activa"
                         data-categoria="prevencion"
@@ -273,8 +240,7 @@
                         Prevención
                     </button>
 
-                    <!-- Botón para mostrar únicamente
-                         artículos relacionados con actividad física. -->
+                    <!-- Botón para mostrar únicamente artículos relacionados con actividad física. -->
                     <button
                         class="categoria_activa"
                         data-categoria="actividad_fisica"
@@ -290,20 +256,15 @@
 
 
 
-            <!-- =========================
-                 GRID DE ARTÍCULOS
-            ========================== -->
+            <!-- GRID DE ARTÍCULOS -->
 
-            <!-- Contenedor que organiza los artículos
-                 mediante una cuadrícula definida por CSS. -->
+            <!-- Contenedor que organiza los artículos mediante una cuadrícula definida por CSS. -->
             <div class="articulos_grid">
 
 
                 <!-- ARTÍCULO 1 -->
 
-                <!-- Primer artículo del blog.
-                     data-categoria indica que pertenece
-                     a la categoría Salud. -->
+                <!-- Primer artículo del blog. data-categoria indica que pertenece a la categoría Salud. -->
                 <article
                     class="articulo"
                     data-categoria="salud"
@@ -313,8 +274,7 @@
                     <!-- Contenedor de la imagen del artículo. -->
                     <div class="imagen_art1">
 
-                        <!-- Imagen relacionada con la vacunación
-                             de mascotas. -->
+                        <!-- Imagen relacionada con la vacunación de mascotas. -->
                         <img
                             src="../assets/images/productos/salud.avif"
                             alt="Vacunación de mascotas"
@@ -324,8 +284,7 @@
                     </div>
 
 
-                    <!-- Contenedor del contenido textual
-                         del artículo. -->
+                    <!-- Contenedor del contenido textual del artículo. -->
                     <div class="contenido_art">
 
                         <!-- Muestra la categoría del artículo. -->
@@ -346,10 +305,7 @@
                             el moquillo o la rabia.
                         </p>
 
-                        <!-- Botón que permite abrir
-                             el contenido completo del artículo.
-                             data-articulo identifica el artículo
-                             que debe mostrar JavaScript. -->
+                        <!-- Botón que permite abrir el contenido completo del artículo. data-articulo identifica el artículo que debe mostrar JavaScript. -->
                         <button class="leer-mas" data-articulo="vacunas">
                             Leer más
 
@@ -369,8 +325,7 @@
 
                 <!-- ARTÍCULO 2 -->
 
-                <!-- Segundo artículo del blog.
-                     Pertenece a la categoría Alimentación. -->
+                <!-- Segundo artículo del blog. Pertenece a la categoría Alimentación. -->
                 <article
                     class="articulo"
                     data-categoria="alimentacion"
@@ -380,8 +335,7 @@
                     <!-- Contenedor de la imagen del artículo. -->
                     <div class="imagen_art1">
 
-                        <!-- Imagen relacionada con alimentación
-                             saludable para mascotas. -->
+                        <!-- Imagen relacionada con alimentación saludable para mascotas. -->
                         <img
                             src="../assets/images/productos/alim.jpg"
                             alt="Alimentación saludable para mascotas"
@@ -413,8 +367,7 @@
                         </p>
 
 
-                        <!-- Botón utilizado para abrir
-                             el artículo completo. -->
+                        <!-- Botón utilizado para abrir el artículo completo. -->
                         <button class="leer-mas" data-articulo="alimentacion">
 
                             <!-- Texto del botón. -->
@@ -436,8 +389,7 @@
 
                 <!-- ARTÍCULO 3 -->
 
-                <!-- Tercer artículo del blog.
-                     Pertenece a la categoría Cuidado. -->
+                <!-- Tercer artículo del blog. Pertenece a la categoría Cuidado. -->
                 <article
                     class="articulo"
                     data-categoria="cuidado"
@@ -447,8 +399,7 @@
                     <!-- Contenedor de la imagen. -->
                     <div class="imagen_art1">
 
-                        <!-- Imagen relacionada con
-                             el cuidado dental. -->
+                        <!-- Imagen relacionada con el cuidado dental. -->
                         <img
                             src="../assets/images/productos/dental.jpg"
                             alt="Cuidado dental de mascotas"
@@ -478,8 +429,7 @@
                             buena salud oral.
                         </p>
 
-                        <!-- Botón para abrir
-                             el artículo completo. -->
+                        <!-- Botón para abrir el artículo completo. -->
                         <button class="leer-mas" data-articulo="dental">
 
                             <!-- Texto del botón. -->
@@ -501,8 +451,7 @@
 
                 <!-- ARTÍCULO 4 -->
 
-                <!-- Cuarto artículo del blog.
-                     Pertenece a la categoría Prevención. -->
+                <!-- Cuarto artículo del blog. Pertenece a la categoría Prevención. -->
                 <article
                     class="articulo"
                     data-categoria="prevencion"
@@ -512,8 +461,7 @@
                     <!-- Contenedor de la imagen. -->
                     <div class="imagen_art1">
 
-                        <!-- Imagen relacionada con una consulta
-                             veterinaria. -->
+                        <!-- Imagen relacionada con una consulta veterinaria. -->
                         <img
                             src="../assets/images/productos/veterinaris.jpg"
                             alt="Consulta veterinaria"
@@ -543,8 +491,7 @@
                             enfermedades graves.
                         </p>
 
-                        <!-- Botón para abrir
-                             el contenido completo. -->
+                        <!-- Botón para abrir el contenido completo. -->
                         <button class="leer-mas" data-articulo="consulta">
 
                             <!-- Texto del botón. -->
@@ -566,8 +513,7 @@
 
                 <!-- ARTÍCULO 5 -->
 
-                <!-- Quinto artículo del blog.
-                     Pertenece a la categoría Actividad física. -->
+                <!-- Quinto artículo del blog. Pertenece a la categoría Actividad física. -->
                 <article
                     class="articulo"
                     data-categoria="actividad_fisica"
@@ -577,8 +523,7 @@
                     <!-- Contenedor de la imagen. -->
                     <div class="imagen_art1">
 
-                        <!-- Imagen relacionada con
-                             la actividad física de mascotas. -->
+                        <!-- Imagen relacionada con la actividad física de mascotas. -->
                         <img
                             src="../assets/images/productos/theforest.jpg"
                             alt="Actividad física para mascotas"
@@ -608,8 +553,7 @@
                             un buen estado físico.
                         </p>
 
-                        <!-- Botón para abrir
-                             el contenido completo. -->
+                        <!-- Botón para abrir el contenido completo. -->
                         <button class="leer-mas" data-articulo="actividad">
 
                             <!-- Texto del botón. -->
@@ -628,12 +572,9 @@
                 </article>
 
 
-                <!-- =====================================================
-                    ARTÍCULO 6
-                ===================================================== -->
+                <!-- ARTÍCULO 6 -->
 
-                <!-- Sexto artículo del blog.
-                     Pertenece a la categoría Cuidado. -->
+                <!-- Sexto artículo del blog. Pertenece a la categoría Cuidado. -->
                 <article
                     class="articulo"
                     data-categoria="cuidado"
@@ -644,8 +585,7 @@
                     <!-- Contenedor de la imagen. -->
                     <div class="imagen_art1">
 
-                        <!-- Imagen relacionada con las mascotas
-                             y sus familias. -->
+                        <!-- Imagen relacionada con las mascotas y sus familias. -->
                         <img
                             src="../assets/images/productos/blog-1.png"
                             alt="Mascotas junto a su familia"
@@ -675,8 +615,7 @@
                             para el bienestar de cada mascota y su familia.
                         </p>
 
-                        <!-- Botón para abrir
-                             el contenido completo del artículo. -->
+                        <!-- Botón para abrir el contenido completo del artículo. -->
                         <button
                             class="leer-mas"
                             type="button"
@@ -699,12 +638,9 @@
                 </article>
 
 
-                <!-- =====================================================
-                    ARTÍCULO 7
-                ===================================================== -->
+                <!-- ARTÍCULO 7 -->
 
-                <!-- Séptimo artículo del blog.
-                     Pertenece a la categoría Prevención. -->
+                <!-- Séptimo artículo del blog. Pertenece a la categoría Prevención. -->
                 <article
                     class="articulo"
                     data-categoria="prevencion"
@@ -715,8 +651,7 @@
                     <!-- Contenedor de la imagen. -->
                     <div class="imagen_art1">
 
-                        <!-- Imagen relacionada con mascotas
-                             y sus propietarios. -->
+                        <!-- Imagen relacionada con mascotas y sus propietarios. -->
                         <img
                             src="../assets/images/productos/blog-2.jpg"
                             alt="Mascotas junto a su familia"
@@ -746,8 +681,7 @@
                             protegida en cada etapa de su vida.
                         </p>
 
-                        <!-- Botón para abrir
-                             el contenido completo. -->
+                        <!-- Botón para abrir el contenido completo. -->
                         <button
                             class="leer-mas"
                             type="button"
@@ -770,12 +704,9 @@
                 </article>
 
 
-                <!-- =====================================================
-                    ARTÍCULO 8
-                ===================================================== -->
+                <!-- ARTÍCULO 8 -->
 
-                <!-- Octavo artículo del blog.
-                     Pertenece a la categoría Salud. -->
+                <!-- Octavo artículo del blog. Pertenece a la categoría Salud. -->
                 <article
                     class="articulo"
                     data-categoria="salud"
@@ -786,8 +717,7 @@
                     <!-- Contenedor de la imagen. -->
                     <div class="imagen_art1">
 
-                        <!-- Imagen relacionada con la salud
-                             y bienestar de una mascota. -->
+                        <!-- Imagen relacionada con la salud y bienestar de una mascota. -->
                         <img
                             src="../assets/images/productos/blog-3.jpg"
                             alt="Salud y bienestar de una mascota"
@@ -817,8 +747,7 @@
                             posibles problemas de salud.
                         </p>
 
-                        <!-- Botón para abrir
-                             el contenido completo. -->
+                        <!-- Botón para abrir el contenido completo. -->
                         <button
                             class="leer-mas"
                             type="button"
@@ -841,12 +770,9 @@
                 </article>
 
 
-                <!-- =====================================================
-                    ARTÍCULO 9
-                ===================================================== -->
+                <!-- ARTÍCULO 9 -->
 
-                <!-- Noveno artículo del blog.
-                     Pertenece a la categoría Alimentación. -->
+                <!-- Noveno artículo del blog. Pertenece a la categoría Alimentación. -->
                 <article
                     class="articulo"
                     data-categoria="alimentacion"
@@ -857,8 +783,7 @@
                     <!-- Contenedor de la imagen. -->
                     <div class="imagen_art1">
 
-                        <!-- Imagen relacionada con la alimentación
-                             saludable de las mascotas. -->
+                        <!-- Imagen relacionada con la alimentación saludable de las mascotas. -->
                         <img
                             src="../assets/images/productos/blog-4.jpeg"
                             alt="Alimentación saludable para mascotas"
@@ -888,8 +813,7 @@
                             y bienestar durante cada etapa de su vida.
                         </p>
 
-                        <!-- Botón para abrir
-                             el contenido completo del artículo. -->
+                        <!-- Botón para abrir el contenido completo del artículo. -->
                         <button
                             class="leer-mas"
                             type="button"
@@ -922,28 +846,22 @@
     </main>
 
 
-    <!-- Contenedor donde se cargará
-         el componente de accesibilidad. -->
+    <!-- Contenedor donde se cargará el componente de accesibilidad. -->
     <div id="accessibility-container"></div>
 
 
-    <!-- ==========================================
-         FOOTER GLOBAL
-         ========================================== -->
+    <!-- FOOTER GLOBAL -->
 
-    <!-- Contenedor vacío donde JavaScript cargará
-         automáticamente el footer global. -->
+    <!-- Contenedor vacío donde JavaScript cargará automáticamente el footer global. -->
     <div id="footer-container"></div>
 
 
     <!-- Scripts -->
 
-    <!-- Carga el JavaScript encargado de cargar
-         componentes globales como navbar y footer. -->
+    <!-- Carga el JavaScript encargado de cargar componentes globales como navbar y footer. -->
     <script src="../js/component-loader.js"></script>
 
-    <!-- Carga el JavaScript específico
-         encargado de controlar el funcionamiento del blog. -->
+    <!-- Carga el JavaScript específico encargado de controlar el funcionamiento del blog. -->
     <script src="../js/pages/blog.js"></script>
 
     <script src="../components/accesibilidad/accesibilidad.js"></script>

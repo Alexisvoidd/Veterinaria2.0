@@ -169,11 +169,11 @@ CREATE TABLE producto (
 );
 
 INSERT INTO producto (id_produ, id_cat, id_marca, nombre_produ, descripcion_produ, precio, talla, imagen_url, fecha_vencimiento, estado) VALUES
-(1, 1,1, 'DogChow 3kg', 'Alimento seco para perro adulto', 45000.000000, NULL, NULL, '2027-06-01 00:00:00', 'ACTIVO'),
-(2, 1,2, 'CatFresh 2kg', 'Alimento seco para gato adulto', 38000.000000, NULL, NULL, '2027-06-01 00:00:00', 'ACTIVO'),
-(3, 2,3, 'Amoxicilina 250mg', 'Antibiótico veterinario', 15000.000000, NULL, NULL, '2028-01-01 00:00:00', 'ACTIVO'),
-(4, 3,4, 'Shampoo antipulgas', 'Shampoo medicado para perros y gatos', 22000.000000, NULL, NULL, '2027-12-01 00:00:00', 'ACTIVO'),
-(5, 5,5, 'Pelota de goma', 'Juguete resistente para perro', 12000.000000, NULL, NULL, NULL, 'ACTIVO');
+(1, 1,1, 'DogChow 3kg', 'Alimento seco para perro adulto', 45000.000000, NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvCRYAokT-Qj1mBlwPkd7hDgKqYFVsHIFE6HeCnvZ0qA&s=10.jpg' , '2027-06-01 00:00:00', 'ACTIVO'),
+(2, 1,2, 'CatFresh 2kg', 'Alimento seco para gato adulto', 38000.000000, NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKQYSjKHEqwGYUJ_uf5TMe70NdP5Q8hJOkUV3s6VNVHA&s.jpg', '2027-06-01 00:00:00', 'ACTIVO'),
+(3, 2,3, 'Amoxicilina 250mg', 'Antibiótico veterinario', 15000.000000, NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSID8m4u1dC8-kN-2q87fJULdl6rhwFWInmiHmNFoCa4g&s=10.jpg', '2028-01-01 00:00:00', 'ACTIVO'),
+(4, 3,4, 'Shampoo antipulgas', 'Shampoo medicado para perros y gatos', 22000.000000, NULL, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBPlXRdurpK6RHB1awMZDh06CRVUns2B1seb46nPsqbQ&s=10.jpg', '2027-12-01 00:00:00', 'ACTIVO'),
+(5, 5,5, 'Pelota de goma', 'Juguete resistente para perro', 12000.000000, NULL, 'https://petoutlet.com.co/wp-content/uploads/2021/06/23027-Pelota-Maciza-Para-Perro-OKAL-petoutlet.com_.co-2.jpg', NULL, 'ACTIVO');
 
 -- --------------Inventario-----------------
 

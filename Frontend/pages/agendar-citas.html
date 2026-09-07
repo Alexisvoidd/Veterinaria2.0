@@ -3,19 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Agenda una cita en VetSalud." />
+    <title>Agendar citas | VetSalud</title>
+
+    <!-- Iconos de Font Awesome y Material Symbols -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <!-- Hojas de estilos base y específica de agendar citas -->
     <link rel="stylesheet" href="../css/base.css" />
-    <meta name="description" content="Agenda una cita en VetSalud." />
-    <title>Agendar citas | VetSalud</title>
     <link rel="stylesheet" href="../css/agendar-citas.css" />
   </head>
 
   <body data-page="agendar-citas">
+    <!-- Navegación modular -->
     <div id="nav-container"></div>
+
+    <!-- Contenido principal de la página -->
     <main class="page-shell">
+      <!-- Sección Hero: Título y descripción -->
       <section class="page-hero">
         <div class="page-container">
           <span class="eyebrow">Citas VetSalud</span>
@@ -26,9 +38,13 @@
           </p>
         </div>
       </section>
+
+      <!-- Sección del formulario de agendamiento -->
       <section class="section">
         <div class="page-container">
+          <!-- Tarjeta contenedora de la solicitud de cita -->
           <div class="appointment-card">
+            <!-- Introducción de la tarjeta -->
             <div class="appointment-intro">
               <span class="eyebrow">Reserva en pocos pasos</span>
               <h2>Solicitar una cita</h2>
@@ -36,124 +52,149 @@
                 Completa la información del propietario, la mascota y la cita.
               </p>
             </div>
+
+            <!-- Formulario de solicitud de cita -->
             <form id="appointment-form" novalidate>
+              <!-- Bloque 1: Datos del propietario -->
               <div class="form-section">
                 <h3>Datos del propietario</h3>
                 <div class="form-grid">
+                  <!-- Campo: Nombre completo del propietario -->
                   <div class="field" id="field-owner-name">
-                    <label for="owner-name">Nombre completo *</label
-                    ><input id="owner-name" required /><small class="error"
-                      >Escribe tu nombre completo.</small
-                    >
+                    <label for="owner-name">Nombre completo *</label>
+                    <input id="owner-name" required />
+                    <small class="error">Escribe tu nombre completo.</small>
                   </div>
+
+                  <!-- Campo: Correo electrónico del propietario -->
                   <div class="field" id="field-owner-email">
-                    <label for="owner-email">Correo *</label
-                    ><input id="owner-email" type="email" required /><small
-                      class="error"
-                      >Ingresa un correo válido.</small
-                    >
+                    <label for="owner-email">Correo *</label>
+                    <input id="owner-email" type="email" required />
+                    <small class="error">Ingresa un correo válido.</small>
                   </div>
+
+                  <!-- Campo: Teléfono del propietario -->
                   <div class="field" id="field-owner-phone">
-                    <label for="owner-phone">Teléfono *</label
-                    ><input
+                    <label for="owner-phone">Teléfono *</label>
+                    <input
                       id="owner-phone"
                       type="tel"
                       inputmode="numeric"
                       required
-                    /><small class="error">Ingresa un teléfono válido.</small>
+                    />
+                    <small class="error">Ingresa un teléfono válido.</small>
                   </div>
                 </div>
               </div>
+
+              <!-- Bloque 2: Datos de la mascota -->
               <div class="form-section">
                 <h3>Datos de la mascota</h3>
                 <div class="form-grid">
+                  <!-- Campo: Selección de mascota registrada -->
                   <div class="field" id="field-pet-name">
-                    <label for="pet-name">Mascota *</label
-                    ><select id="pet-name" required>
-                      <option value="">Cargando tus mascotas...</option></select
-                    ><small class="error"
-                      >Selecciona una mascota registrada.</small
-                    >
+                    <label for="pet-name">Mascota *</label>
+                    <select id="pet-name" required>
+                      <option value="">Cargando tus mascotas...</option>
+                    </select>
+                    <small class="error">Selecciona una mascota registrada.</small>
                   </div>
+
+                  <!-- Campo: Especie de la mascota -->
                   <div class="field" id="field-species">
-                    <label for="species">Especie *</label
-                    ><select id="species" required>
+                    <label for="species">Especie *</label>
+                    <select id="species" required>
                       <option value="">Selecciona</option>
                       <option>Perro</option>
                       <option>Gato</option>
-                      <option>Otro</option></select
-                    ><small class="error">Selecciona la especie.</small>
+                      <option>Otro</option>
+                    </select>
+                    <small class="error">Selecciona la especie.</small>
                   </div>
                 </div>
               </div>
+
+              <!-- Bloque 3: Datos de la cita -->
               <div class="form-section">
                 <h3>Datos de la cita</h3>
                 <div class="form-grid">
+                  <!-- Campo: Servicio veterinario -->
                   <div class="field" id="field-service">
-                    <label for="service">Servicio *</label
-                    ><select id="service" required>
+                    <label for="service">Servicio *</label>
+                    <select id="service" required>
                       <option value="">Selecciona un servicio</option>
                       <option>Consulta general</option>
                       <option>Vacunación</option>
                       <option>Odontología</option>
                       <option>Diagnóstico</option>
-                      <option>Cirugía</option></select
-                    ><small class="error">Selecciona un servicio.</small>
+                      <option>Cirugía</option>
+                    </select>
+                    <small class="error">Selecciona un servicio.</small>
                   </div>
+
+                  <!-- Campo: Fecha de la cita -->
                   <div class="field" id="field-date">
-                    <label for="appointment-date">Fecha *</label
-                    ><input id="appointment-date" type="date" required /><small
-                      class="error"
-                      >Selecciona una fecha válida.</small
-                    >
+                    <label for="appointment-date">Fecha *</label>
+                    <input id="appointment-date" type="date" required />
+                    <small class="error">Selecciona una fecha válida.</small>
                   </div>
+
+                  <!-- Campo: Hora de la cita -->
                   <div class="field" id="field-time">
-                    <label for="appointment-time">Hora *</label
-                    ><select id="appointment-time" required>
+                    <label for="appointment-time">Hora *</label>
+                    <select id="appointment-time" required>
                       <option value="">
                         Primero selecciona una fecha
-                      </option></select
-                    ><small class="error">Selecciona un horario.</small>
+                      </option>
+                    </select>
+                    <small class="error">Selecciona un horario.</small>
                   </div>
+
+                  <!-- Campo: Motivo de la cita -->
                   <div class="field field-full" id="field-reason">
-                    <label for="reason">Motivo de la cita *</label
-                    ><textarea
+                    <label for="reason">Motivo de la cita *</label>
+                    <textarea
                       id="reason"
                       minlength="10"
                       maxlength="300"
                       required
                       placeholder="Cuéntanos brevemente el motivo de la consulta..."
-                    ></textarea
-                    ><small class="error"
-                      >Escribe al menos 10 caracteres.</small
-                    >
+                    ></textarea>
+                    <small class="error">Escribe al menos 10 caracteres.</small>
                   </div>
                 </div>
               </div>
-              <label class="check-row"
-                ><input id="appointment-consent" type="checkbox" /><span
-                  >Acepto que estos datos sean utilizados para gestionar mi
-                  solicitud de cita.</span
-                ></label
-              >
+
+              <!-- Consentimiento de tratamiento de datos -->
+              <label class="check-row">
+                <input id="appointment-consent" type="checkbox" />
+                <span>
+                  Acepto que estos datos sean utilizados para gestionar mi solicitud de cita.
+                </span>
+              </label>
+
+              <!-- Mensajes de respuesta del formulario -->
               <div
                 id="appointment-message"
                 class="form-message"
                 role="alert"
               ></div>
+
+              <!-- Botón de envío de solicitud -->
               <button class="btn btn-primary" type="submit">
-                <span class="material-symbols-outlined">event_available</span
-                >Solicitar cita
+                <span class="material-symbols-outlined">event_available</span>
+                <span>Solicitar cita</span>
               </button>
             </form>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- Contenedor modular de accesibilidad -->
     <div id="accessibility-container"></div>
-    <!-- ==========================================
-         FOOTER GLOBAL (cargado automáticamente)
-    =========================================== -->
+
+    <!-- Footer global cargado automáticamente -->
     <div id="footer-container"></div>
 
     <!-- Scripts -->

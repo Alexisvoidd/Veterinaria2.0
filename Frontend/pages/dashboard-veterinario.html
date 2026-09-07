@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Veterinario | VetSalud</title>
 
-    <!-- Google Fonts -->
+    <!-- Fuentes oficiales de Google: Montserrat, Open Sans, Jost y Raleway -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700;800&family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Icons -->
+    <!-- Iconos de Material Symbols Outlined y Font Awesome -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Stylesheets -->
+    <!-- Hojas de estilos del dashboard veterinario -->
     <link rel="stylesheet" href="../css/dashboard-veterinario.css">
 </head>
 <body data-page="dashboard-veterinario">
 
-    <!-- Global navigation container -->
+    <!-- Navegación modular -->
     <div id="nav-container"></div>
 
-    <!-- Main clinical panel -->
+    <!-- Panel clínico principal -->
     <main class="dashboard-veterinario">
         <div class="dashboard-contenedor">
 
-            <!-- Panel header: doctor greeting and current date -->
+            <!-- Encabezado del panel: Saludo al médico y fecha actual -->
             <section class="dashboard-encabezado">
                 <div>
                     <span class="dashboard-etiqueta">PANEL VETERINARIO</span>
@@ -46,9 +46,9 @@
                 </div>
             </section>
 
-            <!-- KPI metric cards -->
+            <!-- Cuadrícula de tarjetas métricas y KPIs clínicos -->
             <section class="dashboard-estadisticas">
-                <!-- Total active patients -->
+                <!-- Tarjeta: Pacientes registrados -->
                 <article class="estadistica-card">
                     <div class="estadistica-icono">
                         <span class="material-symbols-outlined">pets</span>
@@ -60,7 +60,7 @@
                     </div>
                 </article>
 
-                <!-- Total consultations -->
+                <!-- Tarjeta: Consultas realizadas -->
                 <article class="estadistica-card">
                     <div class="estadistica-icono">
                         <span class="material-symbols-outlined">medical_services</span>
@@ -72,7 +72,7 @@
                     </div>
                 </article>
 
-                <!-- Active treatments -->
+                <!-- Tarjeta: Tratamientos activos -->
                 <article class="estadistica-card">
                     <div class="estadistica-icono">
                         <span class="material-symbols-outlined">medication</span>
@@ -84,7 +84,7 @@
                     </div>
                 </article>
 
-                <!-- Medical records -->
+                <!-- Tarjeta: Historias clínicas registradas -->
                 <article class="estadistica-card">
                     <div class="estadistica-icono">
                         <span class="material-symbols-outlined">description</span>
@@ -97,10 +97,10 @@
                 </article>
             </section>
 
-            <!-- Main grid: recent consultations and quick actions -->
+            <!-- Cuadrícula principal: Consultas recientes y accesos directos -->
             <section class="dashboard-grid">
 
-                <!-- Recent clinical activity -->
+                <!-- Panel: Últimas consultas clínicas -->
                 <article class="dashboard-panel">
                     <div class="panel-encabezado">
                         <div>
@@ -116,13 +116,13 @@
                         </button>
                     </div>
 
+                    <!-- Contenedor dinámico de consultas -->
                     <div class="consultas-lista" id="consultas-lista-contenedor">
-                        <!-- Populated dynamically via dashboard-veterinario.js -->
                         <div class="consulta-item-cargando">Cargando consultas...</div>
                     </div>
                 </article>
 
-                <!-- Quick access actions -->
+                <!-- Panel: Acciones rápidas de atención médica -->
                 <article class="dashboard-panel panel-acciones">
                     <div class="panel-encabezado">
                         <div>
@@ -135,6 +135,7 @@
                     </div>
 
                     <div class="acciones-lista">
+                        <!-- Acción: Buscar paciente -->
                         <button type="button" class="accion-boton" id="accion-buscar-paciente">
                             <span class="material-symbols-outlined">search</span>
                             <div>
@@ -144,6 +145,7 @@
                             <span class="material-symbols-outlined accion-flecha">chevron_right</span>
                         </button>
 
+                        <!-- Acción: Crear historia clínica -->
                         <button type="button" class="accion-boton" id="accion-crear-historia">
                             <span class="material-symbols-outlined">add_notes</span>
                             <div>
@@ -153,6 +155,7 @@
                             <span class="material-symbols-outlined accion-flecha">chevron_right</span>
                         </button>
 
+                        <!-- Acción: Editar historia clínica -->
                         <button type="button" class="accion-boton" id="accion-editar-historia">
                             <span class="material-symbols-outlined">edit_document</span>
                             <div>
@@ -162,6 +165,7 @@
                             <span class="material-symbols-outlined accion-flecha">chevron_right</span>
                         </button>
 
+                        <!-- Acción: Nueva consulta -->
                         <button type="button" class="accion-boton" id="accion-nueva-consulta">
                             <span class="material-symbols-outlined">medical_information</span>
                             <div>
@@ -177,7 +181,7 @@
         </div>
     </main>
 
-    <!-- Modal: Search Patient & Clinical Records -->
+    <!-- Modal 1: Buscar paciente y ficha clínica -->
     <div class="vet-modal-backdrop" id="modal-buscar-paciente-backdrop" hidden>
         <div class="vet-modal vet-modal--lg" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-paciente">
             <div class="vet-modal-header">
@@ -191,23 +195,24 @@
             </div>
 
             <div class="vet-modal-body">
+                <!-- Buscador dinámico de pacientes -->
                 <div class="vet-buscador-input-wrap">
                     <span class="material-symbols-outlined">search</span>
                     <input type="search" id="input-buscar-paciente" placeholder="Buscar por mascota, dueño o documento..." autocomplete="off">
                 </div>
 
+                <!-- Lista de resultados de búsqueda -->
                 <div class="vet-paciente-resultados" id="lista-resultados-pacientes">
-                    <!-- Populated dynamically -->
                 </div>
 
+                <!-- Ficha detallada del paciente seleccionado -->
                 <div class="vet-ficha-paciente" id="detalle-ficha-paciente" hidden>
-                    <!-- Patient profile and history details -->
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal: Create Clinical History -->
+    <!-- Modal 2: Registrar historia clínica -->
     <div class="vet-modal-backdrop" id="modal-crear-historia-backdrop" hidden>
         <div class="vet-modal" role="dialog" aria-modal="true" aria-labelledby="titulo-crear-historia">
             <div class="vet-modal-header">
@@ -220,6 +225,7 @@
                 </button>
             </div>
 
+            <!-- Formulario de creación de historia clínica -->
             <form id="form-crear-historia" class="vet-modal-body">
                 <div class="vet-form-grupo">
                     <label for="select-historia-paciente">Seleccionar Paciente *</label>
@@ -270,7 +276,7 @@
         </div>
     </div>
 
-    <!-- Modal: Edit Clinical History -->
+    <!-- Modal 3: Editar historia clínica -->
     <div class="vet-modal-backdrop" id="modal-editar-historia-backdrop" hidden>
         <div class="vet-modal" role="dialog" aria-modal="true" aria-labelledby="titulo-editar-historia">
             <div class="vet-modal-header">
@@ -283,6 +289,7 @@
                 </button>
             </div>
 
+            <!-- Formulario de edición de historia clínica -->
             <form id="form-editar-historia" class="vet-modal-body">
                 <div class="vet-form-grupo">
                     <label for="select-editar-historia-id">Seleccionar Historia Clínica *</label>
@@ -323,7 +330,7 @@
         </div>
     </div>
 
-    <!-- Modal: Register New Consultation -->
+    <!-- Modal 4: Registrar nueva consulta -->
     <div class="vet-modal-backdrop" id="modal-nueva-consulta-backdrop" hidden>
         <div class="vet-modal" role="dialog" aria-modal="true" aria-labelledby="titulo-nueva-consulta">
             <div class="vet-modal-header">
@@ -336,6 +343,7 @@
                 </button>
             </div>
 
+            <!-- Formulario de agendamiento y atención de consulta -->
             <form id="form-nueva-consulta" class="vet-modal-body">
                 <div class="vet-form-grupo">
                     <label for="select-consulta-paciente">Paciente *</label>
@@ -379,7 +387,7 @@
         </div>
     </div>
 
-    <!-- Modal: View All Consultations -->
+    <!-- Modal 5: Ver todas las consultas -->
     <div class="vet-modal-backdrop" id="modal-todas-consultas-backdrop" hidden>
         <div class="vet-modal vet-modal--lg" role="dialog" aria-modal="true" aria-labelledby="titulo-todas-consultas">
             <div class="vet-modal-header">
@@ -393,6 +401,7 @@
             </div>
 
             <div class="vet-modal-body">
+                <!-- Filtros y buscador de consultas -->
                 <div class="vet-filtros-consultas">
                     <div class="vet-buscador-input-wrap">
                         <span class="material-symbols-outlined">search</span>
@@ -407,6 +416,7 @@
                     </select>
                 </div>
 
+                <!-- Tabla de consultas -->
                 <div class="vet-tabla-contenedor">
                     <table class="vet-tabla">
                         <thead>
@@ -419,7 +429,6 @@
                             </tr>
                         </thead>
                         <tbody id="tabla-todas-consultas-body">
-                            <!-- Populated dynamically -->
                         </tbody>
                     </table>
                 </div>
@@ -427,8 +436,10 @@
         </div>
     </div>
 
-    <!-- Accessibility features and global footer -->
+    <!-- Contenedor modular de accesibilidad -->
     <div id="accessibility-container"></div>
+
+    <!-- Footer global cargado automáticamente -->
     <div id="footer-container"></div>
 
     <!-- Scripts -->
