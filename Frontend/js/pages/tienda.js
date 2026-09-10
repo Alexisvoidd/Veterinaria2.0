@@ -62,7 +62,9 @@ async function cargarProductos() {
   const contenedor = seleccionar("#product-grid");
   contenedor.innerHTML = '<div class="empty-state">Cargando productos...</div>';
   try {
-    const respuesta = await fetch(`/api/productos?${parametros.toString()}`);
+    const respuesta = await fetch(
+      `http://localhost:3001/api/productos?${parametros.toString()}`,
+    );
     const resultado = await respuesta.json();
     if (!respuesta.ok) throw new Error(resultado.error);
     productos = resultado.productos;
